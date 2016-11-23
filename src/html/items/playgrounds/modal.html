@@ -1,0 +1,40 @@
+{% import "items/playgrounds/modal-playground.html" as mpg %}
+<div class="modal pl-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <h4 class="modal-title h3" id="myModalLabel"><strong>Площадки</strong></h4>
+      </div>
+      <div class="modal-body">
+          {{ mpg.mPlayground(
+          user_logo='images/users/userpic-7@3x.png',
+          username='Zweeler',
+          user_desc='Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором
+                спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…'
+          ) }}
+          {{ mpg.mPlayground(
+          user_logo='images/users/userpic-8@3x.png',
+          username='Oulala',
+          user_desc='Oulala — англоязычная платформа Daily Fantasy Football, зарегистрированная на Мальте, имеющая британскую лицензию и доступная для игроков из СНГ'
+          ) }}
+          {{ mpg.mPlayground(
+          user_logo='images/users/userpic-9@3x.png',
+          username='DraftGaming',
+          user_desc='Первый русскоязычный Daily Fantasy Sports с ориентацией на игроков из СНГ-пространства.'
+          ) }}
+          {{ mpg.mPlayground(
+          user_logo='images/users/userpic-7@3x.png',
+          username='Zweeler',
+          user_desc='Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором
+                  спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…'
+          ) }}
+      </div>
+      <div class="modal-footer small text-sm-left">
+        Данные площадки не вошли в список рекомендованных. Вы можете по-прежнему выбирать любую понравившуюся вам площадку, однако мы не можем гарантировать вам наилучший опыт и сохранность данных.
+      </div>
+    </div>
+  </div>
+</div>

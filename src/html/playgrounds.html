@@ -1,0 +1,31 @@
+{% extends 'layouts/application.html' %}
+{% import "items/cards/card.html" as cards %}
+{% import "items/global/subheader.html" as header %}
+
+{% block title %}{{ home_02.title }}{% endblock %}
+
+
+{% block content %}
+{% include "items/header.html" %}
+{{ header.subheader(title='Площадки') }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 hidden-sm-down">
+            {% include "items/playgrounds/description.html" %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            {% include "items/playgrounds/playgrounds.html" %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-sm-center m-b-3">
+            <button type="button" class="btn btn-outline-secondary playgrounds-btn" data-toggle="modal" data-target="#myModal">Все  площадки</button>
+        </div>
+    </div>
+    {% include "items/playgrounds/modal.html" %}
+</div>
+    
+{% endblock %}

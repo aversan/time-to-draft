@@ -1,0 +1,31 @@
+.btn {
+  &:active {
+    outline: none!important;
+  }
+  &.btn-link {
+
+  }
+  &.btn-success {
+    background: $algae-green;
+  }
+
+  &.btn-outline-success {
+    color: $algae-green;
+    background-image: none;
+    background-color: transparent;
+    border-color: $algae-green;
+  }
+
+  &.btn-outline-success:hover {
+    color: $white;
+    background-color: $algae-green-light;
+    border-color: $algae-green-light;
+  }
+  &:focus {
+    outline: none;
+  }
+
+}
+button:focus {
+  outline: none;
+}

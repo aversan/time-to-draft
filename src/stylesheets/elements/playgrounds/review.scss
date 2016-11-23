@@ -1,0 +1,35 @@
+.playground-review {
+    padding-top: 38px;
+    padding-bottom: 20px;
+    background: $white;
+    .heading {
+        font-weight: 900;
+        &.h1 {
+            margin-bottom: 18px;
+        }
+        &.h4 {
+            margin-bottom: 14px;
+        }
+    }
+    .img-fluid {
+        margin-top: 33px;
+    }
+    p {
+        font-size: $font-size-lg;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .playground-review {
+        .heading {
+            &.h1 {
+                font-size: $font-size-h3;
+            }
+            &.h4 {
+                font-size: $font-size-h5;
+            }
+        }
+        p {
+            font-size: $font-size-root;
+        }
+    }
+}

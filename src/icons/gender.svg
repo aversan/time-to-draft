@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="23" viewBox="0 0 27 23">
+    <g id="Design-v.2.1" stroke-width="1" fill-rule="evenodd">
+        <g id="Profile-Edit" transform="translate(-516.000000, -394.000000)">
+            <g id="Group-27" transform="translate(478.000000, 223.000000)">
+                <g id="gender" transform="translate(39.293679, 172.400000)">
+                    <g id="Layer_1">
+                        <path d="M6.364,13.636 L4.4408921e-16,20" id="Shape" fill="none" stroke-width="2"></path>
+                        <path d="M0,14.343 L5.657,20" id="Shape" fill="none" stroke-width="2"></path>
+                        <polyline id="Shape" fill="none" stroke-width="2" points="18 0 24 0 24 6"></polyline>
+                        <path d="M24,0 L18.475,5.525" id="Shape" fill="none" stroke-width="2"></path>
+                        <g id="Group" transform="translate(4.000000, 4.000000)"  stroke="none">
+                            <path d="M10.505,2.05 C9.788,2.17 9.164,2.546 8.714,3.08 C9.5,3.811 10,4.845 10,6 C10,6.591 9.863,7.148 9.632,7.654 C10.044,7.868 10.504,8 11,8 C11.235,8 11.461,7.966 11.681,7.915 C11.885,7.313 12,6.67 12,6 C12,4.487 11.433,3.107 10.505,2.05 L10.505,2.05 Z" id="Shape"></path>
+                            <path d="M6.099,9.99 C6.065,9.991 6.034,10 6,10 C3.794,10 2,8.206 2,6 C2,4.307 3.061,2.865 4.549,2.282 C4.913,1.421 5.446,0.65 6.104,0.005 C6.069,0.005 6.035,0 6,0 C2.691,0 0,2.691 0,6 C0,9.309 2.691,12 6,12 C6.854,12 7.666,11.818 8.402,11.495 C7.536,11.147 6.755,10.634 6.099,9.99 L6.099,9.99 Z" id="Shape"></path>
+                        </g>
+                        <circle id="Oval" fill="none" stroke-width="2" cx="15" cy="9" r="5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,586 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid red;
+}
+
+.sprite {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+// Colors
+
+// brand primary
+
+.icon.-comment,
+.icon.-view,
+.icon.-ttd-team,
+.icon.-green-search,
+.icon.-energy-green,
+.icon.-check {
+	color: $brand-primary;
+}
+
+.sprite.-comment,
+.sprite.-view,
+.sprite.-ttd-team,
+.sprite.-green-search,
+.sprite.-energy-green,
+.sprite.-check {
+	fill: $brand-primary;
+	stroke: $brand-primary;
+}
+
+// social
+
+.icon.-vkontakte {
+	color: $vkontakte-color;
+}
+.sprite.-vkontakte {
+	fill: $vkontakte-color;
+	stroke: $vkontakte-color;
+}
+
+.icon.-facebook {
+	color: $facebook-color;
+}
+.sprite.-facebook {
+	fill: $facebook-color;
+	stroke: $facebook-color;
+}
+
+.icon.-twitter {
+	color: $twitter-color;
+}
+
+.sprite.-twitter {
+	fill: $twitter-color;
+	stroke: $twitter-color;
+}
+
+// expert
+
+.icon.-expert {
+	color: $expert-color;
+}
+.sprite.-expert {
+	fill: $expert-color;
+	stroke: $expert-color;
+}
+
+// gray dark
+
+.icon.-football-2-filled,
+.icon.-hockey {
+	color: $gray-dark;
+}
+.sprite.-football-2-filled,
+.sprite.-hockey {
+	fill: $gray-dark;
+	stroke: $gray-dark;
+}
+
+// gray
+
+.icon.-note,
+.icon.-search,
+.icon.-hamburger,
+.icon.-img-upload,
+.icon.-basketball,
+.icon.-energy,
+.icon.-plus-small {
+	color: $gray;
+}
+.sprite.-note,
+.sprite.-search,
+.sprite.-hamburger,
+.sprite.-img-upload,
+.sprite.-basketball,
+.sprite.-energy,
+.sprite.-plus-small {
+	fill: $gray;
+	stroke: $gray;
+}
+
+// gray light
+
+.icon.-down,
+.icon.-up,
+.icon.-video-upload {
+	color: $gray-light;
+
+	&.-hoverable:hover,
+	&.-hoverable:focus {
+		color: $gray;
+	}
+}
+.sprite.-down,
+.sprite.-up,
+.sprite.-video-upload {
+	fill: $gray-light;
+	stroke: $gray-light;
+
+	.hoverable:hover &,
+	.hoverable:focus & {
+		color: $gray;
+	}
+}
+
+// gray lightest
+
+.icon.-more,
+.icon.-close,
+.icon.-marker,
+.icon.-read-message,
+.icon.-user,
+.icon.-lock,
+.icon.-gender {
+	color: $gray-lightest;
+}
+.sprite.-more,
+.sprite.-close,
+.sprite.-marker,
+.sprite.-read-message,
+.sprite.-user,
+.sprite.-lock,
+.sprite.-gender {
+	fill: $gray-lightest;
+	stroke: $gray-lightest;
+}
+
+.icon.-primary { color: $brand-primary; }
+.icon.-gray-dark { color: $gray-dark; }
+.icon.-gray { color: $gray; }
+.icon.-gray-light { color: $gray-light; }
+.icon.-gray-lightest { color: $gray-lightest; }
+.icon.-white { color: $white; }
+
+
+.icon {
+	&.-close {
+		transition: right ease .2s;
+		display: block;
+		padding: 0;
+		border: none;
+		right: 0;
+		z-index: 3;
+		font-size: 18px;
+		line-height: 1;
+		width: 18px;
+		height: 18px;
+	}
+	
+	&.-search {
+		transition: right ease .2s;
+		display: block;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		right: 0;
+		z-index: 3;
+		font-size: 18px;
+		line-height: 1;
+		width: 18px;
+		height: 18px;
+	}
+
+	&.-hamburger {
+		font-size: 16px;
+		line-height: 1;
+		width: 23px;
+		height: 16px;
+		text-align: center;
+		border-radius: 0;
+		border: none;
+	}
+	
+	&.-more {
+		font-size: 10px;
+		line-height: 1;
+		width: 23px;
+		height: 10px;
+		text-align: center;
+	}
+
+	&.-russian {
+		font-size: 18px;
+		line-height: 1;
+		height: 18px;
+		border: solid 1px rgba(0, 0, 0, 0.11);
+	}
+	
+	&.-facebook,
+	&.-vkontakte,
+	&.-twitter {
+		width: 26px;
+		height: 26px;
+		font-size: 26px;
+		line-height: 1;
+		text-align: center;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	
+	&.-expert {
+		width: 26px;
+		height: 26px;
+		font-size: 26px;
+		line-height: 1;
+		text-align: center;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	
+	&.-expert.-big {
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+		line-height: 1;
+		text-align: center;
+		margin-right: 10px;
+	}
+	
+	&.-ttd-team {
+		width: 26px;
+		height: 26px;
+		font-size: 26px;
+		line-height: 1;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	&.-energy {
+		font-size: 12px;
+		line-height: 1;
+		height: 12px;
+	}
+	
+	&.-energy.-primary {
+		font-size: 16px;
+		line-height: 1;
+		height: 16px;
+	}
+	
+	&.-view {
+		font-size: 8px;
+		height: 8px;
+		line-height: 1;
+	}
+	
+	&.-comments {
+		font-size: 11px;
+		line-height: 1;
+		height: 11px;
+	}
+	
+	&.i-dark-arrow-left {
+		width: 12px;
+		height: 12px;
+		transform: rotate(180deg);
+		background-image: $icon-dark-arrow-left;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-dark-arrow-right {
+		width: 12px;
+		height: 12px;
+		background-image: $icon-dark-arrow-left;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&.-note {
+		font-size: 18px;
+		line-height: 1;
+		height: 18px;
+	}
+
+	&.-comment {
+		font-size: 18px;
+		line-height: 1;
+		height: 18px;
+	}
+
+	&.-img-upload {
+		font-size: 16px;
+		line-height: 1;
+		height: 16px;
+		vertical-align: text-top;
+	}
+
+	&.-video-upload {
+		font-size: 17px;
+		line-height: 1;
+		height: 17px;
+		vertical-align: sub;
+		margin-left: 3px;
+	}
+
+	&.-plus-small {
+		font-size: 20px;
+		line-height: 1;
+		height: 20px;
+		vertical-align: sub;
+		margin-right: 7px;
+	}
+	
+	&.-football {
+		font-size: 57px;
+		line-height: 1;
+		height: 57px;
+	}
+
+	&.-basketball {
+		font-size: 59px;
+		line-height: 1;
+		height: 59px;
+	}
+
+	&.-check {
+		font-size: 24px;
+		line-height: 1;
+		height: 24px;
+	}
+
+	&.-hockey {
+		font-size: 58px;
+		line-height: 1;
+		height: 58px;
+	}
+
+	&.-user {
+		font-size: 24px;
+		line-height: 1;
+		height: 24px;
+	}
+
+	&.-gender {
+		font-size: 24px;
+		line-height: 1;
+		height: 24px;
+	}
+
+	&.-marker {
+		font-size: 24px;
+		line-height: 1;
+		height: 24px;
+	}
+
+	&.-read-message {
+		font-size: 23px;
+		line-height: 1;
+		height: 23px;
+	}
+
+	&.-lock {
+		font-size: 23px;
+		line-height: 1;
+		height: 23px;
+	}
+	
+	&.-up {
+		font-size: 22px;
+		line-height: 1;
+		height: 22px;
+	}
+	
+	&.-down {
+		font-size: 22px;
+		line-height: 1;
+		height: 22px;
+	}
+
+	&.-view {
+		font-size: 11px;
+		line-height: 1;
+		height: 11px;
+	}
+
+	&.-comment {
+		font-size: 13px;
+		line-height: 1;
+		height: 13px;
+	}
+
+	&.-subscribe {
+		font-size: 117px;
+		line-height: 1;
+		width: 117px;
+		height: 117px;
+		text-align: center;
+	}
+
+	&.-pencil {
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		margin-left: 10px;
+		background-image: $pencil;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&.i-star {
+		width: 18px;
+		height: 18px;
+		background-image: $icon-star-x3;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-star-l {
+		width: 20px;
+		height: 20px;
+		background-image: $icon-star-x3;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&.i-visa {
+		width: 65px;
+		height: 25px;
+		background-image: $icon-visa;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-mcard {
+		width: 47px;
+		height: 36px;
+		background-image: $icon-mcard;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-neteller {
+		width: 94px;
+		height: 37px;
+		background-image: $icon-neteller;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-pcard {
+		width: 142px;
+		height: 45px;
+		background-image: $icon-pcard;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-pp {
+		width: 112px;
+		height: 29px;
+		background-image: $icon-pp;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&.i-skrill {
+		width: 63px;
+		height: 21px;
+		background-image: $icon-skrill;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&.i-en,
+	&.i-ru,
+	&.i-no,
+	&.i-sv,
+	&.i-fi,
+	&.i-de {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;		
+
+		&:before {
+			display: none;
+		}
+	}
+	
+	&.i-en {
+		background-image: $icon-en;
+	}
+	
+	&.i-ru {
+		background-image: $icon-ru;
+	}
+	
+	&.i-no {
+		background-image: $icon-no;
+	}
+	
+	&.i-sv {
+		background-image: $icon-sv;
+	}
+
+	&.i-fi {
+		background-image: $icon-fi;
+	}
+
+	&.i-de {
+		background-image: $icon-de;
+	}
+}

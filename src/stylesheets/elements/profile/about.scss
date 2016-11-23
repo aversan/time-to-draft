@@ -1,0 +1,40 @@
+.about {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .h6 {
+        color: $warm-grey-light;
+        margin-bottom: 15px;
+    }
+    .edit-label {
+        cursor: pointer;
+        font-size: $font-size-h6;
+        font-style: italic;
+        line-height: 28px;
+        color: $warm-grey;
+    }
+    .edit-area {
+        background: transparent;
+        border: 0;
+        font-size: $font-size-h6;
+        font-style: italic;
+        line-height: 28px;
+        color: $warm-grey;
+        width: 100%;
+        &:focus {
+            outline: none;
+        }
+    }
+    .btn {
+        border-radius: 100px;
+        width: 118px;
+        height: 40px;
+        font-size: $font-size-sm;
+    }
+    .long-text {
+        display: none;
+    }
+    .more {
+        color: $dark-grey;
+        cursor: pointer;
+    }
+}

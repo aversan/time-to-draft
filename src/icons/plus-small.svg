@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+    <g id="Symbols" stroke-width="1" fill-rule="evenodd">
+        <g id="Plus-small" transform="translate(1.000000, 1.000000)">
+            <g id="Plus_small">
+                <rect id="Rectangle-965" stroke="none" x="9.5" y="5" width="1" height="10"></rect>
+                <rect id="Rectangle-965-Copy" stroke="none" transform="translate(10.000000, 10.000000) rotate(-90.000000) translate(-10.000000, -10.000000) " x="9.5" y="5" width="1" height="10"></rect>
+                <circle id="Oval-2" fill="none" cx="10" cy="10" r="10"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

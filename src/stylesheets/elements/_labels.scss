@@ -1,0 +1,34 @@
+@import "../base/variables";
+
+a.label__type,
+.label__type {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  color: $white;
+  text-transform: uppercase;
+  padding: 5px 6px;
+  font-stretch: condensed;
+
+  &.news {
+    background-color: $faded-orange;
+  }
+  &.profi {
+    background-color: $cornflower-blue;
+  }
+  &.action {
+    background-color: $algae-green;
+  }
+  &.strategy {
+    background-color: $salmon;
+  }
+  &.podcast {
+    background-color: $light-plum;
+  }
+  &.outline {
+    border: 1px solid $white;
+  }
+  &.newbie {
+    background-color: $algae-green;
+  }
+}

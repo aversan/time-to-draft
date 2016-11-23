@@ -1,0 +1,111 @@
+.post-item {
+  border-radius: 2px;
+  background-color:$white;
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px rgba(212, 212, 212, 0.29);
+  margin-bottom: 12px;
+  padding: 14px 20px 64px;
+  position: relative;
+
+  &__info {
+    overflow: hidden;
+    margin-bottom: 12px;
+    &__ava {
+      width: 36px;
+      height: 36px;
+      float: left;
+      margin-right: 12px;
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+    }
+    &__name {
+      font-size: 16px;
+      color: $greyish-brown !important;
+    }
+    &__time {
+      font-size: 12px;
+      color: $warm-grey-light;
+      position: relative;
+      margin-top: -6px;
+    }
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: 236px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 18px;
+  }
+  &__title {
+    font-size: 23px;
+    font-weight: bold;
+    color: $dark-grey;
+  }
+  &__description {
+    font-size: 16px;
+    color: $greyish-brown;
+  }
+  &__icons {
+    &.card__icons {
+      left: 24px;
+      border-bottom: 20px;
+    }
+  }
+  a {
+    color: inherit !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .post-item {
+    border-radius: 0;
+    margin-bottom: 4px;
+    padding: 12px 15px 52px;
+    position: relative;
+
+    &__info {
+      margin-bottom: 6px;
+      &__ava {
+        width: 32px;
+        height: 32px;
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      &__name {
+        font-size: 14px;
+        position: relative;
+        top: -5px;
+      }
+      &__time {
+        font-size: 12px;
+        margin-top: -10px;
+      }
+    }
+    &__image {
+      max-height: 144px;
+      margin-bottom: 12px;
+    }
+    &__title {
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    &__description {
+      line-height: 1.35;
+    }
+    &__icons {
+      &.card__icons {
+        left: 15px;
+        bottom: 15px;
+      }
+    }
+    a {
+      color: inherit !important;
+    }
+  }
+}

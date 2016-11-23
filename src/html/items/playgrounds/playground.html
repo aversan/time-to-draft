@@ -1,0 +1,57 @@
+{% macro playground(
+  img='images/banners/slider/b-g@3x.png',
+  user_logo='images/users/userpic-8@3x.png',
+  username='FanTeam',
+  user_desc='Качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ.',
+  rel='9',
+  support='8',
+  pl_count='6.4k',
+  stars_count='5',
+  forum_count='354'
+) %}
+<div class="col-lg-4 col-sm-12 col-md-4">
+  <div class="text-sm-center playground">
+    <div class="gr-img text-sm-left" style="background-image: url({{ img }})">
+      {% for i in [1,2,3,4,5] -%}
+        {% if loop.index <= stars_count %}
+          <i class="icon i-star"></i>
+        {% endif %}
+      {%- endfor %}
+    </div>
+    <div class="gr-desc">
+      <img class="gr-logo img-circle" src="{{ user_logo }}" alt="">
+      <div class="gr-title h5">{{ username }}</div>
+      <div class="gt-body">
+        {{ user_desc }}
+      </div>
+    </div>
+    <div class="gr-values">
+      <div class="gr-value">
+        <div class="gr-val-img"><div class="progress-radial progress-{{ rel }}0 setsize">
+            <div class="overlay setsize">
+              <p class="pi-val h4">{{ rel }}</p>
+            </div>
+          </div></div>
+        <div class="gr-val-name small">Надежность</div>
+      </div>
+      <div class="gr-value">
+        <div class="gr-val-img h4"><div class="progress-radial progress-{{ support//1 }}0 setsize">
+            <div class="overlay setsize">
+              <p class="pi-val h4">{{ support }}</p>
+            </div>
+          </div></div>
+        <div class="gr-val-name small">Служба поддержки</div>
+      </div>
+      <div class="gr-value">
+        <div class="gr-val-img h4">{{ pl_count }}</div>
+        <div class="gr-val-name small">Количество игроков</div>
+      </div>
+    </div>
+    <div class="gr-overlay">
+      <button type="button" class="btn btn-success gr-btn">Зарегистрироваться</button>
+      <a class="gr-link" href="#">Обзор площадки</a>
+      <a class="gr-link" href="#">Обсудить на форуме <span>({{ forum_count }})</span></a>
+    </div>
+  </div>
+</div>
+{% endmacro %}

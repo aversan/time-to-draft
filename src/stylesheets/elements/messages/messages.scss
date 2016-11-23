@@ -1,0 +1,339 @@
+.messages-wrapper {
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  border-top: solid 1px rgba(158, 158, 158, 0.27);
+  border-bottom: solid 1px rgba(158, 158, 158, 0.27);
+  &.new-message {
+    border-bottom: none;
+    box-shadow: none;
+    .media {
+      .media-left {
+        &:after {
+          content: "";
+          position: absolute;
+          left: 22px;
+          bottom: 2px;
+          width: 12px;
+          height: 12px;
+          background-color: $warm-grey;
+          border: solid 2px $white;
+          border-radius: 6px;
+        }
+        &.online {
+          &:after {
+            background-color: $algae-green;
+          }
+        }
+      }
+    }
+  }
+  margin-bottom: 32px;
+  padding: 0;
+  .message-theme {
+    padding: 22px 14px 17px;
+    margin-bottom: 0;
+    border-bottom: solid 1px $white-two;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    color: $dark-grey;
+    background-color: $white;
+  }
+  .messages-content {
+    padding: 0;
+    margin-bottom: 0;
+    background-color: $white;
+    .message-item {
+      padding: 16px 14px 14px;
+      border-bottom: solid 1px $white-two;
+      &.your-message {
+        .message-text {
+          border-left: solid 2px $greyish-brown;
+          margin-left: 2px;
+          padding-left: 8px;
+        }
+        .answer-container {
+          .answer-button:first-of-type {
+            display: none;
+          }
+        }
+      }
+    }
+    .media {
+      margin-bottom: 12px;
+      .media-left {
+        position: relative;
+        padding-right: 13px;
+        .media-object {
+          width: 32px;
+          height: 32px;
+          border-radius: 20px;
+        }
+      }
+      .media-body {
+        margin-top: -2px;
+      }
+      .time {
+        display: block;
+        margin-top: -4px;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        color: $warm-grey-light;
+      }
+      .icon.-expert, .icon.-ttd-team {
+        width: 18px;
+        height: 18px;
+        vertical-align: sub;
+      }
+      .author-info {
+        height: 24px;
+        margin-bottom: 0;
+      }
+      .author-name {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        color: $greyish-brown;
+      }
+    }
+    .message-title {
+      font-size: 18px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.33;
+      color: $dark-grey;
+      display: block;
+    }
+    .message-text {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.43;
+      color: $gray;
+    }
+    .answer-container {
+      padding: 9px 0 5px;
+      .answer-button {
+        cursor: pointer;
+        margin-right: 14px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        color: $algae-green;
+      }
+    }
+  }
+  .button-container {
+    width: 100%;
+    padding: 12px 0;
+    background-color: $white;
+    text-align: center;
+    .btn-success {
+      padding: 7px 34px;
+      border-radius: 100px;
+      outline: none;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.43;
+      text-align: center;
+      color: $white;
+      background-color: $algae-green;
+    }
+  }
+  .new-message-container {
+    border-top: solid 1px rgba(158, 158, 158, 0.27);
+    margin-top: 4px;
+    .wrapper {
+      margin-bottom: 17px;
+    }
+    .container-heder {
+      padding: 15px 20px;
+      background-color: $white;
+      .user-image {
+        width: 36px;
+        height: 36px;
+        border-radius: 20px;
+      }
+      .user-name {
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        color: $greyish-brown;
+      }
+    }
+    .medium-editor-insert-plugin.medium-editor-placeholder:after {
+      padding: 20px 16px;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      color: $warm-grey-light;
+    }
+    .b-medium-editor-wrapper {
+      background: $white;
+      .medium-insert-buttons {
+        display: none !important;
+      }
+      #message-editor-control {
+        padding: 0 16px 42px;
+        outline: none;
+        background-color: $white;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    .b-medium-editor-wrapper-mobile {
+      position: relative;
+      padding-top: 40px;
+      box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(212, 212, 212, 0.29);
+      p {
+        margin: 0;
+      }
+      #mobile-message-editor-control {
+        padding: 20px 16px 42px;
+        outline: none;
+        background-color: $white;
+      }
+      .medium-editor-toolbar {
+        padding-left: 8px;
+        li button {
+          min-width: 36px !important;
+          font-family: Roboto !important;
+          font-size: 16px !important;
+          font-weight: 900 !important;
+          font-style: normal !important;
+          font-stretch: normal !important;
+          line-height: 1.5 !important;
+          color: $greyish-brown !important;
+          padding: 5px 12px !important;
+          background-color: transparent !important;
+        }
+      }
+      .medium-editor-relative-toolbar {
+        position: absolute !important;
+        display: block !important;
+        visibility: visible !important;
+        z-index: 10;
+        width: 100%;
+        background-color: transparent;
+      }
+      .medium-insert-buttons {
+        display: none !important;
+      }
+    }
+    .btn-outline-success {
+      margin-left: 20px;
+      padding: 9px 24px;
+      border-radius: 20px;
+      outline: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .messages-wrapper {
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px rgba(158, 158, 158, 0.27);
+    margin-bottom: 70px;
+    padding: 0;
+    &.new-message {
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      .messages-content {
+        .message-item {
+          padding: 15px 0 24px;
+        }
+      }
+      .new-message-container {
+        border-top: none;
+        margin-top: 0;
+      }
+    }
+    .message-hostory {
+      padding: 0 20px;
+      margin-bottom: 16px;
+      background-color: $white;
+      box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+      border: solid 1px rgba(158, 158, 158, 0.27);
+    }
+    .message-theme {
+      padding: 22px 0 17px;
+      font-size: 23px;
+      line-height: 1.22;
+    }
+    .messages-content {
+      border-top: transparent;
+      .message-item {
+        position: relative;
+        padding: 15px 20px 24px;
+        &:last-of-type {
+          border-bottom: transparent;
+        }
+        .answer-container {
+          position: absolute;
+          top: 4px;
+          right: -12px;
+        }
+      }
+      .media {
+        margin-bottom: 12px;
+        .media-left {
+          padding-right: 9px;
+          .media-object {
+            width: 36px;
+            height: 36px;
+          }
+          &:after {
+            left: 26px;
+            bottom: -2px;
+          }
+        }
+        .author-name {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+      .message-title {
+        font-size: 23px;
+        line-height: 1.22;
+      }
+      .message-text {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+    .new-message-container {
+      .wrapper {
+        border: solid 1px rgba(158, 158, 158, 0.27);
+      }
+      .medium-editor-insert-plugin.medium-editor-placeholder:after {
+        padding: 0 16px;
+      }
+      #message-editor-control {
+        min-height: 100px;
+      }
+      .btn-outline-success {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+.quick-banner {
+  background-image: $banner-quick;
+  background-size: cover;
+  background-position: center top;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  .row {
+    .shadow-container {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(32, 35, 38, 0.57) 44%, $gray-dark);
+      &::before {
+        content: '';
+        display: block;
+        background-image: $banner-quick-players-3x;
+        background-size: cover;
+        background-position-x: 0;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 324px;
+      }
+    }
+    .content {
+      padding: 130px 4px 30px;
+      text-align: center;
+      color: $white;
+      .banner-subtitle,
+      .banner-title {
+        font-size: 32px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+      .banner-subtitle {
+        margin-bottom: 0;
+      }
+      .banner-title {
+        margin-bottom: 22px;
+      }
+      .description {
+        margin-bottom: 44px;
+        font-size: 18px;
+        line-height: 1.4;
+        max-width: 540px;
+      }
+      .btn {
+        width: 220px;
+        outline: none;
+        font-size: 18px;
+        height: 52px;
+
+        &.btn-success {
+          background-color: $algae-green;
+        }
+        &.btn-outline-secondary {
+          border-radius: 4px;
+          backdrop-filter: blur(10px);
+          background-color: rgba(32, 35, 38, 0.53);
+          border: solid 1px $white;
+          color: $white;
+        }
+        margin-bottom: 16px;
+        &:first-of-type {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(md){
+  .quick-banner {
+    background-image: $banner-quick-2x;
+    .banner-background {
+      background-image: $banner-quick-players-2x;
+      background-size: cover;
+      background-position: 270px 0;
+      background-repeat: no-repeat;
+    }
+    .row {
+      .shadow-container {
+        background-image: none;
+      }
+      .content {
+        padding: 70px 14px 60px;
+        text-align: left;
+        .btn {
+          float: left;
+          margin-right: 20px;
+          padding: 15px;
+        }
+        .banner-subtitle,
+        .banner-title {
+          font-size: 36px;
+          font-weight: 900;
+          line-height: 1;
+          text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+        }
+        .banner-title {
+          font-size: 76px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .quick-banner {
+    .row {
+      .shadow-container {
+        padding: 0;
+        background-image: none;
+
+        &::before {
+          content: '';
+          display: block;
+          background-image: $banner-quick-players-3x;
+          background-size: contain;
+          background-position-x: 0;
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 324px;
+        }
+      }
+      .content {
+        padding: 75px 10px 56px;
+        .banner-subtitle,
+        .banner-title {
+          font-size: 40px;
+          font-weight: 900;
+          line-height: 1;
+          text-shadow: 0 2px 22px rgba(0, 0, 0, 0.5);
+        }
+        .banner-title {
+          font-size: 86px;
+        }
+        .description {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+
+  .quick-banner {
+    .row {
+      .shadow-container {
+        background-size: cover;
+        background-image: url(/images/banners/quick-banner/small/players@3x.png);
+
+        &::before {
+          left: 0;
+          background-size: cover;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(32, 35, 38, 0.57) 44%, $dark-grey);
+        }
+      }
+
+      .content {
+        padding: 127px 16px 14px;
+
+        .banner-title {
+          margin-bottom: 17px;
+        }
+        .btn {
+          width: 100%;
+          height: 48px;
+          font-size: 16px;
+        }
+
+        .description {
+          line-height: 1.35;
+          margin-bottom: 28px;
+        }
+      }
+    }
+  }
+
+  .posts-control {
+    margin-bottom: 4px;
+
+    .container {
+      padding-left: 16px;
+      padding-right: 16px;
+      height: 64px;
+    }
+
+    .posts-control__switcher__item .switcher-label:before {
+      left: -2px;
+    }
+    .posts-control__switcher {
+      top: -2px;
+      position: relative;
+    }
+    .posts-control__switcher__label {
+      margin-right: 10px;
+    }
+  }
+}

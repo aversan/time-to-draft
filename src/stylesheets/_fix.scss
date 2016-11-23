@@ -1,0 +1,91 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
+}
+
+.m-b-20, .mb-20 {
+  margin-bottom: 20px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+.container {
+  padding-left:  0;
+  padding-right: 0;
+}
+
+@include media-breakpoint-down(md) {
+  .container {
+    padding-left:  24px;
+    padding-right: 24px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .container {
+    padding-left:  0;
+    padding-right: 0;
+
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+
+      & > [class*=col-md-],
+      & > [class*=col-lg-],
+      & > [class*=col-sm-] {
+        padding-left: 0;
+        padding-right: 0;
+
+      }
+
+    }
+  }
+
+  .m-b-20 {
+    margin-bottom: 4px;
+  }
+}
+
+.l-cards.container {
+  .row {
+    & > [class*=col-] {
+      display: flex;
+
+    }
+  }
+}
+
+img.media-object {
+  border-radius: 50%;
+}
+
+// medium-editor-toolbar
+
+.medium-editor-toolbar li:first-of-type button {
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  padding-left: 24px;
+}
+
+.medium-editor-toolbar li:last-of-type button {
+  border-bottom-right-radius: 50px;
+  border-right: none;
+  border-top-right-radius: 50px;
+  padding-right: 24px;
+}
+
+.medium-editor-toolbar li:only-of-type button {
+  border-radius: 50px;
+  padding: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;	
+}

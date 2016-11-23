@@ -1,0 +1,166 @@
+{% extends 'layouts/application.html' %}
+{% import "items/cards/card-lazy.html" as cards %}
+{% block title %}{{ home_01.title }}{% endblock %}
+
+
+{% block content %}
+    {% include "items/gamebar.html" %}
+    {% include "items/header.html" %}
+    {% include "items/banners/quick-banner.html" %}
+    {% include "items/posts-control.html" %}
+
+    <div class="posts-control__choose">
+        <div class="l-cards container m-b-20">
+            <div class="row">
+                <div class="col-md-8">
+                    {{cards.card(
+                    title="Полуфиналы Евро-2016: играем строго от обороны",
+                    description="Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди откладывают на потом (или навсегда) какие-то занятия могут быть разные.",
+                    label_type='profi',
+                    label_text='Продвинутым',
+                    user_name='alextazy',
+                    post_time='1 час назад',
+                    image='images/posts/b-g_3.jpg',
+                    class='double',
+                    user_icon="<span class='icon -ttd-team'></span>"
+                    )}}
+                </div>
+                <div class="col-md-4">
+                    {% include "items/sliders/cards.html" %}
+                </div>
+            </div>
+        </div>
+
+        <div class="l-cards container m-b-20">
+            <div class="row">
+                <div class="col-md-4">
+                    {{cards.card(
+                    title="Над схваткой / EURO-2016. Fantasy-превью 1/4 финала: прогнозы, капитаны, джокеры",
+                    description="Какие изменения ждут FanTeam в ближайшие несколько недель.",
+                    label_type='news',
+                    label_text='Новости',
+                    user_name='alextazy',
+                    post_time='1 час назад',
+                    image='images/posts/b-g_3.jpg',
+                    user_icon="<span class='icon -ttd-team'></span>"
+                    )}}
+                </div>
+                <div class="col-md-8">
+                    {{cards.card(
+                    title="Получите 50 евро на депозит в четвертьфиналах Евро-2016, играя во фрироллы вместе с нами!",
+                    description="Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди откладывают на потом (или навсегда) какие-то занятия могут быть разные.",
+                    label_type='action',
+                    label_text='Акции time to draft',
+                    user_name='Time to draft',
+                    post_time='2 дня назад',
+                    image='images/posts/b-g_3.jpg',
+                    class='double',
+                    user_icon="<span class='icon -ttd-team'></span>"
+                    )}}
+                </div>
+            </div>
+        </div>
+
+        <div class="container m-b-20 hidden-md-up">
+            {% include "items/banners/wide-slider-small.html" %}
+        </div>
+
+        <div class="l-cards container m-b-20">
+            <div class="row">
+                <div class="col-md-4">
+                    {{cards.card(
+                    title="Mathmen / Обновленная платформа и другие новости FanTeam",
+                    description="Какие изменения ждут FanTeam в ближайшие несколько недель.",
+                    label_type='news',
+                    label_text='Новости',
+                    user_name='FanTeam',
+                    post_time='1 час назад',
+                    image='images/posts/b-g_3.jpg'
+                    )}}
+                </div>
+                <div class="col-md-4">
+                    {{cards.card(
+                    title="Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016",
+                    description="Какие изменения ждут FanTeam в ближайшие несколько недель.",
+                    label_type='strategy',
+                    label_text='Стратегии',
+                    user_name='alextazy',
+                    post_time='1 час назад',
+                    image='images/posts/b-g_3.jpg'
+                    )}}
+                </div>
+                <div class="col-md-4">
+                    {{cards.card(
+                    title="Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016",
+                    description="Какие изменения ждут FanTeam в ближайшие несколько недель.",
+                    label_type='podcast',
+                    label_text='Подкасты',
+                    user_name='Eugene Leshkovich',
+                    post_time='Неделю назад назад',
+                    image='images/posts/b-g_3.jpg',
+                    user_icon='<span class="icon -expert"></span>'
+                    )}}
+                </div>
+            </div>
+        </div>
+
+        <div class="container m-b-20 hidden-sm-down">
+            {% include "items/banners/wide-slider.html" %}
+        </div>
+
+        <div class="l-cards container m-b-20">
+            <div class="row">
+                <div class="col-md-4">
+                    {% include "items/banners/card-banner.html" %}
+                </div>
+                <div class="col-md-4">
+                    {{cards.card(
+                    title="Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016",
+                    description="Какие изменения ждут FanTeam в ближайшие несколько недель.",
+                    label_type='strategy',
+                    label_text='Стратегии',
+                    user_name='Eugene Leshkovich',
+                    post_time='Неделю назад назад',
+                    image='images/posts/b-g_3.jpg',
+                    user_icon='<span class="icon -expert"></span>'
+                    )}}
+                </div>
+                <div class="col-md-4">
+                    {{cards.card(
+                    title="Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016",
+                    description="Какие изменения ждут FanTeam в ближайшие несколько недель.",
+                    label_type='strategy',
+                    label_text='Стратегии',
+                    user_name='alextazy',
+                    post_time='1 час назад',
+                    image='images/posts/b-g_3.jpg'
+                    )}}
+                </div>
+            </div>
+        </div>
+
+        {% include "items/posts/news-from-fantasy-world.html" %}
+        {% include "items/posts/forum-posts.html" %}
+
+        {% include "items/sliders/promo-lazy.html" %}
+
+        {% include "items/posts/other-posts.html" %}
+    </div>
+
+    <div class="posts-control__all">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+                    {% include "items/posts/write.html" %}
+                    {% include "items/posts/list.html" %}
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="row">
+                        {% include "items/sidebars/main-sidebar.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

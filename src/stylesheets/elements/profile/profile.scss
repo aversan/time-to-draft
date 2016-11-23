@@ -1,0 +1,187 @@
+.profile-bg {
+    background: $dark-grey;
+    color: $warm-grey-light;
+}
+.profile-tabs {
+    &.subheader__wrapper {
+        background: none;
+        border-width: 1px;
+        margin-bottom: 20px;
+        .tabs__container {
+            font-size: $font-size-lg;
+            font-weight: 600;
+            border: 0;
+        }
+        .nav-item {
+            text-align: center;
+            .nav-link {
+                background: none;
+                border: 0;
+                color: $warm-grey-light;
+                &.active {
+                    color : $dark-grey;
+                    font-weight: bold;
+                    border-bottom: 4px solid $cornflower-blue;
+                }
+            }
+        }
+    }
+    .btn {
+        border-radius: 100px;
+    }
+}
+.profile {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    .p-user-name {
+        color: $white;
+    }
+    .user-image-wrap {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 2px solid $white;
+        .image-change {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background: rgba(37, 37, 37, 0.7);
+            z-index: 1;
+            left: 0;
+            font-size: $font-size-xs;
+            text-align: center;
+            bottom: 0;
+            .custom-file-input {
+                display: none;
+            }
+            .change-action {
+                color: $white-two;
+                display: block;
+                cursor: pointer;
+            }
+        }
+        &:hover {
+            .image-change {
+                display: block;
+            }
+        }
+    }
+    .profile-usr-img {
+        width: 96px;
+    }
+    .p-status {
+        margin-top: 25px;
+        font-size: $font-size-lg;
+        margin-bottom: 25px;
+    }
+    .subscribers-list {
+        img {
+            width: 48px;
+            margin-left: 15px;
+            border:1px solid rgba($white, 0.2);
+        }
+    }
+    .subscribers-info {
+        margin-top: 20px;
+        font-size: $font-size-xs;
+        margin-bottom: 15px;
+    }
+    .separator {
+        margin-top: 23px;
+        margin-bottom: 26px;
+        border-top: 1px solid rgba(128, 128, 128, 0.3);
+    }
+    .count, .count a {
+        color: $white;
+    }
+    .edit-profile {
+        font-size: $font-size-sm;
+        border-radius: 100px;
+        height: 40px;
+
+    }
+    .info-item {
+        .karma {
+            color: $algae-green;
+        }
+    }
+    .btns-karma {
+        margin-left: 15px;
+        .btn {
+            background: $warm-grey;
+            border: none;
+            width: 26px;
+            height: 26px;
+            color: #252525;
+            font-size: 24px;
+            padding: 1px;
+            line-height: 18px;
+            &:hover {
+                background-color: $algae-green;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .profile  {
+        .user-image-wrap {
+            margin-right: 20px;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .profile  {
+        .user-image-wrap {
+            margin-right: 0;
+        }
+    }
+}
+@include media-breakpoint-down(sm) {
+    .profile {
+        padding-bottom: 30px;
+        .address {
+            margin-top: 20px;
+        }
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            .count {
+                display: block;
+                font-size: $font-size-h4;
+            }
+            .title {
+                display: block;
+                font-size: $font-size-sm;
+            }
+        }
+        .btns-karma {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+    .profile-tabs {
+        &.subheader__wrapper {
+            margin-bottom: 15px;
+            .tabs__container {
+                display: flex;
+            }
+            .nav-item {
+                width: 50%;
+            }
+            .btn-fixed {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                background: $white;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                z-index: $zindex-navbar-fixed;
+                border-top: 1px solid rgba(158, 158, 158, 0.27);
+            }
+        }
+    }
+}

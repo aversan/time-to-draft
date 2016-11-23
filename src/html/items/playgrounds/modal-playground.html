@@ -1,0 +1,15 @@
+{% macro mPlayground(
+    user_logo='images/users/userpic-8@3x.png',
+    username='Zweeler',
+    user_desc='Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором
+            спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…'
+) %}
+<div class="pl-item">
+    <img src="{{ user_logo }}" class="img-circle pl-img" alt="">
+    <div class="pl-info">
+        <div class="pl-title h6">{{ username }}</div>
+        <div class="pl-desc">{{ user_desc }}
+        </div>
+    </div>
+</div>
+{% endmacro %}

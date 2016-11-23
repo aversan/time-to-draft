@@ -1,0 +1,19 @@
+{% macro expert(
+user_desc='Опыт игры в Fantasy — более 10 лет. Двукратный чемпион Беларуси, чемпион России в FPL. Входит в 400 лучших игроков в истории турнира.',
+user_ava='images/users/userpic-1@3x.png',
+user_name='stishenok',
+user_spec='Специализация: NBA',
+team_big=''
+) %}
+<div class="text-sm-center expert">
+    <div class="expert-img"><img class="img-circle" src="{{ user_ava }}"></div>
+    <div class="expert-name">
+        <i class="icon {{ team_big }}"></i>
+        <i class="icon -expert"></i>
+        <strong>{{ user_name }}</strong></div>
+    <div class="expert-desc">
+        {{ user_desc }}
+    </div>
+    <div class="expert-spec"><strong>{{ user_spec }}</strong></div>
+</div>
+{% endmacro %}

@@ -1,0 +1,39 @@
+.typo--h1 {
+	@include typo-h1;
+}
+
+.typo--h2 {
+	@include typo-h2;
+}
+
+.typo--h3 {
+	@include typo-h3;
+}
+
+.typo--h4 {
+	@include typo-h4;
+}
+
+.typo--h5 {
+	@include typo-h5;
+}
+
+.typo--h6 {
+	@include typo-h6;
+}
+
+.typo--body {
+	@include typo-body;
+}
+
+.typo--body-sm {
+	@include typo-body-sm;
+}
+
+.typo--body-lg {
+	@include typo-body-lg;
+}
+
+.typo--caption {
+	@include typo-caption;
+}

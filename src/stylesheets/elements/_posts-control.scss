@@ -1,0 +1,103 @@
+.posts-control {
+  height: 72px;
+  background-color: $white;
+  border-bottom: solid 2px rgba(158, 158, 158, 0.27);
+  margin-bottom: 30px;
+
+  .container {
+    height: 72px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  &__title {
+    font-size: 1em;
+    color: $dark-grey;
+    font-weight: bold;
+    vertical-align: middle;
+    float: left;
+    text-transform: uppercase;
+  }
+
+  &__switcher {
+    float: right;
+    &__label {
+      font-size: 1rem;
+      color: $warm-grey-light;
+      margin-right: 1rem;
+    }
+
+    &__item {
+      position: relative;
+      cursor: pointer;
+      .switcher {
+        position: absolute;
+        visibility: hidden;
+        z-index: -10;
+      }
+      .switcher-label {
+        cursor: pointer;
+        width: 40px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: $white-two;
+        border: solid 1px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin: 0;
+        position: relative;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: $white;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          border: solid 1px #ddd;
+          position: absolute;
+          top: -6px;
+          left: -4px;
+        }
+      }
+    }
+  }
+
+
+  &.active {
+    & ~ .posts-control__choose {display: none}
+    & ~ .posts-control__all {display: block;}
+    .posts-control__title {
+      opacity: 0.3;
+    }
+    .posts-control__switcher__label {
+      color: $dark-grey;
+    }
+    .posts-control__switcher__item {
+      .switcher {}
+    }
+    .switcher-label {
+      background-color: $algae-green;
+      &::before {
+        left: auto;
+        right: -4px;
+      }
+    }
+  }
+}
+
+.posts-control__choose {}
+.posts-control__all {
+  display: none;
+}
+
+@include media-breakpoint-down(sm) {
+  .posts-control {
+    height: 64px;
+    margin-bottom: 4px;
+
+    .posts-control__title {
+      font-size: 14px;
+    }
+  }
+}

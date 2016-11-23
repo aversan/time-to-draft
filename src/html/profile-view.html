@@ -1,0 +1,39 @@
+{% extends 'layouts/application.html' %}
+
+{% block title %}{{ home_02.title }}{% endblock %}
+
+{% import "items/profile/subheader.html" as subheader %}
+{% import "items/profile/about.html" as about %}
+{% import "items/profile/tabs.html" as tabs %}
+
+{% block content %}
+{% include "items/header.html" %}
+    <div class="container-fluid">
+        <div class="row profile-bg">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                {{ subheader.subheader(register=false) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {{ about.about(register=false) }}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-8 offset-lg-2 col-md-12">
+                    {{ tabs.post(register=false) }}
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="posts" role="tabpanel">
+                            {% include "items/posts/list.html" %}
+                        </div>
+                        <div class="tab-pane" id="blogs" role="tabpanel">
+                            {% include "items/blogs/blog-list.html" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

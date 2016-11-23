@@ -1,0 +1,13 @@
+.posts-list {
+  margin-bottom: 60px;
+  .more-news-button {
+    margin-bottom: 0;
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .posts-list {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,17 @@
+{% extends 'layouts/application.html' %}
+{% import "items/global/subheader.html" as header %}
+
+{% block title %}{{ home_02.title }}{% endblock %}
+
+
+{% block content %}
+{% include "items/header.html" %}
+{{ header.messageSubheader() }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            {% include "items/messages/message.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

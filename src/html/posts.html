@@ -1,0 +1,52 @@
+{% extends 'layouts/application.html' %}
+{% import "items/global/subheader.html" as header %}
+
+{% block title %}{{ home_02.title }}{% endblock %}
+
+{% block content %}
+{% include "items/header.html" %}
+{{ header.postSubheader() }}
+
+<div class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    {% include "items/posts/post-content.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-sm-12 col-lg-10 offset-lg-1">
+            <div class="hidden-sm-down">
+                {% include "items/banners/wide-slider-white.html" %}
+            </div>
+            <div class="container hidden-md-up">
+                {% include "items/banners/wide-slider-white-small.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <div class="">
+                        {% include "items/sliders/recommended-to-read.html" %}
+                    </div>
+                    <div class="">
+                        {% include "items/posts/subscribe-to-fantasy.html" %}
+                    </div>
+                    <div class="">
+                        {% include "items/comments.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

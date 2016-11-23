@@ -1,0 +1,34 @@
+{% extends 'layouts/application.html' %}
+{% import "items/global/subheader.html" as header %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block content %}
+{% include "items/header.html" %}
+{{ header.subheader(title='Блоги') }}
+<div class="tabs__wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tabs__container">
+                    <div class="tabs__item active">Все блоги</div>
+                    <div class="tabs__item">Все посты</div>
+                    <div class="tabs__item">Лучшие посты</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            {% include "items/blogs/blog-list.html" %}
+            {% include "items/pagination/pagination.html" %}
+        </div>
+        <div class="col-sm-12 col-md-4 hidden-md-up">
+            {% include "items/sidebars/blogs-sidebar.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

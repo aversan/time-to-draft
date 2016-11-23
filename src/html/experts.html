@@ -1,0 +1,53 @@
+{% extends 'layouts/application.html' %}
+{% import "items/cards/card.html" as cards %}
+{% import "items/global/subheader.html" as header %}
+
+{% block title %}{{ home_02.title }}{% endblock %}
+
+
+{% block content %}
+{% include "items/header.html" %}
+{{ header.subheader(title='Эксперты') }}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                {% include "items/experts/description.html" %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% include "items/experts/experts.html" %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container m-b-20 hidden-sm-down">
+        {% include "items/banners/wide-slider.html" %}
+    </div>
+
+    <div class="container">
+        {% include "items/experts/where-play.html" %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h5 class="mb-20 experts-block-title"><strong>Прогнозы экспертов</strong></h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-8 col-md-8">
+                {% include "items/posts/list.html" %}
+            </div>
+            <div class="col-lg-4 col-md-4 hidden-sm-down">
+                <div class="row">
+                    {% include "items/sidebars/main-sidebar.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

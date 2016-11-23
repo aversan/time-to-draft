@@ -1,0 +1,213 @@
+.blogs-personal {
+  background-color: $white;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: solid 1px rgba(158, 158, 158, 0.27);
+  margin-bottom: 26px;
+
+  .authors {
+    padding-bottom: 30px;
+    border-bottom: solid 1px rgba(158, 158, 158, 0.27);
+    display: flex;
+
+    .author {
+      margin-right: 48px;
+
+      .media-left {
+        padding-right: 20px;
+
+        .media-object {
+          width: 46px;
+          height: 46px;
+        }
+      }
+
+      .author-info {
+        .author-name {
+          font-size: 16px;
+          color: $greyish-brown;
+
+          &:hover {
+            color: inherit;
+            text-decoration: underline;
+          }
+        }
+        .icon {
+          &.-ttd-team {
+            width: 16px;
+            height: 14px;
+          }
+          
+          &.-expert {
+            width: 16px;
+            height: 14px;
+          }
+        }
+
+        .author-count {
+
+        }
+      }
+
+      .title {
+        font-size: 14px;
+        color: $warm-grey-light;
+        position: relative;
+        top: -5px;
+      }
+
+      &.co-author {
+        .media-left {
+          padding-right: 0;
+          margin-left: -5px;
+          z-index: 10;
+          &:first-child {
+            margin-left: 0;
+            z-index: 20;
+          }
+
+        }
+
+        .author-count {
+          border: solid 1px $white-two;
+          border-radius: 50%;
+          color: $warm-grey-light;
+          font-size: 18px;
+          line-height: 38px;
+          text-align: center;
+          width: 40px;
+          height: 40px;
+          display: block;
+          margin-left: -5px;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+
+        .author-show {
+          font-size: 14px;
+          color: $warm-grey-light;
+          margin-left: 15px;
+          line-height: 1.2;
+          margin-top: 5px;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  .blogs-personal__head {
+    padding-top: 30px;
+
+  }
+  .blogs-personal__title {
+    font-size: 42px;
+    font-weight: 900;
+    color: $dark-grey;
+  }
+  .blogs-personal__description {
+    font-size: 20px;
+    color: $warm-grey-light;
+    font-style: italic;
+  }
+
+  .follow-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .follow-btn {
+      border-radius: 20px;
+      height: 40px;
+      order: 2;
+      margin-left: 40px;
+
+    }
+    .followers-counter {
+      font-size: 12px;
+      color: $warm-grey-light;
+      order: 1;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .blogs-personal {
+    .authors {
+      .author {
+        .media-left {
+          padding-right: 17px;
+
+          .media-object {
+            width: 42px;
+            height: 42px;
+            border: 2px solid $white;
+            position: relative;
+            margin-left: -2px;
+          }
+        }
+      }
+    }
+
+  }
+}
+@include media-breakpoint-down(sm) {
+  .blogs-personal {
+    padding: 20px 16px;
+    margin-bottom: 8px;
+
+    .authors {
+      padding-bottom: 20px;
+
+      .author {
+        margin-right: 19px;
+
+
+        .media-left {
+          padding-right: 17px;
+
+          .media-object {
+            width: 42px;
+            height: 42px;
+            border: 2px solid $white;
+            position: relative;
+            margin-left: -2px;
+          }
+        }
+      }
+    }
+
+    .blogs-personal__head {
+      padding-top: 16px;
+    }
+    .blogs-personal__title {
+      font-size: 30px;
+    }
+    .blogs-personal__description {
+      font-size: 16px;
+    }
+
+    .follow-block {
+      justify-content: flex-start;
+      padding-top: 16px;
+
+      .follow-btn {
+        height: 36px;
+        border-radius: 18px;
+        order: 1;
+        margin-left: 0;
+        margin-right: 16px;
+      }
+      .followers-counter {
+        font-size: 12px;
+        order: 2;
+      }
+    }
+  }
+}
