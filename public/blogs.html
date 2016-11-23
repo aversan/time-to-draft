@@ -1,0 +1,800 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#212932">
+<meta name="theme-color" content="#212932">
+    
+  </head>
+  <body>
+    
+<div class="header__wrapper" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
+    <div class="container header logged-in">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="navbar navbar-dark main-menu">
+                    <a class="navbar-brand" href="#"><img class="logo" alt="Time to Draft" src="/images/logo.svg" width="81" height="27"></a>
+                    <span class="navbar-toggler hidden-md-up icon -hamburger" data-toggle="collapse"
+                          data-target="#exMainNavBar" aria-controls="exMainNavBar" aria-expanded="false"
+                          aria-label="Toggle navigation">
+                    </span>
+                    <div class="collapse navbar-toggleable-sm" id="exMainNavBar">
+                        <span class="navbar-toggler hidden-md-up close" data-toggle="collapse"
+                              data-target="#exMainNavBar"
+                              aria-controls="exMainNavBar" aria-expanded="false" aria-label="Close navigation">×
+                        </span>
+                        <div class="header-left-menu-wrapper">
+                            <div class="site-search-container hidden-md-up">
+                                <span class="icon -search -white"></span>
+                                <input type="text" class="form-control" id="siteSearch" placeholder="Поиск по сайту">
+                            </div>
+                            <div class="log-in-container clearfix hidden-md-up">
+                                <img class="user-icon" src="images/icons/person.svg" alt="User icon">
+                                <a class="log-in-link log-in-item" href="#">Войти</a>
+                                <div class="notes logged-in-item">
+                                    <div class="more-items display-header-notes-js">
+                                        <span class="icon -white -note">
+                                            <span class="note-count">3</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="logged-in-item user-info">
+                                    <div class="user-name">Jack Sparrow</div>
+                                    <span class="profile-text">Профиль</span>
+                                </div>
+                            </div>
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item write-post hidden-md-up logged-in-item">
+                                    <a class="nav-link" href="#">Написать пост</a>
+                                </li>
+                                <li class="nav-item hidden-md-up logged-in-item">
+                                    <a class="nav-link" href="#">Мои блоги</a>
+                                </li>
+                                <li class="nav-item hidden-md-up with-border logged-in-item">
+                                    <a class="nav-link" href="#">Личные сообщения</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Стат-центр</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Игроки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Команды</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Площадки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Стратегии</a>
+                                </li>
+                                <li class="nav-item hidden-sm-down hidden-lg-up">
+                                    <div class="btn-group more-items">
+                                        <span class="icon -more" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        </span>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Эксперты</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Блоги</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Форум</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item hidden-md-down">
+                                    <a class="nav-link" href="#">Эксперты</a>
+                                </li>
+                                <li class="nav-item hidden-md-down">
+                                    <a class="nav-link" href="#">Блоги</a>
+                                </li>
+                                <li class="nav-item hidden-md-down">
+                                    <a class="nav-link" href="#">Форум</a>
+                                </li>
+                                <li class="nav-item hidden-md-up">
+                                    <a class="nav-link" href="#">Эксперты</a>
+                                </li>
+                                <li class="nav-item hidden-md-up">
+                                    <a class="nav-link" href="#">Блоги</a>
+                                </li>
+                                <li class="nav-item hidden-md-up">
+                                    <a class="nav-link" href="#">Форум</a>
+                                </li>
+                                <li class="nav-item hidden-md-up log-out-link logged-in-item">
+                                    <a class="nav-link" href="#">Выйти</a>
+                                </li>
+                                <li class="nav-item site-search hidden-sm-down">
+                                    <form class="form-inline">
+                                        <button class="btn btn-link btn-sm search-button">
+                                        	<span class="icon -search"></span>
+                                        </button>
+                                        <input class="site-search-input" type="text" placeholder="Поиск по сайту">
+                                    </form>
+                                </li>
+                                <li class="nav-item hidden-sm-down log-in-item">
+                                    <a class="nav-link ctrl-enter" href="#">Войти</a>
+                                </li>
+                                <li class="nav-item hidden-sm-down notes logged-in-item">
+                                    <div class="btn-group more-items">
+                            <span class="icon -note" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="note-count">3</span>
+                            </span>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li class="note-item">
+                                                <a class="media" href="#">
+                                                    <span class="media-left" href="#">
+                                                        <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                                                    </span>
+                                                    <div class="media-body">
+                                                        <span class="person-name">Maybe</span>
+                                                        прокомментировал ваше сообщение на форуме
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="note-item">
+                                                <a class="media" href="#">
+                                                    <span class="media-left" href="#">
+                                                        <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                                                    </span>
+                                                    <div class="media-body">
+                                                        <span class="icon -expert"></span>
+                                                        <span class="person-name">Oleg Smolerov (awd2)</span>
+                                                        отправил вам личное сообщение
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item hidden-sm-down logged-in-item">
+
+                                    <div class="btn-group more-items">
+                                        <a href="#" class="user_link" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">
+                                            <img class="user-image" alt="Author info" src="images/icons/person.svg">
+                                        </a>
+                                        <span class="cursor" data-toggle="dropdown" aria-haspopup="true"
+                                              aria-expanded="false"></span>
+                                        <ul class="dropdown-menu user-menu dropdown-menu-right">
+                                            <li class="item write-post">
+                                                <a class="link" href="#">Написать пост</a>
+                                            </li>
+                                            <li class="item">
+                                                <a class="link" href="#">Мои блоги</a>
+                                            </li>
+                                            <li class="item">
+                                                <a class="link" href="#">Личные сообщения</a>
+                                            </li>
+                                            <li class="item">
+                                                <a class="link" href="#">Профиль</a>
+                                            </li>
+                                            <li class="item exit">
+                                                <a class="link" href="#">Выйти</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-right-menu-wrapper">
+                            <span class="back-button">Назад</span>
+                            <ul class="notes-content list-unstyled">
+                                <li class="note-item">
+                                    <a class="media" href="#">
+                                        <span class="media-left" href="#">
+                                            <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="person-name">Maybe</span>
+                                            прокомментировал ваше сообщение на форуме
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="note-item">
+                                    <a class="media" href="#">
+                                        <span class="media-left" href="#">
+                                            <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="icon -expert"></span>
+                                            <span class="person-name">Oleg Smolerov (awd2)</span>
+                                            отправил вам личное сообщение
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="subheader__wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <h1 class="subheader__title">Блоги</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs__wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tabs__container">
+                    <div class="tabs__item active">Все блоги</div>
+                    <div class="tabs__item">Все посты</div>
+                    <div class="tabs__item">Лучшие посты</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="messages-wrapper blogs">
+    <ul class="messages-content list-unstyled">
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">Oleg Smolerov (awd2)</span>
+                    </div>
+                    <span class="time">2 дня назад</span>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Подкасты
+            </a>
+            <div class="message-text">
+                Подкасты от TimeToDraft, прослушивая которые можно узнать много полезного и интересного о дэйли фэнтези.
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -ttd-team"></span>
+                        <span class="author-name">alextazy</span>
+                    </div>
+                    <span class="time">2 дня назад</span>
+                </div>
+
+                <div class="media">
+                    <a class="media-left hidden-sm-down" href="#">
+                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
+                    </a>
+                    <div class="author-counter hidden-md-up">+1</div>
+                    <div class="media-body hidden-sm-down">
+                        <div class="author-info">
+                            <span class="icon -expert"></span>
+                            <span class="author-name">Oleg Smolerov (awd2)</span>
+                        </div>
+                        <span class="time hidden-sm-down">соавтор</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Евро-2016
+            </a>
+            <div class="message-text">
+                Тексты, посвященные Евро-2016
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">Oleg Smolerov (awd2)</span>
+                    </div>
+                    <span class="time">1 час назад</span>
+                </div>
+                <div class="media">
+                    <a class="media-left hidden-sm-down" href="#">
+                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
+                    </a>
+                    <div class="author-counter hidden-sm-down">+1</div>
+                    <div class="author-counter hidden-md-up">+2</div>
+                    <a href="#" class="more-authors hidden-sm-down">
+                        Показать coавторов
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Total Draft — играем в Евро-2016
+            </a>
+            <div class="message-text">
+                Прогрессивный проект по дэйли фэнтези футболу, предлагающий ежедневные турниры с гарантированными призами
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">Oleg Smolerov (awd2)</span>
+                    </div>
+                    <span class="time">2 дня назад</span>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Подкасты
+            </a>
+            <div class="message-text">
+                Подкасты от TimeToDraft, прослушивая которые можно узнать много полезного и интересного о дэйли фэнтези.
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -ttd-team"></span>
+                        <span class="author-name">alextazy</span>
+                    </div>
+                    <span class="time">2 дня назад</span>
+                </div>
+
+                <div class="media">
+                    <a class="media-left hidden-sm-down" href="#">
+                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
+                    </a>
+                    <div class="author-counter hidden-md-up">+1</div>
+                    <div class="media-body hidden-sm-down">
+                        <div class="author-info">
+                            <span class="icon -expert"></span>
+                            <span class="author-name">Oleg Smolerov (awd2)</span>
+                        </div>
+                        <span class="time hidden-sm-down">соавтор</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Евро-2016
+            </a>
+            <div class="message-text">
+                Тексты, посвященные Евро-2016
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">Oleg Smolerov (awd2)</span>
+                    </div>
+                    <span class="time">1 час назад</span>
+                </div>
+                <div class="media">
+                    <a class="media-left hidden-sm-down" href="#">
+                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
+                    </a>
+                    <div class="author-counter hidden-sm-down">+1</div>
+                    <div class="author-counter hidden-md-up">+2</div>
+                    <a href="#" class="more-authors hidden-sm-down">
+                        Показать coавторов
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Total Draft — играем в Евро-2016
+            </a>
+            <div class="message-text">
+                Прогрессивный проект по дэйли фэнтези футболу, предлагающий ежедневные турниры с гарантированными призами
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">Oleg Smolerov (awd2)</span>
+                    </div>
+                    <span class="time">2 дня назад</span>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Подкасты
+            </a>
+            <div class="message-text">
+                Подкасты от TimeToDraft, прослушивая которые можно узнать много полезного и интересного о дэйли фэнтези.
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -ttd-team"></span>
+                        <span class="author-name">alextazy</span>
+                    </div>
+                    <span class="time">2 дня назад</span>
+                </div>
+
+                <div class="media">
+                    <a class="media-left hidden-sm-down" href="#">
+                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
+                    </a>
+                    <div class="author-counter hidden-md-up">+1</div>
+                    <div class="media-body hidden-sm-down">
+                        <div class="author-info">
+                            <span class="icon -expert"></span>
+                            <span class="author-name">Oleg Smolerov (awd2)</span>
+                        </div>
+                        <span class="time hidden-sm-down">соавтор</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Евро-2016
+            </a>
+            <div class="message-text">
+                Тексты, посвященные Евро-2016
+            </div>
+        </li>
+        <li class="message-item">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">Oleg Smolerov (awd2)</span>
+                    </div>
+                    <span class="time">1 час назад</span>
+                </div>
+                <div class="media">
+                    <a class="media-left hidden-sm-down" href="#">
+                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
+                    </a>
+                    <div class="author-counter hidden-sm-down">+1</div>
+                    <div class="author-counter hidden-md-up">+2</div>
+                    <a href="#" class="more-authors hidden-sm-down">
+                        Показать coавторов
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="message-title h4">
+                Total Draft — играем в Евро-2016
+            </a>
+            <div class="message-text">
+                Прогрессивный проект по дэйли фэнтези футболу, предлагающий ежедневные турниры с гарантированными призами
+            </div>
+        </li>
+    </ul>
+</div>
+            <div class="pagination">
+    <a href="#" class="pagination_item prev disabled"></a>
+    <a href="#" class="pagination_item active">1</a>
+    <a href="#" class="pagination_item">2</a>
+    <a href="#" class="pagination_item">3</a>
+    <a href="#" class="pagination_item">4</a>
+    <a href="#" class="pagination_item next"></a>
+</div>
+        </div>
+        <div class="col-sm-12 col-md-4 hidden-md-up">
+            <div class="main-sidebar col-sm-12 col-md-12">
+    <div class="post-column tab-item hidden-sm-down active">
+        <h6 class="title hidden-sm-down">Где поиграть?</h6>
+        <ul class="post-content">
+            <li class="wide-slider__item">
+                <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
+                <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
+                <div class="wide-slider__item__control">
+                    <span class="team_name">FanTeam</span>
+                    <div class="btn btn-outline-success">Играть</div>
+                </div>
+            </li>
+            <li class="wide-slider__item">
+                <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
+                <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
+                <div class="wide-slider__item__control">
+                    <span class="team_name">FanTeam</span>
+                    <div class="btn btn-outline-success">Играть</div>
+                </div>
+            </li>
+            <li class="wide-slider__item">
+                <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
+                <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
+                <div class="wide-slider__item__control">
+                    <span class="team_name">FanTeam</span>
+                    <div class="btn btn-outline-success">Играть</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="for-newcomers sm-tab-component hidden-sm-down">
+        <div class="post-links-tabs-wrapper">
+            <ul class="post-tabs-link list-unstyled">
+                <li class="tab-link active" data-tab-id="for-newcomers">
+                    <span class="title">Новичкам</span>
+                </li>
+                <li class="tab-link" data-tab-id="for-advanced-users">
+                    <span class="title">Продвинутым</span>
+                </li>
+            </ul>
+        </div>
+        <div class="post-column tab-item active hidden-lg-down" data-tab-id="for-newcomers">
+            <ul class="post-content">
+                <li class="media">
+                    <span class="media-left">01</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            Daily Fantasy Sport: Как начать играть?
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">98</span>
+                        </h4>
+                    </div>
+                </li>
+                <li class="media">
+                    <span class="media-left">02</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            Хороший результат в Daily Fantasy при слабом знании матчасти?
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">31</span>
+                        </h4>
+                    </div>
+                </li>
+                <li class="media">
+                    <span class="media-left">03</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            8 советов для начинающих: от первых игр до вывода денег
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">198</span>
+                        </h4>
+                    </div>
+                </li>
+                <li class="media">
+                    <span class="media-left">04</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            Главные правила игры в Daily Fantasy КХЛ
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">82</span>
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="post-column tab-item hidden-lg-down" data-tab-id="for-advanced-users">
+            <ul class="post-content">
+                <li class="media">
+                    <span class="media-left">01</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            Главные правила игры в Daily Fantasy КХЛ
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">98</span>
+                        </h4>
+                    </div>
+                </li>
+                <li class="media">
+                    <span class="media-left">02</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            8 советов для начинающих: от первых игр до вывода денег
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">31</span>
+                        </h4>
+                    </div>
+                </li>
+                <li class="media">
+                    <span class="media-left">03</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            Хороший результат в Daily Fantasy при слабом знании матчасти?
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">198</span>
+                        </h4>
+                    </div>
+                </li>
+                <li class="media">
+                    <span class="media-left">04</span>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            Daily Fantasy Sport: Как начать играть?
+                            <span class="icon -comment"></span>
+                            <span class="comments-count">82</span>
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="post-column tab-item hidden-sm-down" data-tab-id="new-on-forums">
+        <h6 class="title hidden-sm-down">Новое на форумах</h6>
+        <ul class="post-content">
+            <li class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon -expert"></span>
+                        <span class="author-name">alextry</span>
+                    </div>
+                    <h4 class="media-heading">
+                        Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
+                    </h4>
+                </div>
+            </li>
+            <li class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon"></span>
+                        <span class="author-name">alextry</span>
+                    </div>
+                    <h4 class="media-heading">
+                        Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
+                    </h4>
+                </div>
+            </li>
+            <li class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon"></span>
+                        <span class="author-name">alextry</span>
+                    </div>
+                    <h4 class="media-heading">
+                        Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
+                    </h4>
+                </div>
+            </li>
+            <li class="media">
+                <a class="media-left" href="#">
+                    <img class="media-object" src="images/icons/person.svg" alt="Author info">
+                </a>
+                <div class="media-body">
+                    <div class="author-info">
+                        <span class="icon"></span>
+                        <span class="author-name">alextry</span>
+                    </div>
+                    <h4 class="media-heading">
+                        Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
+                    </h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+        </div>
+    </div>
+</div>
+
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="content col-sm-12 clearfix">
+                <div class="contacts col-md-3 col-lg-2">
+                    <h6 class="title">На связи</h6>
+                    <div class="clearfix">
+                        <a href="mailto:info@timetodraft.com" class="email">info@timetodraft.com</a>
+                        <ul class="social-networks list-unstyled clearfix">
+                            <li class="list-item">
+                                <a class="icon -facebook" href="#"></a>
+                            </li>
+                            <li class="list-item">
+                                <a class="icon -vkontakte" href="#"></a>
+                            </li>
+                            <li class="list-item">
+                                <a class="icon -twitter" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="county-info hidden-md-up">
+                        <a href="#" class="icon -russian"></a>
+                        <a href="#" class="country-name">Русский</a>
+                    </div>
+                    <a class="footer-brand" href="#"><img class="logo" alt="TDD" src="/images/logo.svg"></a>
+                </div>
+                <div class="copyright col-md-9 col-lg-10">
+                    <ul class="footer-menu hidden-sm-down list-unstyled">
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Новости</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Стратегии</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Площадки</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Эксперты</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Подкасты</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Остальное</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Форум</a>
+                    </ul>
+                    <div class="copyright-container">
+                        <span class="copyright-text">© TimeToDraft.com 2015-2016</span>
+                        <div class="county-info hidden-sm-down">
+                            <a href="#" class="icon i-russian"></a>
+                            <a href="#" class="country-name">Русский</a>
+                        </div>
+                    </div>
+                    <div class="delivery hidden-md-down">
+                        <h6 class="title">Рассылка TimeToDraft</h6>
+                        <form class="delivery-form">
+                            <button type="submit" class="btn btn-outline-secondary">Подписаться</button>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Введите свой E-mail">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="info col-md-9 col-lg-8">
+                    Фэнтези спорт — игра (часто на реальные деньги), основанная на всевозможных спортивных событиях.
+                    Правила игры в фэнтези спорт легки для понимания новичками.
+                    Обучение займет всего пару минут, и не создаст никаких сложностей для любого болельщика.
+                    Участие в fantasy-турнирах сделает просмотр спортивных соревнований еще более эмоциональным и
+                    интересным, а для кого-то может стать увлечением всей жизни. Тексты под размер блока.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      <script src="javascripts/app.js"></script>
+    
+  </body>
+</html>

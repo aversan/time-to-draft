@@ -1,0 +1,184 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#212932">
+<meta name="theme-color" content="#212932">
+    
+  </head>
+  <body>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <button class="btn" data-toggle="modal" data-target="#enterSiteModal">Войти</button>
+            <button class="btn" data-toggle="modal" data-target="#registrationModal">Регистрация</button>
+        </div>
+    </div>
+</div>
+<div class="modal pl-modal fade enter-site-modal" id="enterSiteModal" tabindex="-1" role="dialog" aria-labelledby="enterSiteModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="/images/logo.svg" class="logo-img" alt="login">
+                <h4 class="title">
+                    Присоеденись и получи доступ
+                    к уникальному контенту
+                </h4>
+                <button class="btn btn-fb"><span class="icon -facebook -white"></span>Войти через Facebook</button>
+                <button class="btn btn-vk"><span class="icon -vkontakte -white"></span>Войти через Вконтакте</button>
+                <button class="btn btn-twitter"><span class="icon -white -twitter"></span>Войти через Twitter</button>
+                <div class="field-subscriptions-subs_email required">
+                    <input type="email" id="user-email" class="user-email" name="user-email" maxlength="255" placeholder="Войти или зарегестрироваться по эл. почте">
+                    <div class="help-block"></div>
+                </div>
+                <div class="info">
+                    Можете не беспокоится, мы обещаем ничего не постить
+                    в социальные сети без вашего разрешения, а также полную конфеденциальность и сохранность ваших личных данных.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal pl-modal fade registration-modal" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="sm-tab-component">
+                    <ul class="links list-unstyled clearfix">
+                        <li class="tab-link active" data-tab-id="enter-on-site">
+                            <span class="title">Вход</span>
+                        </li>
+                        <li class="tab-link" data-tab-id="registration-on-site">
+                            <span class="title">Регистрация</span>
+                        </li>
+                    </ul>
+                    <div class="tabs-wrapper">
+                        <div class="tab-item active" data-tab-id="enter-on-site">
+                            <label class="label">Электронная почта</label>
+                            <div class="field-subscriptions-subs_email required">
+                                <input type="email" id="user-email" class="user-email" name="user-email" maxlength="255" placeholder="Почта">
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="field-subscriptions-subs_email required">
+                                <input type="password" id="password" class="password" name="password" maxlength="255" placeholder="Пароль">
+                                <div class="help-block"></div>
+                            </div>
+                            <a class="forgot-password" href="#">Забыли пароль?</a>
+                            <input type="button" class="btn btn-success enter" value="Войти" />
+                        </div>
+                        <div class="tab-item" data-tab-id="registration-on-site">
+                            <label class="label">Логин</label>
+                            <div class="field-subscriptions-subs_email required">
+                                <input type="text" id="login" class="login" name="login" maxlength="255" placeholder="Логин">
+                                <div class="help-block"></div>
+                            </div>
+                            <label class="label">Электронная почта</label>
+                            <div class="field-subscriptions-subs_email required">
+                                <input type="email" id="user-email" class="user-email" name="user-email" maxlength="255" placeholder="Электронная почта">
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="field-subscriptions-subs_email required">
+                                <input type="password" id="password" class="password" name="password" maxlength="255" placeholder="Пароль">
+                                <div class="help-block"></div>
+                            </div>
+
+                            <input type="button" class="btn btn-success registrate" value="Зарегестрироваться" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="content col-sm-12 clearfix">
+                <div class="contacts col-md-3 col-lg-2">
+                    <h6 class="title">На связи</h6>
+                    <div class="clearfix">
+                        <a href="mailto:info@timetodraft.com" class="email">info@timetodraft.com</a>
+                        <ul class="social-networks list-unstyled clearfix">
+                            <li class="list-item">
+                                <a class="icon -facebook" href="#"></a>
+                            </li>
+                            <li class="list-item">
+                                <a class="icon -vkontakte" href="#"></a>
+                            </li>
+                            <li class="list-item">
+                                <a class="icon -twitter" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="county-info hidden-md-up">
+                        <a href="#" class="icon -russian"></a>
+                        <a href="#" class="country-name">Русский</a>
+                    </div>
+                    <a class="footer-brand" href="#"><img class="logo" alt="TDD" src="/images/logo.svg"></a>
+                </div>
+                <div class="copyright col-md-9 col-lg-10">
+                    <ul class="footer-menu hidden-sm-down list-unstyled">
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Новости</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Стратегии</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Площадки</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Эксперты</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Подкасты</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Остальное</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="nav-link" href="#">Форум</a>
+                    </ul>
+                    <div class="copyright-container">
+                        <span class="copyright-text">© TimeToDraft.com 2015-2016</span>
+                        <div class="county-info hidden-sm-down">
+                            <a href="#" class="icon i-russian"></a>
+                            <a href="#" class="country-name">Русский</a>
+                        </div>
+                    </div>
+                    <div class="delivery hidden-md-down">
+                        <h6 class="title">Рассылка TimeToDraft</h6>
+                        <form class="delivery-form">
+                            <button type="submit" class="btn btn-outline-secondary">Подписаться</button>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Введите свой E-mail">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="info col-md-9 col-lg-8">
+                    Фэнтези спорт — игра (часто на реальные деньги), основанная на всевозможных спортивных событиях.
+                    Правила игры в фэнтези спорт легки для понимания новичками.
+                    Обучение займет всего пару минут, и не создаст никаких сложностей для любого болельщика.
+                    Участие в fantasy-турнирах сделает просмотр спортивных соревнований еще более эмоциональным и
+                    интересным, а для кого-то может стать увлечением всей жизни. Тексты под размер блока.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      <script src="javascripts/app.js"></script>
+    
+  </body>
+</html>
