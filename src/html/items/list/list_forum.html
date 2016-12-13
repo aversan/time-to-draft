@@ -1,0 +1,45 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/list/list.html" as list %}
+
+{{list.list(
+    items = {
+        item1: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "alextazy",
+            info_user_icon: iconTeam,
+            title: 'Конкурс прогнозов по Евро-2016 на TimeToDraft'
+        },
+        item2: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "maybe",
+            title: 'Чем вам нравится фэнтези?'
+        },
+        item3: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "Zweeler",
+            title: '€5 от TimeToDraft на площадке Zwеeler'
+        },
+        item4: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "Eugene Leshkovich",
+            info_user_icon: "<i class='icon -expert'></i>",
+            title: 'Отвечает Eugene Leshkovich'
+        },
+        item5: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "maybe",
+            title: 'Чем вам не нравится фэнтези?'
+        },
+        item6: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "alextazy",
+            title: 'Скоро начало сезона. Готов ли ты?'
+        }
+    }
+)}}

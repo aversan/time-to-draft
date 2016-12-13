@@ -1,0 +1,61 @@
+.mdl-textfield--lg {
+  font-size: $input-text-font-size-lg;
+  padding-top: $input-text-vertical-spacing-lg;
+  padding-bottom: $input-text-vertical-spacing-lg;
+
+  & .mdl-button {
+    bottom: $input-text-vertical-spacing-lg;
+  }
+}
+
+.mdl-textfield__input {
+  .mdl-textfield--lg & {
+    font-size: $input-text-font-size-lg;
+    padding-top: $input-text-padding-lg;
+    padding-bottom: $input-text-padding-lg;
+  }
+}
+
+.mdl-textfield__label {
+  margin-bottom: 0;
+  
+  .mdl-textfield--lg & {
+    font-size: $input-text-font-size-lg;
+    top: ($input-text-padding-lg + $input-text-vertical-spacing-lg);
+  }
+
+  .mdl-textfield--floating-label.is-focused &,
+  .mdl-textfield--floating-label.is-dirty &,
+  .mdl-textfield--floating-label.has-placeholder & {
+    color: $grey;
+  }
+
+  .mdl-textfield--lg.mdl-textfield--floating-label.is-focused &,
+  .mdl-textfield--lg.mdl-textfield--floating-label.is-dirty &,
+  .mdl-textfield--lg.mdl-textfield--floating-label.has-placeholder & {
+    font-size : $input-text-floating-label-fontsize-lg;
+    top: $input-text-vertical-spacing-lg - ($input-text-floating-label-fontsize-lg + $input-text-padding-lg);
+  }
+
+  .mdl-textfield--lg.mdl-textfield--floating-label.is-focused .mdl-textfield__expandable-holder &,
+  .mdl-textfield--lg.mdl-textfield--floating-label.is-dirty .mdl-textfield__expandable-holder &,
+  .mdl-textfield--lg.mdl-textfield--floating-label.has-placeholder .mdl-textfield__expandable-holder & {
+    top: -($input-text-floating-label-fontsize-lg + $input-text-padding-lg);
+  }
+
+  .mdl-textfield--lg.mdl-textfield--floating-label.is-invalid & {
+    font-size: $input-text-floating-label-fontsize-lg;
+  }
+
+  .mdl-textfield--lg &:after {
+    bottom: $input-text-vertical-spacing-lg;
+  }
+}
+
+.mdl-textfield__error {
+  right: 0;
+
+  .mdl-textfield--lg & {
+    font-size: $input-text-floating-label-fontsize;
+  }
+}

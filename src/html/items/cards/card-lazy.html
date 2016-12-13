@@ -4,18 +4,18 @@
     description='Description',
     label_type='news',
     label_text='Новости',
-    user_name='alextazy',
-    post_time='час назад',
+    info_user='alextazy',
+    info_time='час назад',
     image='images/posts/b-g_3.jpg',
-    user_icon=''
+    info_user_icon=''
 ) %}
 <div class="card {{class}}">
     <div class="card__img lazy-decor" data-original="{{image}}" style="background-image: none;"></div>
-    <a href="#" class="label__type card__label {{label_type}}">{{label_text}}</a>
-    <div class="card_content">
+    <a href="#" class="label label--type card__label {{label_type}}">{{label_text}}</a>
+    <div class="card__content">
         <div class="card__info">
-            <a href="#" class="card__info__user">{{user_icon| safe}}{{user_name}}</a>
-            <a href="#" class="card__info__time">{{post_time}}</a>
+            <a href="#" class="card__info-user">{{user_icon| safe}}{{user_name}}</a>
+            <a href="#" class="card__info-time">{{post_time}}</a>
         </div>
         <h2 class="card__title">
             <a href="#">{{title}}</a>
@@ -24,10 +24,6 @@
             {{description}}
         </div>
     </div>
-    <div class="card__icons">
-        <a href="#" class="card__icons__item"><span class="icon -energy"></span>+7</a>
-        <a href="#" class="card__icons__item"><span class="icon -view"></span>79</a>
-        <a href="#" class="card__icons__item"><span class="icon -comments"></span>14</a>
-    </div>
+    {% include "items/cards/card-icons.html" %}
 </div>
 {% endmacro %}

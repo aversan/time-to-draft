@@ -1,11 +1,3 @@
 .playgrounds-btn {
-    border-radius: 100px;
-    font-size: $font-size-sm;
-    width: 170px;
-    height: 40px;
-    &.btn-outline-secondary:focus {
-        color: #ccc;
-        background-color: transparent;
-        border-color: #ccc;
-    }
+    min-width: 170px;
 }

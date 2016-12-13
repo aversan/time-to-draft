@@ -1,192 +1,209 @@
 .footer {
   background-color: $white;
-  .content {
-    padding: 32px 5px;
-    .contacts {
-      .title {
-        margin-bottom: 6px;
-        font-size: 16px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        color: $gray-dark;
+  margin-top: 28px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 40px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 60px;
+  }
+
+  // container
+  
+  &__container {
+    padding-top: 18px;
+    padding-bottom: 32px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 32px;
+      padding-top: 32px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 38px;
+      padding-bottom: 58px;
+    }
+  }
+  
+  // title
+
+  &__title {
+    @include typo-title-2;
+    color: $darker-grey;    
+
+    .footer__contacts & {
+      margin-bottom: 6px;
+    }
+
+    .footer__subscribe & {
+      margin-bottom: 12px;
+    }
+  }
+
+  // contacts
+
+  &__contacts {
+    .social-networks {
+      padding-left: 0;
+      list-style: none;        
+      @include clearfix;
+      margin-bottom: 20px;
+      float: left;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 36px;
       }
-      .email {
-        display: inline-block;
-        font-size: 16px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        color: $gray-lighter;
+      
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 38px;
       }
-      .social-networks {
+      
+      .list-item {
         float: left;
-        .list-item {
-          float: left;
-          margin-right: 24px;
-        }
-      }
-      .logo {
-        width: 155px;
-      }
-      .county-info {
-        margin-bottom: 22px;
-      }
-      .footer-brand {
-        display: inline-block;
-        margin-bottom: 9px;
+        margin-right: 24px;
       }
     }
-    .copyright {
-      .footer-menu {
-        column-count: 2;
-        column-gap: 50px;
-        .nav-link {
-          font-size: 16px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.75;
-          color: $gray;
-        }
+
+    .email {
+      display: inline-block;
+      @include typo-body;
+      color: $grey;
+      margin-bottom: 20px;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $grey;       
       }
-      .delivery {
-        float: right;
-        margin-right: 32px;
-        .delivery-form {
-          padding: 8px 4px;
-          border-radius: 4px;
-          border: solid 1px $gray-lightest;
-        }
-        .form-group {
-          float: left;
-          margin-bottom: 0;
-          .form-control {
-            width: 245px;
-            border: none;
-            border-right: solid 1px $gray-lightest;
-            margin-top: 0;
-          }
-        }
-        .btn, .form-control {
-          padding: 5px 12px;
-        }
-        .btn-outline-secondary {
-          border: none;
-          color: $algae-green;
-          background-color: transparent;
-          outline: none;
-          &:hover {
-            background-color: transparent;
-          }
-        }
-        .title {
-          margin-bottom: 12px;
-          font-size: 16px;
-          font-weight: bold;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.5;
-          color: $gray-dark;
-        }
-      }
-      .copyright-container {
+
+      @include media-breakpoint-up(md) {
+        display: block;
+        @include typo-body-sm;
+        line-height: 1.86;
         margin-bottom: 16px;
-        .copyright-text {
-          display: inline-block;
-          margin-bottom: 16px;
-          font-size: 14px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.43;
-          color: $gray-lighter;
-        }
+      }
+
+    }     
+  }
+
+  
+  // brand
+  
+  .footer__brand {
+    display: inline-block;
+    margin-bottom: 16px;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: 100%;
+      left: -200%;
+      margin-left: 16px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      left: -300%;
+    }
+
+    .logo {
+      height: 29px;
+      width: auto;
+    }
+  }
+  
+  // copyright
+
+  &__copyright {
+    display: block;
+    @include typo-body-sm;
+    color: $grey;
+    margin-bottom: 18px;
+
+    @include media-breakpoint-up(md) {
+      @include typo-body;
+      margin-bottom: 12px;
+    }
+    
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 8px;
+    }
+  }
+
+  // menu
+
+  .footer__menu {
+    column-count: 2;
+    column-gap: 50px;
+    margin-top: -2px;
+    
+    .nav-link {
+      @include typo-body;
+      color: $darker-grey;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    @include media-breakpoint-up(md) {
+      float: left;
+    }
+  }
+
+   
+  // info
+
+  &__info {
+    @include typo-caption;
+    line-height: 1.2;
+    color: $dark-grey;
+
+    @include media-breakpoint-up(md) {
+      @include typo-body-sm;
+    }
+  }
+
+  // lang
+
+  .footer__lang {
+    display: block;
+    margin-bottom: 26px;
+
+    .icon.-russian {
+      margin-right: 5px;
+      vertical-align: middle;
+
+      &,
+      & svg {
+        width: 24px;
+        height: 16px;
       }
     }
-    .county-info {
-      .icon.-russian {
-        margin-right: 5px;
-        vertical-align: middle;
-      }
-      .country-name {
-        color: $dark-grey;
-        &, &:hover, &:active {
-          color: inherit!important;
-        }
-      }
+    
+    .lang-name {
+      @include typo-body;
+      line-height: 1.75;
+      color: $darker-grey;
     }
-    .info {
-      font-size: 12px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.2;
-      color: $gray-light;
+
+    a,
+    a:hover,
+    a:focus {
+      color: $darker-grey;
+      text-decoration: none;
     }
   }
 }
 
-@include media-breakpoint-up(md){
-  .footer {
-    .content {
-      padding: 32px 14px;
-      .contacts, .info, .copyright {
-        float: left;
-      }
-      .contacts {
-        .email {
-          font-size: 14px;
-          margin-bottom: 18px;
-        }
-        .social-networks {
-          margin-bottom: 26px;
-        }
-      }
-      .copyright {
-        .footer-menu {
-          float:left;
-        }
-        .copyright-container {
-          float: right;
-          margin-right: 74px;
-          .copyright-text {
-            font-size: 16px;
-          }
-        }
-      }
-      .info {
-        font-size: 14px;
-        line-height: 1.43;
-      }
-    }
-  }
-}
+// col-right
 
-@include media-breakpoint-up(lg){
-  .footer {
-    .container {
-      padding: 0;
-    }
-    .content {
-      padding: 32px 0;
-      .contacts {
-        .social-networks {
-          margin-bottom: 38px;
-        }
-      }
-      .copyright {
-        margin-bottom: 16px;
-        .copyright-container {
-          margin-right: 18px;
-          .copyright-text {
-            font-size: 16px;
-            margin-bottom: 8px;
-          }
-        }
-      }
-    }
+.footer__col-right {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;    
+  }
+
+  .footer__lang {
+    order: 99;
   }
 }

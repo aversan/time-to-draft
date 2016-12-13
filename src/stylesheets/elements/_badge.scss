@@ -1,0 +1,6 @@
+.mdl-badge {
+  &[data-badge]:after {
+    font-family: $font-family-base;
+    font-weight: 500;
+  }
+} 

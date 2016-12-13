@@ -1,0 +1,76 @@
+// tabs
+
+.mdl-tabs {
+  &.row {
+    display: flex;
+    width: auto;
+  }
+}
+
+// bar
+
+.mdl-tabs__tab-bar {
+  height: 56px;
+  border-bottom: 1px solid $tab-border-color;
+  justify-content: flex-start;
+
+  .mdl-tabs--sm & {
+    height: 46px;
+  }
+}
+
+// tab
+
+.mdl-tabs__tab {
+  padding: 0 12px;
+  height: 56px;
+  line-height: 56px;
+  font-family: $font-family-base;
+  font-weight: 400;
+  font-size: $font-size-lg;
+  text-transform: none;
+  color: $tab-text-color;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base;
+  }
+
+  .mdl-tabs--sm & {
+    height: 46px;
+    line-height: 46px;
+    font-size: $font-size-sm;
+  }
+
+  .mdl-tabs--full-width & {
+    flex-grow: 1;
+  }
+
+  &:hover,
+  &:focus {
+    color: $tab-hover-text-color;
+    text-decoration: none;
+  }
+
+  .mdl-tabs &.is-active,
+  .mdl-tabs.is-upgraded &.is-active {
+    font-weight: 700;
+    color: $tab-active-text-color;
+  }
+
+  .mdl-tabs--sm &.is-active,
+  .mdl-tabs--sm.is-upgraded &.is-active {
+    font-weight: 500;
+  }
+
+  .mdl-tabs &.is-active:after,
+  .mdl-tabs.is-upgraded &.is-active:after {
+    height: 3px;
+    animation: none;
+  }
+
+  .mdl-tabs--sm &.is-active:after,
+  .mdl-tabs--sm.is-upgraded &.is-active:after {
+    left: 12px;
+    width: calc(100% - 24px);
+  }
+}

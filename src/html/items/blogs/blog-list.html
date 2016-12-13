@@ -1,3 +1,5 @@
+{% from 'macros/helpers.html' import sprite %}
+
 <div class="messages-wrapper blogs">
     <ul class="messages-content list-unstyled">
         <li class="message-item">
@@ -27,7 +29,7 @@
                 </a>
                 <div class="media-body">
                     <div class="author-info">
-                        <span class="icon -ttd-team"></span>
+                        {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
                         <span class="author-name">alextazy</span>
                     </div>
                     <span class="time">2 дня назад</span>
@@ -111,7 +113,7 @@
                 </a>
                 <div class="media-body">
                     <div class="author-info">
-                        <span class="icon -ttd-team"></span>
+                        {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
                         <span class="author-name">alextazy</span>
                     </div>
                     <span class="time">2 дня назад</span>
@@ -195,7 +197,7 @@
                 </a>
                 <div class="media-body">
                     <div class="author-info">
-                        <span class="icon -ttd-team"></span>
+                        {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
                         <span class="author-name">alextazy</span>
                     </div>
                     <span class="time">2 дня назад</span>

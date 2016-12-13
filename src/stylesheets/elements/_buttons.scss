@@ -1,31 +1,228 @@
-.btn {
-  &:active {
-    outline: none!important;
-  }
-  &.btn-link {
-
-  }
-  &.btn-success {
-    background: $algae-green;
-  }
-
-  &.btn-outline-success {
-    color: $algae-green;
-    background-image: none;
-    background-color: transparent;
-    border-color: $algae-green;
-  }
-
-  &.btn-outline-success:hover {
-    color: $white;
-    background-color: $algae-green-light;
-    border-color: $algae-green-light;
-  }
+.btn,
+button.btn {
+  &:active,
   &:focus {
     outline: none;
   }
-
 }
-button:focus {
+
+.btn .icon {
+  margin-top: -3px;
+}
+
+.btn-primary {
+  &:hover,
+  &:focus {
+    background-color: $light-green;
+    border-color: $light-green;
+  }
+}
+
+.btn-secondary {
+  backdrop-filter: blur(10px);
+
+  &:hover,
+  &:focus {
+    background-color: #3b4550;
+    border-color: #3b4550;
+  }
+}
+
+.btn-primary-outline { 
+  background-color: transparent;
+  border-color: $green;
+  color: $green;
+
+  &:hover,
+  &:focus {
+    background-color: $green;
+    border-color: $green;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $green;
+    border-color: $green;
+    color: $white;
+  }
+}
+
+.btn-secondary-outline { 
+  background-color: transparent;
+  border-color: $grey;
+  color: $grey;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border-color: $dark-grey;
+    color: $dark-grey;
+  }
+
+  &:active {
+    background-color: transparent;
+    border-color: $dark-grey;
+    color: $dark-grey;
+  }
+}
+
+.btn-link { 
+  color: $green;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active {
+  }
+}
+
+.btn-alt {
+  border-radius: 100px;
+  padding: 0.813rem 1.626rem;
+
+  &.btn-higher {
+    padding: 0.657rem 1.314rem;
+  }
+
+  &.btn-lg {
+    padding: 0.625rem 1.250rem;
+  }
+
+  &.btn-sm {
+    // padding: .407rem .814rem;
+    padding: .407rem 1.625rem;
+
+    &.btn-higher {
+      padding: 0.657rem 1.314rem;
+    }
+  }
+}
+
+.btn-width {
+  &-small {
+    min-width: 96px;
+  }
+
+  &-medium {
+    min-width: 222px;
+  }
+
+  &-large {
+   min-width: 360px;
+  }
+}
+
+.btn-fb {
+  background-color: $facebook-color;
+  color: $white;
+
+  .icon,
+  .icon svg {
+    color: $white;
+  }
+}
+
+.btn-vk {
+  background-color: $vkontakte-color;
+  color: $white;
+
+  .icon,
+  .icon svg {
+    color: $white;
+  }
+}
+
+.btn-twitter {
+  background-color: #1b95e0;
+  color: $white;
+
+  .icon,
+  .icon svg {
+    color: $white;
+  }
+}
+
+.btn--icon {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  padding: 0;
   outline: none;
+
+  .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &,
+    & svg {
+      height: 1rem;
+    }
+  }
+}
+
+
+.btn-xs {
+    padding: 0 5px;
+    height: 29px;
+    line-height: 27px;
+    font-size: 14px;
+    padding: 0 10px;
+
+    .icon,
+    .icon svg,
+    .icon.-twitter,
+    .icon.-twitter svg {
+      width: 16px;
+      height: auto;
+    }
+
+    .icon {
+      margin-right: 0;
+    }
+}
+
+.btn--more {
+  background-color: $dark-silver;
+  color: $darker-grey;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 22px;
+  border: none;
+
+  @include media-breakpoint-down(md) {
+    padding: 16px 20px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.btn-more-wrapper {
+  &.container,
+  & > .container {
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .container & {
+    @include media-breakpoint-down(sm) {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  }
+
+  .btn {
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+    }
+  }
 }

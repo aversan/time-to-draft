@@ -2,14 +2,13 @@
   &.messages-wrapper {
     padding: 0;
 
-    .messages-content .message-text {
-      font-size: 18px;
-      color: $warm-grey;
-      line-height: 1.33;
+    .message-title {
+      @include typo-h5;
     }
 
-    .message-title {
-      font-size: 23px;
+    .messages-content .message-text {
+      @include typo-body-lg;
+      color: $dark-grey;
     }
   }
 
@@ -27,31 +26,26 @@
     }
 
     .author-counter {
-      font-size: 14px;
-      color: $warm-grey-light;
+      font-size: $font-size-sm;
       width: 36px;
       height: 36px;
-      border: solid 1px $white-two;
+      line-height: 34px;
+      border: solid 1px $light-silver;
       border-radius: 50%;
       text-align: center;
-      line-height: 34px;
       vertical-align: inherit;
       position: relative;
       margin-left: -15px;
+      color: $grey;
     }
 
     .more-authors {
-      font-size: 12px;
-      color: $warm-grey-light !important;
+      @include typo-caption();
       margin-left: 8px;
-      width: 100px;
-      line-height: 14px;
-      position: relative;
       margin-top: 5px;
-
+      width: 100px;
+      position: relative;
     }
-
-
   }
 }
 
@@ -63,23 +57,26 @@
       .messages-content {
         .media {
           margin-bottom: 5px;
+          
           .media {
             .author-counter {
               width: 32px;
               height: 32px;
-              font-size: 14px;
+              line-height: 30px;
               margin-left: 0;
             }
           }
         }
+        
         .message-title {
-          font-size: 18px;
+          @include typo-title;
         }
+        
         .message-text {
-          font-size: 14px;
+          @include typo-body-sm();
+          color: $dark-grey;
         }
       }
     }
-
   }
 }

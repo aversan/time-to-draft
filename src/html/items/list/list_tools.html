@@ -1,0 +1,27 @@
+{% import "items/list/list.html" as list %}
+
+{{list.list(
+    items = {
+        item1: {
+          avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+          title: 'Eugene Leshkovich',
+          titleicon: '<i class="icon -expert"></i>',
+          textbody: 'Исполнители стандартов на EURO-2016'
+        },
+        item2: {
+          avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+          title: 'Whoscored',
+          textbody: 'Whoscored – сервис футбольной статистики и прогнозов'
+        },
+        item3: {
+          avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+          title: 'Flashscore',
+          textbody: 'Flashscore – сервис онлайн-статистики и стартовых составов'
+        },
+        item4: {
+          avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+          title: 'FootballTop.ru',
+          textbody: 'FootballTop.ru – сайт прогнозов на футбол'
+        }
+    }
+)}}

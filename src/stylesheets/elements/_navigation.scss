@@ -1,0 +1,58 @@
+.navigation {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navigation__link {
+  position: relative;
+  color: $grey;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 12px;
+  height: 56px;
+  line-height: 56px;
+  font-family: $font-family-base;
+  font-weight: 400;
+  font-size: $font-size-lg;
+  text-transform: none;
+  color: $grey;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base;
+  }
+
+  &:hover,
+  &:focus {
+    color: $darker-grey;
+    text-decoration: none;
+  }
+
+  &.active {
+    font-weight: 500;
+  }
+
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    color: $darker-grey;
+  }
+
+  & .icon {
+    vertical-align: middle;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: $blue;
+    display: none;
+  }
+
+  &.active:after {
+    display: block;
+  }
+} 

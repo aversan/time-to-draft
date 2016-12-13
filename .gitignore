@@ -3,8 +3,9 @@ _in/*
 .DS_Store
 .sass-cache
 .publish
-//public
+#public
 Desktop.ini
-node_modules
+node_modules/
+!src/node_modules/
 **/generated/_icons.sass
 npm-debug.log

@@ -1,0 +1,27 @@
+{% macro tabs(
+    class='',
+    classBar='',
+    items = {
+        item1: {
+            class: '',
+            id: 'id',
+            title: 'title',
+            content: 'content'
+        }
+    }
+) %}
+
+<div class="mdl-tabs mdl-js-tabs {{ class }}">
+    <div class="mdl-tabs__tab-bar {{ classBar }}">
+        {% for id, item in items %}
+            <a href="#{{ item.id }}" class="mdl-tabs__tab {{ item.class }}">{{ item.title | safe }}</a>
+        {% endfor %}
+    </div>
+    {% for id, item in items %}
+        <div class="mdl-tabs__panel {{ item.class }} {{ item.classPanel }}" id="{{ item.id }}">
+            {{ item.content | safe }}
+        </div>
+    {% endfor %}
+</div>
+
+{% endmacro %}

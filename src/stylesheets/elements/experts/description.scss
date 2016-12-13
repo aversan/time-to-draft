@@ -1,7 +1,4 @@
 .experts-description {
-    font-size: $font-size-lg;
+    @include typo-body-lg;
     margin: 10px 0 0 0;
-    .h2 {
-        font-weight: 900;
-    }
 }

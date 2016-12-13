@@ -1,0 +1,91 @@
+.row {
+  margin-left: -16px;
+  margin-right: -16px;
+
+  & > [class*=col-md-],
+  & > [class*=col-sm-],
+  & > [class*=col-lg-] {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.l-cards > .row,
+.panel-row {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  & > [class*=col-md-],
+  & > [class*=col-sm-],
+  & > [class*=col-lg-] {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 16px;
+      padding-right: 16px;    
+    }
+  }
+}
+
+.l-cards {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &.container {
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }    
+  }
+
+  .card,
+  .panel,
+  .slider-cards__container {
+    margin-bottom: 20px;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.l-cards.container {
+  & > .row {
+    & > [class*=col-] {
+      display: flex;
+    }
+  }
+}
+
+.col-side {
+  & .panel-component,
+  & .panel {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    &:last-child {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  & .panel {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 4px;
+    }
+  }
+
+  & .panel-component {
+    @include media-breakpoint-down(sm) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

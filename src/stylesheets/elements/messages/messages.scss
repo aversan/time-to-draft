@@ -2,9 +2,13 @@
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   border-top: solid 1px rgba(158, 158, 158, 0.27);
   border-bottom: solid 1px rgba(158, 158, 158, 0.27);
+  margin-bottom: 32px;
+  padding: 0;
+  
   &.new-message {
     border-bottom: none;
     box-shadow: none;
+    
     .media {
       .media-left {
         &:after {
@@ -14,45 +18,45 @@
           bottom: 2px;
           width: 12px;
           height: 12px;
-          background-color: $warm-grey;
+          background-color: $dark-grey;
           border: solid 2px $white;
           border-radius: 6px;
         }
+        
         &.online {
           &:after {
-            background-color: $algae-green;
+            background-color: $green;
           }
         }
       }
     }
   }
-  margin-bottom: 32px;
-  padding: 0;
+  
   .message-theme {
     padding: 22px 14px 17px;
     margin-bottom: 0;
-    border-bottom: solid 1px $white-two;
-    font-size: 18px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.33;
-    color: $dark-grey;
+    border-bottom: solid 1px $light-silver;
+    @include typo-title;
+    color: $darker-grey;
     background-color: $white;
   }
+  
   .messages-content {
     padding: 0;
     margin-bottom: 0;
     background-color: $white;
+    
     .message-item {
       padding: 16px 14px 14px;
-      border-bottom: solid 1px $white-two;
+      border-bottom: solid 1px $light-silver;
+      
       &.your-message {
         .message-text {
-          border-left: solid 2px $greyish-brown;
+          border-left: solid 2px $darker-grey;
           margin-left: 2px;
           padding-left: 8px;
         }
+        
         .answer-container {
           .answer-button:first-of-type {
             display: none;
@@ -60,141 +64,128 @@
         }
       }
     }
+    
     .media {
       margin-bottom: 12px;
+      
       .media-left {
         position: relative;
         padding-right: 13px;
+        
         .media-object {
           width: 32px;
           height: 32px;
           border-radius: 20px;
         }
       }
+      
       .media-body {
         margin-top: -2px;
       }
+      
       .time {
         display: block;
         margin-top: -4px;
-        font-size: 12px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        color: $warm-grey-light;
+        @include typo-caption;
+        color: $grey;
       }
-      .icon.-expert, .icon.-ttd-team {
-        width: 18px;
-        height: 18px;
+      
+      .icon.-expert,
+      .icon.-ttd-team {
         vertical-align: sub;
+
+        &,
+        & svg {
+          width: 18px;
+          height: 18px;
+        }
       }
+      
       .author-info {
         height: 24px;
         margin-bottom: 0;
       }
+      
       .author-name {
-        font-size: 14px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.43;
-        color: $greyish-brown;
+        @include typo-body-sm;
+        color: $darker-grey;
       }
     }
+    
     .message-title {
-      font-size: 18px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.33;
-      color: $dark-grey;
+      @include typo-title;
+      color: $darker-grey;
       display: block;
     }
+    
     .message-text {
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.43;
-      color: $gray;
+      @include typo-body-sm;
+      color: $darker-grey;
     }
+
     .answer-container {
       padding: 9px 0 5px;
+      
       .answer-button {
         cursor: pointer;
         margin-right: 14px;
-        font-size: 14px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.43;
-        color: $algae-green;
+        @include typo-body-sm;
+        color: $green;
       }
     }
   }
+
   .button-container {
     width: 100%;
     padding: 12px 0;
     background-color: $white;
     text-align: center;
-    .btn-success {
-      padding: 7px 34px;
-      border-radius: 100px;
-      outline: none;
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.43;
-      text-align: center;
-      color: $white;
-      background-color: $algae-green;
-    }
   }
+  
   .new-message-container {
     border-top: solid 1px rgba(158, 158, 158, 0.27);
     margin-top: 4px;
+  
     .wrapper {
       margin-bottom: 17px;
     }
+  
     .container-heder {
       padding: 15px 20px;
       background-color: $white;
+  
       .user-image {
         width: 36px;
         height: 36px;
         border-radius: 20px;
       }
+  
       .user-name {
         margin-left: 10px;
-        font-size: 16px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        color: $greyish-brown;
+        @include typo-body;
+        color: $darker-grey;
       }
     }
+
     .medium-editor-insert-plugin.medium-editor-placeholder:after {
       padding: 20px 16px;
-      font-family: Roboto;
-      font-size: 16px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      color: $warm-grey-light;
+      @include typo-body;
+      color: $grey;
     }
+    
     .b-medium-editor-wrapper {
       background: $white;
+      
       .medium-insert-buttons {
         display: none !important;
       }
+      
       #message-editor-control {
         padding: 0 16px 42px;
         outline: none;
         background-color: $white;
       }
+      
       p {
         margin: 0;
       }
@@ -204,29 +195,34 @@
       padding-top: 40px;
       box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
       border-bottom: 1px solid rgba(212, 212, 212, 0.29);
+      
       p {
         margin: 0;
       }
+      
       #mobile-message-editor-control {
         padding: 20px 16px 42px;
         outline: none;
         background-color: $white;
       }
+      
       .medium-editor-toolbar {
         padding-left: 8px;
+        
         li button {
           min-width: 36px !important;
-          font-family: Roboto !important;
+          font-family: $font-family-base !important;
           font-size: 16px !important;
           font-weight: 900 !important;
           font-style: normal !important;
           font-stretch: normal !important;
           line-height: 1.5 !important;
-          color: $greyish-brown !important;
+          color: $darker-grey !important;
           padding: 5px 12px !important;
           background-color: transparent !important;
         }
       }
+      
       .medium-editor-relative-toolbar {
         position: absolute !important;
         display: block !important;
@@ -235,15 +231,14 @@
         width: 100%;
         background-color: transparent;
       }
+      
       .medium-insert-buttons {
         display: none !important;
       }
     }
-    .btn-outline-success {
+    
+    .btn-primary-outline {
       margin-left: 20px;
-      padding: 9px 24px;
-      border-radius: 20px;
-      outline: none;
     }
   }
 }
@@ -254,20 +249,24 @@
     border: solid 1px rgba(158, 158, 158, 0.27);
     margin-bottom: 70px;
     padding: 0;
+    
     &.new-message {
       border: none;
       box-shadow: none;
       padding: 0;
+      
       .messages-content {
         .message-item {
           padding: 15px 0 24px;
         }
       }
+      
       .new-message-container {
         border-top: none;
         margin-top: 0;
       }
     }
+    
     .message-hostory {
       padding: 0 20px;
       margin-bottom: 16px;
@@ -275,64 +274,77 @@
       box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
       border: solid 1px rgba(158, 158, 158, 0.27);
     }
+    
     .message-theme {
-      padding: 22px 0 17px;
-      font-size: 23px;
-      line-height: 1.22;
+      padding: 17px 0;
+      @include typo-h5;
     }
+    
     .messages-content {
       border-top: transparent;
+      
       .message-item {
         position: relative;
         padding: 15px 20px 24px;
+        
         &:last-of-type {
           border-bottom: transparent;
         }
+        
         .answer-container {
           position: absolute;
           top: 4px;
           right: -12px;
         }
       }
+      
       .media {
         margin-bottom: 12px;
+        
         .media-left {
           padding-right: 9px;
+          
           .media-object {
             width: 36px;
             height: 36px;
           }
+          
           &:after {
             left: 26px;
             bottom: -2px;
           }
         }
+        
         .author-name {
-          font-size: 16px;
-          line-height: 1.5;
+          @include typo-body;
         }
       }
+      
       .message-title {
-        font-size: 23px;
+        @include typo-h5;
         line-height: 1.22;
       }
+
       .message-text {
-        font-size: 16px;
-        line-height: 1.5;
+        @include typo-body;
       }
     }
+    
     .new-message-container {
       .wrapper {
         border: solid 1px rgba(158, 158, 158, 0.27);
       }
+      
       .medium-editor-insert-plugin.medium-editor-placeholder:after {
         padding: 0 16px;
       }
+      
       #message-editor-control {
         min-height: 100px;
       }
-      .btn-outline-success {
-        margin: 0;
+      
+      .btn-primary-outline {
+        margin-left: 0;
       }
     }
   }

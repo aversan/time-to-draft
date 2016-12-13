@@ -1,111 +1,145 @@
-.slider-promo {
-  &__wrapper {
-    width: 100%;
-    background-image: $slider-promo-x3;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-  &__container {
-    position: relative;
-  }
+.slider-promo__container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $dark;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 
-  &__title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    color:$white;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
+  @include media-breakpoint-down(md) {
+    padding-top: 46px;
+    padding-bottom: 46px;
+    margin-top: 46px;
+    margin-bottom: 36px;
   }
 
-  &__item {
-    position: relative;
-    display: inline-block;
-    &__img {
-      width: 100%;
-      display: inline-block;
-      margin-bottom: 18px;
-      img {
-        max-width: 100%;
-        max-height: 160px;
-        height: auto;
-      }
-    }
-    &__title {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.35;
-      color: $white;
-    }
-  }
-
-  &__arrow {
-    top: 62px;
-
-    &.prev__arrow {
-      &::before {
-        left: 20px;
-      }
-    }
-    &.next__arrow {
-
-      &::before {
-        right: 18px;
-        transform: rotate(-45deg);
-      }
-    }
-  }
-
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-
-  .owl-stage-outer,
-  .owl-stage,
-  .owl-item{
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-  }
-
-}
-
-
-@include media-breakpoint-down(sm) {
-  .slider-promo__wrapper {
-    width: 100%;
-    overflow: hidden;
-    padding: 38px 16px 25px;
+  @include media-breakpoint-down(sm) {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    margin-top: 16px;
     margin-bottom: 16px;
   }
-  .slider-promo {
-    overflow: visible;
-  }
-  .slider-promo__title {
-    font-size: 23px;
-    line-height: 1.33;
-    margin-bottom: 26px;
-  }
-  .slider-carousel__container {
-    width: 87%;
-    overflow-x: visible;
-  }
-  .slider-promo__item {
 
-  }
-  .slider-promo__item__img {
-    img {
+  .swiper-scrollbar {
+    display: none;
 
+    @include media-breakpoint-down(sm) {
+      display: block;
     }
   }
-  .slider-promo__item__title {
-    font-size: 18px;
+
+  .swiper-container {
+    @include media-breakpoint-down(md) {
+      margin-right: -24px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-right: -16px;
+    }
+  }
+}
+
+.slider-promo__wrapper {
+  position: relative;
+}
+
+.slider-promo__title {
+  @include typo-h3;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 32px;
+
+  @include media-breakpoint-down(sm) {
+    @include typo-h5;
+    font-weight: 700;
+    margin-bottom: 24px;
   }
 
-  .slider-carousel__wrapper:hover .slider-carousel__arrow {
-    display: none;
+  &,
+  & a,
+  & a:hover,
+  & a:focus {
+    color: $white;
   }
+}
+
+.slider-promo__item {
+  position: relative;
+  display: inline-block;   
+  max-width: 286px;
+  width: 17.875rem;
+  vertical-align: top;
+}
+
+.slider-promo__item-img {
+  display: block;
+  margin-bottom: 18px;
+  
+  img {
+    height: 160px;
+    width: auto;
+  }
+}   
+
+.slider-promo__item-title {
+  @include typo-title;
+  margin-bottom: 0;
+
+  &,
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+.slider-promo__prev,
+.slider-promo__next {
+  background-color: rgba(36, 42, 50, 0.95);
+
+  .slider-promo__wrapper & {
+    position: absolute;
+    top: 66px;
+    margin: 0;
+    z-index: 1;
+
+    @include media-breakpoint-down(md) {
+      top: 58px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}
+
+.slider-promo__prev {
+  .slider-promo__wrapper & {
+    right: 100%;
+    margin-right: 66px;
+
+    @media (max-width: 1419px) {
+      right: auto;
+      margin-right: 0;
+      left: -12px;
+    }
+  }
+}
+
+.slider-promo__next {
+  .slider-promo__wrapper & {
+    left: 100%;
+    margin-left: 66px;
+
+    @media (max-width: 1419px) {
+      left: auto;
+      margin-left: 0;
+      right: -12px;
+    }
+  }
+}
+
+.slider-promo__pagination {
+  display: none;
 }

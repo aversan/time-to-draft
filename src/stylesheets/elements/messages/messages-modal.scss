@@ -1,61 +1,74 @@
 .new-message-modal {
-  padding-right: 0!important;
+  padding-right: 0 !important;
+  
   .modal-dialog {
     width: 793px;
     height: 471px;
     max-width: 793px;
     max-height: 471px;
     .modal-header {
+      
       padding-bottom: 0;
+      
       .modal-title {
         margin-top: 11px;
       }
     }
+    
     .modal-body {
       border-bottom: solid 1px rgba(158, 158, 158, 0.27);
       padding-top: 12px;
+    
       .label {
-        font-family: Roboto;
-        font-size: 12px;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
-        color: $warm-grey-light;
+        color: $grey;
       }
+      
       .recipient-info {
         margin-bottom: 8px;
       }
+      
       .media {
         margin-top: 6px;
         cursor: pointer;
+        
         .media-left {
           position: relative;
           padding-right: 13px;
+          
           .media-object {
             width: 36px;
             height: 36px;
             border-radius: 23px;
           }
         }
+        
         .author-info {
           height: 24px;
           margin-top: 5px;
         }
+        
         .author-name {
-          font-size: 16px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.5;
-          color: $greyish-brown;
+          @include typo-body;
         }
-        .icon.-expert, .icon.-ttd-team {
-          width: 18px;
-          height: 18px;
+        
+        .icon.-expert,
+        .icon.-ttd-team {
           vertical-align: sub;
+
+          &,
+          & svg {
+            width: 18px;
+            height: 18px;
+          }
         }
       }
     }
+    
     .modal-footer {
       .btn {
         border-radius: 26px;
@@ -69,116 +82,119 @@
         outline: none;
       }
     }
+    
     .medium-editor-insert-plugin.medium-editor-placeholder:after {
+      @include typo-body;
       padding: 0;
-      font-family: Roboto;
-      font-size: 16px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      color: $warm-grey-light;
       width: 100%;
       height: 100%;
+      color: $grey;
     }
+    
     .new-message-container {
       .message-theme {
+        @include typo-body;
+        font-weight: bold;
         margin-bottom: 16px;
         display: inline-block;
         width: 100%;
-        font-family: Roboto;
-        font-size: 16px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        color: $dark-grey;
         outline: none;
         padding-bottom: 5px;
+        color: $darker-grey;
       }
     }
+    
     .b-medium-editor-wrapper {
       height: 160px;
       background: $white;
+      
       .medium-insert-buttons {
         display: none !important;
       }
+      
       #message-editor-control {
         padding: 0 0 42px;
         outline: none;
         background-color: $white;
       }
+      
       p {
         margin: 0;
       }
     }
   }
 }
+
 .contact-list-modal {
   .modal-dialog {
     width: 480px;
     height: 520px;
+    
     .modal-header {
       padding-bottom: 3px;
+      
       .modal-title {
         margin-top: 8px;
       }
     }
+    
     .modal-body {
       overflow-y: auto;
       max-height: 440px;
       padding-bottom: 0;
+      
       .search-wrapper {
         width: 360px;
         margin-bottom: 28px;
         border-bottom: solid 1px rgba(158, 158, 158, 0.27);
         padding-bottom: 6px;
+        
         .search-input {
           margin-left: 23px;
           border-bottom: none;
           outline: none;
         }
       }
+      
       .icon.-search {
         float: left;
         margin-top: 3px;
       }
+      
       .media {
         margin-bottom: 19px;
         cursor: pointer;
+        
         .media-left {
           position: relative;
           padding-right: 18px;
+          
           .media-object {
             width: 46px;
             height: 46px;
             border-radius: 23px;
           }
         }
+        
         .subscribers {
           display: block;
           margin-top: -4px;
-          font-size: 14px;
-          line-height: 1.43;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          color: $warm-grey-light;
+          @include typo-body-sm;
+          color: $grey;
         }
+        
         .author-info {
           height: 24px;
           margin-top: -4px;
           margin-bottom: 5px;
         }
+        
         .author-name {
-          font-size: 14px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.43;
-          color: $greyish-brown;
+          @include typo-body-sm;
         }
-        .icon.-expert, .icon.-ttd-team {
+        
+        .icon.-expert,
+        .icon.-ttd-team {
           width: 18px;
           height: 18px;
           vertical-align: sub;
@@ -196,10 +212,12 @@
       max-width: 100%;
       max-height: 100%;
       margin: 0;
+      
       .modal-body {
       }
     }
   }
+  
   .contact-list-modal {
     .modal-dialog {
       width: 100%;
@@ -207,10 +225,12 @@
       max-width: 100%;
       max-height: 100%;
       margin: 0;
+      
       .modal-body {
         overflow-y: auto;
         max-height: 440px;
         padding-bottom: 0;
+        
         .search-wrapper {
           width: 280px;
         }

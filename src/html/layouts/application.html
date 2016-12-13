@@ -9,9 +9,12 @@
     {% include "shared/app-icons.html" %}
     {% block head %}{% endblock %}
   </head>
-  <body>
-    {% block content %}{% endblock %}
-    {% block footer %}{% include "items/footer.html" %}{% endblock %}
+  <body class="page">
+    {% block header %}{% include "items/header/header-is-logged.html" %}{% endblock %}
+    <div class="page__content">
+      {% block content %}{% endblock %}
+    </div>
+    {% block footer %}{% include "items/footer/footer.html" %}{% endblock %}
     {% block javascript %}
       <script src="javascripts/app.js"></script>
     {% endblock %}

@@ -1,0 +1,38 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/list/list.html" as list %}
+
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon -primary') }}
+{% endset %}
+
+{{list.list(
+    items = {
+        item1: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "alextazy",
+            info_user_icon: iconTeam,
+            info_time: '1 час назад',
+            title: 'Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса'
+        },
+        item2: {
+            class: 'mdl-list__item--more-line',
+            avatar: { src: 'http://placehold.it/96x96', width: '96', height: '96' },
+            info_user: "maybe",
+            info_time: '1 час назад',
+            title: 'Политик: вопрос о положении фэнтези-спорта нельзя решить по щелчку пальцев'
+        },
+        item3: {
+            class: 'mdl-list__item--more-line',
+            info_user: "Daboos",
+            info_time: '1 час назад',
+            title: 'Лучшие атакующие защитники АПЛ для вашей фэнтези-команды'
+        },
+        item4: {
+            class: 'mdl-list__item--more-line',
+            info_user: "Huilo.com",
+            info_time: '1 час назад',
+            title: 'Goal объявил о старте фэнтези-турнира по АПЛ сезона-2016/17'
+        }        
+    }
+)}}

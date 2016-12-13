@@ -1,0 +1,53 @@
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100px;
+  width: $avatar-size-1;
+  height: $avatar-size-1;
+
+
+  &--size-1 {
+    width: $avatar-size-1;
+    height: $avatar-size-1;
+
+    @include media-breakpoint-down(sm) {
+      width: $avatar-size-4;
+      height: $avatar-size-4;
+    }
+  }
+  
+  &--size-2 {
+    width: $avatar-size-2;
+    height: $avatar-size-2;
+
+    @include media-breakpoint-down(sm) {
+      width: $avatar-size-4;
+      height: $avatar-size-4;
+    }
+  }
+  
+  &--size-3 {
+    width: $avatar-size-3;
+    height: $avatar-size-3;
+
+    @include media-breakpoint-down(sm) {
+      width: $avatar-size-4;
+      height: $avatar-size-4;
+    }
+  }
+  
+  &--size-4 {
+    width: $avatar-size-4;
+    height: $avatar-size-4;
+  }
+  
+  &--size-5 {
+    width: $avatar-size-5;
+    height: $avatar-size-5;
+  }
+  
+  &--size-6 {
+    width: $avatar-size-6;
+    height: $avatar-size-6;
+  }
+}

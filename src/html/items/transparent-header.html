@@ -1,3 +1,5 @@
+{% from 'macros/helpers.html' import sprite %}
+
 <div class="header__wrapper transparent-header js-fixed-header">
     <div class="container header logged-in">
         <div class="row">
@@ -5,13 +7,10 @@
                 <nav class="navbar navbar-light main-menu">
                     <a class="navbar-brand white" href="#"><img class="logo" alt="TDD" src="/images/logo-white.png"></a>
                     <a class="navbar-brand dark" href="#"><img class="logo" alt="TDD" src="/images/logo.svg"></a>
-                    <span class="navbar-toggler hidden-md-up icon -hamburger -white" data-toggle="collapse"
+                    <span class="navbar-toggler hidden-md-up" data-toggle="collapse"
                           data-target="#exMainNavBar" aria-controls="exMainNavBar" aria-expanded="false"
                           aria-label="Toggle navigation">
-                    </span>
-                    <span class="navbar-toggler hidden-md-up icon -hamburger" data-toggle="collapse"
-                          data-target="#exMainNavBar" aria-controls="exMainNavBar" aria-expanded="false"
-                          aria-label="Toggle navigation">
+                        {{ sprite('hamburder', '0 0 1 1', 'icon') }}
                     </span>
                     <div class="collapse navbar-toggleable-sm" id="exMainNavBar">
                         <span class="navbar-toggler hidden-md-up close" data-toggle="collapse"
@@ -20,7 +19,7 @@
                         </span>
                         <div class="header-left-menu-wrapper">
                             <div class="site-search-container hidden-md-up">
-                                <span class="icon -search -white"></span>
+                                {{ sprite('search', '0 0 1 1', 'icon -white') }}
                                 <input type="text" class="form-control" id="siteSearch" placeholder="Поиск по сайту">
                             </div>
                             <div class="log-in-container clearfix hidden-md-up">
@@ -28,7 +27,8 @@
                                 <a class="log-in-link log-in-item" href="#">Войти</a>
                                 <div class="notes logged-in-item">
                                     <div class="more-items display-header-notes-js">
-                                        <span class="icon -white -note">
+                                        <span class='sprite -note icon'>
+                                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#note' /></use></svg>
                                             <span class="note-count">3</span>
                                         </span>
                                     </div>
@@ -101,11 +101,7 @@
                                 <li class="nav-item site-search hidden-sm-down">
                                     <form class="form-inline">
                                         <button class="btn btn-link btn-sm search-button">
-                                            <span class="icon -search -white"></span>
-                                            <span class="icon -search"></span>
-                                            <span class="icon -search -primary">
-
-                                            </span>
+                                            {{ sprite('search', '0 0 1 1', 'icon') }}
                                         </button>
                                         <input class="site-search-input" type="text" placeholder="Поиск по сайту">
                                     </form>
@@ -115,12 +111,10 @@
                                 </li>
                                 <li class="nav-item hidden-sm-down notes logged-in-item">
                                     <div class="btn-group more-items">
-                            <span class="icon -white -note" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="note-count">3</span>
-                            </span>
-                            <span class="icon -note" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="note-count">3</span>
-                            </span>
+                                        <span class='sprite -note icon' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#note' /></use></svg>
+                                            <span class="note-count">3</span>
+                                        </span>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                             <li class="note-item">
                                                 <a class="media" href="#">

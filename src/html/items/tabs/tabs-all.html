@@ -1,0 +1,67 @@
+{% import "items/tabs/tabs.html" as tabs %}
+
+{{tabs.tabs(
+    class = '',
+    items = {
+        item1: {
+            class: 'is-active',
+            id: 'tab-1',
+            title: 'Новичкам',
+            content: ''
+        },
+        item2: {
+            class: '',
+            id: 'tab-2',
+            title: 'Продвинутым',
+            content: ''
+        },
+        item3: {
+            class: '',
+            id: 'tab-3',
+            title: 'Еще',
+            content: ''
+        }        
+    }
+)}}
+
+{{tabs.tabs(
+    class = 'mdl-tabs--sm',
+    items = {
+        item1: {
+            class: 'is-active',
+            id: 'tab-4',
+            title: 'Рекомендуемые',
+            content: ''
+        },
+        item2: {
+            class: '',
+            id: 'tab-5',
+            title: 'Бесплатные',
+            content: ''
+        },
+        item3: {
+            class: '',
+            id: 'tab-6',
+            title: 'На деньги',
+            content: ''
+        }        
+    }
+)}}
+
+{{tabs.tabs(
+    class = 'mdl-tabs--full-width',
+    items = {
+        item1: {
+            class: 'is-active',
+            id: 'tab-7',
+            title: 'Посты',
+            content: ''
+        },
+        item2: {
+            class: '',
+            id: 'tab-8',
+            title: 'Блоги',
+            content: ''
+        }        
+    }
+)}}

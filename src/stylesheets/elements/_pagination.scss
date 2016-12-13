@@ -1,16 +1,17 @@
 .pagination {
   display: flex;
   margin: 0 17px 20px;
+  
   &_item {
-    border: 1px solid $white-two;
-    font-size: 18px;
-    color: $greyish-brown;
-    line-height: 18px;
+    border: 1px solid $light-silver;
+    font-size: $font-size-lg;
+    line-height: 1;
     border-radius: 4px;
     padding: 7px;
     margin-right: 4px;
     min-width: 24px;
     text-align: center;
+    color: $darker-grey;
 
     &:hover,
     &.active {
@@ -21,26 +22,29 @@
     &.prev {
       &::before {
         content: '';
-        @include arrow(left, 6px, 2px, $greyish-brown);
+        @include arrow(left, 6px, 2px, $darker-grey);
       }
     }
+    
     &.next {
       &::before {
         content: '';
-        @include arrow(right, 6px, 2px, $greyish-brown);
+        @include arrow(right, 6px, 2px, $darker-grey);
       }
     }
+    
     &.active {
-      background-color: $greyish-brown;
-      color: $white;
       pointer-events: none;
       cursor: default;
       border: none;
+      background-color: $darker-grey;
+      color: $white;
     }
+
     &.disabled {
-      color: $warm-grey;
       cursor: default;
       pointer-events: none;
+      color: $dark-grey;
     }
   }
 }

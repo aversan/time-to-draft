@@ -15,19 +15,20 @@ $icon-de: url("../images/icons/bitmap-copy-12@3x.png");
 $icon-arrow-down: url("../images/icons/arrow-down-gray-md.png");
 $pencil : url("../images/icons/pencil-512.png");
 
-$banner-quick: url("../images/banners/quick-banner/b-g.jpg");
-$banner-quick-2x: url("../images/banners/quick-banner/b-g@2x.jpg");
-$banner-quick-players: url("../images/banners/quick-banner/players.png");
-$banner-quick-players-2x: url("../images/banners/quick-banner/players@2x.png");
-$banner-quick-players-3x: url("../images/banners/quick-banner/players@3x.png");
+$banner-quick: "../images/banners/quick-banner/b-g.jpg";
+$banner-quick-x2: "../images/banners/quick-banner/b-g@2x.jpg";
+$banner-quick-players: "../images/banners/quick-banner/players.png";
+$banner-quick-players-x2: "../images/banners/quick-banner/players@2x.png";
+$banner-quick-players-small: "/images/banners/quick-banner/small/players.png";
+$banner-quick-players-small-x2: "/images/banners/quick-banner/small/players@2x.png";
 
-$banner-wide-slider: url("../images/banners/slider/b-g.jpg");
-$banner-wide-slider-x2: url("../images/banners/slider/b-g@2x.jpg");
-$banner-wide-slider-x3: url("../images/banners/slider/b-g@3x.jpg");
+$banner-wide-slider: "../images/banners/slider/b-g.jpg";
+$banner-wide-slider-x2: "../images/banners/slider/b-g@2x.jpg";
+$banner-wide-slider-x3: "../images/banners/slider/b-g@3x.jpg";
 
-$slider-promo: url("../images/slider-promo/b-g-promo-2.jpg");
-$slider-promo-x2: url("../images/slider-promo/b-g-promo-2@2x.jpg");
-$slider-promo-x3: url("../images/slider-promo/b-g-promo-2@3x.jpg");
+$slider-promo: "../images/slider-promo/b-g-promo-2.jpg";
+$slider-promo-x2: "../images/slider-promo/b-g-promo-2@2x.jpg";
+$slider-promo-x3: "../images/slider-promo/b-g-promo-2@3x.jpg";
 
 $tourney-bg: url("../images/bg/bg.jpg");
 $tourney-new-icon: url("../images/icons/new.svg");
@@ -40,3 +41,7 @@ $icon-neteller: url("../images/icons/bitmap-copy-5@3x.png");
 $icon-pcard: url("../images/icons/bitmap-copy-6@3x.png");
 $icon-pp: url("../images/icons/bitmap-copy@3x.png");
 $icon-skrill: url("../images/icons/bitmap-copy-2@3x.png");
+
+$russian-icon: url("../images/icons/russian.svg");
+$expert-icon: url("../images/icons/expert.svg");
+$subscribe-icon: url("../images/icons/subscribe.svg");

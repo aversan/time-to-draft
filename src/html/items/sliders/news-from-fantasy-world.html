@@ -1,0 +1,104 @@
+{% import "items/list/list.html" as list %}
+
+<div class="panel js-swiper-news">
+    <div class="typo--header">
+        <h6 class="typo--title">
+            Новости из мира фэнтези
+        </h6>
+        <div class="typo--header__actions">
+            <i class="icon icon--prev-sm js-swiper-prev" title="Предыдущий"></i>
+            <i class="icon icon--next-sm js-swiper-next" title="Следующий"></i>
+        </div>
+    </div>
+    <div class="swiper-container js-swiper-container">
+        {{list.list(
+            class='column-sm-1-1 column-md-1-3 column-lg-1-3 swiper-wrapper',
+            items = {
+                item1: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 час назад',
+                    title: 'Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса',
+                    withoutAvatar: true
+                },
+                item2: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '2 часа назад',
+                    title: 'Политик: вопрос о положении фэнтези-спорта нельзя решить по щелчку пальцев',
+                    withoutAvatar: true
+                },
+                item3: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '4 часа назад',
+                    title: 'Лучшие атакующие защитники АПЛ для вашей фэнтези-команды',
+                    withoutAvatar: true
+                },
+                item4: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 день назад',
+                    title: '10 лучших нападающих для фэнтези по АПЛ-2016/17',
+                    withoutAvatar: true
+                },
+                item5: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 день назад',
+                    title: 'Goal объявил о старте фэнтези-турнира по АПЛ сезона-2016/17',
+                    withoutAvatar: true
+                },
+                item6: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 день назад',
+                    title: 'Мхитарян занял 3-е место в рейтинге лучших фэнтези-полузащитников АПЛ от Mirror',
+                    withoutAvatar: true
+                },
+                item7: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 час назад',
+                    title: 'Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса',
+                    withoutAvatar: true
+                },
+                item8: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '2 часа назад',
+                    title: 'Политик: вопрос о положении фэнтези-спорта нельзя решить по щелчку пальцев',
+                    withoutAvatar: true
+                },
+                item9: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '4 часа назад',
+                    title: 'Лучшие атакующие защитники АПЛ для вашей фэнтези-команды',
+                    withoutAvatar: true
+                },
+                item10: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 день назад',
+                    title: '10 лучших нападающих для фэнтези по АПЛ-2016/17',
+                    withoutAvatar: true
+                },
+                item11: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 день назад',
+                    title: 'Goal объявил о старте фэнтези-турнира по АПЛ сезона-2016/17',
+                    withoutAvatar: true
+                },
+                item12: {
+                    class: 'mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0',
+                    avatar: '',
+                    info_time: '1 день назад',
+                    title: 'Мхитарян занял 3-е место в рейтинге лучших фэнтези-полузащитников АПЛ от Mirror',
+                    withoutAvatar: true
+                }
+            }
+        )}}
+    </div>
+</div>

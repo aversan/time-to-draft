@@ -13,20 +13,17 @@ $card-s-height: $card-m-height;
   padding-top: 35px;
   padding-bottom: 25px;
   background-size: cover;
+  width: 100%;
+  position: relative;
+  
   &__header {
-    font-size: 36px;
-    font-weight: 900;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.44;
-    text-align: center;
+    @include typo-h2;
     color: $white;
+    text-transform: uppercase;
+    letter-spacing: .1ex;
+    text-align: center;
     margin-top: 0;
     margin-bottom: 12px;
-    text-transform: uppercase;
-    &-name {
-
-    }
   }
 
   .tabs__control {
@@ -41,12 +38,12 @@ $card-s-height: $card-m-height;
       margin: 0 12px -1px;
       font-style: normal;
       font-stretch: normal;
-      color: $gray-lightest;
+      color: $light-silver;
       cursor: pointer;
       padding: 0 2px 4px;
 
       &.active {
-        border-bottom: solid 3px $brand-primary;
+        border-bottom: solid 3px $green;
         color: $white;
         cursor: default;
         font-weight: 500;
@@ -99,6 +96,7 @@ $card-s-height: $card-m-height;
         stroke: $salmon;
       }
     }
+    
     &__top {
       position: relative;
       width: 100%;
@@ -109,6 +107,7 @@ $card-s-height: $card-m-height;
       border-top-right-radius: 2px;
       overflow: hidden;
     }
+    
     .tournament-img {
       position: relative;
       width: 100%;
@@ -138,6 +137,7 @@ $card-s-height: $card-m-height;
           -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
         }
+        
         &::after {
           content: '';
           display: block;
@@ -166,26 +166,17 @@ $card-s-height: $card-m-height;
       width: 100%;
       display: block;
       top: 0;
+      
       &__title {
+        @include typo-h6;
+        font-weight: 700;
+        line-height: 1.29;
+        color: $white;
         padding: 23px 85px 20px 21px;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.29;
-        color: $white;
-        text-shadow: 0 1px 4px rgba(0,0,0,.35);
-        position: absolute;
-        top: 0;
-        left: 0;    padding: 23px 85px 20px 21px;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.29;
-        color: $white;
         text-shadow: 0 1px 4px rgba(0,0,0,.35);
         position: absolute;
         top: 0;
         left: 0;
-
-
       }
 
       &__logo {
@@ -207,28 +198,26 @@ $card-s-height: $card-m-height;
       align-items: flex-start;
       text-align: center;
 
-
       &__price {
         border-right: 1px solid rgba(158,158,158,.27);
         flex-basis: 50%;
       }
+
       &__title {
-        display: block;
-        color: $white;
-        font-size: 18px;
+        @include typo-title;
         font-weight: 700;
-        line-height: 1.33;
+        color: $white;
+        display: block;
         padding: 0 5px 0 8px;
       }
+      
       &__subtitle {
         display: block;
-        color: $gray-lighter;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.43;
+        @include typo-body-sm;
+        color: $grey;
         padding: 0 5px 0 8px;
-
       }
+      
       &__prize {
         flex-basis: 50%;
       }
@@ -269,19 +258,17 @@ $card-s-height: $card-m-height;
             height: 40px!important;
           }
         }
+        
         &__name {
-          font-size: 16px;
-          line-height: 1.5;
-          color: $gray;
+          @include typo-body;
+          color: $darker-grey;
           margin-top: -2px;
-          font-weight: 400;
           display: block;
         }
+        
         &__time {
-          font-weight: 400;
+          @include typo-caption;
           display: block;
-          font-size: 12px;
-          color: $gray-lighter;
         }
       }
     }
@@ -292,23 +279,22 @@ $card-s-height: $card-m-height;
     flex-basis: 40%;
     padding-top: 5px;
   }
+  
   &__btn-act {
     display: inline-block;
     width: 96px;
     height: 32px;
     border-radius: 16px;
-    border: 1px solid $brand-primary;
+    border: 1px solid $green;
     font-size: 14px;
     line-height: 30px;
     vertical-align: middle;
     text-align: center;
-    color: $brand-primary;
+    color: $green;
     outline: 0;
     font-weight: 400;
   }
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+
   .owl-stage-outer,
   .owl-stage,
   .owl-item{
@@ -321,10 +307,13 @@ $card-s-height: $card-m-height;
     top: 33%
   }
 }
-.tournament__icon__khl, .tournament__icon__pl {
+
+.tournament__icon__khl,
+.tournament__icon__pl {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .tournament__icon__khl {
   width: 50px;
   height: 54px;
@@ -336,22 +325,24 @@ $card-s-height: $card-m-height;
   height: 57px;
   background-image: $pl;
 }
+
 .tournament__icon {
   display: block;
 }
 
-
 @media (max-width: 1240px){
   .tournament-head {
     &__title {
-      font-size: 18px;
+      font-size: $font-size-lg;
       padding: 20px 85px 20px 15px;
     }
+    
     &__logo {
       zoom: 0.9
     }
   }
 }
+
 @media (max-width: 360px){
   .tournament-head {
     &__title {
@@ -379,7 +370,7 @@ $card-s-height: $card-m-height;
 @media (max-width: 1240px) {
   .tournament {
     &__header {
-      font-size: 30px;
+      font-size: $font-size-h3;
       margin-bottom: 10px;
     }
 
@@ -390,6 +381,7 @@ $card-s-height: $card-m-height;
     & &__btn-act {
       width: 86px;
     }
+    
     &-item {
       width: $card-m-width;
 
@@ -435,10 +427,10 @@ $card-s-height: $card-m-height;
 
 @media (max-width: 1240px){
   .tournament-info {
-
     &__title {
       margin-bottom: -4px;
     }
+    
     &__subtitle {
       position: relative;
       top: 3px;

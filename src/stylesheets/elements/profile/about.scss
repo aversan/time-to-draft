@@ -1,40 +1,44 @@
 .about {
     margin-top: 30px;
     margin-bottom: 30px;
+    
     .h6 {
-        color: $warm-grey-light;
+        color: $grey;
         margin-bottom: 15px;
     }
+    
+    .edit-label,
+    .edit-area {
+        @include typo-h6;
+        color: $dark-grey;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    
     .edit-label {
         cursor: pointer;
-        font-size: $font-size-h6;
-        font-style: italic;
-        line-height: 28px;
-        color: $warm-grey;
     }
+    
     .edit-area {
         background: transparent;
         border: 0;
-        font-size: $font-size-h6;
-        font-style: italic;
-        line-height: 28px;
-        color: $warm-grey;
         width: 100%;
+        
         &:focus {
             outline: none;
         }
     }
+    
     .btn {
-        border-radius: 100px;
-        width: 118px;
-        height: 40px;
-        font-size: $font-size-sm;
+        min-width: 118px;
     }
+    
     .long-text {
         display: none;
     }
+    
     .more {
-        color: $dark-grey;
+        color: $darker-grey;
         cursor: pointer;
     }
 }

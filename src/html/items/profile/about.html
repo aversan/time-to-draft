@@ -11,12 +11,14 @@ text="В футбол влюбился с детства, окончательн
             <h6><strong>О себе</strong></h6>
             {% if register %}
                 <span class="edit-label" id="edit-label">
-                    <i class="icon -plus-small"></i>
+                    <span class='sprite -plus-small icon'>
+                        <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#plus-small' /></use></svg>
+                    </span>
                     <em class="h6">Опишите себя</em>
                 </span>
                 <textarea class="edit-area" id="edit-area"></textarea>
-                <button type="button" id="back-edit" class="btn btn-outline-secondary">Отменить</button>
-                <button type="button" id="save-edit" class="btn btn-success">Сохранить</button>
+                <button type="button" id="back-edit" class="btn btn-alt btn-sm btn-higher btn-secondary-outline">Отменить</button>
+                <button type="button" id="save-edit" class="btn btn-alt btn-sm btn-higher btn-primary">Сохранить</button>
             {% else %}
                 <div class="edit-area short-text">
                     {{ text | truncate(237, true, "...") }}

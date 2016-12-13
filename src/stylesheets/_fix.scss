@@ -2,13 +2,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img {
+  max-width: 100%;
+  height: auto; 
+}
+
 .disable-hover,
 .disable-hover * {
   pointer-events: none !important;
 }
 
-.m-b-20, .mb-20 {
+.m-b-20,
+.mb-20 {
   margin-bottom: 20px;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 16px;
+  }
 }
 
 .m-t-30 {
@@ -16,54 +26,31 @@ body {
 }
 
 .container {
-  padding-left:  0;
-  padding-right: 0;
-}
+  padding-left: 16px;
+  padding-right: 16px;    
 
-@include media-breakpoint-down(md) {
-  .container {
-    padding-left:  24px;
+  @include media-breakpoint-up(sm) {
+    padding-left: 16px;
+    padding-right: 16px;    
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 24px;
     padding-right: 24px;
   }
 }
 
-@include media-breakpoint-down(sm) {
-  .container {
-    padding-left:  0;
-    padding-right: 0;
-
-    .row {
-      margin-right: 0;
-      margin-left: 0;
-
-      & > [class*=col-md-],
-      & > [class*=col-lg-],
-      & > [class*=col-sm-] {
-        padding-left: 0;
-        padding-right: 0;
-
-      }
-
-    }
-  }
-
-  .m-b-20 {
-    margin-bottom: 4px;
-  }
-}
-
-.l-cards.container {
-  .row {
-    & > [class*=col-] {
-      display: flex;
-
-    }
-  }
-}
+// media-object
 
 img.media-object {
   border-radius: 50%;
 }
+
 
 // medium-editor-toolbar
 
@@ -85,7 +72,25 @@ img.media-object {
   padding: 0;
 }
 
-img {
-	max-width: 100%;
-	height: auto;	
+.bg-light + .bg-dark,
+.bg-dark + .bg-light {
+  margin-top: 0 !important;
+}
+
+.hidden-screen-1 {
+  @include media-breakpoint-only(xs) {
+    display: none !important;
+  }
+}
+
+.hidden-screen-2 {
+  @include media-breakpoint-only(sm) {
+    display: none !important;
+  }
+}
+
+.hidden-screen-3 {
+  @include media-breakpoint-only(md) {
+    display: none !important;
+  }
 }

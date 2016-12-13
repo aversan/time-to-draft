@@ -1,0 +1,72 @@
+// menu
+
+.dropdown-menu {
+  border-radius: 2px;
+  box-shadow: $dropdown-box-shadow;
+
+  &--note {
+    width: 346px;
+
+    .media {
+      flex-wrap: nowrap;
+    }
+
+    .media-left {
+      padding-right: 16px;
+    }
+
+    .icon.-expert,
+    .icon.-expert svg {
+      width: 16px;
+      height: 14px;
+    }
+  }
+}
+
+// toggle
+
+.dropdown-toggle::after {
+  margin-top: -.3em;
+  margin-left: .45rem;
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-left: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  transform: rotate(-45deg);
+  cursor: pointer;
+
+  .navbar-dark & {
+    border-left-color: #d0d0d0;
+    border-bottom-color: #d0d0d0;
+  }
+}
+
+// divider
+
+.dropdown-divider {
+  margin-left: $dropdown-item-padding-x;
+  margin-right: $dropdown-item-padding-x;
+}
+
+// item
+
+.dropdown-item {
+  &.active {
+    font-weight: 700;
+  }
+  
+  &--accent {
+    color: $green;
+  }
+
+  .dropdown-menu--note & {
+    @include typo-body-sm;
+    white-space: normal;
+    padding: 10px 20px;
+
+    .person-name {
+      font-weight: 700;
+    }
+  }
+}

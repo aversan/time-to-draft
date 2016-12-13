@@ -1,21 +1,24 @@
 .form-group {
     .help-block {
+        @include typo-caption;
         display: none;
         color: $salmon;
-        font-size: $font-size-xs;
         float: right;
     }
+    
     .field-container {
         position: relative;
     }
+    
     label {
-        color: $warm-grey-light;
         font-weight: normal;
         position: absolute;
         pointer-events: none;
         top: 6px;
         transition: 0.2s ease all;
+        color: $grey;
     }
+    
     .custom-select {
         display: block;
         width: 100%;
@@ -23,57 +26,71 @@
         background-size: 3%;
         background-position: right center;
     }
-    input, select {
+    
+    input,
+    select {
         padding-left: 0;
         padding-right: 0;
         border: 0;
-        border-bottom: 2px solid rgba(158, 158, 158, 0.27);
+        border-bottom: 2px solid $border-color;
         border-radius: 0;
         margin-top: 30px;
     }
+    
     input {
         &:focus {
             border-color: transparent;
+            
             & ~ .bar {
-                &:before, &:after {
+                &:before,
+                &:after {
                     width: 50%;
                 }
             }
         }
+        
         &:invalid {
             & ~ .bar {
-                &:before, &:after {
+                &:before,
+                &:after {
                     background: $salmon;
                     width: 50%;
                 }
+                
                 & ~ label ~ .help-block {
                     display: block;
                 }
             }
         }
     }
+    
     input:focus ~ label,
     input.used ~ label,
     select ~ label {
         top: -15px;
         font-size: $font-size-xs;
     }
+    
     .bar {
         position: relative;
         display: block;
         width: 100%;
-        &:before, &:after {
+        
+        &:before,
+        &:after {
             content: '';
             height: 2px;
             width: 0;
             bottom: 1px;
             position: absolute;
-            background: $algae-green;
+            background: $green;
             transition: 0.2s ease all;
         }
+        
         &:before {
             left: 50%;
         }
+        
         &:after {
             right: 50%;
         }

@@ -6,7 +6,6 @@
 
 
 {% block content %}
-{% include "items/header.html" %}
 {{ header.subheader(title='Эксперты') }}
     <div class="container-fluid">
         <div class="row">
@@ -25,7 +24,7 @@
     </div>
 
     <div class="container m-b-20 hidden-sm-down">
-        {% include "items/banners/wide-slider.html" %}
+        <!-- include "items/banners/wide-slider.html" | slider-play -->
     </div>
 
     <div class="container">
@@ -40,7 +39,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-lg-8 col-md-8">
-                {% include "items/posts/list.html" %}
+                {% include "items/posts/posts-list.html" %}
             </div>
             <div class="col-lg-4 col-md-4 hidden-sm-down">
                 <div class="row">

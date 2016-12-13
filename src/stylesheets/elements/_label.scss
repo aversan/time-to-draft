@@ -1,0 +1,39 @@
+a.label--type,
+.label--type {
+  @include typo-label;
+  display: inline-block;
+  padding: 5px 6px;
+  color: $white;
+  
+  &.news {
+    background-color: $orange;
+  }
+  
+  &.profi {
+    background-color: $blue;
+  }
+  
+  &.action {
+    background-color: $green;
+  }
+  
+  &.strategy {
+    background-color: $salmon;
+  }
+  
+  &.podcast {
+    background-color: $plum;
+  }
+  
+  &.outline {
+    border: 1px solid $white;
+  }
+  
+  &.newbie {
+    background-color: $green;
+  }
+  
+  &.playground {
+    background-color: $twilight;
+  }
+}

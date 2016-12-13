@@ -1,25 +1,39 @@
-.typo--h1 {
+.typo--h1,
+.h1 {
 	@include typo-h1;
 }
 
-.typo--h2 {
+.typo--h2,
+.h2 {
 	@include typo-h2;
 }
 
-.typo--h3 {
+.typo--h3,
+.h3 {
 	@include typo-h3;
 }
 
-.typo--h4 {
+.typo--h4,
+.h4 {
 	@include typo-h4;
 }
 
-.typo--h5 {
+.typo--h5,
+.h5 {
 	@include typo-h5;
 }
 
-.typo--h6 {
+.typo--h6,
+.h6 {
 	@include typo-h6;
+}
+
+.typo--title {
+	@include typo-title;
+}
+
+.typo--title-2 {
+	@include typo-title-2;
 }
 
 .typo--body {
@@ -36,4 +50,83 @@
 
 .typo--caption {
 	@include typo-caption;
+}
+
+.typo--link-muted {
+	&,
+	&:hover,
+	&:focus {
+		color: $grey;
+	}
+}
+
+.typo--header {
+	border-bottom: 1px solid $border-color;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	line-height: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	height: 56px;
+	justify-content: space-between;
+
+	.typo--h1,
+	.typo--h2,
+	.typo--h3,
+	.typo--h4,
+	.typo--h5,
+	.typo--h6,
+	.typo--title,
+	.typo--title-2 {
+		font-weight: 700;
+		line-height: 20px;
+		margin: 0;
+		@include text-truncate;
+
+		& > .icon,
+		& > .icon svg {
+			width: .8em;
+			height: .8em;
+		}
+
+		& > .icon {
+			margin-right: 8px;
+		}
+	}
+
+	&__btn.btn {
+		margin-left: 31px;
+	}
+
+	&--light {
+		.typo--h1,
+		.typo--h2,
+		.typo--h3,
+		.typo--h4,
+		.typo--h5,
+		.typo--h6,
+		.typo--title,
+		.typo--title-2 {
+			font-weight: 400;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+
+		&-title {
+			@include typo-body-lg;
+			color: $lighter-grey;
+			margin-right: 20px;
+		}
+
+		.icon + .icon {
+			margin-left: 6px;
+		}
+	}
 }

@@ -6,7 +6,6 @@
 
 
 {% block content %}
-{% include "items/header.html" %}
 {{ header.subheader(title='Площадки') }}
 
 <div class="container">
@@ -22,7 +21,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12 text-sm-center m-b-3">
-            <button type="button" class="btn btn-outline-secondary playgrounds-btn" data-toggle="modal" data-target="#myModal">Все  площадки</button>
+            <button type="button" class="btn btn-sm btn-higher btn-alt btn-secondary-outline playgrounds-btn" data-toggle="modal" data-target="#myModal">Все  площадки</button>
         </div>
     </div>
     {% include "items/playgrounds/modal.html" %}

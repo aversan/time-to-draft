@@ -1,34 +1,47 @@
 {% macro card(
     class='',
-    title='Title',
-    description='Description',
-    label_type='news',
-    label_text='Новости',
-    user_name='alextazy',
-    post_time='час назад',
-    image='images/posts/b-g_3.jpg',
-    user_icon=''
+    image='',
+    num='',
+    label_type='',
+    label_text='',
+    title='',
+    description='',
+    info_user='',
+    info_user_icon='',
+    info_time='',
+    hasNewComment=false
 ) %}
-<div class="card {{class}}">
-    <div class="card__img" style="background-image: url({{image}})"></div>
-    <a href="#" class="label__type card__label {{label_type}}">{{label_text}}</a>
 
-    <div class="card_content">
+<section class="card {{ class }}">
+    {% if image | length %}
+        <div class="card__img" style="background-image: url({{ image | safe }})"></div>
+    {% elif num | length %}
+        <div class="card__num">{{ num }}</div>
+    {% endif %}
+    {% if label_text | length %}
+        <a href="#" class="label label--type card__label {{ label_type }}">{{ label_text | safe }}</a>
+    {% endif %}
+    <div class="card__content">
+        {% if info_user | length %}
         <div class="card__info">
-            <a href="#" class="card__info__user">{{user_icon| safe}}{{user_name}}</a>
-            <a href="#" class="card__info__time">{{post_time}}</a>
+            <a href="#" class="card__info-user">{{ info_user_icon | safe }}{{ info_user | safe }}</a>
+            {% if info_time | length %}
+                <div class="card__info-time">{{ info_time | safe }}</div>
+            {% endif %}
         </div>
-        <h2 class="card__title">
-            <a href="#">{{title}}</a>
-        </h2>
-        <div class="card__description">
-            {{description}}
-        </div>
+        {% endif %}
+        {% if title | length %}
+            <h2 class="card__title">
+                <a href="#">{{ title | safe }}</a>
+            </h2>
+        {% endif %}
+        {% if description | length %}
+            <div class="card__description">
+                {{ description | safe }}
+            </div>
+        {% endif %}
     </div>
-    <div class="card__icons">
-        <a href="#" class="card__icons__item"><span class="icon -energy"></span>+7</a>
-        <a href="#" class="card__icons__item"><span class="icon -view"></span>79</a>
-        <a href="#" class="card__icons__item"><span class="icon -comments"></span>14</a>
-    </div>
-</div>
+    {% include "items/cards/card-icons.html" %}
+</section>
+
 {% endmacro %}

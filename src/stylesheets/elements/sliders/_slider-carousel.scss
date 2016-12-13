@@ -8,9 +8,11 @@
       }
     }
   }
+  
   &__container {
     position: relative;
   }
+  
   &__arrow {
     display: none;
     width: 48px;
@@ -29,6 +31,7 @@
         opacity: 1;
       }
     }
+    
     &::before {
       content: '';
       display: inline-block;
@@ -45,10 +48,12 @@
 
     &.prev__arrow {
       left: -110px;
+      
       &::before {
         left: 20px;
       }
     }
+    
     &.next__arrow {
       right: -110px;
 
@@ -62,9 +67,11 @@
 
 @media (max-width: 1450px) {
   .slider-carousel__arrow {
+    
     &.next__arrow {
       right: -40px;
     }
+    
     &.prev__arrow {
       left: -40px;
     }
@@ -72,9 +79,11 @@
 }
 @media (max-width: 1310px) {
   .slider-carousel__arrow {
+    
     &.next__arrow {
       right: 10px;
     }
+    
     &.prev__arrow {
       left: 10px;
     }

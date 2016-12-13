@@ -1,0 +1,19 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/cards/card.html" as cards %}
+
+{% set iconTeam %}
+	{{ sprite('ttd-team', '0 0 1 1', 'icon') }}
+{% endset %}
+
+
+{{cards.card(
+    class='card--hoverable',
+    image='images/posts/b-g_3.jpg',
+    label_type='news',
+    label_text='Новости',
+    title='Над Схваткой / Euro-2016. Fantasy-превью 1/4 Финала: Прогнозы, Капитаны, Джокеры',
+    description='Какие изменения ждут FanTeam в ближайшие несколько недель.',
+    info_user='alextazy',
+    info_user_icon=iconTeam | safe,
+    info_time='1 час назад'
+)}}

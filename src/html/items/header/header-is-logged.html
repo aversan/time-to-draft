@@ -1,0 +1,137 @@
+{% from 'macros/helpers.html' import sprite %}
+
+<header class="navbar navbar--header navbar-dark is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
+    <div class="container">
+        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+            {{ sprite('hamburger', '0 0 1 1', 'icon') }}
+        </button>
+        <a class="navbar-brand float-xs-none float-md-left" href="#">
+            <img src="/images/logos/logo-light.svg" alt="Time to Draft" width="80" height="26">
+        </a>
+        <div class="nav navbar-nav hidden-md-up float-xs-right">
+            <a class="nav-item nav-link" href="#">
+                Стат-центр
+                {{ sprite('live', '0 0 1 1', 'icon') }}
+            </a>
+        </div>
+        <div class="collapse navbar-toggleable-sm float-md-right" id="exCollapsingNavbar2">
+            <div class="nav navbar-nav">
+                <div class="navbar-nav-divider hidden-md-up"></div>
+                <a class="nav-item nav-link" href="#">
+                    Стат-центр
+                    {{ sprite('live', '0 0 1 1', 'icon') }}
+                </a>
+                <a class="nav-item nav-link" href="#">Игроки</a>
+                <a class="nav-item nav-link" href="#">Команды</a>
+                <a class="nav-item nav-link" href="#">Площадки</a>
+                <a class="nav-item nav-link" href="#">Стратегии</a>
+                <a class="nav-item nav-link hidden-md-down" href="#">Эксперты</a>
+                <a class="nav-item nav-link hidden-md-down" href="#">Блоги</a>
+                <a class="nav-item nav-link hidden-md-down" href="#">Форум</a>
+                <div class="navbar-nav-divider hidden-md-up"></div>
+                <a class="nav-item nav-link hidden-md-up" href="#">Выйти</a>
+            </div>
+            <div class="btn-group hidden-sm-down hidden-lg-up">
+                <a href="#" class="btn btn--icon navbar__btn-icon"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ sprite('more', '0 0 1 1', 'icon') }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="">
+                        Эксперты
+                    </a>
+                    <a class="dropdown-item" href="">
+                        Блоги
+                    </a>
+                    <a class="dropdown-item" href="">
+                        Форум
+                    </a>
+                </div>
+            </div>
+            <div class="btn-group navbar-search">
+                <label class="btn btn--icon navbar__btn-icon" for="site-search">
+                    {{ sprite('search', '0 0 1 1', 'icon') }}
+                </label>
+                <div class="mdl-textfield mdl-js-textfield navbar-search__textfield">
+                    <input class="mdl-textfield__input" type="text" id="site-search">
+                    <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                </div>
+            </div>
+            <div class="btn-group hidden-sm-down">
+                <a href="#" class="btn btn--icon navbar__btn-icon"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sprite -note icon mdl-badge mdl-badge--overlap" data-badge="3">
+                        <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#note" /></use></svg>
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
+                    <a class="dropdown-item" href="#">
+                        <span class="media media-middle">
+                            <span class="media-left">
+                                {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+                            </span>
+                            <span class="media-body">
+                                <span class="icon -expert"></span>
+                                <span class="person-name">Oleg Smolerov (awd2)</span>
+                                отправил вам личное сообщение
+                            </span>
+                        </span>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <span class="media media-middle">
+                            <span class="media-left">
+                                {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+                            </span>
+                            <span class="media-body">
+                                <span class="person-name">Maybe</span>
+                                прокомментировал ваше сообщение на форуме
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="btn-group hidden-sm-down">
+                <div class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-6 navbar__avatar') }}
+                </div>
+                <div class="dropdown-menu dropdown-menu--user-menu dropdown-menu-right">
+                    <a class="dropdown-item dropdown-item--accent" href="">
+                        Написать пост
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">
+                        Мои блоги
+                    </a>
+                    <a class="dropdown-item" href="">
+                        Личные сообщения
+                    </a>
+                    <a class="dropdown-item" href="">
+                        Профиль
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">
+                        Выйти
+                    </a>
+                </div>                    
+            </div>
+            <div class="navbar-user-item hidden-md-up">
+                <div class="navbar-user-item__primary">
+                    {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-5 navbar__avatar') }}
+                    <h6 class="navbar-user-item__title">Andrei Filipovich</h6>
+                    <div class="navbar-user-item__sub-title">Профиль</div>
+                </div>
+                <div class="navbar-user-item__secondary">
+                    <a href="#" class="btn btn--icon navbar__btn-icon">
+                        <span class="sprite -note icon mdl-badge mdl-badge--overlap" data-badge="3">
+                            <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#note" /></use></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav navbar-nav hidden-md-up navbar-user-nav">
+                <div class="navbar-nav-divider"></div>
+                <a class="nav-item nav-link nav-link--accent" href="#">Написать пост</a>
+                <a class="nav-item nav-link" href="#">Мои блоги</a>
+                <a class="nav-item nav-link" href="#">Личные сообщения</a>
+            </div>
+        </div>
+    </div>
+</header>

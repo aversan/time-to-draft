@@ -1,0 +1,42 @@
+.delivery {
+  .delivery-form {
+    padding: 7px 4px;
+    border-radius: 4px;
+    border: solid 1px $border-color;
+  }
+  
+  .form-group {
+    float: left;
+    margin-bottom: 0;
+    
+    .form-control {
+      width: 245px;
+      border: none;
+      border-right: solid 1px $border-color;
+      margin-top: 0;
+    }
+  }
+  
+  .btn,
+  .form-control {
+    padding: 5px 12px;
+  }
+  
+  .btn {
+    border: none;
+    color: $green;
+    background-color: transparent;
+    outline: none;
+    
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  
+  .title {
+    @include typo-body;
+    font-weight: bold;
+    color: $darker-grey;
+    margin-bottom: 12px;
+  }
+}

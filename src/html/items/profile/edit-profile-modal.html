@@ -3,14 +3,20 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="icon -close"></i></span>
+                    <span aria-hidden="true">
+                        <span class='sprite -close icon'>
+                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#close' /></use></svg>
+                        </span>                        
+                    </span>
                 </button>
                 <h3 class="modal-title" id="myModalLabel"><strong>Профиль</strong></h3>
             </div>
             <form>
                 <div class="modal-body edit-profile">
                     <div class="form-group">
-                        <i class="icon -user"></i>
+                        <span class='sprite -user icon'>
+                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#user' /></use></svg>
+                        </span>
                         <div class="field-container">
                             <input required type="text" class="form-control" value="Олег Смолеров">
                             <span class="bar"></span>
@@ -19,7 +25,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <i class="icon -gender"></i>
+                        <span class='sprite -gender icon'>
+                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#gender' /></use></svg>
+                        </span>
                         <div class="field-container">
                             <select class="custom-select" id="exampleSelect1">
                                 <option>Мужской</option>
@@ -30,7 +38,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <i class="icon -marker"></i>
+                        <span class='sprite -marker icon'>
+                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#marker' /></use></svg>
+                        </span>
                         <div class="field-container">
                             <input type="text" class="form-control">
                             <span class="bar"></span>
@@ -38,7 +48,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <i class="icon -read-message"></i>
+                        <span class='sprite -read-message icon'>
+                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#read-message' /></use></svg>
+                        </span>
                         <div class="field-container">
                             <input required type="email" value="Olegsm@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             <span class="bar"></span>
@@ -46,7 +58,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <i class="icon -lock"></i>
+                        <span class='sprite -lock icon'>
+                            <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#lock' /></use></svg>
+                        </span>
                         <div class="field-container">
                             <input required type="password" value="password" class="form-control" id="exampleInputPassword1">
                             <span class="bar"></span>
@@ -63,8 +77,8 @@
                     </div>
                 </div>
                 <div class="modal-footer edit-profile">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Отменить</button>
-                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-sm btn-alt btn-higher btn-secondary-outline" data-dismiss="modal">Отменить</button>
+                    <button type="submit" class="btn btn-sm btn-alt btn-higher btn-primary">Сохранить</button>
                 </div>
             </form>
         </div>

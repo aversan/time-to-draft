@@ -1,89 +1,62 @@
+@import 'bootstrap/scss/mixins/breakpoints';
+
 .subscribe-to-fantasy {
-  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
-  border-bottom: solid 1px rgba(212, 212, 212, 0.29);
-  background: $white;
-  padding: 32px 16px 40px;
-  text-align: center;
-  .icon {
-    margin-bottom: 20px;
-  }
-  .title {
-    margin-bottom: 24px;
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.2;
-    text-align: center;
-    color: $dark-grey;
-  }
-  .description {
-    float: left;
-    margin-bottom: 15px;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.5;
-    color: $dark-grey;
-  }
-  .delivery {
-    .delivery-form {
-      padding: 8px 4px;
-      border-radius: 4px;
-      border: solid 1px $gray-lightest;
-    }
-    .form-group {
-      float: left;
-      margin-bottom: 0;
-      .form-control {
-        width: 194px;
-        border: none;
-        border-right: solid 1px $gray-lightest;
-        margin-top: 0;
-      }
-    }
-    .btn, .form-control {
-      padding: 5px 12px;
-    }
-    .btn-outline-secondary {
-      border: none;
-      color: $algae-green;
-      background-color: transparent;
-      outline: none;
-      &:hover {
-        background-color: transparent;
-      }
-    }
-    .title {
-      margin-bottom: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      color: $gray-dark;
-    }
-  }
+	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
+	border-bottom: solid 1px rgba(212, 212, 212, 0.29);
+	padding: 32px 16px 40px;
+	text-align: center;
+	background: $white;
+
+	.icon {
+		margin-bottom: 20px;
+	}
+
+	.title {
+		@include typo-h6;
+		margin-bottom: 24px;
+		text-align: center;
+		color: $darker-grey;
+	}
+
+	.description {
+		float: left;
+		@include typo-body;
+		color: $darker-grey;
+		margin-bottom: 15px;
+	}
+
+	.delivery {
+		.input-group--subscribe {
+			width: 325px;
+		}
+		
+		.title {
+			@include typo-title-2;
+			color: $darker-grey;
+			margin-bottom: 12px;
+		}
+	}
 }
+
 @include media-breakpoint-up(md) {
-  .subscribe-to-fantasy {
-    border: solid 1px rgba(212, 212, 212, 0.29);
-    padding: 29px 41px;
-    .icon.-subscribe {
-      float: left;
-      margin-right: 45px;
-      margin-bottom: 0;
-    }
-    .delivery {
-      float: left;
-      width: 388px;
-    }
-    .title {
-      float: left;
-      margin-bottom: 4px;
-    }
-  }
+	.subscribe-to-fantasy {
+		border: solid 1px rgba(212, 212, 212, 0.29);
+		padding: 29px 41px;
+
+		.icon.-subscribe {
+			float: left;
+			margin-right: 45px;
+			margin-bottom: 0;
+		}
+
+		.delivery {
+			float: left;
+			width: 388px;
+		}
+
+		.title {
+			float: left;
+			margin-bottom: 4px;
+		}
+	}
 }

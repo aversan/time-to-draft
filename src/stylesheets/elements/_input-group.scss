@@ -1,0 +1,27 @@
+.input-group--subscribe {
+  border: 1px solid $input-border-color;
+  border-radius: $border-radius;
+  background-color: $white;
+  width: 100%;
+
+  .form-control {
+    border-color: transparent;
+    padding: .69rem .75rem;
+  }
+
+  .btn {
+    position: relative;
+    outline: none;
+    padding: .69rem 1rem;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      height: 30px;
+      top: 50%;
+      margin-top: -15px;
+      left: -1px;
+      border-left: 1px solid $input-border-color;
+    }    
+  }
+}

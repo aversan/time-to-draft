@@ -1,12 +1,14 @@
 .recommended-to-read {
   padding: 6px 10px;
   border-radius: 4px;
-  background-color: $white;
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   border: solid 1px rgba(212, 212, 212, 0.29);
   margin-bottom: 20px;
+  background-color: $white;
+  
   .recommended-to-read-wrapper {
     overflow: hidden;
+    
     .owl-controls .owl-nav {
       position: absolute;
       top: 18px;
@@ -15,6 +17,7 @@
       font-size: 1px;
       color: transparent;
       text-align: right;
+      
       .owl-prev {
         margin-right: 6px;
         display: inline-block;
@@ -24,6 +27,7 @@
         background-size: contain;
         cursor: pointer;
       }
+      
       .owl-next {
         display: block;
         float: right;
@@ -36,30 +40,29 @@
       }
     }
   }
+  
   .header {
     padding: 0 10px;
 
     .title {
+      @include typo-title;
+      color: $darker-grey;
       padding: 14px 0;
       margin-bottom: 18px;
       border-bottom: solid 1px rgba(158, 158, 158, 0.27);
-      font-family: Roboto;
-      font-size: 18px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.33;
-      color: $dark-grey;
     }
   }
+  
   .recommended-to-read-slider {
     .owl-item {
       display: inline-block;
-      padding:0 10px;
+      padding: 0 10px;
     }
+    
     .slider-item {
       .media {
         padding-bottom: 20px;
+        
         .media-left {
           .media-object {
             border-radius: 0;
@@ -67,15 +70,12 @@
             height: 95px;
           }
         }
+        
         .media-body {
           .news-link {
-            font-family: Roboto;
-            font-size: 16px;
-            font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
+            @include typo-body;
             line-height: 1.25;
-            color: $dark-grey;
+            color: $darker-grey;
           }
         }
       }
@@ -86,15 +86,19 @@
 @include media-breakpoint-down(sm) {
   .recommended-to-read {
     padding: 6px;
+    
     .recommended-to-read-wrapper {
       overflow: hidden;
+      
       .owl-controls .owl-nav {
         display: none;
+        
         .recommended-to-read-slider {
           .owl-item {
             display: inline-block;
             padding:0 10px;
           }
+          
           .slider-item {
             .media {
               .media-left {

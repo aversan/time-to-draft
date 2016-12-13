@@ -1,0 +1,19 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/cards/card.html" as cards %}
+
+{% set iconTeam %}
+	{{ sprite('ttd-team', '0 0 1 1', 'icon') }}
+{% endset %}
+
+
+{{cards.card(
+    class='card--overlap-md-up card--hoverable',
+    image='images/posts/b-g_3.jpg',
+    label_type='profi',
+    label_text='Продвинутым',
+    title='Полуфиналы Евро-2016: играем строго от обороны',
+    description='Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди откладывают на потом (или навсегда) какие-то занятия могут быть разные.',
+    info_user='alextazy',
+    info_user_icon=iconTeam | safe,
+    info_time='1 час назад'
+)}}

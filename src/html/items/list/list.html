@@ -1,0 +1,115 @@
+{% from 'macros/helpers.html' import sprite %}
+
+{% macro list(
+    class = '',
+    items = {
+        item1: {
+            class: '',
+            avatar: { src: '', width: '', height: '' },
+            title: 'title',
+            titleicon: '',
+            textbody: 'text',
+            textbodylink: [],
+            info_user: '',
+            info_user_icon: '',
+            info_time: '',
+            withoutAvatar: false
+        }
+    }
+) %}
+
+<ul class="mdl-list {{ class }}">
+  {% for id, item in items %}
+  <li class="mdl-list__item {{ item.class or 'mdl-list__item--more-line' }}">
+    <span class="mdl-list__item-primary-content">
+      
+      {% if item.withoutAvatar %}
+      {% elseif item.avatar | length %}
+        <img class="mdl-list__item-avatar" src="{{ item.avatar.src }}" alt="" width="{{ item.avatar.width }}" height="{{ item.avatar.height }}">
+      {% else %}
+        {{ sprite('person', '0 0 1 1', 'icon mdl-list__item-avatar') }}
+      {% endif %}
+      
+      {% if (item.info_user | length) or (item.info_time | length)  %}
+        <span class="mdl-list__item-info">
+          {% if item.info_user | length %}
+            <a href="" class="mdl-list__item-info-user">
+              {{ item.info_user_icon | safe }}
+              {{ item.info_user | safe }}
+            </a>
+          {% endif %}
+          {% if item.info_time %}
+          <span class="mdl-list__item-info-time">
+            {{ item.info_time | safe }}
+          </span>
+          {% endif %}
+        </span>
+      {% endif %}
+
+      {% if item.title | length %}
+        <a href="" class="mdl-list__item-title">
+          <span>
+            {{ item.titleicon | safe }}
+            {{ item.title | safe }}
+          </span>
+        </a>
+      {% endif %}
+
+      {% if item.textbody | length %}
+        <span class="mdl-list__item-text-body">
+          {{ item.textbody | safe }}
+          {% for link in item.textbodylink %}
+            <a class="link" href="">{{ link }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+
+      {% if item.actions | length %}
+        <span class="mdl-list__item-actions">
+          {{ item.actions | safe }}
+        </span>
+      {% endif %}
+
+    </span>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endmacro %}
+
+
+{% macro listNum(
+    class= '',
+    items= {
+        item1: {
+            class: '',
+            num: '01',
+            title: 'title',
+            hasNewComment: false
+        }
+    }
+) %}
+
+<ul class="mdl-list {{ class }}">
+  {% for id, item in items %}
+  <li class="mdl-list__item {{ item.class or 'mdl-list__item--more-line' }}">
+    <span class="mdl-list__item-primary-content">
+      <span class="mdl-list__item-num">{{ item.num }}</span>
+      <span class="mdl-list__item-header">
+        <span class="mdl-list__item-title">
+          {{ item.title }}
+        </span>
+        <a class="mdl-list__item-header-icon" href="">
+          {{ sprite('comments', '0 0 1 1', 'icon -primary') }}
+          96
+          {% if item.hasNewComment %}
+            / <span class="accent">3</span>
+          {% endif %}
+        </a>
+      </span>
+    </span>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endmacro %}

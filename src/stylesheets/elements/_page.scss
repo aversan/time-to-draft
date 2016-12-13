@@ -1,0 +1,14 @@
+body,
+.page {
+	min-width: 320px;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  &__content {
+    flex: 1;
+  }
+}

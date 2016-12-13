@@ -1,202 +1,202 @@
 .comments-container {
   margin-bottom: 32px;
+  
   .comments-wrapper {
     padding: 32px 14px 19px;
     background-color: $white;
   }
+  
   .title {
+    @include typo-h6;
+    color: $darker-grey;
     margin-bottom: 19px;
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.2;
-    color: $dark-grey;
+    
     &.comment-title {
       margin-bottom: 0;
     }
   }
+  
   .comments-list {
     margin-bottom: 29px;
     padding-top: 8px;
+    
     .comment-item {
       margin-bottom: 16px;
+      
       .comments-list {
         margin-left: 24px;
       }
+      
       .media {
         margin-bottom: 12px;
+        
         .media-left {
           position: relative;
           padding-right: 17px;
+          
           .media-object {
             width: 40px;
             height: 40px;
             border-radius: 20px;
           }
         }
+        
         .media-body {
           margin-top: -2px;
+          
           .comment-text {
+            @include typo-body-sm;
+            color: $darker-grey;
             margin-bottom: 8px;
-            font-family: Roboto;
-            font-size: 14px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.43;
-            color: $greyish-brown;
           }
+          
           .vote-container {
             .vote-list {
               display: inline-block;
               border-radius: 3px;
-              border: solid 1px $white-two;
+              border: solid 1px $light-silver;
+              
               .item {
                 padding: 1px 0;
                 width: 21px;
                 float: left;
-                font-size: 16px;
-                font-weight: normal;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: 1.25;
+                @include typo-body;
+                color: $grey;
                 text-align: center;
-                color: $warm-grey-light;
                 cursor: pointer;
+                
                 &.value {
+                  @include typo-body-sm;
+                  color: $green;
                   cursor: default;
-                  font-family: Roboto;
-                  font-size: 14px;
-                  line-height: 1.43;
-                  color: $algae-green;
                 }
               }
             }
           }
+          
           .answer-container {
             .time {
+              @include typo-body-sm;
+              color: $grey;
               margin-right: 10px;
-              font-family: Roboto;
               display: inline;
-              font-size: 14px;
-              font-weight: normal;
-              font-style: normal;
-              font-stretch: normal;
-              line-height: 1.43;
-              color: $warm-grey-light;
             }
+            
             .answer-button {
+              @include typo-body-sm;
+              color: $green;
               margin-right: 8px;
-              font-family: Roboto;
-              font-size: 14px;
-              font-weight: normal;
-              font-style: normal;
-              font-stretch: normal;
-              line-height: 1.43;
-              color: $algae-green;
+
               &:last-child {
                 margin-right: 0;
               }
             }
           }
         }
+        
         .icon.-expert,
         .icon.-ttd-team {
-          width: 18px;
-          height: 18px;
+          font-size: 18px;
           vertical-align: sub;
+  
+          &,
+          & svg {
+            width: 18px;
+            height: 18px;
+          }
         }
+        
         .author-info {
           height: 24px;
           margin-bottom: -2px;
         }
+        
         .author-name {
-          font-family: Roboto;
-          font-size: 16px;
-          font-weight: 500;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.5;
-          color: $dark-grey;
+          @include typo-body;
+          color: $darker-grey;
         }
       }
     }
   }
+  
   .new-message-container {
     border-top: solid 1px rgba(212, 212, 212, 0.29);
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
+    
     .container-heder {
       padding: 15px 14px;
       background-color: $white;
+      
       .user-image {
         width: 36px;
         height: 36px;
         border-radius: 20px;
       }
+      
       .user-name {
+        @include typo-body;
+        color: $darker-grey;
         margin-left: 10px;
-        font-size: 16px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        color: $greyish-brown;
       }
     }
+    
     .medium-editor-insert-plugin.medium-editor-placeholder:after {
+      @include typo-body;
+      color: $grey;
       padding: 20px 16px;
-      font-family: Roboto;
-      font-size: 16px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      color: $warm-grey-light;
     }
+    
     .b-medium-editor-wrapper {
       background: $white;
+      
       .medium-insert-buttons {
         display: none !important;
       }
+      
       #message-editor-control {
         padding: 0 16px 42px;
         outline: none;
         background-color: $white;
       }
+      
       p {
         margin: 0;
       }
     }
+    
     .b-medium-editor-wrapper-mobile {
       position: relative;
       padding-top: 40px;
       box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
       border-bottom: 1px solid rgba(212, 212, 212, 0.29);
+      
       p {
         margin: 0;
       }
+      
       #mobile-message-editor-control {
         padding: 20px 16px 42px;
         outline: none;
         background-color: $white;
       }
+      
       .medium-editor-toolbar {
         padding-left: 2px;
+        
         li button {
           min-width: 36px !important;
-          font-family: Roboto !important;
+          font-family: $font-family-base !important;
           font-size: 16px !important;
           font-weight: 900 !important;
           font-style: normal !important;
           font-stretch: normal !important;
           line-height: 1.5 !important;
-          color: $greyish-brown !important;
+          color: $darker-grey !important;
           padding: 5px 12px !important;
           background-color: transparent !important;
         }
       }
+      
       .medium-editor-relative-toolbar {
         position: absolute !important;
         display: block !important;
@@ -205,19 +205,19 @@
         width: 100%;
         background-color: transparent;
       }
+      
       .medium-insert-buttons {
         display: none !important;
       }
     }
+    
     .button-wrapper {
       padding-top: 17px;
       background-color: $white;
     }
-    .btn-outline-success {
+    
+    .btn-primary-outline {
       margin-left: 20px;
-      padding: 9px 24px;
-      border-radius: 20px;
-      outline: none;
     }
   }
 }
@@ -228,20 +228,25 @@
       .comment-item {
         .media {
           position: relative;
+          
           .media-body {
             .vote-container {
               position: absolute;
               right: 50px;
               top: 0;
+              
               .vote-list {
                 border-color: transparent;
+                
                 &:hover {
-                  border-color: $white-two;;
+                  border-color: $light-silver;;
+                  
                   .item:first-of-type,
                   .item:last-child {
                     visibility: visible;
                   }
                 }
+                
                 .item:first-of-type,
                 .item:last-child {
                   visibility: hidden;

@@ -1,52 +1,62 @@
 .experts {
-    background: $white;
     display: flex;
-    color: $dark-grey;
     margin: 36px 0 28px 0;
     padding: 6px 0 0 0;
+    background: $white;
+    color: $darker-grey;
+
     .expert {
+        @include typo-body-sm;
+        color: inherit;
         flex-basis: 33.33%;
         flex-grow: 1;
-        font-size: $font-size-sm;
-        line-height: 20px;
         padding: 48px 39px 48px;
     }
+    
     .expert-name {
-        font-size: $font-size-h6;
-        line-height: 24px;
+        @include typo-h6;
+        
         margin: 0 0 10px 0;
+        
         i {
             margin: 0 5px -5px 0;
         }
     }
+    
     .expert-desc {
         margin: 0 0 10px 0;
     }
+    
     .expert-img {
         margin: 0 0 20px 0;
     }
 }
 
 .experts-block {
-    background: $dark-grey;
+    background: $darker-grey;
     color: $white;
+    
     .post-column .post-content {
         overflow: hidden;
     }
+    
     .title {
-        font-size: $font-size-lg;
+        @include typo-title;
         border-bottom: 1px solid rgba(158, 158, 158, 0.27);
         padding-top: 19px;
         padding-bottom: 14px;
     }
+    
     .post-column .post-content .wide-slider__item .wide-slider__item__control .team_name {
         color: $white;
     }
+    
     .wide-slider__item__title {
         a {
             color: $white;
         }
     }
+    
     .wide-slider__item__control, .wide-slider__item {
         width: 100%;
     }
@@ -63,6 +73,7 @@
     .experts .expert {
         flex-basis: 100%;
     }
+    
     .experts-block-title {
         padding-left: 10px;
         padding-right: 10px;

@@ -4,6 +4,7 @@
     &.setsize {
         height: 50px;
         width: 50px;
+        
         .setsize {
             width: 44px;
             height:44px;
@@ -11,7 +12,8 @@
     }
 }
 
-.progress-radial, .progress-radial * {
+.progress-radial,
+.progress-radial * {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -44,7 +46,7 @@
     transform: translate(-50%, -50%);
 }
 
-.progress-radial .overlay p{
+.progress-radial .overlay p {
     position: absolute;
     line-height: 40px;
     text-align: center;

@@ -3,11 +3,13 @@
         &.edit-profile {
             .form-group {
                 position: relative;
+                
                 .icon {
                     position: absolute;
                     left: 0;
                     bottom: 10px;
                 }
+                
                 .field-container {
                     padding-left: 45px;
                 }
@@ -17,15 +19,14 @@
     .modal-footer {
         &.edit-profile {
             padding-bottom: 40px;
+            
             .btn {
-                border-radius: 100px;
-                width: 118px;
-                height: 40px;
-                font-size: $font-size-sm;
+                min-width: 118px;
             }
         }
     }
 }
+
 @include media-breakpoint-down(sm) {
     .modal-open .modal-dialog {
         width: 100vw;

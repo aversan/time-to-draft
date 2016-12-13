@@ -1,17 +1,38 @@
 import 'jquery';
 import 'tether';
+
+// bootstrap
 import 'bootstrap/dist/js/bootstrap';
+
+// uikit
 import 'uikit/dist/js/core/core';
 import 'uikit/dist/js/components/sticky';
+
+// material-design-lite
+import 'material-design-lite/material'
+import 'mdl-selectfield/dist/mdl-selectfield'
+
 import 'swiper';
 import 'owl.carousel/dist/owl.carousel';
 import 'handlebars/dist/handlebars.runtime';
 import 'jquery-sortable/source/js/jquery-sortable';
+import 'nanoscroller';
+
 import MediumEditor from 'medium-editor';
 import 'medium-editor-insert-plugin';
+
 import lazyload from 'jquery-lazyload';
 
 console.log(`app.js has loaded!`);
+
+// nano scroller
+
+$(".nano").nanoScroller({
+    iOSNativeScrolling: true,
+    preventPageScrolling: true,
+    alwaysVisible: false,
+    flashDelay: 1000
+});
 
 var swiperGamebar = new Swiper('.gamebar__container .swiper-container', {
     spaceBetween: 0,
@@ -22,59 +43,136 @@ var swiperGamebar = new Swiper('.gamebar__container .swiper-container', {
     prevButton: '.js-gamebar-prev'
 });
 
-$('.slider-cards').owlCarousel({
-    loop:false,
-    nav:true,
-    items:1
+// slider plays
+
+$('.js-swiper-slider-plays').each(function(){
+    var $wrapper = $(this);
+    var $swiperContainer = $wrapper.find('.js-swiper-container');
+    var $prev = $wrapper.find('.js-swiper-prev');
+    var $next = $wrapper.find('.js-swiper-next');
+    var $pagination = $wrapper.find('.js-swiper-pagination');
+
+    new Swiper($swiperContainer, {
+        loop: false,
+        prevButton: $prev,
+        nextButton: $next,
+        spaceBetween: 40,
+        slidesPerView: 3,
+        pagination: $pagination,
+        paginationClickable: true,
+        breakpoints: {
+            1248: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            },
+            960: {
+                slidesPerView: 1,
+                spaceBetween: 32
+            }
+        }        
+    });
 });
 
-var EXPERTS_SLIDER = $('.slider-promo');
-EXPERTS_SLIDER.owlCarousel({
-    loop:true,
-    nav:false,
-    items:4,
-    margin: 20,
-    responsive: {
-        0: {
-            items: 1
-        },
-        544: {
-            items: 2
-        },
+// panel news
+
+$('.js-swiper-news').each(function(){
+    var $wrapper = $(this);
+    var $swiperContainer = $wrapper.find('.js-swiper-container');
+    var $prev = $wrapper.find('.js-swiper-prev');
+    var $next = $wrapper.find('.js-swiper-next');
+
+    new Swiper($swiperContainer, {
+        loop: false,
+        prevButton: $prev,
+        nextButton: $next,
+        spaceBetween: 20,
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        breakpoints: {
+            1248: {
+                slidesPerView: 3,
+                slidesPerColumn: 2,
+                spaceBetween: 20
+            },
+            960: {
+                slidesPerView: 1,
+                slidesPerColumn: 3,
+                spaceBetween: 16
+            }
+        }        
+    });
+});
+
+// slider promo
+
+$('.js-swiper-slider-promo').each(function(){
+    var $wrapper = $(this);
+    var $swiperContainer = $wrapper.find('.js-swiper-container');
+    var $prev = $wrapper.find('.js-swiper-prev');
+    var $next = $wrapper.find('.js-swiper-next');
+    var $pagination = $wrapper.find('.js-swiper-pagination');
+
+    new Swiper($swiperContainer, {
+        loop: false,
+        prevButton: $prev,
+        nextButton: $next,
+        spaceBetween: 20,
+        slidesPerView: 4,
+        pagination: $pagination,
+        paginationClickable: true,
+        breakpoints: {
+            1248: {
+                slidesPerView: 'auto',
+                scrollbarHide: true,
+                spaceBetween: 20,
+                centeredSlides: false,
+                grabCursor: true,
+                freeMode: false
+            },
+            960: {
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+                centeredSlides: false,
+                grabCursor: true,
+                freeMode: false                
+            }
+        }        
+    });
+});
+
+// slider cards
+
+$('.js-swiper-slider-cards').each(function(){
+    var $wrapper = $(this);
+    var $swiperContainer = $wrapper.find('.js-swiper-container');
+    var $prev = $wrapper.find('.js-swiper-prev');
+    var $next = $wrapper.find('.js-swiper-next');
+    var $pagination = $wrapper.find('.js-swiper-pagination');
+
+    new Swiper($swiperContainer, {
+        loop: false,
+        prevButton: $prev,
+        nextButton: $next,
+        spaceBetween: 20,
+        slidesPerView: 1,
+        pagination: $pagination,
+        paginationClickable: true,
         960: {
-            items: 4
+            spaceBetween: 16
         }
-    }
-
-
-
-});
-$('.slider-promo__wrapper').on('click', '.next__arrow', function () {
-    EXPERTS_SLIDER.trigger('next.owl');
-});
-$('.slider-promo__wrapper').on('click', '.prev__arrow', function () {
-    EXPERTS_SLIDER.trigger('prev.owl');
+    });
 });
 
+// scroller
 
-$('.js-wide-slider').owlCarousel({
-    loop:false,
-    nav:true,
-    items:3,
-    mouseDrag: true,
-    responsive: {
-        0: {
-            items: 1
-        },
-        544: {
-            items: 2
-        },
-        960: {
-            items: 3
-        }
-    }
-
+new Swiper('.js-swiper-container-scrollable', {
+    scrollbar: '.swiper-scrollbar',
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    mousewheelControl: true,
+    freeMode: true
 });
+
 
 $('.recommended-to-read-slider').owlCarousel({
     loop:false,

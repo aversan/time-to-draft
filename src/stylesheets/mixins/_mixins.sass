@@ -32,4 +32,11 @@
     transform: rotate(135deg)
 
 
+@mixin clearfix()
+  &:before,
+  &:after
+    content: ""
+    display: table
 
+  &:after
+    clear: both

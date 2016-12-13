@@ -4,128 +4,159 @@
         height: auto;
         position: relative;
         z-index: 1;
+        
         &:after {
             opacity: 0.4;
         }
     }
+    
     .gr-logo {
         margin: 55px 0 20px 0;
         width: 78px;
         border-width: 3px;
     }
+    
     .gr-title {
-        font-weight: 900;
+        @include typo-h1;
         color: $white;
     }
+    
     .gr-stars {
         margin: 0 0 30px 0;
+        
         .icon {
             margin-top: 0;
+            
             &:first-child {
                 margin-top: 0;
             }
         }
     }
+    
     .gt-body {
+        @include typo-body-lg;
         color: $white;
-        font-size: $font-size-lg;
     }
+    
     .gt-links {
         margin: 32px 0 42px 0;
+        
         a {
-            color: $warm-grey-light;
+            color: $grey;
         }
+        
         .sep {
             padding: 0 5px;
         }
+        
         span {
             color: $white;
         }
     }
+    
     .gr-btn {
         margin-top: 0;
         width: 270px;
         height: 56px;
         margin-bottom: 73px;
     }
+    
     .playground-mid {
         padding-bottom: 55px;
         border-bottom: 1px solid rgba(158, 158, 158, 0.27);
         margin-bottom: 45px;
     }
+    
     .gt-desc {
         margin: 55px 0 30px 0;
-        color: $greyish-brown;
         line-height: 28px;
+        color: $darker-grey;
+        
         i {
-            color: $warm-grey-light;
+            color: $grey;
         }
     }
+    
     .gt-expert {
         display: flex;
         justify-content: center;
+        
         .expert-info {
             padding: 2px 0;
         }
+        
         .icon.-expert {
-            width: 14px;
-            height: 14px;
+            &,
+            & svg {
+              width: 14px;
+              height: 14px;
+            }
         }
-        .expert-img img{
+        
+        .expert-img img {
             width: 46px;
             margin: 0 20px 0 0;
         }
+        
         .expert-desc {
-            color: $warm-grey-light;
+            color: $grey;
         }
     }
     .playground-info {
-        background: $white;
         padding: 35px 0 55px 0;
+        background: $white;
+        
         .pr-value {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+        
         .gr-val-img {
             position: relative;
             height: 75px;
             margin-bottom: 20px;
+            
             .icon.-check {
                 position: absolute;
                 right: -6px;
                 top: -8px;
             }
+            
             &.not-available {
                 .icon.-check {
                     display: none;
                 }
+                
                 .icon {
                     opacity: 0.2;
                 }
             }
         }
+        
         .gr-val-name {
-            color: $warm-grey;
-            line-height: 24px;
-            font-weight: 500;
-            font-size: $font-size-lg;
+            @include typo-h5;
+            color: $dark-grey;
         }
+        
         .pi-val {
-            font-family: 'Exo 2', sans-serif;
+            font-family: $font-family-alt;
             font-size: 56px;
             line-height: 44px;
             padding-top: 10px;
         }
+        
         .progress-radial {
             &.setsize {
                 height: 76px;
                 width: 76px;
+                
                 .pi-val {
                     padding: 0;
                     font-size: 40px;
                     line-height: 39px;
                 }
+                
                 .setsize {
                     width: 66px;
                     height:66px;
@@ -133,6 +164,7 @@
             }
         }
     }
+    
     .review-btn {
         border-top: 1px solid rgba(158, 158, 158, 0.27);
         padding-top: 40px;
@@ -143,33 +175,44 @@
     .playground-full  {
         .playground-info {
             padding: 35px 0 20px 0;
+            
             .pr-value {
                 margin-bottom: 35px;
             }
         }
+        
         .gr-logo {
             width: 70px;
         }
+        
         .gr-title {
-            font-size: $font-size-h3;
+            @include typo-h3;
+            color: $white;
         }
+        
         .gt-body {
-            font-size: $font-size-root;
+            @include typo-body;
+            color: $white;
         }
+        
         .playground-mid {
            margin-bottom: 32px;
         }
+        
         .gt-desc {
             font-size: $font-size-lg;
         }
+        
         .playground-info {
             .pi-val {
                 font-size: $font-size-h2;
             }
         }
+        
         .gr-val-name {
             font-size: $font-size-sm;
         }
+        
         .gr-btn {
             font-size: $font-size-root;
             width: 270px;
