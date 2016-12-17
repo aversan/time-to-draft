@@ -1,0 +1,243 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/tabs/tabs.html" as tabs %}
+{% import "items/list/list.html" as list %}
+
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert"></i>
+{% endset %}
+
+{% set listBeginner %}
+    {{list.listNum(
+      items= {
+        item1: {
+          num: '01',
+          title: '<a href="">Daily Fantasy Sport: Как начать играть?</a>'
+        },
+        item2: {
+          num: '02',
+          title: '<a href="">Хороший результат в Daily Fantasy при слабом знании матчасти?</a>',
+          hasNewComment: true
+        },
+        item3: {
+          num: '03',
+          title: '<a href="">8 советов для начинающих: от первых игр до вывода денег</a>'
+        },
+        item4: {
+          num: '04',
+          title: '<a href="">Главные правила игры в Daily Fantasy КХЛ</a>'
+        }
+      }
+    )}}
+{% endset %}
+
+{% set listProfi %}
+    {{list.listNum(
+      items= {
+        item1: {
+          num: '01',
+          title: '<a href="">Daily Fantasy Sport: Как начать играть?</a>'
+        },
+        item2: {
+          num: '02',
+          title: '<a href="">Хороший результат в Daily Fantasy при слабом знании матчасти?</a>'
+        },
+        item3: {
+          num: '03',
+          title: '<a href="">8 советов для начинающих: от первых игр до вывода денег</a>'
+        },
+        item4: {
+          num: '04',
+          title: '<a href="">Главные правила игры в Daily Fantasy КХЛ</a>'
+        }
+      }
+    )}}
+{% endset %}
+
+{% set listForum %}
+    {{list.list(
+        items = {
+            item1: {
+                class: 'mdl-list__item--more-line',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                info_user: "alextazy",
+                info_user_icon: iconTeam,
+                title: '<a href="">Конкурс прогнозов по Евро-2016 на TimeToDraft</a>'
+            },
+            item2: {
+                class: 'mdl-list__item--more-line',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                info_user: "maybe",
+                title: '<a href="">Чем вам нравится фэнтези?</a>'
+            },
+            item3: {
+                class: 'mdl-list__item--more-line',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                info_user: "Zweeler",
+                title: '<a href="">€5 от TimeToDraft на площадке Zwеeler</a>'
+            },
+            item4: {
+                class: 'mdl-list__item--more-line',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                info_user: "Eugene Leshkovich",
+                info_user_icon: iconExpert,
+                title: '<a href="">Отвечает Eugene Leshkovich</a>'
+            },
+            item5: {
+                class: 'mdl-list__item--more-line',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                info_user: "maybe",
+                title: '<a href="">Чем вам не нравится фэнтези?</a>'
+            }
+        }
+    )}}
+{% endset %}
+
+{% set listPlay %}
+    {{list.list(
+        class = 'mdl-list--sep',
+        items = {
+            item1: {
+                class: 'mdl-list__item--more-line mdl-list__item--actions',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                title: '<a href="">Фрироллы по €2000 на каждый тур Евро-2016</a>&nbsp;<span class="text-label">New</span>',
+                actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">FanTeam</a>'
+            },
+            item2: {
+                class: 'mdl-list__item--more-line mdl-list__item--actions',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                title: '<a href="">Фрироллы по Евро-2016 на 250.000 рублей</a>',
+                actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Total Draft</a>'
+            },
+            item3: {
+                class: 'mdl-list__item--more-line mdl-list__item--actions',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                title: '<a href="">Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)</a>',
+                actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>'
+            },
+            item4: {
+                class: 'mdl-list__item--more-line mdl-list__item--actions',
+                avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                title: '<a href="">Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)</a>',
+                actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>'
+            }
+        }
+    )}}
+{% endset %}
+
+{% set sectionBeginnerProfi %}
+    <section class="panel panel--transparent hidden-sm-down">
+        {{tabs.tabs(
+            class = '',
+            items = {
+                item1: {
+                    class: 'is-active',
+                    id: 'tab-side-beginner',
+                    title: 'Новичкам',
+                    content: listBeginner
+                },
+                item2: {
+                    class: '',
+                    id: 'tab-side-profi',
+                    title: 'Продвинутым',
+                    content: listProfi
+                }        
+            }
+        )}}
+    </section>
+{% endset %}
+
+{% set sectionPlay %}
+    <section class="panel panel--transparent">
+        <header class="typo--header hidden-sm-down">
+            <h6 class="typo--title">
+                <a href="">Где поиграть?</a>
+            </h6>
+        </header>
+        <div class="panel-content">
+            {{ listPlay | safe }}
+        </div>
+    </section>
+{% endset %}
+
+{% set sectionForum %}
+    <section class="panel panel--transparent">
+        <header class="typo--header hidden-sm-down">
+            <h6 class="typo--title">
+                <a href="">Новое на форумах</a>
+            </h6>
+        </header>
+        <div class="panel-content">
+            {{ listForum | safe }}
+        </div>
+    </section>
+{% endset %}
+
+{% set sectionBeginner %}
+    <section class="panel panel--transparent">
+        <header class="typo--header hidden-sm-down">
+            <h6 class="typo--title">
+                <a href="">Новичкам</a>
+            </h6>
+        </header>
+        <div class="panel-content">
+            {{ listBeginner | safe }}
+        </div>
+    </section>
+{% endset %}
+
+{% set sectionProfi %}
+    <section class="panel panel--transparent">
+        <header class="typo--header hidden-sm-down">
+            <h6 class="typo--title">
+                <a href="">Продвинутым</a>
+            </h6>
+        </header>
+        <div class="panel-content">
+            {{ listProfi | safe }}
+        </div>
+    </section>
+{% endset %}
+
+{{ sectionBeginnerProfi | safe  }}
+<div class="panel-component panel-component--transparent panel-component--side">
+    <div class="container">
+        {{tabs.tabs(
+            class = 'row panel-row',
+            classBar = 'hidden-md-up col-sm-12 flex-xs-first flex-md-unordered',
+            items = {
+                item1: {
+                    class: '',
+                    classPanel: 'panel-column col-sm-12',
+                    id: 'tab-side-forum-2',
+                    title: 'Новое на форумах',
+                    content: sectionForum
+                },
+                item2: {
+                    class: 'is-active flex-xs-first flex-md-unordered',
+                    classPanel: 'panel-column col-sm-12',
+                    id: 'tab-side-play-2',
+                    title: 'Где поиграть?',
+                    content: sectionPlay
+                },
+                item3: {
+                    class: '',
+                    classPanel: 'panel-column col-sm-12 hidden-md-up',
+                    id: 'tab-side-beginner-2',
+                    title: 'Новичкам',
+                    content: sectionBeginner
+                },
+                item4: {
+                    class: '',
+                    classPanel: 'panel-column col-sm-12 hidden-md-up',
+                    id: 'tab-side-profi-2',
+                    title: 'Продвинутым',
+                    content: sectionProfi
+                }
+            }
+        )}}
+    </div>
+</div>

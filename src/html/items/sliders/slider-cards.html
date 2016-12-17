@@ -3,25 +3,74 @@
 
 <div class="slider-cards__container js-swiper-slider-cards">
     <div class="slider-cards__wrapper">
+        <section class="card card--num card--accent">
+            <a href="#" class="label label--type card__label outline">Новичкам</a>
+            <div class="swiper-container js-swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider-cards__item">
+                        <div class="card__num">01</div>
+                        <div class="card__content">
+                            <h2 class="card__title">
+                                <a href="">Daily Fantasy Sport: Как начать играть?</a>
+                            </h2>
+                            <div class="card__description">
+                                Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди
+                            </div>
+                        </div>
+                        <div class="slider-cards__item-icons">
+                            {% include "items/cards/card-icons.html" %}
+                        </div>
+                    </div>
+                    <div class="swiper-slide slider-cards__item">
+                        <div class="card__num">02</div>
+                        <div class="card__content">
+                            <h2 class="card__title">
+                                <a href="">Daily Fantasy Sport: Как начать играть?</a>
+                            </h2>
+                            <div class="card__description">
+                                Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди
+                            </div>
+                        </div>
+                        <div class="slider-cards__item-icons">
+                            {% include "items/cards/card-icons.html" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="js-swiper-icons">
+                {% include "items/cards/card-icons.html" %}
+            </div>
+        </section>
+        <div class="slider-cards__nav">
+            <div class="icon icon--prev-sm -contrast js-swiper-prev slider-cards__prev" title="Предыдущий"></div>
+            <div class="icon icon--next-sm -contrast js-swiper-next slider-cards__next" title="Следующий"></div>
+        </div>
+        <div class="slider-cards__pagination js-swiper-pagination"></div>        
+    </div>
+</div>
+
+
+<!-- <div class="slider-cards__container js-swiper-slider-cards">
+    <div class="slider-cards__wrapper">
         <div class="swiper-container js-swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slider-cards__item">
                     {{cards.card(
-                        class='card--num card--accent card--hoverable',
+                        class='card--num card--accent',
                         num='01',
                         label_type='outline',
                         label_text='Новичкам',
-                        title='Daily Fantasy Sport: Как начать играть?',
+                        title='<a href="">Daily Fantasy Sport: Как начать играть?</a>',
                         description='Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди'
                     )}}
                 </div>
                 <div class="swiper-slide slider-cards__item">
                     {{cards.card(
-                        class='card--num card--accent card--hoverable',
+                        class='card--num card--accent',
                         num='02',
                         label_type='outline',
                         label_text='Новичкам',
-                        title='Daily Fantasy Sport: Как начать играть?',
+                        title='<a href="">Daily Fantasy Sport: Как начать играть?</a>',
                         description='Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди'
                     )}}
                 </div>
@@ -34,3 +83,4 @@
         </div>
     </div>
 </div>
+ -->

@@ -26,7 +26,6 @@
 .post-item__info {
   overflow: hidden;
   margin-bottom: 12px;
-  order: -2;
 
   @include media-breakpoint-down(sm) {
     margin-bottom: 8px;
@@ -35,9 +34,19 @@
 
 // info ava
 
-.post-item__info-ava {
+.post-item__info-ava,
+.avatar.post-item__info-ava {
   float: left;
   margin-right: 12px;
+  width: $avatar-size-5;
+  height: $avatar-size-5;
+  position: relative;
+  z-index: 1;
+
+  @include media-breakpoint-down(sm) {
+    width: $avatar-size-6;
+    height: $avatar-size-6;
+  }
 }
 
 // info name
@@ -45,9 +54,14 @@
 .post-item__info-name {
   @include typo-body;
   color: $darker-grey;
+  position: relative;
+  z-index: 1;
 
   @include media-breakpoint-down(sm) {
     @include typo-body-sm;
+    position: relative;
+    top: -.3rem;
+    margin-bottom: -.3rem;
   }
 }
 
@@ -56,6 +70,13 @@
 .post-item__info-time {
   @include typo-caption;
   color: $grey;
+
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    top: -.3rem;
+    margin-bottom: -.3rem;
+
+  }
 }
 
 // image
@@ -67,7 +88,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 16px;
-  order: -1;
 
   @include media-breakpoint-down(md) {
     height: 175px;
@@ -86,6 +106,8 @@
   line-height: 1.22;
   font-weight: bold;
   color: $darker-grey;
+  position: relative;
+  z-index: 1;
 
   @include media-breakpoint-down(sm) {
     @include typo-title;
@@ -119,10 +141,21 @@
     left: 20px;
     bottom: 20px;
     border-bottom: 20px;
+    z-index: 1;
 
     @include media-breakpoint-down(sm) {
       left: 16px;
       bottom: 14px;
     }
   }
+}
+
+// area link
+
+.post-item__area-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }

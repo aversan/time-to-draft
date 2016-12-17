@@ -9,7 +9,23 @@
 }
 
 .slider-plays__item { 
+  align-self: stretch;
   margin: 0;
+
+  &.mdl-list__item--more-line .mdl-list__item-primary-content {
+    padding-bottom: 0;
+    align-self: stretch;
+    padding-bottom: 52px;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 48px;
+    }
+
+    .mdl-list__item-actions {
+      position: absolute;
+      bottom: 0;
+    }
+  }
 }
 
 .slider-plays__pagination {

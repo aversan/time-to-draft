@@ -12,10 +12,17 @@
 ) %}
 
 <div class="mdl-tabs mdl-js-tabs {{ class }}">
-    <div class="mdl-tabs__tab-bar {{ classBar }}">
-        {% for id, item in items %}
-            <a href="#{{ item.id }}" class="mdl-tabs__tab {{ item.class }}">{{ item.title | safe }}</a>
-        {% endfor %}
+    <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container {{ classBar }}">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="mdl-tabs__tab-bar {{ classBar }}">
+                    {% for id, item in items %}
+                        <a href="#{{ item.id }}" class="mdl-tabs__tab {{ item.class }}">{{ item.title | safe }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
     </div>
     {% for id, item in items %}
         <div class="mdl-tabs__panel {{ item.class }} {{ item.classPanel }}" id="{{ item.id }}">

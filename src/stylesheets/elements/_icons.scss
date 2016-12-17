@@ -101,6 +101,21 @@
 	}
 }
 
+// expert2
+
+.icon.-expert2 {
+	color: $expert-color;
+	background-image: $expert2-icon;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&:before {
+		display: none;
+	}
+}
+
+
 // dark grey
 
 .icon.-down,
@@ -232,8 +247,8 @@
 		
 		&,
 		& svg {
-			width: 23px;
-			height: 10px;			
+			width: auto;
+			height: 22px;
 		}
 	}
 
@@ -288,7 +303,6 @@
 		font-size: 26px;
 		line-height: 1;
 		text-align: center;
-		border-radius: 4px;
 		overflow: hidden;
 
 		&,
@@ -311,6 +325,19 @@
 		}
 	}
 	
+	&.-expert2 {
+		font-size: 26px;
+		line-height: 1;
+		text-align: center;
+		overflow: hidden;
+
+		&,
+		& svg {
+			width: 26px;
+			height: 26px;			
+		}
+	}
+
 	&.-ttd-team {
 		font-size: 26px;
 		line-height: 1;
@@ -407,7 +434,9 @@
 		}
 	}
 
-	&.-note {
+	&.-note,
+	&.-notification,
+	&.-notification-blank {
 		font-size: 18px;
 		line-height: 1;
 		height: 18px;
@@ -955,7 +984,7 @@
 	&--next-lg {
 		&:before {
 			transform: rotate(-135deg);
-			margin-left: -6px;
+			margin-left: -7px;
 		}
 	}
 

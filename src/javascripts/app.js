@@ -16,23 +16,24 @@ import 'swiper';
 import 'owl.carousel/dist/owl.carousel';
 import 'handlebars/dist/handlebars.runtime';
 import 'jquery-sortable/source/js/jquery-sortable';
-import 'nanoscroller';
+// import 'nanoscroller';
 
 import MediumEditor from 'medium-editor';
 import 'medium-editor-insert-plugin';
 
 import lazyload from 'jquery-lazyload';
+// import 'jquery-match-height';
 
 console.log(`app.js has loaded!`);
 
 // nano scroller
 
-$(".nano").nanoScroller({
-    iOSNativeScrolling: true,
-    preventPageScrolling: true,
-    alwaysVisible: false,
-    flashDelay: 1000
-});
+// $(".nano").nanoScroller({
+//     iOSNativeScrolling: true,
+//     preventPageScrolling: true,
+//     alwaysVisible: false,
+//     flashDelay: 1000
+// });
 
 var swiperGamebar = new Swiper('.gamebar__container .swiper-container', {
     spaceBetween: 0,
@@ -43,6 +44,10 @@ var swiperGamebar = new Swiper('.gamebar__container .swiper-container', {
     prevButton: '.js-gamebar-prev'
 });
 
+// $('[data-mh=panel-content-twitter-group]').matchHeight({
+//     target: $('.mh-target')
+// });
+
 // slider plays
 
 $('.js-swiper-slider-plays').each(function(){
@@ -52,21 +57,25 @@ $('.js-swiper-slider-plays').each(function(){
     var $next = $wrapper.find('.js-swiper-next');
     var $pagination = $wrapper.find('.js-swiper-pagination');
 
-    new Swiper($swiperContainer, {
+    var swiper = new Swiper($swiperContainer, {
         loop: false,
         prevButton: $prev,
         nextButton: $next,
         spaceBetween: 40,
         slidesPerView: 3,
+        slidesPerGroup: 3,
         pagination: $pagination,
         paginationClickable: true,
+        autoHeight: true,
         breakpoints: {
             1248: {
                 slidesPerView: 3,
+                slidesPerGroup: 3,
                 spaceBetween: 40
             },
             960: {
                 slidesPerView: 1,
+                slidesPerGroup: 1,
                 spaceBetween: 32
             }
         }        
@@ -87,15 +96,18 @@ $('.js-swiper-news').each(function(){
         nextButton: $next,
         spaceBetween: 20,
         slidesPerView: 3,
+        slidesPerGroup: 3,
         slidesPerColumn: 2,
         breakpoints: {
             1248: {
                 slidesPerView: 3,
+                slidesPerGroup: 3,
                 slidesPerColumn: 2,
                 spaceBetween: 20
             },
             960: {
                 slidesPerView: 1,
+                slidesPerGroup: 1,
                 slidesPerColumn: 3,
                 spaceBetween: 16
             }
@@ -112,27 +124,28 @@ $('.js-swiper-slider-promo').each(function(){
     var $next = $wrapper.find('.js-swiper-next');
     var $pagination = $wrapper.find('.js-swiper-pagination');
 
-    new Swiper($swiperContainer, {
+    var swiper = new Swiper($swiperContainer, {
         loop: false,
         prevButton: $prev,
         nextButton: $next,
         spaceBetween: 20,
         slidesPerView: 4,
+        slidesPerGroup: 4,
         pagination: $pagination,
         paginationClickable: true,
         breakpoints: {
             1248: {
                 slidesPerView: 'auto',
+                slidesPerGroup: 3,
                 scrollbarHide: true,
                 spaceBetween: 20,
-                centeredSlides: false,
                 grabCursor: true,
                 freeMode: false
             },
             960: {
                 slidesPerView: 'auto',
+                slidesPerGroup: 1,
                 spaceBetween: 16,
-                centeredSlides: false,
                 grabCursor: true,
                 freeMode: false                
             }
@@ -148,8 +161,9 @@ $('.js-swiper-slider-cards').each(function(){
     var $prev = $wrapper.find('.js-swiper-prev');
     var $next = $wrapper.find('.js-swiper-next');
     var $pagination = $wrapper.find('.js-swiper-pagination');
+    var $iconsContainer = $wrapper.find('.js-swiper-icons');
 
-    new Swiper($swiperContainer, {
+    var swiper = new Swiper($swiperContainer, {
         loop: false,
         prevButton: $prev,
         nextButton: $next,
@@ -161,6 +175,30 @@ $('.js-swiper-slider-cards').each(function(){
             spaceBetween: 16
         }
     });
+
+    swiper.on('slideChangeStart', function(swiper){
+        var $iconsOut = $iconsContainer.find('.card-icons');
+        var $iconsIn = $swiperContainer.find('.swiper-slide-active .slider-cards__item-icons .card-icons').clone();
+
+        $iconsIn.hide().appendTo($iconsContainer);
+        $iconsOut.fadeOut(300, function(){
+            $iconsOut.remove();
+        });
+        $iconsIn.fadeIn(300);
+    });
+});
+
+// tabs scroller
+
+new Swiper('.js-swiper-container-tabs', {
+    scrollbar: '.swiper-scrollbar',
+    scrollbarHide: true,
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    mousewheelControl: false,
+    freeMode: true,
+    centeredSlides: false,
+    grabCursor: true
 });
 
 // scroller

@@ -74,3 +74,16 @@
     width: calc(100% - 24px);
   }
 }
+
+.mdl-tabs__bar-container {
+  width: 100%;
+
+  .swiper-slide {
+    min-width: 100%;
+    width: auto;
+  }
+}
+
+.mdl-tabs__bar-container .swiper-scrollbar {
+  display: none;
+}

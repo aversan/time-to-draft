@@ -61,6 +61,7 @@
     "handlebars": "^4.0.5",
     "jquery": "^3.1.1",
     "jquery-lazyload": "^1.9.7",
+    "jquery-match-height": "^0.7.0",
     "jquery-sortable": "^0.9.13",
     "jquery-ui": "^1.12.1",
     "jquery.ui.widget": "^1.10.3",

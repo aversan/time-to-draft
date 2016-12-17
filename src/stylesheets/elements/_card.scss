@@ -12,21 +12,27 @@ $card-banner-background-color: #f4fff8;
   display: block;
   width: 100%;
   max-width: 100%;
+  overflow: hidden;
 
   @include media-breakpoint-down(md) {
-    padding: $card-img-height-md 20px 66px 20px;
+    padding-top: $card-img-height-md;
+    padding-bottom: 66px;
   }
 
   @include media-breakpoint-down(sm) {
     padding-left: 16px;
     padding-right: 16px;
     margin-bottom: 4px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 
   .card-icons {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    z-index: 1;
 
     @include media-breakpoint-down(md) {
       left: 16px;
@@ -96,29 +102,16 @@ $card-banner-background-color: #f4fff8;
       padding-top: $card-img-height-md;
     }
 
-    .card__bg-1,
-    .card__bg-2,
-    .card__bg-3 {
+    &::before {
+      content: '';
       display: block;
       width: 100%;
       height: 100%;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.23) 60%, rgba(0, 0, 0, 0.34)), linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
       border-radius: 2px;
       position: absolute;
       left: 0;
       top: 0;
-    }
-
-    .card__bg-1 {
-      background-color: #202b39;
-      opacity: .6;
-    }
-
-    .card__bg-2 {
-      background-color: rgba(30, 66, 30, 0.69);
-    }
-    
-    .card__shadow {
-      background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.23) 60%, rgba(0, 0, 0, 0.34)), linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));;
     }
   }
 
@@ -219,6 +212,10 @@ $card-banner-background-color: #f4fff8;
     height: $card-img-height-md;
   }
 
+  @include media-breakpoint-down(sm) {
+    border-radius: 0;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -228,9 +225,17 @@ $card-banner-background-color: #f4fff8;
     border-radius: 2px 2px 0 0;
     position: absolute;
 
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+    }
+
     .card--overlap & {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.23) 60%, rgba(0, 0, 0, 0.34)), linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
       border-radius: 2px;
+
+      @include media-breakpoint-down(sm) {
+        border-radius: 0;
+      }
     }
 
     .card--overlap-md-up & {
@@ -244,6 +249,10 @@ $card-banner-background-color: #f4fff8;
   .card--overlap & {
     height: 100%;
     border-radius: 2px;
+
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+    }
   }
 
   .card--overlap-md-up & {
@@ -293,6 +302,7 @@ $card-banner-background-color: #f4fff8;
   position: absolute;
   top: 16px;
   left: 16px;
+  z-index: 2;
 }
 
 // info
@@ -342,13 +352,26 @@ $card-banner-background-color: #f4fff8;
     text-align: center;
 
     .card__info-primary {
-      display: inline-block;
+      display: inline-flex;
       text-align: left;
+    }
+
+    .card__info-primary-inner {
+      display: block;
     }
 
     @include media-breakpoint-down(md) {
       margin-top: 16px;
       margin-bottom: 16px;
+    }
+
+    .card__info-user-sub-title {
+      max-width: 182px;
+    }
+
+    .icon.-expert2 {
+      width: 17px;
+      height: 18px;
     }
   }
 }
@@ -362,6 +385,8 @@ $card-banner-background-color: #f4fff8;
   color: $white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 
   &:hover,
   &:focus {
@@ -396,7 +421,6 @@ $card-banner-background-color: #f4fff8;
   }
 
   .card--banner--quote & {
-    overflow: hidden;
     text-shadow: none;
   }
 }
@@ -428,6 +452,8 @@ $card-banner-background-color: #f4fff8;
   margin-bottom: 8px;
   color: $darker-grey;
   max-width: 570px;
+  position: relative;
+  z-index: 1;
 
   @include media-breakpoint-down(md) {
     @include typo-title;
@@ -520,6 +546,10 @@ $card-banner-background-color: #f4fff8;
   .card--banner & {
     padding-top: 40px;
     padding-bottom: 8px;
+
+    @include media-breakpoint-down(sm) {
+      overflow: hidden;
+    }
   }
 
   .card--banner--quote & {
@@ -566,7 +596,6 @@ $card-banner-background-color: #f4fff8;
   }
 
   .card--banner--quote & {
-    overflow: hidden;
     text-shadow: none;
     color: #fff;
   }
@@ -744,8 +773,14 @@ $card-banner-background-color: #f4fff8;
   .new {
     font-weight: 700;
     color: $darker-grey;
+
+    .card--accent & {
+      color: $white;
+    }
   }
 }
+
+// actions
 
 .card__actions {
   .card--banner & {
@@ -760,4 +795,14 @@ $card-banner-background-color: #f4fff8;
       margin-right: auto;
     }
   }
+}
+
+// area link
+
+.card__area-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }

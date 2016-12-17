@@ -1,4 +1,7 @@
 {% extends 'layouts/application.html' %}
+{% import "items/posts/posts-control.html" as postscontrol %}
+{% import "items/posts/post-item.html" as item %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
@@ -8,8 +11,28 @@
     <h3 class="h3">Post</h3>
     <br>
 </div>
-{% include "items/posts/post-all.html" %}
-
+{{postscontrol.postscontrol(
+    class = '',
+    title = 'В центре внимания',
+    title2 = 'Лента событий',
+    label = 'Все посты',
+    content_choose = choose,
+    content_all = all
+)}}
+<div class="container">
+	{% include "items/posts/post-write.html" %}
+	<div class="posts-list">
+	    {{item.post(
+	        title='<a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a>',
+	        description='Какие изменения ждут FanTeam в ближайшие несколько недель.',
+	        user_ava='/images/users/userpic-8@3x.png',
+	        info_user='FanTeam',
+	        info_time='1 час назад',
+	        image='/images/content/bitmap@3x.jpg',
+	        hasNewComment=true
+	    )}}
+	</div>
+</div>
 <br>
 <br>
 <br>

@@ -9,188 +9,200 @@
   @include media-breakpoint-up(lg) {
     margin-top: 60px;
   }
+}
 
-  // container
-  
-  &__container {
-    padding-top: 18px;
-    padding-bottom: 32px;
+// container
+
+.footer__container {
+  padding-top: 18px;
+  padding-bottom: 32px;
+  min-height: 228px;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 32px;
+    padding-top: 32px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 38px;
+    padding-bottom: 58px;
+    min-height: 262px;
+  }
+}
+
+// title
+
+.footer__title {
+  @include typo-title-2;
+  color: $darker-grey;    
+
+  .footer__contacts & {
+    margin-bottom: 6px;
+  }
+
+  .footer__subscribe & {
+    margin-bottom: 12px;
+  }
+}
+
+// contacts
+
+.footer__contacts {
+  .social-networks {
+    padding-left: 0;
+    list-style: none;        
+    @include clearfix;
+    margin-bottom: 20px;
+    float: left;
 
     @include media-breakpoint-up(md) {
-      padding-top: 32px;
-      padding-top: 32px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      padding-top: 38px;
-      padding-bottom: 58px;
-    }
-  }
-  
-  // title
-
-  &__title {
-    @include typo-title-2;
-    color: $darker-grey;    
-
-    .footer__contacts & {
-      margin-bottom: 6px;
-    }
-
-    .footer__subscribe & {
-      margin-bottom: 12px;
-    }
-  }
-
-  // contacts
-
-  &__contacts {
-    .social-networks {
-      padding-left: 0;
-      list-style: none;        
-      @include clearfix;
-      margin-bottom: 20px;
-      float: left;
-
-      @include media-breakpoint-up(md) {
-        margin-bottom: 36px;
-      }
-      
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 38px;
-      }
-      
-      .list-item {
-        float: left;
-        margin-right: 24px;
-      }
-    }
-
-    .email {
-      display: inline-block;
-      @include typo-body;
-      color: $grey;
-      margin-bottom: 20px;
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        color: $grey;       
-      }
-
-      @include media-breakpoint-up(md) {
-        display: block;
-        @include typo-body-sm;
-        line-height: 1.86;
-        margin-bottom: 16px;
-      }
-
-    }     
-  }
-
-  
-  // brand
-  
-  .footer__brand {
-    display: inline-block;
-    margin-bottom: 16px;
-
-    @include media-breakpoint-up(md) {
-      position: absolute;
-      top: 100%;
-      left: -200%;
-      margin-left: 16px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      left: -300%;
-    }
-
-    .logo {
-      height: 29px;
-      width: auto;
-    }
-  }
-  
-  // copyright
-
-  &__copyright {
-    display: block;
-    @include typo-body-sm;
-    color: $grey;
-    margin-bottom: 18px;
-
-    @include media-breakpoint-up(md) {
-      @include typo-body;
-      margin-bottom: 12px;
+      margin-bottom: 36px;
     }
     
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 38px;
+    }
+    
+    .list-item {
+      float: left;
+      margin-right: 24px;
+    }
+  }
+
+  .email {
+    display: inline-block;
+    @include typo-body;
+    color: $grey;
+    margin-bottom: 20px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $grey;       
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      @include typo-body-sm;
+      line-height: 1.86;
+      margin-bottom: 16px;
+    }
+
+  }     
+}
+
+// brand
+
+.footer__brand {
+  display: inline-block;
+  margin-bottom: 16px;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 100%;
+    left: -200%;
+    margin-left: 10px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    left: -300%;
+  }
+
+  .logo {
+    height: 29px;
+    width: auto;
+  }
+}
+
+// copyright
+
+.footer__copyright {
+  display: block;
+  @include typo-body-sm;
+  color: $grey;
+  margin-bottom: 18px;
+
+  @include media-breakpoint-up(md) {
+    @include typo-body;
+    margin-bottom: 12px;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 8px;
+  }
+
+  .footer--alt & {
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 12px;
+    }
+
     @include media-breakpoint-up(lg) {
       margin-bottom: 8px;
     }
   }
+}
 
-  // menu
+// menu
 
-  .footer__menu {
-    column-count: 2;
-    column-gap: 50px;
-    margin-top: -2px;
-    
-    .nav-link {
-      @include typo-body;
-      color: $darker-grey;
-      margin-top: 2px;
-      margin-bottom: 2px;
-    }
-
-    @include media-breakpoint-up(md) {
-      float: left;
-    }
+.footer__menu {
+  column-count: 2;
+  column-gap: 50px;
+  margin-top: -2px;
+  
+  .nav-link {
+    @include typo-body;
+    color: $darker-grey;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
-   
-  // info
+  @include media-breakpoint-up(md) {
+    float: left;
+  }
+}
+ 
+// info
 
-  &__info {
-    @include typo-caption;
-    line-height: 1.2;
-    color: $dark-grey;
+.footer__info {
+  @include typo-caption;
+  line-height: 1.2;
+  color: $dark-grey;
 
-    @include media-breakpoint-up(md) {
-      @include typo-body-sm;
+  @include media-breakpoint-up(md) {
+    @include typo-body-sm;
+  }
+}
+
+// lang
+
+.footer__lang {
+  display: block;
+  margin-bottom: 26px;
+
+  .icon.-russian {
+    margin-right: 5px;
+    vertical-align: middle;
+
+    &,
+    & svg {
+      width: 24px;
+      height: 16px;
     }
   }
+  
+  .lang-name {
+    @include typo-body;
+    line-height: 1.75;
+    color: $darker-grey;
+  }
 
-  // lang
-
-  .footer__lang {
-    display: block;
-    margin-bottom: 26px;
-
-    .icon.-russian {
-      margin-right: 5px;
-      vertical-align: middle;
-
-      &,
-      & svg {
-        width: 24px;
-        height: 16px;
-      }
-    }
-    
-    .lang-name {
-      @include typo-body;
-      line-height: 1.75;
-      color: $darker-grey;
-    }
-
-    a,
-    a:hover,
-    a:focus {
-      color: $darker-grey;
-      text-decoration: none;
-    }
+  a,
+  a:hover,
+  a:focus {
+    color: $darker-grey;
+    text-decoration: none;
   }
 }
 
@@ -206,4 +218,10 @@
   .footer__lang {
     order: 99;
   }
+}
+
+// subscribe
+
+.footer__subscribe {
+  margin-right: 12px;
 }

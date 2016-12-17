@@ -1,6 +1,7 @@
 {% macro postscontrol(
     class='',
     title='Title',
+    title2='Title2',
     label='All posts',
     content_choose='choose',
     content_all='all'
@@ -9,6 +10,7 @@
 <div class="posts-control {{ class }}">
     <div class="container">
         <div class="posts-control__title">{{ title }}</div>
+        <div class="posts-control__title">{{ title2 }}</div>
         <div class="posts-control__switcher">
             <span class="posts-control__switcher__label">
                 {{ label }}

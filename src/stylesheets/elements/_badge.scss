@@ -4,3 +4,7 @@
     font-weight: 500;
   }
 } 
+
+.mdl-badge.mdl-badge--overlap:after {
+	right: -7px;
+}

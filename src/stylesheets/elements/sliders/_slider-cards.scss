@@ -1,42 +1,59 @@
+// container
+
 .slider-cards__container {
   width: 100%;
   max-width: 100%;
+}
+
+// wrapper
+
+.slider-cards__wrapper {
+  position: relative;
+  margin: 0;
 
   .swiper-wrapper {
     box-sizing: border-box;
   }
+
+  .card {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.slider-cards__wrapper {
-  position: relative;
-}
+// item
 
 .slider-cards__item {
-  margin: 0;
+  padding-top: $card-img-height - 40px;
+  padding-bottom: 66px + 8px + 66px;
+  padding-left: 20px;
+  padding-right: 20px;
 
-  .card--num {
-    margin: 0;
-
-    padding-bottom: 66px + 8px + 66px; // bullet height = 8px, bullet margin-top = 38px
-
-    @include media-breakpoint-down(md) {
-      padding-bottom: 56px + 8px + 28px; // bullet height = 8px, bullet margin-top = 28px
-    }
-
-    @include media-breakpoint-down(md) {
-      padding-bottom: 56px + 8px + 40px; // bullet height = 8px, bullet margin-top = 28px
-    }
+  @include media-breakpoint-down(md) {
+    padding-top: $card-img-height-md - 40px;
+    padding-bottom: 56px + 8px + 28px;
   }
 
-  .card--num .card__description {
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 56px + 8px + 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .card__description {
     margin-top: 32px;
 
     @include media-breakpoint-down(md) {
       margin-top: 28px;
     }
   }
-
 }
+
+.slider-cards__item-icons {
+  opacity: 0;
+}
+
+// nav
 
 .slider-cards__nav {
   position: absolute;
@@ -49,11 +66,14 @@
   }
 }
 
+// pagination
+
 .slider-cards__pagination {
   .slider-cards__wrapper & {
     position: absolute;
     bottom: 66px;
     left: 0;
+    width: 100%;
     text-align: center;
     z-index: 2;
 

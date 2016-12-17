@@ -1,4 +1,5 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
@@ -7,7 +8,59 @@
     <br>
     <h3 class="h3">Dropdown</h3>
     <br>
-    {% include "items/dropdown/dropdown-all.html" %}
+
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Стандартный дропдаун
+	    </a>
+	    <div class="dropdown-menu">
+	        <a class="dropdown-item" href="">
+	            Эксперты
+	        </a>
+	        <a class="dropdown-item" href="">
+	            Блоги
+	        </a>
+	        <div class="dropdown-divider"></div>
+	        <a class="dropdown-item" href="">
+	            Форум
+	        </a>
+	    </div>
+	</div>
+
+	<br>
+
+	<div class="dropdown">
+	    <a href="" class="btn btn--icon"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        <span class="sprite -note icon mdl-badge mdl-badge--overlap" data-badge="3">
+	            <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#note" /></use></svg>
+	        </span>
+	    </a>
+	    <div class="dropdown-menu dropdown-menu--note">
+	        <a class="dropdown-item" href="#">
+	            <span class="media media-middle">
+	                <span class="media-left">
+	                    <img class="avatar avatar--size-4 media-object" src="http://placehold.it/40x40" alt="Author info" width="40" height="40">
+	                </span>
+	                <span class="media-body">
+	                    <span class="icon -expert"></span>
+	                    <span class="person-name">Oleg Smolerov (awd2)</span>
+	                    отправил вам личное сообщение
+	                </span>
+	            </span>
+	        </a>
+	        <a class="dropdown-item" href="#">
+	            <span class="media media-middle">
+	                <span class="media-left">
+	                    {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+	                </span>
+	                <span class="media-body">
+	                    <span class="person-name">Maybe</span>
+	                    прокомментировал ваше сообщение на форуме
+	                </span>
+	            </span>
+	        </a>
+	    </div>
+	</div>
 </div>
 
 <br>

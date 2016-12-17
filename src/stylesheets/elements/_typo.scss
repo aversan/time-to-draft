@@ -1,39 +1,71 @@
 .typo--h1,
 .h1 {
 	@include typo-h1;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--h2,
 .h2 {
 	@include typo-h2;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--h3,
 .h3 {
 	@include typo-h3;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--h4,
 .h4 {
 	@include typo-h4;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--h5,
 .h5 {
 	@include typo-h5;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--h6,
 .h6 {
 	@include typo-h6;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--title {
 	@include typo-title;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--title-2 {
 	@include typo-title-2;
+
+	a {
+		color: inherit;
+	}
 }
 
 .typo--body {
@@ -85,13 +117,13 @@
 		margin: 0;
 		@include text-truncate;
 
-		& > .icon,
-		& > .icon svg {
+		& .icon,
+		& .icon svg {
 			width: .8em;
 			height: .8em;
 		}
 
-		& > .icon {
+		& .icon {
 			margin-right: 8px;
 		}
 	}
@@ -123,6 +155,10 @@
 			@include typo-body-lg;
 			color: $lighter-grey;
 			margin-right: 20px;
+		}
+
+		&-title a {
+			color: inherit;
 		}
 
 		.icon + .icon {

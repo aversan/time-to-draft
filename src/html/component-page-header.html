@@ -7,7 +7,19 @@
     <br>
     <h3 class="h3">Page header</h3>
     <br>
-	{% include "items/page-header/page-header-all.html" %}
+	<div class="page-header">
+	    <h1 class="page-header__title">Площадки</h1>
+	</div>
+	<div class="page-header">
+	    <h1 class="page-header__title">Стратегии</h1>
+	    <div class="page-header__row">
+	        <nav class="navigation">
+	            <a class="navigation__link active" href="">Новичкам</a>
+	            <a class="navigation__link" href="">Продвинутым</a>
+	            <a class="navigation__link" href="">Инструменты</a>
+	        </nav>
+	    </div>
+	</div>
 </div>
 
 {% endblock %}

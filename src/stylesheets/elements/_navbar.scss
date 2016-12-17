@@ -4,7 +4,7 @@
   padding: 1rem 0;
 
   .navbar-toggler {
-    width: 2rem;
+    width: 1.6rem;
     height: 2rem;
     position: relative;
     border: none;
@@ -12,7 +12,7 @@
     opacity: 1;
     background-image: none;
     outline: none;
-    margin-left: 1rem;
+    margin-left: 1.6rem;
 
     .icon {
       position: absolute;
@@ -68,7 +68,7 @@
 
       .icon.-live {
         position: relative;
-        top: -.65em;
+        top: -.45em;
       }
     }
 
@@ -109,14 +109,11 @@
     }
   }
 
-  // .navbar-link {}
-  // .navbar-nav-divider {}
   .navbar-search {
     display: inline-block;
     margin-left: 2rem;
     position: relative;
     height: 2rem;
-    left: -.45rem;
 
     &__textfield {
       top: -20px;
@@ -153,7 +150,7 @@
     & .navbar__btn-icon {
       margin: 0;
       position: absolute;
-      cursor: default;
+      cursor: pointer;
     } 
   }
 
@@ -172,22 +169,35 @@
   }
  
   .navbar__btn-icon {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+
     .icon {
       &,
       & svg {
-        color: $white;
+        color: $silver;
       }
     }
-  }
-
-  .navbar__btn-icon + .navbar__btn-icon {
-    margin-left: 2rem;
   }
 
   .btn-group + .btn-group,
   .btn-group + .navbar__btn,
   .navbar-nav + .btn-group {
-    margin-left: 1rem;
+    margin-left: 1.2rem;
+  }
+
+  .navbar__btn-icon + .navbar__btn-icon,
+  .navbar__btn-group-icon + .navbar__btn-group-icon {
+    margin-left: .6rem;
+  }
+
+  .navbar-search {
+    &,
+    &.btn-group,
+    &.navbar__btn-group-icon {
+      margin-left: 1.2rem;
+    }
   }
 
   .navbar-toggleable-sm  .btn-group + .btn-group,
@@ -289,7 +299,7 @@
   }
 
   &.is-logged .navbar__avatar {
-    border: 2px solid $light-grey;
+    border: 2px solid $silver;
     box-sizing: content-box;
     margin: -2px;
   }
@@ -301,5 +311,27 @@
       margin-top: 12px;
       margin-bottom: 12px;      
     }
+  }
+
+  .navbar__btn-icon .icon.mdl-badge.mdl-badge--overlap:after {
+    right: auto;
+    left: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
+    min-width: $badge-size;
+    width: auto;
+    border-radius: 100px;
+  }
+
+  .navbar__btn-icon .icon.-notification.mdl-badge.mdl-badge--overlap {
+    display: none;
+  }
+  
+  .navbar__btn-icon .icon.-notification.mdl-badge.mdl-badge--overlap[data-badge] {
+    display: block;
+  }
+  
+  .navbar__btn-icon .icon.-notification.mdl-badge.mdl-badge--overlap[data-badge] ~ .icon {
+    display: none;
   }
 }

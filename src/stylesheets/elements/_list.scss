@@ -37,26 +37,6 @@
 		@include media-breakpoint-down(md) {
 			height: $list-actions-three-line-height-md;
 		}
-
-		&:after {
-			position: absolute;
-			content: '';
-			display: block;
-			border-bottom: 1px solid $border-color-light;
-			left: $list-num-text-left-distance;
-			right: 0;
-			bottom: $list-bottom-padding / 2;
-			margin-bottom: -4px;
-
-			@include media-breakpoint-down(md) {
-				bottom: $list-bottom-padding-md / 2;
-				margin-bottom: 3px;
-			}
-		}
-
-		&:last-child:after {
-			display: none;
-		}
 	}
 
 	&--lg {
@@ -74,11 +54,16 @@
 
 // title
 
-.mdl-list__item-title,
-a.mdl-list__item-title {
+.mdl-list__item-title {
 	display: block;
-	color: $list-main-text-text-color;
-	margin-top: -.3rem;
+
+	& {
+		color: $list-main-text-text-color;
+	}
+
+	& a {
+		color: inherit;
+	}
 
 	.mdl-list__item-header & {
 		display: inline;
@@ -90,12 +75,12 @@ a.mdl-list__item-title {
 		overflow: hidden;
 	}
 
-	.mdl-list__item--actions & {
+	.mdl-list__item--three-line & {
 		height: 48px;
 		overflow: hidden;
 	}
 
-	.mdl-list__item--lg.mdl-list__item--actions & {
+	.mdl-list__item--lg.mdl-list__item--three-line & {
 		height: 56px;
 
 		@include media-breakpoint-down(md) {
@@ -144,8 +129,8 @@ a.mdl-list__item-title {
 		padding: 0;
 	}
 
-	.mdl-list__item--more-line &,
-	.mdl-list__item--three-line & {
+	.mdl-list__item--three-line &,
+	.mdl-list__item--more-line & {
 		@include typo-body-sm;
 		color: $list-main-text-text-color;
 
@@ -154,6 +139,10 @@ a.mdl-list__item-title {
 		.link:focus {
 			color: $list-supporting-text-text-color;
 		}
+	}
+
+	a {
+		color: inherit;
 	}
 }
 
@@ -241,11 +230,6 @@ a.mdl-list__item-title {
 		margin-left: 12px;
 		white-space: nowrap;
 		color: $grey;
-
-		&:hover,
-		&:focus {
-			color: grey;
-		}
 
 		.icon {
 			margin-right: 4px;
@@ -348,6 +332,10 @@ a.mdl-list__item-title {
 		margin-left: $list-num-text-left-distance-md;
 	}
 
+	.mdl-list__item-primary-content-inner & {
+		margin-left: 0;
+	}
+
 	.mdl-list__item--lg & {
 		margin-top: 20px;
 
@@ -355,13 +343,17 @@ a.mdl-list__item-title {
 			margin-top: 16px;
 		}
 	}
-
-	&-hint {
-		@include typo-body;
-		margin-left: 16px;
-		color: $list-supporting-text-text-color;
-	}
 }
+
+// hint
+
+.mdl-list__item-actions-hint,
+a.mdl-list__item-actions-hint {
+	@include typo-body;
+	margin-left: 16px;
+	color: $list-supporting-text-text-color;
+}
+
 
 // info
 
@@ -403,10 +395,6 @@ a.mdl-list__item-title {
 		padding: 0;
 		margin-bottom: 4px;
 
-		.mdl-list__item--less-air & {
-			margin-bottom: 10px;
-		}
-
 		&,
 		&:hover,
 		&:focus {
@@ -424,5 +412,32 @@ a.mdl-list__item-title {
 
 	@include media-breakpoint-down(md) {
 		margin-left: $list-num-text-left-distance-md;
+	}
+}
+
+.mdl-list__item-primary-content-inner {
+	display: block;
+	overflow: hidden;
+}
+
+// sep
+
+.mdl-list--sep {
+	.mdl-list__item-primary-content-inner {
+		border-bottom: 1px solid $border-color-light;
+		padding-bottom: $list-bottom-padding;
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: $list-bottom-padding-md;
+		}
+	}
+
+	.mdl-list__item:last-child .mdl-list__item-primary-content-inner {
+		border-bottom: none;
+		padding-bottom: 0;
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: 0;
+		}
 	}
 }

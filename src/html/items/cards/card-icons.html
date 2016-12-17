@@ -1,19 +1,19 @@
 {% from 'macros/helpers.html' import sprite %}
 
 <div class="card-icons">
-    <a href="#" class="card-icons__item">
+    <span class="card-icons__item">
         {{ sprite('energy', '0 0 1 1', 'icon') }}
         +7
-    </a>
-    <a href="#" class="card-icons__item">
+    </span>
+    <span class="card-icons__item">
         {{ sprite('view', '0 0 1 1', 'icon') }}
         79
-    </a>
-    <a href="#" class="card-icons__item">
+    </span>
+    <span class="card-icons__item">
         {{ sprite('comments', '0 0 1 1', 'icon') }}
         14
         {% if hasNewComment %}
-            / <span class="new">3 новых</span>
+            / <a href="#" class="new">3 новых</a>
         {% endif %}
-    </a>
+    </span>
 </div>
