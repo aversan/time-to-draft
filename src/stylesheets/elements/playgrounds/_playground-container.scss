@@ -1,0 +1,13 @@
+// container
+
+.playground-container {
+    padding-top: 62px;
+
+    @include media-breakpoint-down(md) {
+        padding-top: 56px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 34px;
+    }
+}

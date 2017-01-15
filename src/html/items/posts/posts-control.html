@@ -16,7 +16,18 @@
                 {{ label }}
             </span>
             <span class="posts-control__switcher__item">
-                <input type="checkbox" id="posts-switcher" class="switcher"><label for="posts-switcher" class="switcher-label"></label>
+                <input type="checkbox" id="posts-switcher" class="switcher">
+                <span class="js-popover-lenta" data-popover-counter="0">
+                    <label for="posts-switcher" class="switcher-label"></label>
+                </span>
+                <div class="webui-popover-content">
+                    <div class="webui-popover-body">
+                        <p class="typo--body-sm">Это лента Time to draft. Делитесь мыслями и общайтесь с другими пользователями. Лучшие посты попадают на главную.</p>
+                    </div>
+                    <div class="webui-popover-footer">
+                        <button class="webui-popover-button js-popover-lenta-close">Ок, понятно!</button>
+                    </div>
+                </div>
             </span>
         </div>
     </div>

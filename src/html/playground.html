@@ -1,61 +1,25 @@
 {% extends 'layouts/application.html' %}
 
+{% block pageClass %}{{ 'page--navbar-overlap' }}{% endblock %}
+
 {% block title %}{{ home_02.title }}{% endblock %}
 
 {% block content %}
-<!-- {% include "items/transparent-header.html" %} -->
-    <div class="playground-full container-fluid">
-
-        <div class="row playground-head gr-img" style="background-image: url('images/bg/fanteam-bg.jpg')">
-            <div class="col-sm-12 col-lg-12 col-md-12">
-                {% include "items/playground/playground-head.html" %}
-            </div>
-        </div>
-
-        <div class="row playground-info">
-            <div class="col-sm-12">
-                <div class="container">
-                    {% include "items/playground/playground-info.html" %}
-                </div>
-            </div>
-        </div>
-
+    <div>
+        {% include "items/playgrounds/playground-head.html" %}
+        {% include "items/playgrounds/playground-info.html" %}
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    {% include "items/playground/playground-full.html" %}
+                <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
+                    <div class="playground-container">
+                        {% include "items/playgrounds/playground-expert.html" %}
+                        <div class="playground-hr"></div>
+                        {% include "items/playgrounds/playground-deposit-and-lang.html" %}
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-lg-8 col-md-10 offset-md-1 offset-lg-2">
-                    {% include "items/playground/deposit-and-lang.html" %}
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row collapse playground-review" id="playground-review-collapse">
-            <div class="col-sm-12">
-                <div class="container">
-                    {% include "items/playground/playground-review.html" %}
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="review-btn col-sm-12 col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-sm-center m-b-3">
-                    <button type="button"
-                            data-toggle="collapse"
-                            data-target="#playground-review-collapse"
-                            aria-expanded="false"
-                            aria-controls="playground-review-collapse"
-                            class="btn btn-sm btn-higher btn-alt btn-secondary-outline playgrounds-btn">Обзор площадки
-                    </button>
-                </div>
-            </div>
-        </div>
-
+        </div>      
+        {% include "items/playgrounds/playground-review.html" %}
     </div>
 
 {% endblock %}

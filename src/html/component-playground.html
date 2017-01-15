@@ -1,0 +1,61 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/playgrounds/playground.html" as pg %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Playground</div>
+    <br>
+	<div class="typo--h4">Card</div>
+	<br>
+	<div class="row">
+		<div class="col-xs-12 col-md-4">
+            {{ pg.playground(
+                img='http://placehold.it/387x138',
+                user_logo='http://placehold.it/66x66',
+                username='FanTeam',
+                user_desc='Качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ.',
+                rel='9',
+                support='8',
+                pl_count='6.4k',
+                stars_count='5',
+                forum_count='354'
+            )}}
+		</div>
+	</div>
+</div>
+<div class="container">
+	<br>
+	<br>
+	<div class="typo--h4">Head</div>
+	<br>
+</div>
+{% include "items/playgrounds/playground-head.html" %}
+<div class="container">
+	<br>
+	<br>
+	<div class="typo--h4">Info</div>
+	<br>
+</div>
+{% include "items/playgrounds/playground-info.html" %}
+<div class="container">
+    <br>
+    <br>
+	<div class="typo--h4">Expert</div>
+	<br>
+    {% include "items/playgrounds/playground-expert.html" %}
+    <br>
+    <br>
+	<div class="typo--h4">Deposit and lang</div>
+	<br>
+    {% include "items/playgrounds/playground-deposit-and-lang.html" %}
+    <br>
+    <br>
+	<div class="typo--h4">Review</div>
+	<br>
+    {% include "items/playgrounds/playground-review.html" %}
+</div>
+{% endblock %}

@@ -1,50 +1,66 @@
+// pagination
+
 .pagination {
   display: flex;
-  margin: 0 17px 20px;
-  
-  &_item {
-    border: 1px solid $light-silver;
-    font-size: $font-size-lg;
-    line-height: 1;
-    border-radius: 4px;
-    padding: 7px;
-    margin-right: 4px;
-    min-width: 24px;
-    text-align: center;
-    color: $darker-grey;
+  margin-top: 28px;
+  margin-bottom: 28px;
 
-    &:hover,
-    &.active {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    &.prev {
-      &::before {
-        content: '';
-        @include arrow(left, 6px, 2px, $darker-grey);
-      }
-    }
-    
-    &.next {
-      &::before {
-        content: '';
-        @include arrow(right, 6px, 2px, $darker-grey);
-      }
-    }
-    
-    &.active {
-      pointer-events: none;
-      cursor: default;
-      border: none;
-      background-color: $darker-grey;
-      color: $white;
-    }
-
-    &.disabled {
-      cursor: default;
-      pointer-events: none;
-      color: $dark-grey;
-    }
+  @include media-breakpoint-down(sm) {
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
+}
+
+// link
+
+.page-link {
+  border-radius: 4px;
+  @include typo-title;
+  font-weight: 700;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 1.5rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  
+  &,
+  &:hover,
+  .page-item.active &,
+  .page-item.active &:hover,
+  .page-item.disabled &,
+  .page-item.disabled &:hover {
+    @include media-breakpoint-down(sm) {
+      border-color: transparent;
+    }    
+  }
+}
+
+// item
+
+.page-item.prev .icon:before {
+  content: '';
+  @include arrow(left, 8px, 2px, $pagination-color);
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.page-item.next .icon:before {
+  content: '';
+  @include arrow(right, 8px, 2px, $pagination-color);
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.page-item.prev.disabled .icon:before,
+.page-item.next.disabled .icon:before {
+  border-color: $pagination-disabled-color;
 }

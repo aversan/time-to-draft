@@ -1,3 +1,5 @@
+// type
+
 a.label--type,
 .label--type {
   @include typo-label;
@@ -33,7 +35,7 @@ a.label--type,
     background-color: $green;
   }
   
-  &.playground {
+  &.playgrnd {
     background-color: $twilight;
   }
 }

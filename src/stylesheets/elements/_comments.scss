@@ -1,261 +1,214 @@
-.comments-container {
-  margin-bottom: 32px;
-  
-  .comments-wrapper {
-    padding: 32px 14px 19px;
-    background-color: $white;
-  }
-  
-  .title {
-    @include typo-h6;
-    color: $darker-grey;
-    margin-bottom: 19px;
-    
-    &.comment-title {
-      margin-bottom: 0;
-    }
-  }
-  
-  .comments-list {
-    margin-bottom: 29px;
-    padding-top: 8px;
-    
-    .comment-item {
-      margin-bottom: 16px;
-      
-      .comments-list {
-        margin-left: 24px;
-      }
-      
-      .media {
-        margin-bottom: 12px;
-        
-        .media-left {
-          position: relative;
-          padding-right: 17px;
-          
-          .media-object {
-            width: 40px;
-            height: 40px;
-            border-radius: 20px;
-          }
-        }
-        
-        .media-body {
-          margin-top: -2px;
-          
-          .comment-text {
-            @include typo-body-sm;
-            color: $darker-grey;
-            margin-bottom: 8px;
-          }
-          
-          .vote-container {
-            .vote-list {
-              display: inline-block;
-              border-radius: 3px;
-              border: solid 1px $light-silver;
-              
-              .item {
-                padding: 1px 0;
-                width: 21px;
-                float: left;
-                @include typo-body;
-                color: $grey;
-                text-align: center;
-                cursor: pointer;
-                
-                &.value {
-                  @include typo-body-sm;
-                  color: $green;
-                  cursor: default;
-                }
-              }
-            }
-          }
-          
-          .answer-container {
-            .time {
-              @include typo-body-sm;
-              color: $grey;
-              margin-right: 10px;
-              display: inline;
-            }
-            
-            .answer-button {
-              @include typo-body-sm;
-              color: $green;
-              margin-right: 8px;
+// container
 
-              &:last-child {
-                margin-right: 0;
-              }
-            }
-          }
-        }
-        
-        .icon.-expert,
-        .icon.-ttd-team {
-          font-size: 18px;
-          vertical-align: sub;
-  
-          &,
-          & svg {
-            width: 18px;
-            height: 18px;
-          }
-        }
-        
-        .author-info {
-          height: 24px;
-          margin-bottom: -2px;
-        }
-        
-        .author-name {
-          @include typo-body;
-          color: $darker-grey;
-        }
-      }
-    }
-  }
-  
-  .new-message-container {
-    border-top: solid 1px rgba(212, 212, 212, 0.29);
-    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
-    
-    .container-heder {
-      padding: 15px 14px;
-      background-color: $white;
-      
-      .user-image {
-        width: 36px;
-        height: 36px;
-        border-radius: 20px;
-      }
-      
-      .user-name {
-        @include typo-body;
-        color: $darker-grey;
-        margin-left: 10px;
-      }
-    }
-    
-    .medium-editor-insert-plugin.medium-editor-placeholder:after {
-      @include typo-body;
-      color: $grey;
-      padding: 20px 16px;
-    }
-    
-    .b-medium-editor-wrapper {
-      background: $white;
-      
-      .medium-insert-buttons {
-        display: none !important;
-      }
-      
-      #message-editor-control {
-        padding: 0 16px 42px;
-        outline: none;
-        background-color: $white;
-      }
-      
-      p {
-        margin: 0;
-      }
-    }
-    
-    .b-medium-editor-wrapper-mobile {
-      position: relative;
-      padding-top: 40px;
-      box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
-      border-bottom: 1px solid rgba(212, 212, 212, 0.29);
-      
-      p {
-        margin: 0;
-      }
-      
-      #mobile-message-editor-control {
-        padding: 20px 16px 42px;
-        outline: none;
-        background-color: $white;
-      }
-      
-      .medium-editor-toolbar {
-        padding-left: 2px;
-        
-        li button {
-          min-width: 36px !important;
-          font-family: $font-family-base !important;
-          font-size: 16px !important;
-          font-weight: 900 !important;
-          font-style: normal !important;
-          font-stretch: normal !important;
-          line-height: 1.5 !important;
-          color: $darker-grey !important;
-          padding: 5px 12px !important;
-          background-color: transparent !important;
-        }
-      }
-      
-      .medium-editor-relative-toolbar {
-        position: absolute !important;
-        display: block !important;
-        visibility: visible !important;
-        z-index: 10;
-        width: 100%;
-        background-color: transparent;
-      }
-      
-      .medium-insert-buttons {
-        display: none !important;
-      }
-    }
-    
-    .button-wrapper {
-      padding-top: 17px;
-      background-color: $white;
-    }
-    
-    .btn-primary-outline {
-      margin-left: 20px;
-    }
-  }
+.comment-container {
+	margin-top: 48px;
 }
 
-@include media-breakpoint-up(md) {
-  .comments-container {
-    .comments-list {
-      .comment-item {
-        .media {
-          position: relative;
-          
-          .media-body {
-            .vote-container {
-              position: absolute;
-              right: 50px;
-              top: 0;
-              
-              .vote-list {
-                border-color: transparent;
-                
-                &:hover {
-                  border-color: $light-silver;;
-                  
-                  .item:first-of-type,
-                  .item:last-child {
-                    visibility: visible;
-                  }
-                }
-                
-                .item:first-of-type,
-                .item:last-child {
-                  visibility: hidden;
-                }
-              }
-            }
-          }
-        }
-      }
+// list
+
+.comment-list {
+	&,
+	&.media-list {
+		padding-top: 26px;
+		padding-bottom: 26px;
+		max-width: 644px;
+
+		@include media-breakpoint-down(sm) {
+			padding-top: 22px;
+			padding-bottom: 22px;
+		}
+	}
+
+	.comment-item,
+	.comment-item.media {
+		padding-bottom: 28px;
+
+		@include media-breakpoint-down(sm) {
+			padding-bottom: 20px;
+		}
+	}
+}
+
+// item
+
+.comment-item {
+  position: relative;
+
+  .media-left {
+    padding-right: ($list-avatar-text-left-distance - $list-avatar-size);
+
+    @include media-breakpoint-down(sm) {
+      padding-right: ($list-avatar-text-left-distance-md - $list-avatar-size-md);
     }
   }
+
+  .media-right {
+    padding-left: ($list-avatar-text-left-distance - $list-avatar-size);
+
+    @include media-breakpoint-down(sm) {
+      padding-left: ($list-avatar-text-left-distance-md - $list-avatar-size-md);
+    }
+  }
+
+  .media-object.avatar {
+    width: $list-avatar-size;
+    height: $list-avatar-size;
+
+    @include media-breakpoint-down(sm) {
+      width: $list-avatar-size-md;
+      height: $list-avatar-size-md;
+    }
+  }
+
+	&--level-2 {
+		margin-left: 40px;
+		margin-top: 8px;
+
+		@include media-breakpoint-down(sm) {
+			margin-left: 22px;
+		}
+	}
+}
+
+// author name
+
+.comment-item__author-name {
+	@include typo-title-2;
+	font-weight: 500;
+	color: $darker-grey;
+
+	a {
+		color: inherit;
+	}
+}
+
+// time
+
+.comment-item__time {
+	@include typo-body-sm;
+	color: $grey;
+}
+
+// actions
+
+.comment-item__actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.comment-item__actions-link {
+	transition: $transition-default;
+	@include typo-body-sm;
+	color: $darker-grey;
+
+	@include media-breakpoint-down(sm) {
+		color: $link-color;
+	}
+	
+	&:hover,
+	&:focus {
+		color: $link-hover-color;
+		text-decoration: none;
+	}
+
+	.comment-item:hover & {
+		color: $link-color;
+
+		&:hover,
+		&:focus {
+			color: $link-hover-color;
+			text-decoration: none;
+		}
+	}
+
+	& + & {
+		margin-left: 14px;
+
+		@include media-breakpoint-down(sm) {
+			margin-left: 8px;
+		}
+	}
+}
+
+// header
+
+.comment-item__header {
+	&,
+	&.typo--header {
+		border-bottom: none;
+		height: auto;
+		padding: 0 112px 0 0;
+		margin-bottom: 4px;
+		margin-top: -.3rem;
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+// vote
+
+.comment-item__vote {
+	transition: $transition-default;
+	border-color: transparent;
+	width: 88px;
+	position: absolute;
+	right: 0;
+	top: -.3rem;
+
+	@include media-breakpoint-down(sm) {
+		position: relative;
+		top: auto;
+		right: auto;
+		border-color: $border-color;
+		margin-top: 8px;
+	}
+
+	.comment-item:hover & {
+		border-color: $border-color;
+	}
+
+	.btn {
+		transition: $transition-default;
+		opacity: 0;
+
+		@include media-breakpoint-down(sm) {
+			opacity: 1;
+		}
+
+		.comment-item:hover & {
+			opacity: 1;
+		}
+	}
+}
+
+// body
+
+.comment-item__body {
+	@include typo-body;
+	color: $darker-grey;
+
+	@include media-breakpoint-down(sm) {
+		@include typo-body-sm;
+	}
+}
+
+// footer
+
+.comment-item__footer {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 8px;
+
+	.comment-item__time {
+		margin-right: 24px;
+
+		@include media-breakpoint-down(sm) {
+			margin-right: 14px;
+		}
+	}
 }

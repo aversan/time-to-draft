@@ -1,22 +1,23 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Navbar</h3>
+    <div class="typo--h3">Navbar</div>
+    <br>
+    <div class="typo--h4">Header</div>
     <br>
 </div>
-
 {% include "items/navbar/navbar_header.html" %}
-
-<br>
-
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h4">Header logged</div>
+    <br>
+</div>
 {% include "items/navbar/navbar_header_is-logged.html" %}
-
-<br>
-<br>
-<br>
 
 {% endblock %}

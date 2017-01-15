@@ -10,6 +10,7 @@ var htmlmin      = require('gulp-htmlmin')
 var path         = require('path')
 var render       = require('gulp-nunjucks-render')
 var fs           = require('fs')
+var yamlFrontMatter = require('yaml-front-matter')
 
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
@@ -20,7 +21,9 @@ var paths = {
 
 var getData = function(file) {
   var dataPath = path.resolve(config.root.src, config.tasks.html.src, config.tasks.html.dataFile)
-  return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
+  
+  return yamlFrontMatter.loadFront(dataPath);
+  // return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
 
 var htmlTask = function() {

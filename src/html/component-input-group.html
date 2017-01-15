@@ -1,0 +1,25 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/input-group/input-group-vote.html" as vote %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Input group</div>
+    <br>
+    <div class="typo--h4">Subscribe</div>
+    <br>
+	{% include "items/input-group/input-group_subscribe.html" %}
+    <br>
+    <br>
+    <div class="typo--h4">Vote</div>
+    <br>
+    {{ vote.vote(
+        class='',
+        controlClass='js-comment-vote',
+        controlValue='6'
+    ) }}
+</div>
+{% endblock %}

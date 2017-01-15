@@ -1,38 +1,41 @@
 {% extends 'layouts/application.html' %}
-
-{% block title %}{{ home_02.title }}{% endblock %}
-
-{% import "items/profile/subheader.html" as subheader %}
-{% import "items/profile/about.html" as about %}
-{% import "items/profile/tabs.html" as tabs %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/profile/profile-head.html" as head %}
+{% import "items/profile/profile-about.html" as about %}
+{% import "items/profile/profile-tabs.html" as tabs %}
+{% import "items/messages/message-post-items.html" as postItems %}
+{% block pageClass %}{{ 'page--navbar-overlap' }}{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row profile-bg">
-            <div class="col-sm-12 col-lg-12 col-md-12">
-                {{ subheader.subheader(register=false) }}
-            </div>
+    <div class="row profile-head-bg">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            {{ head.profileHead(register=false) }}
         </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            {{ about.profileAbout(register=false) }}
+        </div>
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                {{ about.about(register=false) }}
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-lg-8 offset-lg-2 col-md-12">
-                    {{ tabs.post(register=false) }}
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="posts" role="tabpanel">
-                            {% include "items/posts/posts-list.html" %}
-                        </div>
-                        <div class="tab-pane" id="blogs" role="tabpanel">
-                            {% include "items/blogs/blog-list.html" %}
+            <div class="col-lg-8 col-md-12 col-sm-12 mx-auto">
+                {{ tabs.profileTabs(register=false) }}
+                <div class="tab-content">
+                    <div class="tab-pane active" id="posts" role="tabpanel">
+                        {% include "items/posts/posts-list.html" %}
+                    </div>
+                    <div class="tab-pane" id="blogs" role="tabpanel">
+                        <div class="message-wrapper">
+                            {{ postItems.messagePostItems(hasAction=false) }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
 
+{% block modal %}
+    {% include "items/modals/modal_form_new_message.html" %}
 {% endblock %}

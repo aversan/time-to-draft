@@ -1,0 +1,29 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/posts/post-header-top.html" as postHeaderTop %}
+
+<article class="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <header class="post__header">
+                    {{ postHeaderTop.postHeaderTop(register=false) }}
+                    <nav class="breadcrumb breadcrumb--lg post__breadcrumb">
+                      <span class="breadcrumb-item active">
+                        Гусь и вода
+                        <span class="breadcrumb-divider"></span>
+                      </span>
+                    </nav>
+                    <h1 class="post__title">
+                        ​Выбираем идеального капитана на 1/2 финала Евро-2016
+                    </h1>
+                    <div class="post__announce">
+                        На Евро-2016 осталось всего 4 команды, и среди них нужно найти достойнейшего носителя капитанской повязки.
+                    </div>
+                </header>
+                {% include "items/posts/post-text.html" %}
+                {% include "items/posts/post-more.html" %}
+                {% include "items/posts/post-footer.html" %}
+            </div>
+        </div>
+    </div>
+</article>

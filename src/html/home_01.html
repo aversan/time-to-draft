@@ -2,7 +2,11 @@
 {% import "items/cards/card.html" as cards %}
 {% import "items/posts/posts-control.html" as postscontrol %}
 {% from 'macros/helpers.html' import sprite %}
-{% block title %}{{ home_01.title }}{% endblock %}
+{% import "items/posts/posts-list.html" as postsList %}
+
+{% set colSideContent %}
+    {% include "items/panel/panel-component_beginner-profi-play-forum_side.html" %}   
+{% endset %}
 
 {% set iconTeam %}
     {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
@@ -33,7 +37,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='news',
                     label_text='Новости',
@@ -59,7 +63,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='news',
                     label_text='Новости',
@@ -72,7 +76,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='strategy',
                     label_text='Стратегии',
@@ -85,7 +89,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='podcast',
                     label_text='Подкасты',
@@ -104,7 +108,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='strategy',
                     label_text='Стратегии',
@@ -117,7 +121,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='strategy',
                     label_text='Стратегии',
@@ -133,7 +137,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='news',
                     label_text='Новости',
@@ -146,7 +150,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='strategy',
                     label_text='Стратегии',
@@ -159,7 +163,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='podcast',
                     label_text='Подкасты',
@@ -185,7 +189,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='strategy',
                     label_text='Стратегии',
@@ -198,7 +202,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='news',
                     label_text='Новости',
@@ -211,7 +215,7 @@
             </div>
             <div class="col-md-4">
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='strategy',
                     label_text='Стратегии',
@@ -227,7 +231,7 @@
             </div>
             <div class="col-md-4">             
                 {{cards.card(
-                    class='card--hoverable',
+                    class='',
                     image='images/posts/b-g_3.jpg',
                     label_type='news',
                     label_text='Новости',
@@ -253,7 +257,7 @@
 
     {% include "items/panel/panel-component_posts-forum.html" %}
     
-    {% include "items/sliders/slider-promo.html" %}
+    {% include "items/sliders/slider-wide_promo.html" %}
     
     {% include "items/panel/panel-component_tw-ex-tls.html" %}
 {% endset %}
@@ -261,9 +265,11 @@
 {% set all %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-8">
+            <div class="col-sm-12 col-md-8 col-section">
                 {% include "items/posts/post-write.html" %}
-                {% include "items/posts/posts-list.html" %}
+                {{ postsList.postsList(
+                    colSideContent = colSideContent
+                ) }}
                 <div class="btn-more-wrapper">
                     <button class="btn btn--more btn-block">
                         Показать еще...
@@ -275,8 +281,9 @@
 {% endset %}
 
 {% block content %}
-    {% include "items/banners/quick-banner.html" %}
-
+    {% block firstBlock %}
+        {% include "items/banners/quick-banner.html" %}
+    {% endblock %}
     {{postscontrol.postscontrol(
         class = '',
         title = 'В центре внимания',

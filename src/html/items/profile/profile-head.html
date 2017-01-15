@@ -1,0 +1,108 @@
+{% macro profileHead(
+register=true
+) %}
+<div class="container profile-head">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-12 text-md-left text-xs-center">
+                    <div class="media p-media">
+                        <div class="media-left">
+                            <div class="p-user-image-wrap">
+                                <img class="avatar" src="http://placehold.it/96x96" width="96" height="96" alt="">
+                                {% if register %}
+                                    <div class="image-change">
+                                        <label class="change-action">
+                                            <span>Изменить</span>
+                                            <input type="file" id="file" class="custom-file-input">
+                                        </label>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="p-user-name">Oleg Smolerov (awd2)</h3>
+                            <h6 class="p-user-name-2">Олег Смолеров</h6>
+                            <div class="p-status"><i class="icon -expert"></i>Эксперт</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 text-md-right text-xs-center">
+                    <div class="p-subscribers-list">
+                        <img class="avatar avatar--size-3" src="http://placehold.it/46x46" width="46" height="46" alt="">
+                        <img class="avatar avatar--size-3" src="http://placehold.it/46x46" width="46" height="46" alt="">
+                        <img class="avatar avatar--size-3" src="http://placehold.it/46x46" width="46" height="46" alt="">
+                        <img class="avatar avatar--size-3" src="http://placehold.it/46x46" width="46" height="46" alt="">
+                    </div>
+                    <ul class="list-inline list-inline-sep p-subscribers-info">
+                        <li class="list-inline-item">128 подписчиков</li>
+                        <li class="list-inline-item">12 подписок</li>
+                    </ul>
+                    <div class="p-actions">
+                        {% if register %}
+                            <button class="btn btn-sm btn-alt btn-higher btn-primary-outline" data-toggle="modal" data-target="#modal_form_profile" type="button">Редактировать профиль</button>
+                        {% else %}
+                            <button class="btn btn-sm btn-alt btn-higher btn-primary-outline" data-toggle="modal" data-target="#modal_form_new_message" type="button">Отправить сообщение</button>
+                            <button class="btn btn-sm btn-alt btn-higher btn-primary" type="button">Подписано</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="row hidden-sm-down">
+                <div class="col-sm-12">
+                    <div class="p-separator"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12 flex-xs-last flex-md-unordered">
+                            <div class="p-info-item flex-items-md-left flex-items-xs-center text-xs-center">
+                                Год на сайте
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="p-info-item flex-items-md-left flex-items-xs-center text-xs-center">
+                                Минск, Беларусь
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden-md-up">
+                        <div class="col-sm-12">
+                            <div class="p-separator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                            <div class="p-info-item flex-items-md-left flex-items-xs-center text-xs-center p-info-item-responsive">
+                                <span class="title flex-xs-last flex-md-unordered">Сообщений на&nbsp;форуме<span class="hidden-sm-down">:</span></span>
+                                <span class="count"><a href="#">322</a></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                            <div class="p-info-item flex-items-md-left flex-items-xs-center text-xs-center p-info-item-responsive">
+                                <span class="title flex-xs-last flex-md-unordered">Комментариев в&nbsp;блоге<span class="hidden-sm-down">:</span></span>
+                                <span class="count"><a href="#">48</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                    <div class="p-info-item flex-items-md-right flex-items-xs-center text-xs-center p-info-item-responsive">
+                        <span class="title flex-xs-last flex-md-unordered">Карма<span class="hidden-sm-down">:</span></span>
+                        <span class="count count--karma">+6</span>
+                        {% if register == false %}
+                        <span class="btns-karma flex-xs-last flex-md-unordered">
+                            <button type="button" class="btn btn-secondary btn-sm">&#43;</button>
+                            <button type="button" class="btn btn-secondary btn-sm">&#8212;</button>
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

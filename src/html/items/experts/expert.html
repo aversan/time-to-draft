@@ -1,19 +1,29 @@
-{% macro expert(
-user_desc='Опыт игры в Fantasy — более 10 лет. Двукратный чемпион Беларуси, чемпион России в FPL. Входит в 400 лучших игроков в истории турнира.',
-user_ava='images/users/userpic-1@3x.png',
-info_user='stishenok',
-user_spec='Специализация: NBA',
-team_big=''
+{% macro expertItem(
+    user_ava={ src: 'http://placehold.it/96x96', width: '96', height: '96' },
+    user_icons='',
+	user_desc='Опыт игры в Fantasy — более 10 лет. Двукратный чемпион Беларуси, чемпион России в FPL. Входит в 400 лучших игроков в истории турнира.',
+	user_name='stishenok',
+	user_spec='Специализация: NBA'
 ) %}
-<div class="text-sm-center expert">
-    <div class="expert-img"><img class="img-circle" src="{{ user_ava }}"></div>
-    <div class="expert-name">
-        <i class="icon {{ team_big }}"></i>
-        <i class="icon -expert"></i>
-        <strong>{{ user_name }}</strong></div>
-    <div class="expert-desc">
-        {{ user_desc }}
+
+<div class="expert-item">
+    <div class="expert-item__img">
+        <a href="">
+            <img class="avatar" src="{{ user_ava.src | safe }}" width="{{ user_ava.width | safe }}" height="{{ user_ava.height | safe }}" alt="">
+        </a>
     </div>
-    <div class="expert-spec"><strong>{{ user_spec }}</strong></div>
+    <h6 class="expert-item__name">
+    	{{ user_icons | safe }}
+        <a href="">
+            {{ user_name | safe }}
+        </a>
+    </h6>
+    <div class="expert-item__desc">
+        {{ user_desc | safe }}
+    </div>
+    <div class="expert-item__spec">
+    	{{ user_spec | safe }}
+    </div>
 </div>
+
 {% endmacro %}

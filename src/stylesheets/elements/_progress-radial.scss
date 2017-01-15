@@ -1,0 +1,306 @@
+$barColor: $green;
+$overlayColor: #fff;
+$backColor: #dbefdc;
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background-color: $barColor;
+
+  &--transparent,
+  &--icon {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background-color: $overlayColor;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-left: -23px;
+  margin-top: -23px;
+  text-align: center;
+  @include typo-h4;
+
+  // .fonts-loaded & {
+    font-family: $font-family-alt;
+  // }
+
+  font-weight: 400;
+  line-height: 46px;
+}
+
+.progress-radial--transparent,
+.progress-radial--icon {
+  background-image: none !important;
+}
+
+.progress-radial--transparent .overlay,
+.progress-radial--icon .overlay {
+  background-color: transparent;
+}
+
+// radial caption
+
+.progress-radial-caption {
+    display: block;
+    @include typo-caption;
+    line-height: normal;
+    color: $grey;
+    margin-top: 7px;
+}
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+.progress-0 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-5 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-10 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-15 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-20 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-25 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-30 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-35 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-40 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-45 {
+  background-image: linear-gradient(90deg, $backColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-50 {
+  background-image: linear-gradient(-90deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-55 {
+  background-image: linear-gradient(-72deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-60 {
+  background-image: linear-gradient(-54deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-65 {
+  background-image: linear-gradient(-36deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-70 {
+  background-image: linear-gradient(-18deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-75 {
+  background-image: linear-gradient(0deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-80 {
+  background-image: linear-gradient(18deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-85 {
+  background-image: linear-gradient(36deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-90 {
+  background-image: linear-gradient(54deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-95 {
+  background-image: linear-gradient(72deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+.progress-100 {
+  background-image: linear-gradient(90deg, $barColor 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+}
+
+// radial icon
+
+.progress-radial--icon {
+  & .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &,
+    & svg {
+      width: auto;
+      height: 48px;
+      color: $darker-grey;
+    }
+
+    & ~ .icon.-check {
+      left: auto;
+      top: 0;
+      right: -12px;
+      transform: translate(0%, 0%);
+
+      &,
+      & svg {
+        width: auto;
+        height: 24px;
+        color: $green;
+      }
+    }
+  }
+
+  &.progress-radial--lg .icon {
+    &,
+    & svg {
+      width: auto;
+      height: 58px;
+    }
+
+    & ~ .icon.-check {
+      top: 4px;
+      right: -4px;
+    }
+  }
+
+  &.not-available .icon {
+    opacity: .2;
+
+    & ~ .icon.-check {
+      display: none;
+    }
+  }
+}
+
+// radial lg
+
+.progress-radial--lg {
+  width: 82px;
+  height: 82px;
+
+  & .overlay {
+    width: 72px;
+    height: 72px;
+    margin-left: -36px;
+    margin-top: -36px;
+    line-height: 72px;
+    font-size: 40px;
+  }
+
+  & ~ .progress-radial-caption {
+    @include typo-body;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+
+  &.progress-radial--transparent .overlay {
+    font-size: 56px;
+  }
+
+  &.progress-radial--icon .overlay {
+    font-size: 56px;
+  }
+
+  &.progress-radial--responsive {
+    @include media-breakpoint-down(md) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 60px;
+      height: 60px;
+    }
+
+    & .overlay {
+      @include media-breakpoint-down(md) {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        margin-left: -35px;
+        margin-top: -35px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        margin-left: -26px;
+        margin-top: -26px;
+        font-size: 36px;
+      }
+    }
+
+    &.progress-radial--icon .icon {
+      &,
+      & svg {
+        @include media-breakpoint-down(sm) {
+          width: auto;
+          height: 56px;          
+        }
+      }
+
+      & ~ .icon.-check {
+        @include media-breakpoint-down(sm) {
+          top: -4px;
+          right: -8px;          
+        }
+
+        &,
+        & svg {
+          @include media-breakpoint-down(sm) {
+            width: 22px;
+            height: 22px;            
+          }
+        }
+      }
+    }
+
+    &  ~ .progress-radial-caption {
+      @include media-breakpoint-down(md) {
+        @include typo-body-sm;
+        margin-top: 22px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        @include typo-caption;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+    }
+  }
+}

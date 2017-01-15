@@ -1,16 +1,28 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Panel</h3>
+    <div class="typo--h3">Panel</div>
     <br>
+	<div class="typo--h4">Wide</div>
+	<br>
+	<div class="row">
+		<div class="col-sm-12 col-md-12">
+    		{% include "items/panel/panel-component_tw-ex-tls.html" %}
+		</div>
+	</div>
+    <br>
+	<br>
+	<div class="typo--h4">Side</div>
+	<br>
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			{% include "items/panel/panel-component_play-forum-expert_side.html" %}
+		</div>
+	</div>	
 </div>
-{% include 'items/panel/panel-component_tw-ex-tls.html' %}
-<br>
-<br>
-<br>
-
 {% endblock %}

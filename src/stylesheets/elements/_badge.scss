@@ -1,6 +1,13 @@
+// badge
+
 .mdl-badge {
   &[data-badge]:after {
-    font-family: $font-family-base;
+    font-family: Arial, sans-serif;
+    
+    // .fonts-loaded & {
+    	font-family: $font-family;
+    // }
+
     font-weight: 500;
   }
 } 

@@ -1,52 +1,44 @@
 {% extends 'layouts/application.html' %}
 {% import "items/cards/card.html" as cards %}
-{% import "items/global/subheader.html" as header %}
+{% import "items/posts/posts-list.html" as postsList %}
 
-{% block title %}{{ home_02.title }}{% endblock %}
-
+{% set colSideContent %}
+    {% include "items/panel/panel-component_beginner-profi-play-forum_side.html" %}
+{% endset %}
 
 {% block content %}
-{{ header.subheader(title='Эксперты') }}
-    <div class="container-fluid">
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">Эксперты</h1>
+        </div>
+    </div>
+    <div class="container mt-expert-description">
         <div class="row">
-            <div class="col-sm-12">
-                {% include "items/experts/description.html" %}
+            <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+                {% include "items/experts/expert-description.html" %}
             </div>
         </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                {% include "items/experts/experts.html" %}
-            </div>
-        </div>
+    <div class="container mt-expert-items">
+        {% include "items/experts/expert-items.html" %}
     </div>
-
-    <div class="container m-b-20 hidden-sm-down">
-        <!-- include "items/banners/wide-slider.html" | slider-play -->
+    <div class="container mt-expert-slider-plays expert-slider-plays-container">
+        {% include "items/sliders/slider-plays.html" %}
     </div>
-
-    <div class="container">
-        {% include "items/experts/where-play.html" %}
-    </div>
-
-    <div class="container">
+    <div class="container mt-expert-block">
+        <h5 class="typo--h5 typo--bold expert-block-title">Прогнозы экспертов</h5>
         <div class="row">
-            <div class="col-sm-12">
-                <h5 class="mb-20 experts-block-title"><strong>Прогнозы экспертов</strong></h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-8 col-md-8">
-                {% include "items/posts/posts-list.html" %}
-            </div>
-            <div class="col-lg-4 col-md-4 hidden-sm-down">
-                <div class="row">
-                    {% include "items/sidebars/main-sidebar.html" %}
+            <div class="col-sm-12 col-md-8">
+                {{ postsList.postsList(
+                    colSideContent = colSideContent
+                ) }}
+                <div class="btn-more-wrapper">
+                    <button class="btn btn--more btn-block">
+                        Показать еще...
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    
+
 {% endblock %}

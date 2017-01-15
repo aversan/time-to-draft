@@ -1,0 +1,112 @@
+{% from 'macros/helpers.html' import sprite %}
+
+{% macro dropdownMenuUser(
+    class=''
+) %}
+
+<div class="dropdown-menu {{ class }}">
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Написать пост
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Мои блоги
+    </a>
+    <a class="dropdown-item" href="">
+        Личные сообщения
+    </a>
+    <a class="dropdown-item" href="">
+        Профиль
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Выйти
+    </a>
+</div>
+
+{% endmacro %}
+
+{% macro dropdownMenuNote(
+    class=''
+) %}
+
+<div class="dropdown-menu dropdown-menu--note {{ class }}">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+{% endmacro %}
+
+{% macro dropdownMenuNewPost(
+    class=''
+) %}
+
+<div class="dropdown-menu {{ class }}">
+    <a class="dropdown-item selected" href="">
+        Делимся мыслями
+    </a>
+    <a class="dropdown-item" href="">
+        Марафон на миллион
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Создать новый блог
+    </a>
+</div>
+
+{% endmacro %}
+
+{% macro dropdownMenuBestMatches(
+    class=''
+) %}
+
+<div class="dropdown-menu {{ class }}">
+    <a class="dropdown-item selected" href="">
+        Лучшие матчи
+    </a>
+    <a class="dropdown-item" href="">
+        Лига чемпионов
+    </a>
+    <a class="dropdown-item" href="">
+        Лига Европы
+    </a>
+    <a class="dropdown-item" href="">
+        Премьер-лига
+    </a>
+    <a class="dropdown-item" href="">
+        Примера
+    </a>
+    <a class="dropdown-item" href="">
+        Серия А
+    </a>
+    <a class="dropdown-item" href="">
+        ФНЛ
+    </a>
+    <a class="dropdown-item" href="">
+        Бундеслига
+    </a>
+</div>
+
+{% endmacro %}

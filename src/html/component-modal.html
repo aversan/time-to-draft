@@ -1,0 +1,41 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <h3 class="h3">Modal</h3>
+    <br>
+</div>
+<div class="container">
+    <button class="btn" data-toggle="modal" data-target="#modal_signin_01">Sign In 01</button>
+    <button class="btn" data-toggle="modal" data-target="#modal_signin_02">Sign In 02</button>
+    <button class="btn" data-toggle="modal" data-target="#modal_signin_03">Sign In 03</button>
+    <br>
+    <br>
+    <button class="btn" data-toggle="modal" data-target="#modal_list_pg">Playgrounds list</button>
+    <button class="btn" data-toggle="modal" data-target="#modal_list_coauthor">Personal blog list</button>
+    <br>
+    <br>
+    <button class="btn" data-toggle="modal" data-target="#modal_form_profile">Profile edit</button>
+    <button class="btn" data-toggle="modal" data-target="#modal_list_serch_user">Messages new 1</button>
+    <button class="btn" data-toggle="modal" data-target="#modal_form_new_message">Messages new 2</button>
+    <button class="btn" data-toggle="modal" data-target="#modal_form_new_blog">Blog new</button>
+    <br>
+    <br>
+    <button class="btn" data-toggle="modal" data-target="#modal_tutorial">Tutorial</button>
+</div>
+{% endblock %}
+
+{% block modal %}
+    {% include "items/modals/modal_sign_in.html" %}
+    {% include "items/modals/modal_list_playground.html" %}
+    {% include "items/modals/modal_list_coauthor.html" %}
+    {% include "items/modals/modal_form_profile.html" %}
+    {% include "items/modals/modal_list_search_user.html" %}
+    {% include "items/modals/modal_form_new_message.html" %}
+    {% include "items/modals/modal_form_new_blog.html" %}
+    {% include "items/modals/modal_tutorial.html" %}
+{% endblock %}

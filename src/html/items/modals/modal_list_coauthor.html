@@ -1,0 +1,22 @@
+{% from 'macros/helpers.html' import sprite %}
+
+<div class="modal modal--alt modal--list hide fade" id="modal_list_coauthor" tabindex="-1" role="dialog" aria-labelledby="modal_list_coauthor" aria-hidden="true">
+    <div class="modal-body">
+        <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <div class="modal__body-header">
+            <h3 class="typo--h3 modal__title">
+                Соавторы блога
+            </h3>
+        </div>
+        <div class="pre-scrollable modal__scrollable swiper-container js-swiper-container-scrollable">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    {% include 'items/list/list_author.html' %}
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</div>

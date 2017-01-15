@@ -13,7 +13,9 @@
             info_user: '',
             info_user_icon: '',
             info_time: '',
-            withoutAvatar: false
+            info_sub: '',
+            withoutAvatar: false,
+            area_link: false
         }
     }
 ) %}
@@ -36,7 +38,7 @@
       {% endif %}
       
       <span class="mdl-list__item-primary-content-inner">
-        {% if (item.info_user | length) or (item.info_time | length)  %}
+        {% if (item.info_user | length) or (item.info_time | length) or (item.info_sub_title | length)  %}
           <span class="mdl-list__item-info">
             {% if item.info_user | length %}
               <a href="" class="mdl-list__item-info-user">
@@ -47,6 +49,11 @@
             {% if item.info_time %}
             <span class="mdl-list__item-info-time">
               {{ item.info_time | safe }}
+            </span>
+            {% endif %}
+            {% if item.info_sub %}
+            <span class="mdl-list__item-info-sub">
+              {{ item.info_sub | safe }}
             </span>
             {% endif %}
           </span>
@@ -78,6 +85,9 @@
       </span>
 
     </span>
+    {% if item.area_link %}
+      <a class="mdl-list__item-area-link" href=""></a>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>

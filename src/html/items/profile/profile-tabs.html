@@ -1,0 +1,54 @@
+{% import "items/posts/posts-list.html" as postsList %}
+{% import "items/messages/message-post-items.html" as messagePostItems %}
+
+{% macro profileTabs(
+register=true
+) %}
+<div class="mdl-tabs mdl-js-tabs profile-tabs">
+    <div class="typo--header">
+        <div class="swiper-container js-swiper-container-tabs mdl-tabs__tab-bar typo--header__tab-bar">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="mdl-tabs__tab-bar">
+                        <a href="#posts" class="mdl-tabs__tab is-active">Посты</a>
+                        <a href="#blogs" class="mdl-tabs__tab">Блоги</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="typo--header-space hidden-sm-down"></div>   
+        {% if register %}
+            <button type="button" class="btn btn-sm btn-higher btn-primary btn-alt" data-toggle="modal" data-target="#modal_form_new_blog">Написать пост</button>
+        {% endif %}
+    </div>
+    <div class="mdl-tabs__panel is-active" id="posts">
+        {% if register %}
+            {{ postsList.postsList(hasAction=true) }}
+        {% else %}
+            {{ postsList.postsList(hasAction=false) }}
+        {% endif %}
+        <div class="btn-more-wrapper">
+            <button class="btn btn--more btn-block">
+                Показать еще...
+            </button>
+        </div>
+    </div>
+    <div class="mdl-tabs__panel" id="blogs">
+        {% if register %}
+            <div class="message-wrapper">
+                {{ messagePostItems.messagePostItems(hasAction=true) }}
+            </div>
+        {% else %}
+            <div class="message-wrapper">
+                {{ messagePostItems.messagePostItems(hasAction=false) }}
+            </div>
+        {% endif %}
+        <div class="btn-more-wrapper">
+            <button class="btn btn--more btn-block">
+                Показать еще...
+            </button>
+        </div>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,11 @@
+{% macro messageButtonContainer(
+    class='',
+    button_attribute='',
+    button_text='Кнопка'
+) %}
+<div class="message-button-container hidden-md-up text-xs-center {{ class }}">
+    <div class="container">
+        <button class="btn btn-sm btn-higher btn-responsive btn-alt btn-primary" {{ button_attribute | safe }}>{{ button_text | safe }}</button>
+    </div>
+</div>
+{% endmacro %}

@@ -1,3 +1,5 @@
+// list
+
 .mdl-list {
 	@include media-breakpoint-down(md) {
 		padding-top: $list-border-md;
@@ -49,6 +51,30 @@
 			line-height: 24px;
 			font-weight: 500;
 		}
+
+		@include media-breakpoint-down(sm) {
+			@include typo-title-2;
+			line-height: 24px;
+			font-weight: 500;
+		}
+	}
+
+	&--xl {
+		@include typo-h5;
+		line-height: 32px;
+		font-weight: 500;		
+
+		@include media-breakpoint-down(md) {
+			@include typo-title;
+			line-height: 24px;
+			font-weight: 500;
+		}
+
+		@include media-breakpoint-down(sm) {
+			@include typo-title-2;
+			line-height: 24px;
+			font-weight: 500;
+		}
 	}
 }
 
@@ -82,6 +108,14 @@
 
 	.mdl-list__item--lg.mdl-list__item--three-line & {
 		height: 56px;
+
+		@include media-breakpoint-down(md) {
+			height: 48px;
+		}
+	}
+
+	.mdl-list__item--xl.mdl-list__item--three-line & {
+		height: 64px;
 
 		@include media-breakpoint-down(md) {
 			height: 48px;
@@ -129,6 +163,7 @@
 		padding: 0;
 	}
 
+	.mdl-list__item--two-line &,
 	.mdl-list__item--three-line &,
 	.mdl-list__item--more-line & {
 		@include typo-body-sm;
@@ -164,7 +199,7 @@
 	&.icon svg {
 		width: $list-avatar-size;
 		height: $list-avatar-size;
-		background-color: none;
+		background-color: transparent;
 
 		@include media-breakpoint-down(md) {
 			width: $list-avatar-size-md;
@@ -182,7 +217,12 @@
 // num
 
 .mdl-list__item-num {
-	font-family: $font-family-alt;
+	font-family: Arial, sans-serif;
+	
+	// .fonts-loaded & {
+		font-family: $font-family-alt;
+	// }
+
 	font-weight: 400;
 	font-size: 40px;
 	color: $green;
@@ -265,6 +305,15 @@
 		}
 	}
 
+	.mdl-list__item--xl.mdl-list__item--two-line &,
+	.mdl-list__item--xl.mdl-list__item--three-line & {
+		line-height: 32px;
+
+		@include media-breakpoint-down(md) {
+			line-height: 24px;
+		}
+	}
+
 	.mdl-list__item--two-line & {
 		@include media-breakpoint-down(md) {
 			height: $list-two-line-height-md - $list-min-padding - $list-bottom-padding-md;
@@ -293,6 +342,14 @@
 		}
 	}
 
+	.mdl-list__item--xl.mdl-list__item--three-line.mdl-list__item--actions & {
+		height: $list-actions-three-line-height - $list-min-padding - $list-bottom-padding + 12px;
+
+		@include media-breakpoint-down(md) {
+			height: $list-actions-three-line-height-md - $list-min-padding - $list-bottom-padding-md + 8px;
+		}
+	}
+
 	.mdl-list__item--more-line & {
 		height: auto;
 		display: block;
@@ -310,6 +367,14 @@
 
 	.mdl-list__item--lg.mdl-list__item--more-line & {
 		line-height: 28px;
+
+		@include media-breakpoint-down(md) {
+			line-height: 24px;
+		}
+	}
+
+	.mdl-list__item--xl.mdl-list__item--more-line & {
+		line-height: 32px;
 
 		@include media-breakpoint-down(md) {
 			line-height: 24px;
@@ -343,6 +408,14 @@
 			margin-top: 16px;
 		}
 	}
+
+	.mdl-list__item--xl & {
+		margin-top: 20px;
+
+		@include media-breakpoint-down(md) {
+			margin-top: 16px;
+		}
+	}
 }
 
 // hint
@@ -360,7 +433,7 @@ a.mdl-list__item-actions-hint {
 .mdl-list__item-info {
 	&-user {
 		@include typo-body;
-		display: block;
+		display: inline-block;
 		padding: 0;
 		margin-bottom: 0;
 		
@@ -401,6 +474,24 @@ a.mdl-list__item-actions-hint {
 			color: $list-supporting-text-text-color;
 		}
 	}
+
+	&-sub {
+		@include typo-body-sm;
+		display: block;
+		padding: 0;
+		margin: 0;
+		color: $list-supporting-text-text-color;		
+	}
+}
+
+// area link
+
+.mdl-list__item-area-link {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
 }
 
 // footer

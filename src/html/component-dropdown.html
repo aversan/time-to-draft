@@ -1,17 +1,19 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
+{% import "items/dropdown/dropdown.html" as dropdown %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Dropdown</h3>
+    <div class="typo--h3">Dropdown</div>
     <br>
-
+    <div class="typo--h4">Default</div>
+    <br>
 	<div class="dropdown">
 	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	        Стандартный дропдаун
+	        Default
 	    </a>
 	    <div class="dropdown-menu">
 	        <a class="dropdown-item" href="">
@@ -26,45 +28,87 @@
 	        </a>
 	    </div>
 	</div>
-
-	<br>
-
+    <br>
+    <br>
+    <div class="typo--h4">Menu air</div>
+    <br>
 	<div class="dropdown">
-	    <a href="" class="btn btn--icon"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	        <span class="sprite -note icon mdl-badge mdl-badge--overlap" data-badge="3">
-	            <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#note" /></use></svg>
-	        </span>
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Menu air
 	    </a>
-	    <div class="dropdown-menu dropdown-menu--note">
-	        <a class="dropdown-item" href="#">
-	            <span class="media media-middle">
-	                <span class="media-left">
-	                    <img class="avatar avatar--size-4 media-object" src="http://placehold.it/40x40" alt="Author info" width="40" height="40">
-	                </span>
-	                <span class="media-body">
-	                    <span class="icon -expert"></span>
-	                    <span class="person-name">Oleg Smolerov (awd2)</span>
-	                    отправил вам личное сообщение
-	                </span>
-	            </span>
+	    <div class="dropdown-menu dropdown-menu--air">
+	        <a class="dropdown-item" href="">
+	            Эксперты
 	        </a>
-	        <a class="dropdown-item" href="#">
-	            <span class="media media-middle">
-	                <span class="media-left">
-	                    {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
-	                </span>
-	                <span class="media-body">
-	                    <span class="person-name">Maybe</span>
-	                    прокомментировал ваше сообщение на форуме
-	                </span>
-	            </span>
+	        <a class="dropdown-item" href="">
+	            Блоги
+	        </a>
+	        <div class="dropdown-divider"></div>
+	        <a class="dropdown-item" href="">
+	            Форум
 	        </a>
 	    </div>
 	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Menu bordered</div>
+    <br>
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Menu bordered
+	    </a>
+	    <div class="dropdown-menu dropdown-menu--bordered">
+	        <a class="dropdown-item" href="">
+	            Эксперты
+	        </a>
+	        <a class="dropdown-item" href="">
+	            Блоги
+	        </a>
+	        <div class="dropdown-divider"></div>
+	        <a class="dropdown-item" href="">
+	            Форум
+	        </a>
+	    </div>
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Menu note</div>
+    <br>
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Menu note
+	    </a>
+		{{ dropdown.dropdownMenuNote() }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Menu new post</div>
+    <br>
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Menu new post
+	    </a>
+		{{ dropdown.dropdownMenuNewPost() }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Menu user</div>
+    <br>
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Menu user
+	    </a>
+		{{ dropdown.dropdownMenuUser() }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Best matches</div>
+    <br>
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Best matches
+	    </a>
+		{{ dropdown.dropdownMenuBestMatches() }}
+	</div>
 </div>
-
-<br>
-<br>
-<br>
-
 {% endblock %}

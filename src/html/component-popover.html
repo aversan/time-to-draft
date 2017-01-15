@@ -1,0 +1,25 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Popover</div>
+    <br>
+    <div class="typo--h4">Info</div>
+    <br>
+    <a href="" data-webui-popover>
+        default
+    </a>
+    <div class="webui-popover-content">
+        <div class="webui-popover-body">
+            <p class="typo--body-sm">Это лента Time to draft. Делитесь мыслями и общайтесь с другими пользователями. Лучшие посты попадают на главную.</p>
+        </div>
+        <div class="webui-popover-footer">
+            <button class="webui-popover-button">Ок, понятно!</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

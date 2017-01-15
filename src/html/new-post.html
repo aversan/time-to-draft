@@ -1,0 +1,10 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block pageClass %}{{ 'page--full-post-editor' }}{% endblock %}
+
+{% block content %}
+    {% include "items/editors/editor-post-full.html" %}
+{% endblock %}
+
+{% block footer %}{% endblock %}

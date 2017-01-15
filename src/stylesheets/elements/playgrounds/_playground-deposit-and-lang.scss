@@ -1,0 +1,48 @@
+// playground-deposit-and-lang
+
+.playground-deposit-and-lang {
+	.dl-title {
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.dl-systems {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-right: -24px;
+		margin-bottom: -28px;
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: -16px;
+		}
+
+		.icon {
+			height: 32px;
+			margin-right: 24px;
+			margin-bottom: 28px;
+
+			@include media-breakpoint-down(sm) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	.dl-langs {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: -28px;
+
+		.dl-lang {
+			flex-grow: 1;
+			flex-basis: 33.33%;
+			text-transform: uppercase;
+			margin-bottom: 28px;
+
+			.icon {
+				margin-right: 10px;
+			}
+		}
+	}
+}

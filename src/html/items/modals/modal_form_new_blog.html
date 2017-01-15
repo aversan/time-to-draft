@@ -1,0 +1,62 @@
+{% from 'macros/helpers.html' import sprite %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/media/media.html" as media %}
+
+{% set iconExpert %}
+    <i class="icon -expert -small"></i>
+{% endset %}
+
+<div class="modal modal--alt modal--form hide fade" id="modal_form_new_blog" tabindex="-1" role="dialog" aria-labelledby="modal_form_new_blog" aria-hidden="true">
+    <div class="modal-body">
+        <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <div class="modal__body-header">
+            <h3 class="typo--h3 modal__title">
+                Новый блог
+            </h3>
+        </div>
+        <form action="">
+            <div class="icon-wrap icon-wrap--medium">
+                <!-- {{ sprite('', '0 0 1 1', 'icon -grey icon-wrap__icon') }} -->
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input" type="text" id="modal_blog_name" value="Марафон на миллион">
+                    <label class="mdl-textfield__label" for="modal_blog_name">Название блога</label>
+                    <span class="mdl-textfield__error"></span>
+                </div>
+            </div>
+            <div class="icon-wrap icon-wrap--medium">
+                <!-- {{ sprite('', '0 0 1 1', 'icon -grey icon-wrap__icon') }} -->
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input" type="text" id="modal_blog_desc" value="Блог о всем на свете и не только">
+                    <label class="mdl-textfield__label" for="modal_blog_desc">Описание блога</label>
+                    <span class="mdl-textfield__error"></span>
+                </div>
+            </div>
+            <h6 class="typo--title modal__title mb-0">Соавторы</h6>
+            <div class="media-list">
+                {{media.mediaAuthor(
+                    class='media--author-lg',
+                    avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                    author_name='<a href="">Oleg Smolerov (awd2)</a>',
+                    author_icon=iconExpert,
+                    sub_title='Соавтор'
+                )}}
+                <div class="media media--author media--author-lg media--author--add">
+                    <a class="media-left " href="#">
+                        <span class="media-object avatar"></span>
+                    </a>
+                    <div class="media-body media-middle">
+                        <span class="author-name">
+                            <a href="">Добавить соавтора</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__body-footer mt-0">
+                <button class="btn btn-alt btn-secondary-outline btn-sm btn-higher" data-dismiss="modal">Отменить</button>
+                <button class="btn btn-alt btn-primary btn-sm btn-higher" type="submit">Сохранить</button>
+            </div>
+        </form>
+    </div>
+</div>

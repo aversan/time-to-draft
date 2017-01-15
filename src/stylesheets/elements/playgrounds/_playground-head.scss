@@ -1,0 +1,125 @@
+// playground-head
+
+.playground-head {
+    padding-top: 103px;
+    padding-bottom: 73px;
+    position: relative;
+    z-index: 1;  
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include media-breakpoint-down(sm) {
+    	padding-top: 84px;
+    	padding-bottom: 62px;
+    }
+}
+
+.playground-head__logo {
+    margin: 0 0 10px 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.16);
+
+    @include media-breakpoint-down(sm) {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 14px;
+    }
+}
+
+.playground-head__title {
+    @include typo-h1;
+    margin: 0;
+    color: $white;
+
+    @include media-breakpoint-down(sm) {
+        @include typo-h3;
+    }
+}
+
+.playground-head__rating {
+	margin: 3px 0 30px 0;
+
+	@include media-breakpoint-down(sm) {
+		margin-bottom: 24px;
+	}
+
+    .icon {
+	    width: 20px;
+	    height: 20px;    	
+    }
+}
+
+.playground-head__body {
+    @include typo-body-lg;
+    line-height: 1.3333;
+    color: $white;
+
+    @include media-breakpoint-down(sm) {
+        @include typo-body;
+    }
+}
+
+.playground-head__links {
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @include media-breakpoint-down(sm) {
+    	margin-top: 24px;
+    	margin-bottom: 24px;
+    }
+
+	&.list-inline {
+		font-size: 0;
+	}
+    
+	.list-inline-item {
+	    @include typo-body;
+	    line-height: 1.25;
+		color: $grey;
+
+		@include media-breakpoint-down(sm) {
+			line-height: 1.5;
+		}
+	    
+	    a {
+	    	color: $white;
+	    }
+
+	    &:not(:last-child):after {
+			content: '•';
+			display: inline-block;
+			vertical-align: middle;
+			color: $grey;
+			padding: 0 0 0 5px;
+	    }
+	}
+}
+
+.playground-head__footer {
+    margin-top: 42px;
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 28px;
+    }
+
+    .btn,
+    .btn-lg {
+    	min-width: 270px;
+    	height: 56px;
+    	padding-top: 0;
+    	padding-bottom: 0;
+    	line-height: 56px;
+        
+        @include media-breakpoint-down(sm) {
+			height: 48px;
+			line-height: 48px;
+			padding-top: 0;
+			padding-bottom: 0;
+			font-size: $font-size-base;
+        }
+    }
+}

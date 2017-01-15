@@ -11,8 +11,47 @@ body,
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
 
-  &__content {
-    flex: 1;
-  }
+.page__content {
+flex: 1;
+}
+
+// overlap navbar
+
+.page--navbar-overlap {
+	& .navbar--header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+	}
+	
+	& .navbar--header:not(.uk-active) {
+		background-color: transparent;
+		border-bottom: 1px solid $border-color-light;
+	}
+}
+
+.page__bottom-placeholder {
+	display: none;
+
+	.page.has-message-button & {
+		@include media-breakpoint-down(sm) {
+			display: block;
+			height: 61px;			
+		}
+	}
+}
+
+.page--full-post-editor {
+	.page__content {
+		display: flex;
+	}
+}
+
+.page-overflow,
+.page-overflow body {
+	overflow: hidden;
 }

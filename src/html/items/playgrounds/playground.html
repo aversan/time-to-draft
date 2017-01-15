@@ -1,6 +1,6 @@
 {% macro playground(
-  img='images/banners/slider/b-g@3x.png',
-  user_logo='images/users/userpic-8@3x.png',
+  img='http://placehold.it/387x138',
+  user_logo='http://placehold.it/66x66',
   username='FanTeam',
   user_desc='Качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ.',
   rel='9',
@@ -9,49 +9,54 @@
   stars_count='5',
   forum_count='354'
 ) %}
-<div class="col-lg-4 col-sm-12 col-md-4">
-  <div class="text-sm-center playground">
-    <div class="gr-img text-sm-left" style="background-image: url({{ img }})">
+<div class="playground">
+  <div class="playground__img" style="background-image: url({{ img }})">
+    <div class="playground__rating">
       {% for i in [1,2,3,4,5] -%}
         {% if loop.index <= stars_count %}
           <i class="icon i-star"></i>
         {% endif %}
       {%- endfor %}
     </div>
-    <div class="gr-desc">
-      <img class="gr-logo img-circle" src="{{ user_logo }}" alt="">
-      <div class="gr-title h5">{{ username }}</div>
-      <div class="gt-body">
-        {{ user_desc }}
-      </div>
+  </div>
+  <div class="playground__block">
+    <img class="playground__logo" src="{{ user_logo }}" alt="">
+    <div class="playground__title">{{ username }}</div>
+    <div class="playground__desc">
+      {{ user_desc }}
     </div>
-    <div class="gr-values">
-      <div class="gr-value">
-        <div class="gr-val-img"><div class="progress-radial progress-{{ rel }}0 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">{{ rel }}</p>
+    <div class="playground__hr"></div>
+    <div class="playground__values">
+      <div class="playground__value">
+        <div class="progress-radial progress-{{ rel }}0">
+            <div class="overlay">
+              {{ rel }}
             </div>
-          </div></div>
-        <div class="gr-val-name small">Надежность</div>
+        </div>
+        <div class="progress-radial-caption">Надежность</div>
       </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4"><div class="progress-radial progress-{{ support//1 }}0 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">{{ support }}</p>
+      <div class="playground__value">
+        <div class="progress-radial progress-{{ support//1 }}0">
+            <div class="overlay">
+              {{ support }}
             </div>
-          </div></div>
-        <div class="gr-val-name small">Служба поддержки</div>
+        </div>
+        <div class="progress-radial-caption">Служба поддержки</div>
       </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4">{{ pl_count }}</div>
-        <div class="gr-val-name small">Количество игроков</div>
+      <div class="playground__value">
+        <div class="progress-radial progress-radial--transparent">
+            <div class="overlay">
+              {{ pl_count }}
+            </div>
+        </div>
+        <div class="progress-radial-caption">Количество игроков</div>
       </div>
     </div>
-    <div class="gr-overlay">
-      <button type="button" class="btn btn-primary gr-btn">Зарегистрироваться</button>
-      <a class="gr-link" href="#">Обзор площадки</a>
-      <a class="gr-link" href="#">Обсудить на форуме <span>({{ forum_count }})</span></a>
-    </div>
+  </div>
+  <div class="playground__overlay">
+    <button class="btn btn-primary btn-alt btn-lg playground__btn" type="button">Зарегистрироваться</button>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обзор площадки</a>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обсудить на форуме <span class="count">({{ forum_count }})</span></a>
   </div>
 </div>
 {% endmacro %}

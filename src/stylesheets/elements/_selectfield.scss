@@ -1,8 +1,12 @@
+// selectfield
+
 .mdl-selectfield--lg {
   font-size: $selectfield-font-size-lg;
   padding-top: $selectfield-vertical-spacing-lg;
   padding-bottom: $selectfield-vertical-spacing-lg;
 }
+
+// select
 
 .mdl-selectfield__select {
   .mdl-selectfield--lg & {
@@ -11,6 +15,8 @@
     font-size: $selectfield-font-size-lg;
   }
 }
+
+// label
 
 .mdl-selectfield__label {
   margin-bottom: 0;
@@ -40,6 +46,8 @@
   }
 }
 
+// error
+
 .mdl-selectfield__error {
   right: 0;
 
@@ -47,6 +55,8 @@
     font-size: $selectfield-floating-label-fontsize;
   }
 }
+
+// icon
 
 .mdl-selectfield__icon {
   .mdl-selectfield--lg & {

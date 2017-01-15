@@ -1,30 +1,68 @@
 {% extends 'layouts/application.html' %}
-{% import "items/cards/card.html" as cards %}
-{% import "items/global/subheader.html" as header %}
-
-{% block title %}{{ home_02.title }}{% endblock %}
-
+{% import "items/playgrounds/playground.html" as pg %}
 
 {% block content %}
-{{ header.subheader(title='Площадки') }}
+
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-header__title">Площадки</h1>
+    </div>
+</div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-lg-12 hidden-sm-down">
-            {% include "items/playgrounds/description.html" %}
+    <div class="row hidden-sm-down playgrounds__text">
+        <div class="col-lg-8 col-md-10 offset-md-1 offset-sm-1 offset-lg-2 text-sm-center typo--body-lg">
+            У нас собраны только проверенные и зарекомендовавшие себя площадки. Играя здесь вы можете не беспокоится о безопасноти и сохранности ваших личных данных и средств.
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            {% include "items/playgrounds/playgrounds.html" %}
+    <div class="row playgrounds__row">
+        <div class="col-lg-4 col-sm-12 col-md-4">
+            {{ pg.playground(
+                img='http://placehold.it/387x138',
+                user_logo='http://placehold.it/66x66',
+                username='FanTeam',
+                user_desc='Качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ.',
+                rel='9',
+                support='8',
+                pl_count='6.4k',
+                stars_count='5',
+                forum_count='354'
+            )}}
+        </div>
+        <div class="col-lg-4 col-sm-12 col-md-4">
+            {{ pg.playground(
+                img='http://placehold.it/387x138',
+                user_logo='http://placehold.it/66x66',
+                username='DreamTeam',
+                user_desc='Русскоязычная площадка по дэйли фэнтези футболу, начавшая работу весной 2016 года и находящаяся в стадии активной разработки',
+                rel='9',
+                support='8',
+                pl_count='6.4k',
+                stars_count='3',
+                forum_count='354'
+            )}}
+        </div>
+        <div class="col-lg-4 col-sm-12 col-md-4">
+            {{ pg.playground(
+                img='http://placehold.it/387x138',
+                user_logo='http://placehold.it/66x66',
+                username='FantasyBet',
+                user_desc='Платформа футбольного fantasy без ограничений по странам для участников.',
+                rel='8',
+                support='7.7',
+                pl_count='3.8k',
+                stars_count='4',
+                forum_count='354'
+            )}}
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12 text-sm-center m-b-3">
-            <button type="button" class="btn btn-sm btn-higher btn-alt btn-secondary-outline playgrounds-btn" data-toggle="modal" data-target="#myModal">Все  площадки</button>
-        </div>
+    <div class="playgrounds__footer">
+        <button  class="btn btn-sm btn-higher btn-alt btn-secondary-outline" type="button" data-toggle="modal" data-target="#modal_list_pg">Все площадки</button>
     </div>
-    {% include "items/playgrounds/modal.html" %}
 </div>
-    
+   
+{% endblock %}
+
+{% block modal %}
+    {% include "items/modals/modal_list_playground.html" %}
 {% endblock %}

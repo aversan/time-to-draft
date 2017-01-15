@@ -1,0 +1,15 @@
+.playground-hr {
+    border-top: 1px solid $border-color;
+    margin-top: 52px;
+    margin-bottom: 42px;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 54px;
+        margin-bottom: 44px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}

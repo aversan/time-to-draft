@@ -1,10 +1,10 @@
+// container
+
 .gamebar__container {
 	display: block;
-	overflow: hidden;
 	height: 82px;
 	padding-right: 145px;
 	position: relative;
-	overflow: hidden;
 	background-color: $white;
 
 	.swiper-container-wrapper {
@@ -50,12 +50,13 @@
 	.swiper-button-prev,
 	.swiper-button-next {
 		width: 40px;
-		height: 84px;
+		height: 82px;
 		line-height: 82px;
 		background-image: none;
 		top: -1px;
 		margin-top: 0;
-		border: 1px solid $light-silver;
+		border-left: 1px solid $light-silver;
+		border-right:  1px solid $light-silver;
 		background-color: $white;
 
 		.cursor {
@@ -89,6 +90,8 @@
 		}
 	}
 }
+
+// item
 
 .gamebar__item {
 	height: 84px;
@@ -128,14 +131,17 @@
 		}
 
 		.time {
+			@include typo-body-sm;
+			font-weight: 500;
 			display: inline-block;
 			margin-right: 18px;
-			font-weight: 500;
 			white-space: nowrap;
 			color: $darker-grey;
 		}
 	}
 }
+
+// title
 
 .gamebar__title {
 	height: 84px;
@@ -150,6 +156,8 @@
 	background-color: $light-grey;
 	color: $grey;
 }
+
+// team
 
 .gamebar__team {
 	@include typo-body-sm;
@@ -213,6 +221,7 @@
 		flex: 0 0 auto;
 
 		.scope {
+			@include typo-body-sm;
 			font-weight: 500;
 			white-space: nowrap;
 			display: inline-block;
@@ -223,6 +232,8 @@
 	}
 }
 
+// toggle
+
 .gamebar__toggle {
 	display: block;
 	padding-left: 18px;
@@ -230,7 +241,6 @@
 	width: 145px;
 	text-align: center;
 	white-space: nowrap;
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -245,24 +255,28 @@
 		height: 100%;
 	}
 
-	& > span {
+	& > .dropdown {
 		display: inline-block;
 		vertical-align: middle;
 		white-space: nowrap;
-		@include typo-body-sm;
-		color: $darker-grey;
+	}
 
-		.cursor {
-			display: inline-block;
-			vertical-align: middle;
-			width: 7px;
-			height: 7px;
-			border-left: 1px solid #979797;
-			border-bottom: 1px solid #979797;
-			transform: rotate(-45deg);
-			margin-left: 8px;
-			position: relative;
-			top: -.15em;
-		}
+	& .dropdown-menu {
+		margin-top: 12px;
+	}
+
+	& .dropdown-menu-right {
+		right: -9px;
+	}
+}
+
+.gamebar__toggle-link {
+	@include typo-body-sm;
+	color: $darker-grey;
+
+	&:hover,
+	&:focus {
+		color: $darker-grey;
+		text-decoration: none;
 	}
 }

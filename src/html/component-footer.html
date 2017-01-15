@@ -1,19 +1,23 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Footer</h3>
+    <div class="typo--h3">Footer</div>
+    <br>
+    <div class="typo--h4">Default</div>
     <br>
 </div>
-
 {% include "items/footer/footer.html" %}
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h4">Alternate</div>
+    <br>
+</div>
 {% include "items/footer/footer_alt.html" %}
-
-<br>
-<br>
-<br>
 
 {% endblock %}

@@ -1,0 +1,16 @@
+{% import "items/media/media.html" as media %}
+
+<blockquote class="playground-expert text-xs-center">
+    <div class="playground-expert__body">
+        <i>&#8243;</i>FanTeam выделяется широким охватом футбольных лиг, включая экзотические для Daily Fantasy турецкий и финский чемпионаты и даже шведский и норвежский первые дивизионы. Искушенных игроков привлечет наличие на fantasy-платформе ряда нестандартных турнирных опций.<i>&#8221;</i>
+    </div>
+    <footer class="playground-expert__footer">
+        {{media.mediaAuthor(
+            class='media--author-lg text-xs-left',
+            avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon='<i class="icon -expert -small"></i>',
+            sub_title='Эксперт, победитель Grand Weekend'
+        )}}
+    <footer>
+</blockquote>

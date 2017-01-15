@@ -1,0 +1,73 @@
+{% import "items/list/list.html" as list %}
+
+<div class="js-swiper-slider-plays-wide slider-plays__container slider-plays--wide">
+    <div class="typo--header slider-plays__header">
+        <div class="container">
+            <h6 class="typo--title">
+                <a href="">Где поиграть?</a>
+            </h6>
+            <div class="typo--header-space"></div>
+            <div class="typo--header__actions">
+                <span class="typo--header__actions-title hidden-md-down">
+                    <a href="">
+                        Что это такое?
+                    </a>
+                </span>
+                <i class="icon icon--prev-sm js-swiper-prev slider-plays__prev" title="Предыдущий"></i>
+                <i class="icon icon--next-sm js-swiper-next slider-plays__next" title="Следующий"></i>
+            </div>
+        </div> 
+    </div>
+    <div class="slider-plays__wrapper">
+        <div class="swiper-container js-swiper-container slider-plays__swiper-container">
+            {{list.list(
+                class='swiper-wrapper slider-plays__swiper-wrapper',
+                items = {
+                    item1: {
+                        class: 'mdl-list__item--more-line mdl-list__item--actions mdl-list__item--xl swiper-slide slider-plays__item is-hoverable',
+                        avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                        title: 'Фрироллы по €2000 на каждый тур Евро-2016&nbsp;<span class="text-label">New</span>',
+                        actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">FanTeam</a>',
+                        area_link: true
+                    },
+                    item2: {
+                        class: 'mdl-list__item--more-line mdl-list__item--actions mdl-list__item--xl swiper-slide slider-plays__item is-hoverable',
+                        avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                        title: 'Фрироллы по Евро-2016 на 250.000 рублей',
+                        actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Total Draft</a>',
+                        area_link: true
+                    },
+                    item3: {
+                        class: 'mdl-list__item--more-line mdl-list__item--actions mdl-list__item--xl swiper-slide slider-plays__item is-hoverable',
+                        avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                        title: 'Подарочные €5 от TimeToDraft.',
+                        actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>',
+                        area_link: true
+                    },
+                    item4: {
+                        class: 'mdl-list__item--more-line mdl-list__item--actions mdl-list__item--xl swiper-slide slider-plays__item is-hoverable',
+                        avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                        title: 'Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)',
+                        actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>',
+                        area_link: true
+                    },
+                    item5: {
+                        class: 'mdl-list__item--more-line mdl-list__item--actions mdl-list__item--xl swiper-slide slider-plays__item is-hoverable',
+                        avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                        title: 'Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)',
+                        actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>',
+                        area_link: true
+                    },
+                    item6: {
+                        class: 'mdl-list__item--more-line mdl-list__item--actions mdl-list__item--xl swiper-slide slider-plays__item is-hoverable',
+                        avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                        title: 'Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)',
+                        actions: '<button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>',
+                        area_link: true
+                    }
+                }
+            )}}
+        </div>
+        <div class="swiper-container-pagination js-swiper-pagination slider-plays__pagination"></div>
+    </div>
+</div>

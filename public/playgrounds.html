@@ -1,9 +1,10 @@
 
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>page title</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- http://realfavicongenerator.net/ is the best! -->
@@ -16,12 +17,14 @@
 <meta name="theme-color" content="#212932">
     
   </head>
-  <body class="page">
+  <body class="page ">
     
+      
 
-<header class="navbar navbar--header navbar-dark is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
+
+<header class="navbar navbar--header navbar-dark js-header is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
     <div class="container">
-        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler js-toggler" type="button">
             
   
   <span class='sprite -hamburger icon'>
@@ -43,8 +46,11 @@
 
             </a>
         </div>
-        <div class="collapse navbar-toggleable-sm float-md-right" id="exCollapsingNavbar2">
-            <div class="nav navbar-nav">
+        <div class="collapse navbar-toggleable-sm float-md-right js-collapse">
+            <button type="button" class="close navbar-close js-close" type="button">
+              <span aria-hidden="true"><i class="icon -close"></i></span>
+            </button>
+            <div class="nav navbar-nav navbar-main-menu">
                 <div class="navbar-nav-divider hidden-md-up"></div>
                 <a class="nav-item nav-link" href="#">
                     Стат-центр
@@ -86,8 +92,8 @@
                     </a>
                 </div>
             </div>
-            <div class="btn-group navbar__btn-group-icon navbar-search">
-                <label class="btn btn--icon navbar__btn-icon" for="site-search">
+            <div class="btn-group navbar__btn-group-icon navbar-search js-search">
+                <label class="btn btn--icon navbar__btn-icon js-search-toggle" for="site-search">
                     
   
   <span class='sprite -search icon'>
@@ -95,9 +101,17 @@
   </span>
 
                 </label>
-                <div class="mdl-textfield mdl-js-textfield navbar-search__textfield">
-                    <input class="mdl-textfield__input" type="text" id="site-search">
-                    <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                <div class="navbar-search__expandable-holder">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--has-icon navbar-search__textfield">
+                        
+  
+  <span class='sprite -search icon mdl-textfield__icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#search' /></use></svg>
+  </span>
+
+                        <input class="mdl-textfield__input" type="text" id="site-search">
+                        <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                    </div>
                 </div>
             </div>
             <div class="btn-group navbar__btn-group-icon hidden-sm-down">
@@ -109,41 +123,46 @@
                         <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification-blank" /></use></svg>
                     </span>
                 </a>
-                <div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+                
+
+<div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="icon -expert"></span>
-                                <span class="person-name">Oleg Smolerov (awd2)</span>
-                                отправил вам личное сообщение
-                            </span>
-                        </span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="person-name">Maybe</span>
-                                прокомментировал ваше сообщение на форуме
-                            </span>
-                        </span>
-                    </a>
-                </div>
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+
             </div>
             <div class="btn-group hidden-sm-down">
                 <div class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -154,25 +173,29 @@
   </span>
 
                 </div>
-                <div class="dropdown-menu dropdown-menu--user-menu dropdown-menu-right">
-                    <a class="dropdown-item dropdown-item--accent" href="">
-                        Написать пост
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Мои блоги
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Личные сообщения
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Профиль
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Выйти
-                    </a>
-                </div>                    
+                
+
+<div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Написать пост
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Мои блоги
+    </a>
+    <a class="dropdown-item" href="">
+        Личные сообщения
+    </a>
+    <a class="dropdown-item" href="">
+        Профиль
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Выйти
+    </a>
+</div>
+
+
             </div>
             <div class="navbar-user-item hidden-md-up">
                 <div class="navbar-user-item__primary">
@@ -186,7 +209,7 @@
                     <div class="navbar-user-item__sub-title">Профиль</div>
                 </div>
                 <div class="navbar-user-item__secondary">
-                    <a href="#" class="btn btn--icon navbar__btn-icon">
+                    <a href="#" class="btn btn--icon navbar__btn-icon js-header-notes-toggler">
                         <span class="sprite -notification icon mdl-badge mdl-badge--overlap" data-badge="3">
                             <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification" /></use></svg>
                         </span>
@@ -202,38 +225,80 @@
         </div>
     </div>
 </header>
+<div class="navbar navbar--header navbar-dark navbar--header--notes js-header-notes">
+    <div class="collapse navbar-toggleable-sm js-collapse">
+        <div class="nav navbar-nav navbar-main-menu">
+            <a class="nav-item nav-link js-prev" href="#">
+                <i class="icon icon--chevron-left-lg"></i>Назад
+            </a>
+        </div>
+        <button type="button" class="close navbar-close js-close" type="button">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        
+
+<div class="dropdown-menu dropdown-menu--note ">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+
+    </div>
+</div>
+    
     <div class="page__content">
       
 
-<div class="subheader__wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <h1 class="subheader__title">Площадки</h1>
-      </div>
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-header__title">Площадки</h1>
     </div>
-  </div>
 </div>
-
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-lg-12 hidden-sm-down">
-            <div class="row">
-    <div class="col-lg-8 col-md-10 offset-md-1 offset-sm-1 offset-lg-2 text-sm-center">
-        У нас собраны только проверенные и зарекомендовавшие себя площадки. Играя здесь вы можете не беспокоится о безопасноти и сохранности ваших личных данных и средств.
-    </div>
-</div>
+    <div class="row hidden-sm-down playgrounds__text">
+        <div class="col-lg-8 col-md-10 offset-md-1 offset-sm-1 offset-lg-2 text-sm-center typo--body-lg">
+            У нас собраны только проверенные и зарекомендовавшие себя площадки. Играя здесь вы можете не беспокоится о безопасноти и сохранности ваших личных данных и средств.
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
+    <div class="row playgrounds__row">
+        <div class="col-lg-4 col-sm-12 col-md-4">
             
-<div class="row playgrounds">
-    
-<div class="col-lg-4 col-sm-12 col-md-4">
-  <div class="text-sm-center playground">
-    <div class="gr-img text-sm-left" style="background-image: url(images/banners/slider/b-g@3x.png)">
+<div class="playground">
+  <div class="playground__img" style="background-image: url(http://placehold.it/387x138)">
+    <div class="playground__rating">
       
           <i class="icon i-star"></i>
         
@@ -246,47 +311,54 @@
           <i class="icon i-star"></i>
         
     </div>
-    <div class="gr-desc">
-      <img class="gr-logo img-circle" src="images/users/userpic-8@3x.png" alt="">
-      <div class="gr-title h5">FanTeam</div>
-      <div class="gt-body">
-        Качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ.
-      </div>
+  </div>
+  <div class="playground__block">
+    <img class="playground__logo" src="http://placehold.it/66x66" alt="">
+    <div class="playground__title">FanTeam</div>
+    <div class="playground__desc">
+      Качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ.
     </div>
-    <div class="gr-values">
-      <div class="gr-value">
-        <div class="gr-val-img"><div class="progress-radial progress-90 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">9</p>
+    <div class="playground__hr"></div>
+    <div class="playground__values">
+      <div class="playground__value">
+        <div class="progress-radial progress-90">
+            <div class="overlay">
+              9
             </div>
-          </div></div>
-        <div class="gr-val-name small">Надежность</div>
+        </div>
+        <div class="progress-radial-caption">Надежность</div>
       </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4"><div class="progress-radial progress-80 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">8</p>
+      <div class="playground__value">
+        <div class="progress-radial progress-80">
+            <div class="overlay">
+              8
             </div>
-          </div></div>
-        <div class="gr-val-name small">Служба поддержки</div>
+        </div>
+        <div class="progress-radial-caption">Служба поддержки</div>
       </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4">6.4k</div>
-        <div class="gr-val-name small">Количество игроков</div>
+      <div class="playground__value">
+        <div class="progress-radial progress-radial--transparent">
+            <div class="overlay">
+              6.4k
+            </div>
+        </div>
+        <div class="progress-radial-caption">Количество игроков</div>
       </div>
     </div>
-    <div class="gr-overlay">
-      <button type="button" class="btn btn-primary gr-btn">Зарегистрироваться</button>
-      <a class="gr-link" href="#">Обзор площадки</a>
-      <a class="gr-link" href="#">Обсудить на форуме <span>(354)</span></a>
-    </div>
+  </div>
+  <div class="playground__overlay">
+    <button class="btn btn-primary btn-alt btn-lg playground__btn" type="button">Зарегистрироваться</button>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обзор площадки</a>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обсудить на форуме <span class="count">(354)</span></a>
   </div>
 </div>
 
-    
-<div class="col-lg-4 col-sm-12 col-md-4">
-  <div class="text-sm-center playground">
-    <div class="gr-img text-sm-left" style="background-image: url(images/banners/slider/b-g@3x.png)">
+        </div>
+        <div class="col-lg-4 col-sm-12 col-md-4">
+            
+<div class="playground">
+  <div class="playground__img" style="background-image: url(http://placehold.it/387x138)">
+    <div class="playground__rating">
       
           <i class="icon i-star"></i>
         
@@ -295,47 +367,54 @@
           <i class="icon i-star"></i>
         
     </div>
-    <div class="gr-desc">
-      <img class="gr-logo img-circle" src="images/users/userpic-9@3x.png" alt="">
-      <div class="gr-title h5">DreamTeam</div>
-      <div class="gt-body">
-        Русскоязычная площадка по дэйли фэнтези футболу, начавшая работу весной 2016 года и находящаяся в стадии активной разработки
-      </div>
+  </div>
+  <div class="playground__block">
+    <img class="playground__logo" src="http://placehold.it/66x66" alt="">
+    <div class="playground__title">DreamTeam</div>
+    <div class="playground__desc">
+      Русскоязычная площадка по дэйли фэнтези футболу, начавшая работу весной 2016 года и находящаяся в стадии активной разработки
     </div>
-    <div class="gr-values">
-      <div class="gr-value">
-        <div class="gr-val-img"><div class="progress-radial progress-90 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">9</p>
+    <div class="playground__hr"></div>
+    <div class="playground__values">
+      <div class="playground__value">
+        <div class="progress-radial progress-90">
+            <div class="overlay">
+              9
             </div>
-          </div></div>
-        <div class="gr-val-name small">Надежность</div>
+        </div>
+        <div class="progress-radial-caption">Надежность</div>
       </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4"><div class="progress-radial progress-80 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">8</p>
+      <div class="playground__value">
+        <div class="progress-radial progress-80">
+            <div class="overlay">
+              8
             </div>
-          </div></div>
-        <div class="gr-val-name small">Служба поддержки</div>
+        </div>
+        <div class="progress-radial-caption">Служба поддержки</div>
       </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4">6.4k</div>
-        <div class="gr-val-name small">Количество игроков</div>
+      <div class="playground__value">
+        <div class="progress-radial progress-radial--transparent">
+            <div class="overlay">
+              6.4k
+            </div>
+        </div>
+        <div class="progress-radial-caption">Количество игроков</div>
       </div>
     </div>
-    <div class="gr-overlay">
-      <button type="button" class="btn btn-primary gr-btn">Зарегистрироваться</button>
-      <a class="gr-link" href="#">Обзор площадки</a>
-      <a class="gr-link" href="#">Обсудить на форуме <span>(354)</span></a>
-    </div>
+  </div>
+  <div class="playground__overlay">
+    <button class="btn btn-primary btn-alt btn-lg playground__btn" type="button">Зарегистрироваться</button>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обзор площадки</a>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обсудить на форуме <span class="count">(354)</span></a>
   </div>
 </div>
 
-    
-<div class="col-lg-4 col-sm-12 col-md-4">
-  <div class="text-sm-center playground">
-    <div class="gr-img text-sm-left" style="background-image: url(images/banners/slider/b-g@3x.png)">
+        </div>
+        <div class="col-lg-4 col-sm-12 col-md-4">
+            
+<div class="playground">
+  <div class="playground__img" style="background-image: url(http://placehold.it/387x138)">
+    <div class="playground__rating">
       
           <i class="icon i-star"></i>
         
@@ -346,117 +425,55 @@
           <i class="icon i-star"></i>
         
     </div>
-    <div class="gr-desc">
-      <img class="gr-logo img-circle" src="images/users/userpic-10@3x.png" alt="">
-      <div class="gr-title h5">FantasyBet</div>
-      <div class="gt-body">
-        Платформа футбольного fantasy без ограничений по странам для участников.
-      </div>
-    </div>
-    <div class="gr-values">
-      <div class="gr-value">
-        <div class="gr-val-img"><div class="progress-radial progress-80 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">8</p>
-            </div>
-          </div></div>
-        <div class="gr-val-name small">Надежность</div>
-      </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4"><div class="progress-radial progress-70 setsize">
-            <div class="overlay setsize">
-              <p class="pi-val h4">7.7</p>
-            </div>
-          </div></div>
-        <div class="gr-val-name small">Служба поддержки</div>
-      </div>
-      <div class="gr-value">
-        <div class="gr-val-img h4">3.8k</div>
-        <div class="gr-val-name small">Количество игроков</div>
-      </div>
-    </div>
-    <div class="gr-overlay">
-      <button type="button" class="btn btn-primary gr-btn">Зарегистрироваться</button>
-      <a class="gr-link" href="#">Обзор площадки</a>
-      <a class="gr-link" href="#">Обсудить на форуме <span>(354)</span></a>
-    </div>
   </div>
-</div>
-
-</div>
-        </div>
+  <div class="playground__block">
+    <img class="playground__logo" src="http://placehold.it/66x66" alt="">
+    <div class="playground__title">FantasyBet</div>
+    <div class="playground__desc">
+      Платформа футбольного fantasy без ограничений по странам для участников.
     </div>
-    <div class="row">
-        <div class="col-sm-12 text-sm-center m-b-3">
-            <button type="button" class="btn btn-sm btn-higher btn-alt btn-secondary-outline playgrounds-btn" data-toggle="modal" data-target="#myModal">Все  площадки</button>
+    <div class="playground__hr"></div>
+    <div class="playground__values">
+      <div class="playground__value">
+        <div class="progress-radial progress-80">
+            <div class="overlay">
+              8
+            </div>
         </div>
-    </div>
-    
-<div class="modal pl-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <span class='sprite -close icon'>
-                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#close' /></use></svg>
-            </span>
-          </span>
-        </button>
-        <h4 class="modal-title h3" id="myModalLabel"><strong>Площадки</strong></h4>
+        <div class="progress-radial-caption">Надежность</div>
       </div>
-      <div class="modal-body">
-          
-<div class="pl-item">
-    <img src="images/users/userpic-7@3x.png" class="img-circle pl-img" alt="">
-    <div class="pl-info">
-        <div class="pl-title h6">Zweeler</div>
-        <div class="pl-desc">Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором
-                спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…
+      <div class="playground__value">
+        <div class="progress-radial progress-70">
+            <div class="overlay">
+              7.7
+            </div>
         </div>
-    </div>
-</div>
-
-          
-<div class="pl-item">
-    <img src="images/users/userpic-8@3x.png" class="img-circle pl-img" alt="">
-    <div class="pl-info">
-        <div class="pl-title h6">Oulala</div>
-        <div class="pl-desc">Oulala — англоязычная платформа Daily Fantasy Football, зарегистрированная на Мальте, имеющая британскую лицензию и доступная для игроков из СНГ
-        </div>
-    </div>
-</div>
-
-          
-<div class="pl-item">
-    <img src="images/users/userpic-9@3x.png" class="img-circle pl-img" alt="">
-    <div class="pl-info">
-        <div class="pl-title h6">DraftGaming</div>
-        <div class="pl-desc">Первый русскоязычный Daily Fantasy Sports с ориентацией на игроков из СНГ-пространства.
-        </div>
-    </div>
-</div>
-
-          
-<div class="pl-item">
-    <img src="images/users/userpic-7@3x.png" class="img-circle pl-img" alt="">
-    <div class="pl-info">
-        <div class="pl-title h6">Zweeler</div>
-        <div class="pl-desc">Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором
-                  спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…
-        </div>
-    </div>
-</div>
-
+        <div class="progress-radial-caption">Служба поддержки</div>
       </div>
-      <div class="modal-footer small text-sm-left">
-        Данные площадки не вошли в список рекомендованных. Вы можете по-прежнему выбирать любую понравившуюся вам площадку, однако мы не можем гарантировать вам наилучший опыт и сохранность данных.
+      <div class="playground__value">
+        <div class="progress-radial progress-radial--transparent">
+            <div class="overlay">
+              3.8k
+            </div>
+        </div>
+        <div class="progress-radial-caption">Количество игроков</div>
       </div>
     </div>
   </div>
+  <div class="playground__overlay">
+    <button class="btn btn-primary btn-alt btn-lg playground__btn" type="button">Зарегистрироваться</button>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обзор площадки</a>
+    <a class="btn btn-link btn-lg playground__btn-link" href="#">Обсудить на форуме <span class="count">(354)</span></a>
+  </div>
 </div>
+
+        </div>
+    </div>
+    <div class="playgrounds__footer">
+        <button  class="btn btn-sm btn-higher btn-alt btn-secondary-outline" type="button" data-toggle="modal" data-target="#modal_list_pg">Все площадки</button>
+    </div>
 </div>
-    
+   
 
     </div>
     
@@ -567,8 +584,188 @@
         </div>
     </div>
 </div>
+    <div class="page__bottom-placeholder"></div>
     
-      <script src="javascripts/app.js"></script>
+    
+
+<div class="modal modal--alt modal--list hide fade" id="modal_list_pg" tabindex="-1" role="dialog" aria-labelledby="modal_list_pg" aria-hidden="true">
+    <div class="modal-body">
+        <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <div class="modal__body-header">
+            <h3 class="typo--h3 modal__title">
+                Площадки
+            </h3>
+        </div>
+        <div class="pre-scrollable modal__scrollable swiper-container js-swiper-container-scrollable">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+
+
+
+<ul class="mdl-list ">
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--lg">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Zweeler</a>
+            </span>
+          </span>
+        
+
+        
+          <span class="mdl-list__item-text-body">
+            Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…
+            
+          </span>
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--lg">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Oulala</a>
+            </span>
+          </span>
+        
+
+        
+          <span class="mdl-list__item-text-body">
+            Oulala — англоязычная платформа Daily Fantasy Football, зарегистрированная на Мальте, имеющая британскую лицензию и доступная для игроков из СНГ
+            
+          </span>
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--lg">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">DraftGaming</a>
+            </span>
+          </span>
+        
+
+        
+          <span class="mdl-list__item-text-body">
+            Первый русскоязычный Daily Fantasy Sports с ориентацией на игроков из СНГ-пространства.
+            
+          </span>
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--lg">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Footballtop</a>
+            </span>
+          </span>
+        
+
+        
+          <span class="mdl-list__item-text-body">
+            Первый русскоязычный Daily Fantasy Sports с ориентацией на игроков из СНГ-пространства.
+            
+          </span>
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+</ul>
+
+
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="modal__info">
+            Данные площадки не вошли в список рекомендованных. Вы можете по-прежнему выбирать любую понравившуюся вам площадку, однако мы не можем гарантировать вам наилучший опыт и сохранность данных.
+        </div>
+    </div>
+</div>
+
+    
+      <script src="javascripts/app.js" defer></script>
     
   </body>
 </html>

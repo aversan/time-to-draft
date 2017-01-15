@@ -1,0 +1,114 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/media/media.html" as media %}
+
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon -small') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert -small"></i>
+{% endset %}
+
+{% macro messagePostItems(
+    hasAction=false
+) %}
+
+<div class="message-item message-item--post">
+    <div class="typo--header message-item__header">
+        {{media.mediaAuthor(
+            class='message-item__media',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconExpert,
+            time='1 час назад'
+        )}}
+        <div class="typo--header-space"></div>
+        {% if hasAction %}
+            {% include "items/messages/message-item-header-action.html" %}
+        {% endif %}
+    </div>
+    <h4 class="message-item__title">
+        <a href="">​​​​​Подкасты</a>
+    </h4>
+    <div class="message-item__text">
+        Подкасты от TimeToDraft, прослушивая которые можно узнать много полезного и интересного о дэйли фэнтези.
+    </div>
+</div>
+<div class="message-item message-item--post">
+    <div class="typo--header message-item__header">
+        {{media.mediaAuthor(
+            class='message-item__media',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconTeam,
+            time='1 час назад'
+        )}}
+        {{media.mediaAuthor(
+            class='message-item__media hidden-sm-down',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconExpert,
+            sub_title='Соавтор'
+        )}}
+        <a href="" class="media-badge hidden-md-up" data-badge="+1"></a>
+        <div class="typo--header-space"></div>
+        {% if hasAction %}
+            {% include "items/messages/message-item-header-action.html" %}
+        {% endif %}
+    </div>
+    <h4 class="message-item__title">
+        <a href="">Евро-2016</a>
+    </h4>
+    <div class="message-item__text">
+        Тексты, посвященные Евро-2016
+    </div>
+</div>
+<div class="message-item message-item--post">
+    <div class="typo--header message-item__header">
+        {{media.mediaAuthor(
+            class='message-item__media',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">Time to draft</a>',
+            time='2 дня назад'
+        )}}
+        {{media.mediaAuthor(
+            class='message-item__media hidden-sm-down',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            sub_title='Показать<br>соавторов',
+            hasBadge=true
+        )}}
+        <a href="" class="media-badge hidden-md-up" data-badge="+2"></a>
+        <div class="typo--header-space"></div>
+        {% if hasAction %}
+            {% include "items/messages/message-item-header-action.html" %}
+        {% endif %}
+    </div>
+    <h4 class="message-item__title">
+        <a href="">Total Draft — играем в Евро-2016</a>
+    </h4>
+    <div class="message-item__text">
+        Прогрессивный проект по дэйли фэнтези футболу, предлагающий ежедневные турниры с гарантированными призами
+    </div>
+</div>
+<div class="message-item message-item--post">
+    <div class="typo--header message-item__header">
+        {{media.mediaAuthor(
+            class='message-item__media',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">FanTeam</a>',
+            time='2 дня назад'
+        )}}
+        <div class="typo--header-space"></div>
+        {% if hasAction %}
+            {% include "items/messages/message-item-header-action.html" %}
+        {% endif %}
+    </div>
+    <h4 class="message-item__title">
+        <a href="">Mathmen</a>
+    </h4>
+    <div class="message-item__text">
+        Прогрессивный проект по дэйли фэнтези футболу, предлагающий ежедневные турниры с гарантированными призами
+    </div>
+</div>
+
+{% endmacro %}

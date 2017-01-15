@@ -1,3 +1,17 @@
+$container-max-width-lg: map-get($container-max-widths, 'lg');
+
+// container
+
+.container {
+  width: 100%;
+  
+  @include media-breakpoint-up(lg) {
+    width: $container-max-width-lg;
+  }
+}
+
+// row
+
 .row {
   margin-left: -8px;
   margin-right: -8px;
@@ -7,8 +21,9 @@
     margin-right: -10px;
   }
 
-  & > [class*=col-md-],
+  & > [class*=col-xs-],
   & > [class*=col-sm-],
+  & > [class*=col-md-],
   & > [class*=col-lg-] {
     padding-left: 8px;
     padding-right: 8px;
@@ -20,12 +35,16 @@
   }
 }
 
+// panel-row
+
 .panel-row {
   @include media-breakpoint-down(sm) {
     margin-left: -16px;
     margin-right: -16px;
   }
 }
+
+// panel-column
 
 .panel-column {
   .panel-row & {
@@ -35,6 +54,8 @@
     }    
   }
 }
+
+// l-cards
 
 .l-cards {
   &.container {
@@ -52,7 +73,8 @@
 
   .card,
   .panel,
-  .slider-cards__container {
+  .slider-cards__container,
+  .slider-plays__container {
     margin-bottom: 20px;
 
     @include media-breakpoint-down(sm) {
@@ -60,6 +82,8 @@
     }
   }
 }
+
+// side col
 
 .col-side {
   position: absolute;
@@ -89,4 +113,10 @@
       padding-left: 20px;
     }
   }
+}
+
+// section col
+
+.col-section {
+  min-height: 1392px;
 }

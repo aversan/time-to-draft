@@ -1,0 +1,30 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Editor</div>
+    <br>
+    <div class="typo--h4">Message editor</div>
+    <br>
+    {% include "items/editors/editor-message.html" %}
+    <br>
+    <br>
+    <div class="typo--h4">Modal message editor</div>
+    <br>
+    {% include "items/editors/editor-modal-message.html" %}
+    <br>
+    <br>
+    <div class="typo--h4">Post editor</div>
+    <br>
+    {% include "items/editors/editor-post.html" %}
+    <br>
+    <br>
+    <div class="typo--h4">Full post editor</div>
+    <br>
+</div>
+{% include "items/editors/editor-post-full.html" %}
+{% endblock %}

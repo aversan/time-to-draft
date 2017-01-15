@@ -1,0 +1,40 @@
+// collapsed
+
+.post-write__collapsed {
+  display: flex;
+  align-items: center;
+
+  .post-write.is-expanded & {
+    display: none;
+  }
+}
+
+// expanded
+
+.post-write__expanded {
+  display: none;
+
+  .post-write.is-expanded & {
+    display: block;
+  }
+}
+
+// header
+
+.post-write__header {
+  &.typo--header {
+    border-bottom: none;
+    height: 60px;
+
+    @include media-breakpoint-down(sm) {
+      height: 56px;
+    }
+  }
+}
+
+// title
+
+.post-write__title {
+  cursor: pointer;
+  color: $lighter-grey;
+}

@@ -4,6 +4,8 @@
   border-radius: 2px;
   box-shadow: $dropdown-box-shadow;
 
+  // note menu
+  
   &--note {
     width: 346px;
 
@@ -20,6 +22,12 @@
       width: 16px;
       height: 14px;
     }
+  }
+
+  // bordered menu
+
+  &--bordered {
+    border: solid 1px rgba(37, 37, 37, 0.13);
   }
 }
 
@@ -55,6 +63,12 @@
   &.active {
     font-weight: 700;
   }
+
+  &.selected {
+    font-weight: 700;
+    background-color: $dropdown-link-hover-bg;
+    color: $dropdown-link-hover-color;
+  }
   
   &--accent {
     color: $green;
@@ -68,5 +82,9 @@
     .person-name {
       font-weight: 700;
     }
+  }
+
+  .dropdown-menu--air & {
+    padding: 8px 24px;
   }
 }

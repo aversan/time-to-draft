@@ -2,6 +2,8 @@ $card-img-height: 260px;
 $card-img-height-md: 196px;
 $card-banner-background-color: #f4fff8;
 
+// card
+
 .card {
   position: relative;
   padding: $card-img-height 20px 56px 20px;
@@ -149,10 +151,6 @@ $card-banner-background-color: #f4fff8;
     }
   }
 
-  &--hoverable {
-    cursor: pointer;
-  }
-
   &--accent {
     background-color: $green;
   }
@@ -270,8 +268,13 @@ $card-banner-background-color: #f4fff8;
   top: 0;
   left: 0;
   width: 100%;
-  height: $card-img-height;
-  font-family: $font-family-alt;
+  height: $card-img-height; 
+  font-family: Arial, sans-serif;
+
+  // .fonts-loaded & {
+    font-family: $font-family-alt;
+  // }
+  
   font-weight: 700;
   font-size: 186px;
   line-height: $card-img-height;

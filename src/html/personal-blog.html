@@ -1,0 +1,51 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/posts/posts-list.html" as postsList %}
+
+{% set colSideContent %}
+    {% include "items/panel/panel-component_beginner-profi-play-forum_side.html" %}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert -small"></i>
+{% endset %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="container">
+            {% include "items/posts/post-header-top_personal-blog.html" %}
+            <!-- {% include "items/posts/post-header-top_personal-blog-2.html" %} -->
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                    <h1 class="page-header__title page-header__title--no-transform">
+                        Марафон на миллион
+                    </h1>
+                    <div class="page-header__sub-title">Блог Олега Смолерова об английском fantasy и не только</div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="page-header__action page-header__action--abs">
+                        <a class="btn btn-primary-outline btn-alt btn-sm btn-higher btn-responsive page-header__action-btn flex-xs-first flex-md-last" href="">Подписаться</a>
+                        <span class="typo--caption">128 подписчиков</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                {{ postsList.postsList(
+                    colSideContent = colSideContent,
+                    hasAction = false
+                ) }}
+                <div class="btn-more-wrapper">
+                    <button class="btn btn--more btn-block">
+                        Показать еще...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

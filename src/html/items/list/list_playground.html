@@ -1,0 +1,30 @@
+{% import "items/list/list.html" as list %}
+
+{{list.list(
+    items = {
+        item1: {
+            class: 'mdl-list__item--more-line mdl-list__item--lg',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            title: '<a href="">Zweeler</a>',
+            textbody: 'Zweeler — популярная европейская платформа Fantasy Sports Games с огромным набором спортивных событий и нестандартным интерфейсом, русифицированная и доступная для игроков из СНГ…'
+        },
+        item2: {
+            class: 'mdl-list__item--more-line mdl-list__item--lg',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            title: '<a href="">Oulala</a>',
+            textbody: 'Oulala — англоязычная платформа Daily Fantasy Football, зарегистрированная на Мальте, имеющая британскую лицензию и доступная для игроков из СНГ'
+        },
+        item3: {
+            class: 'mdl-list__item--more-line mdl-list__item--lg',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            title: '<a href="">DraftGaming</a>',
+            textbody: 'Первый русскоязычный Daily Fantasy Sports с ориентацией на игроков из СНГ-пространства.'
+        },
+        item4: {
+            class: 'mdl-list__item--more-line mdl-list__item--lg',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            title: '<a href="">Footballtop</a>',
+            textbody: 'Первый русскоязычный Daily Fantasy Sports с ориентацией на игроков из СНГ-пространства.'
+        }
+    }
+)}}

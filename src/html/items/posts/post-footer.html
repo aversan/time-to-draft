@@ -1,0 +1,63 @@
+{% from 'macros/helpers.html' import sprite %}
+
+<footer class="post__footer">
+    <div class="mdl-chip-container post__chip-container">
+        <span class="mdl-chip-label">Тэги:</span>
+        <div class="mdl-chip-list">
+            <span class="mdl-chip">
+                <span class="mdl-chip__text">dailyfantasy</span>
+            </span>
+            <span class="mdl-chip">
+                <span class="mdl-chip__text">captain</span>
+            </span>
+            <span class="mdl-chip">
+                <span class="mdl-chip__text">fantasyfootball</span>
+            </span>
+            <span class="mdl-chip">
+                <span class="mdl-chip__text">euro2016</span>
+            </span>
+        </div>
+    </div>
+    <div class="rating-container">
+        <ul class="list-inline rating-list">
+            <li class="list-inline-item rating-item">
+                {{ sprite('energy', '0 0 1 1', 'icon -primary') }}
+                <span class="text">Рейтинг:</span>
+                <span class="value value--rating">+6</span>
+            </li>
+            <li class="list-inline-item rating-item">
+                {{ sprite('up', '0 0 1 1', 'icon -hoverable -dark-grey') }}
+                {{ sprite('down', '0 0 1 1', 'icon -hoverable  -dark-grey') }}
+            </li>
+            <li class="list-inline-item rating-item">
+                {{ sprite('view', '0 0 1 1', 'icon -primary') }}
+                <span class="value">78</span>
+            </li>
+            <li class="list-inline-item rating-item">
+                {{ sprite('comment', '0 0 1 1', 'icon -primary') }}
+                <span class="value">16</span>
+                <span class="text">/</span>
+                <span class="value value--new">5 новых</span>
+            </li>
+        </ul>
+        <ul class="list-inline rating-list rating-list--social">
+            <li class="list-inline-item rating-item rating-item--social">
+                <a href="">
+                    {{ sprite('facebook', '0 0 1 1', 'icon') }}
+                </a>
+                <span class="value">34</span>
+            </li>
+            <li class="list-inline-item rating-item rating-item--social">
+                <a href="">
+                    {{ sprite('vkontakte', '0 0 1 1', 'icon') }}
+                </a>
+                <span class="value">12</span>
+            </li>
+            <li class="list-inline-item rating-item rating-item--social">
+                <a href="">
+                    {{ sprite('twitter', '0 0 1 1', 'icon') }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>

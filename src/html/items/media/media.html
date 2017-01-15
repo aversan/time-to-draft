@@ -1,0 +1,31 @@
+{% macro mediaAuthor(
+    class='',
+    avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+    author_name='',
+    author_icon='',
+    time='',
+    sub_title='',
+    hasBadge=0
+) %}
+
+<div class="media media--author {{ class }}">
+    <a class="media-left {{ "media-left--badge" if hasBadge }}" href="#" {{ "data-badge=+1" if hasBadge }}>
+        <img class="media-object avatar" src="{{ avatar.src | safe }}" alt="" width="{{ avatar.width | safe }}" height="{{ avatar.height | safe }}">
+    </a>
+    <div class="media-body media-middle">
+        {% if author_name | length %}
+            <span class="author-name">
+                {{ author_icon | safe }}
+                {{ author_name | safe }}
+            </span>
+        {% endif %}
+        {% if sub_title | length %}
+            <span class="sub-title">{{ sub_title | safe }}</span>
+        {% endif %}
+        {% if time | length %}
+            <span class="time">{{ time | safe }}</span>
+        {% endif %}
+    </div>
+</div>
+
+{% endmacro %}

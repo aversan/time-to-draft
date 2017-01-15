@@ -1,0 +1,71 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/media/media.html" as media %}
+
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon -small') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert -small"></i>
+{% endset %}
+
+{% macro messageItems(
+    hasAction=false
+) %}
+
+<div class="message-item is-new">
+    <div class="typo--header message-item__header">
+        {{media.mediaAuthor(
+            class='is-online message-item__media',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconExpert,
+            time='1 час назад'
+        )}}
+        <div class="typo--header-space"></div>
+        {% if hasAction %}
+        <div class="message-item__actions hidden-sm-down">
+            <a class="message-item__actions-link" href="">Ответить</a>
+            <a class="message-item__actions-link" href="">Цитировать</a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="message-item__text">
+        Тексты, посвященные Евро-2016
+    </div>
+    {% if hasAction %}
+    <div class="message-item__actions hidden-md-up">
+        <a class="message-item__actions-link" href="">Ответить</a>
+        <a class="message-item__actions-link" href="">Цитировать</a>
+    </div>
+    {% endif %}
+</div>
+<div class="message-item">
+    <div class="typo--header message-item__header">
+        {{media.mediaAuthor(
+            class='is-offline message-item__media',
+            avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconTeam,
+            time='1 час назад'
+        )}}
+        <div class="typo--header-space"></div>
+        {% if hasAction %}
+        <div class="message-item__actions hidden-sm-down">
+            <a class="message-item__actions-link" href="">Цитировать</a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="message-item__text">
+        <blockquote class="message-item__text-blockquote">
+            Айчына! Скажы, у трывожны час, у цяжкiя гады. Цi адчуваеш ты патрэбу ў кожным з нас? I мой ўласны лёс цi злучаны з табой, Адзiнаю маёй?
+        </blockquote>
+    </div>
+    {% if hasAction %}
+    <div class="message-item__actions hidden-md-up">
+        <a class="message-item__actions-link" href="">Цитировать</a>
+    </div>
+    {% endif %}
+</div>
+
+{% endmacro %}

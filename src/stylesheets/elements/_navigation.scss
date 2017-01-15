@@ -1,7 +1,11 @@
+// navigation
+
 .navigation {
   display: flex;
   flex-wrap: nowrap;
 }
+
+// link
 
 .navigation__link {
   position: relative;
@@ -11,7 +15,12 @@
   padding: 0 12px;
   height: 56px;
   line-height: 56px;
-  font-family: $font-family-base;
+  font-family: Arial, sans-serif;
+  
+  // .fonts-loaded & {
+    font-family: $font-family;
+  // }
+
   font-weight: 400;
   font-size: $font-size-lg;
   text-transform: none;
@@ -50,9 +59,21 @@
     height: 3px;
     background-color: $blue;
     display: none;
+
+    .navigation--sm & {
+      left: 12px;
+      right: 12px;
+      width: auto;
+    }
   }
 
   &.active:after {
     display: block;
+  }
+
+  .navigation--sm & {
+    height: 46px;
+    line-height: 46px;
+    font-size: $font-size-sm;
   }
 } 

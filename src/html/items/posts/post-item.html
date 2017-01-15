@@ -1,3 +1,5 @@
+{% from 'macros/helpers.html' import sprite %}
+
 {% macro post(
     class='',
     title='Title',
@@ -5,8 +7,10 @@
     user_ava='http://placehold.it/36x36',
     info_user='FanTeam',
     info_time='1 час назад',
-    image='/images/content/bitmap@2x.png',
-    hasNewComment=false
+    image='http://placehold.it/752x236',
+    hasNewComment=false,
+    hasAction=false,
+    pending=false
 ) %}
 
 <article class="post-item {{ class }}">
@@ -23,7 +27,19 @@
     <h2 class="post-item__title">{{ title | safe }}</h2>
     <div class="post-item__description">{{ description }}</div>
     {% include "items/cards/card-icons.html" %}
-    <a class="post-item__area-link" href=""></a>
+    {% if pending %}
+        <div class="post-item__overlay-panel">
+            <div class="post-item__overlay-text">
+                {# sprite('clock', '0 0 1 1', 'icon -large') #}
+                <div class="typo--title typo--medium">Ваш пост проходит модерацию и&nbsp;появится в&nbsp;ленте совсем скоро!</div>
+            </div>
+        </div>
+    {% else %}
+        <a class="post-item__area-link" href=""></a>
+    {% endif %}
+    {% if hasAction %}
+        {% include "items/posts/post-item-actions.html" %}
+    {% endif %}
 </article>
 
 {% endmacro %}

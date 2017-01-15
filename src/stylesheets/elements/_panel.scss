@@ -54,7 +54,13 @@
         bottom: 1px;
         left: 20px;
         right: 20px;
-        max-height: none;        
+      }
+    }
+
+    .panel-scrollable {
+      &,
+      &.pre-scrollable {
+        max-height: 100%;
       }
     }
   }
@@ -92,32 +98,12 @@
   }
 }
 
+// scrollable
 
-// content
-
-.panel-content {
+.panel-scrollable {
+  &,
   &.pre-scrollable {
     position: relative;
-
-    &.nano {
-      @include media-breakpoint-down(sm) {
-        height: auto !important;
-      }
-    }
-
-    .nano-content {
-      @include media-breakpoint-down(sm) {
-        position: static;
-      }
-    }
-
-    .nano-pane {
-      z-index: 3;
-
-      @include media-breakpoint-down(sm) {
-        display: none;
-      }
-    }
 
     @include media-breakpoint-down(sm) {
       max-height: 100%;
@@ -137,19 +123,6 @@
       @include media-breakpoint-down(sm) {
         display: none;
       }
-    }
-  }
-  
-  .panel-component.pre-scrollable & {
-    overflow: hidden;
-    max-height: 404px;
-    
-    @include media-breakpoint-down(md) {
-      max-height: 464px;
-    }
-
-    @include media-breakpoint-down(sm) {
-      max-height: 100%;
     }
   }
 }
@@ -226,57 +199,31 @@
       padding-bottom: 38px;
     }
   }
-}
 
-
-.panel--banner {
-  position: relative;
-  background-repeat: no-repeat;
-  @include img-retina($banner-wide-slider, $banner-wide-slider-x2, 100%, 100%);    
-  background-size: cover !important;
-  box-shadow: none;
-
-  @include media-breakpoint-down(sm) {
-    background-image: radial-gradient(circle at 1% 1%, #323a6a, #232a4e);
-  }
-
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #0f1a29;
-    opacity: .8;
-    border-radius: 2px;
-  }
-
-  &,
-  & .mdl-list__item-title,
-  & .mdl-list__item-actions-hint {
-    color: $white;
-  }
-
-  & .mdl-list__item-title {
-    max-width: 296px;
-  }
-
-  & .mdl-list.swiper-wrapper {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  & .swiper-container {
-    margin-top: 38px;
-    margin-bottom: 62px;
+  .media-list {
+    padding-top: 20px;
+    padding-bottom: 4px;
 
     @include media-breakpoint-down(md) {
-      margin-top: 22px;
-      margin-bottom: 32px;
+      padding-top: 20px;
+      padding-bottom: 6px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 16px;
+      padding-bottom: 8px;
+    }
+
+    .media-left {
+      @include media-breakpoint-down(sm) {
+        max-width: 49%;
+        max-width: calc(50% - 8px);
+      }
     }
   }
 }
 
+// transparent
 
 .panel--transparent {
   background-color: transparent;

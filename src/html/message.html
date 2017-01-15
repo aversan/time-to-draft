@@ -1,15 +1,30 @@
 {% extends 'layouts/application.html' %}
-{% import "items/global/subheader.html" as header %}
-
-{% block title %}{{ home_02.title }}{% endblock %}
-
+{% import "items/messages/message-items.html" as messageItems %}
 
 {% block content %}
-{{ header.messageSubheader() }}
+<div class="page-header">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+		        <div class="page-header__row">
+			        <h1 class="page-header__title">
+			            Сообщения
+			        </h1>
+		        </div>    			
+    		</div>
+    	</div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            {% include "items/messages/message.html" %}
+        	<div class="message-wrapper">
+            	<a class="message-btn-prev" href="" data-role="button">
+            		<i class="icon icon--chevron-left-lg"></i>Привет, брат. Есть че поиграть?
+            	</a>
+            	{{ messageItems.messageItems(hasAction=true) }}
+            </div>
+            {% include "items/editors/editor-message.html" %}
         </div>
     </div>
 </div>

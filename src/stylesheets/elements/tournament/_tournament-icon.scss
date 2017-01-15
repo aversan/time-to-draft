@@ -1,0 +1,19 @@
+// icon
+
+.tournament-icon {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &--khl {
+    width: 50px;
+    height: 54px;
+    background-image: $khl;
+  }
+
+  &--pl {
+    width: 57px;
+    height: 57px;
+    background-image: $pl;
+  }
+}

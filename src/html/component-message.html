@@ -1,0 +1,51 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/messages/message-items.html" as messageItems %}
+{% import "items/messages/message-button-container.html" as buttonContainer %}
+{% import "items/messages/message-post-items.html" as postItems %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Message</div>
+    <br>
+    <div class="typo--h4">Items</div>
+    <br>
+    <div class="message-wrapper">
+    	{{ messageItems.messageItems(hasAction=false) }}
+    </div>
+    <br>
+    <br>
+    <div class="typo--h4">Items actions</div>
+    <br>
+    <div class="message-wrapper">
+		{{ messageItems.messageItems(hasAction=true) }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Post items</div>
+    <br>
+    <div class="message-wrapper">
+		{{ postItems.messagePostItems(hasAction=false) }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Post items actions</div>
+    <br>
+    <div class="message-wrapper">
+    	{{ postItems.messagePostItems(hasAction=true) }}
+    </div>
+    <br>
+    <br>
+    <div class="typo--h4">Button container (visible in small size)</div>
+    <br>
+    {{buttonContainer.messageButtonContainer(
+        class='',
+        button_attribute='',
+        button_text='Кнопка'
+    )}}    
+</div>
+
+{% endblock %}

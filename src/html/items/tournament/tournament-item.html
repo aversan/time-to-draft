@@ -1,0 +1,62 @@
+{% macro tournamentItem(
+    class='',
+    image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+    head_logo_name='',
+    head_title='head_title',
+    head_sub_title='head_sub_title',
+    info_price_title='info_price_title',
+    info_price_sub_title='info_price_sub_title',
+    info_prize_title='info_prize_title',
+    info_prize_sub_title='info_prize_sub_title',
+    actions_info_author_avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36'},
+    actions_info_author_name='actions_info_author_name',
+    actions_info_author_time='actions_info_author_time'
+) %}
+
+<section class="tournament-item {{ class }}">
+    <div class="tournament-item__img" style="background-image: url({{ image.src | safe }});">
+        <img src="{{ image.src | safe }}" alt="" width="{{ image.width | safe }}" height="{{ image.height }}">
+    </div>
+    <div class="tournament-item__block tournament-item__block--top tournament-item__head">
+        {% if head_logo_name | length %}
+            <span class="tournament-item__head-logo tournament-icon tournament-icon--{{ head_logo_name | safe }}"></span>
+        {% endif %}
+        <span class="tournament-item__head-title">
+            {{ head_title | safe }}
+        </span>
+        <span class="tournament-item__head-sub-title">
+            {{ head_sub_title | safe }}
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__info">
+        <span class="tournament-item__info-price">
+            <span class="title">{{ info_price_title | safe }}</span>
+            <span class="sub-title">{{ info_price_sub_title | safe }}</span>
+        </span>
+        <span class="tournament-item__info-prize">
+            <span class="title">{{ info_prize_title | safe }}</span>
+            <span class="sub-title">{{ info_prize_sub_title | safe }}</span>
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__block--bottom tournament-item__actions">
+        <div class="tournament-item__actions-info">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar avatar--size-5 author__ava" src="{{ actions_info_author_avatar.src | safe }}" width="{{ actions_info_author_avatar.width | safe }}" height="{{ actions_info_author_avatar.height | safe }}">
+                </a>
+                <span class="author__body">
+                    <span class="author__name">
+                        <a href="">{{ actions_info_author_name | safe }}</a>
+                    </span>
+                    <span class="author__time">{{ actions_info_author_time }}</span>
+                </span>
+            </div>
+        </div>
+        <div class="tournament-item__actions-act">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button>
+        </div>
+    </div>
+    <a class="tournament-item__area-link" href=""></a>
+</section>
+
+{% endmacro %}

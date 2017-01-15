@@ -1,18 +1,49 @@
 {% extends 'layouts/application.html' %}
-{% import "items/global/subheader.html" as header %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/messages/message-button-container.html" as buttonContainer %}
+{% import "items/messages/message-items.html" as messageItems %}
 
-{% block title %}{{ home_02.title }}{% endblock %}
-
+{% block pageClass %}{{ 'has-message-button' }}{% endblock %}
 
 {% block content %}
-{{ header.messagesSubheader() }}
+
+<div class="page-header">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+		        <div class="page-header__row">
+			        <h1 class="page-header__title">
+			            Сообщения
+			        </h1>
+			        <div class="page-header-space"></div>
+                    <div class="page-header__action">
+                        <button class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" type="button" data-toggle="modal" data-target="#modal_form_new_message">Новое сообщение</button>
+                    </div>
+		        </div>    			
+    		</div>
+    	</div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            {% include "items/messages/messages.html" %}
+        	<div class="message-wrapper">
+            	{{ messageItems.messageItems(hasAction=false) }}
+            </div>
         </div>
     </div>
 </div>
-{% include "items/messages/contact-list-modal.html" %}
-{% include "items/messages/new-message-modal.html" %}
+
+{{buttonContainer.messageButtonContainer(
+    class='',
+    button_attribute='data-toggle="modal" data-target="#modal_form_new_message"',
+    button_text='Новое сообщение'
+)}}
+
+{% endblock %}
+
+{% block modal %}
+    {% include "items/modals/modal_list_search_user.html" %}
+    {% include "items/modals/modal_form_new_message.html" %}
 {% endblock %}

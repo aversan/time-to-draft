@@ -1,0 +1,155 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/media/media.html" as media %}
+
+{% set iconExpert %}
+	<i class="icon -expert -small"></i>
+{% endset %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Media</div>
+    <br>
+    <div class="typo--h4">Items author</div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='',
+		        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        time='1 час назад'
+		    )}}
+	    </div>
+	    <div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='media--author-lg',
+		        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        time='1 час назад'
+		    )}}
+	    </div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='',
+		        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        author_icon=iconExpert,
+		        time='1 час назад'
+		    )}}
+	    </div>
+	    <div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='media--author-lg',
+		        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        author_icon=iconExpert,
+		        time='1 час назад'
+		    )}}
+	    </div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='is-offline',
+		        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        time='1 час назад'
+		    )}}
+	    </div>
+	    <div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='is-offline media--author-lg',
+		        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        time='1 час назад'
+		    )}}
+	    </div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='is-online',
+		        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        time='1 час назад'
+		    )}}
+	    </div>
+	    <div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='is-online media--author-lg',
+		        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        time='1 час назад'
+		    )}}
+	    </div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='',
+		        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        sub_title='Соавтор'
+		    )}}
+	    </div>
+	    <div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='media--author-lg',
+		        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+		        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+		        sub_title='Соавтор'
+		    )}}
+	    </div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='',
+		        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+		        sub_title='Показать<br>соавторов',
+		        hasBadge=true
+		    )}}
+	    </div>
+	    <div class="col-xs-4">
+		    {{media.mediaAuthor(
+		        class='media--author-lg',
+		        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+		        sub_title='Показать<br>соавторов',
+		        hasBadge=true
+		    )}}
+	    </div>
+    </div>
+    <br>
+    <br>
+    <div class="typo--h4">List author</div>
+    <div class="media-list">
+	    {{media.mediaAuthor(
+	        class='',
+	        avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+	        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+	        time='1 час назад'
+	    )}}
+	    {{media.mediaAuthor(
+	        class='',
+	        avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+	        author_name='<a href="">Oleg Smolerov (awd2)</a>',
+	        time='1 час назад'
+	    )}}
+    </div>
+    <br>
+    <br>
+    <div class="typo--h4">Media badge</div>
+    <br>
+	<a href="" class="media-badge" data-badge="+1"></a>
+</div>
+{% endblock %}

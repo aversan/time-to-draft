@@ -1,0 +1,98 @@
+{% import "items/input-group/input-group-vote.html" as vote %}
+
+<ul class="media-list comment-list">
+    <li class="media comment-item">
+        <a class="media-left" href="">
+            <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
+        </a>
+        <div class="media-body media-middle">
+            <div class="typo--header comment-item__header">
+                <div class="comment-item__author-name">
+                    <a href="">
+                        Stishenok
+                    </a>
+                </div>
+            </div>
+            <div class="comment-item__body">
+                Да фиг там, Уэльс укатает портишей. Даже без Рэмзи
+            </div>
+            {{ vote.vote(
+                class='comment-item__vote',
+                controlClass='js-comment-vote',
+                controlValue='6'
+            ) }}
+            <div class="comment-item__footer">
+                <span class="comment-item__time">
+                    1 день назад
+                </span>
+                <div class="comment-item__actions">
+                    <a class="comment-item__actions-link" href="">Ответить</a>
+                    <a class="comment-item__actions-link" href="">Цитировать</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="media comment-item comment-item--level-2">
+        <a class="media-left" href="">
+            <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
+        </a>
+        <div class="media-body media-middle">
+            <div class="typo--header comment-item__header">
+                <div class="comment-item__author-name">
+                    <a href="">
+                        Stishenok
+                    </a>
+                </div>
+            </div>
+            <div class="comment-item__body">
+                Да фиг там, Уэльс укатает портишей. Даже без Рэмзи
+            </div>
+            {{ vote.vote(
+                class='comment-item__vote',
+                controlClass='js-comment-vote',
+                controlValue='-15'
+            ) }}
+            <div class="comment-item__footer">
+                <span class="comment-item__time">
+                    1 день назад
+                </span>
+                <div class="comment-item__actions">
+                    <a class="comment-item__actions-link" href="">Ответить</a>
+                    <a class="comment-item__actions-link" href="">Цитировать</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="media comment-item">
+        <a class="media-left" href="">
+            <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
+        </a>
+        <div class="media-body media-middle">
+            <div class="typo--header comment-item__header">
+                <div class="comment-item__author-name">
+                    <a href="">
+                        Stishenok
+                    </a>
+                </div>
+                <span class="typo--header-space"></span>
+            </div>
+            <div class="comment-item__body">
+                Да фиг там, Уэльс укатает портишей. Даже без Рэмзи
+            </div>
+            {{ vote.vote(
+                class='comment-item__vote',
+                controlClass='js-comment-vote',
+                controlValue='6'
+            ) }}
+            <div class="comment-item__footer">
+                <span class="comment-item__time">
+                    1 день назад
+                </span>
+                <div class="comment-item__actions">
+                    <a class="comment-item__actions-link" href="">Ответить</a>
+                    <a class="comment-item__actions-link" href="">Цитировать</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>  

@@ -1,0 +1,52 @@
+// playgrounds
+
+.playgrounds__text {
+    margin-top: 46px;
+    margin-bottom: 48px;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 44px;
+        margin-bottom: 44px;
+    }
+}
+
+.playgrounds__row {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+
+    & > [class*=col-] {
+        display: flex;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .playground {
+        @include media-breakpoint-down(sm) {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.playgrounds__footer {
+    margin-top: 40px;
+    text-align: center;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 48px;
+        margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 22px;
+        margin-bottom: 12px;
+    }
+
+    .btn {
+        min-width: 170px;
+    }
+}

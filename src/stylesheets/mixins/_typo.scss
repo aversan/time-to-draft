@@ -1,26 +1,22 @@
 @mixin typo-h1() {
-  font-family: $font-family-base;
   font-size: 2.625rem; // 42px
   font-weight: 900;
   line-height: 1.33;  
 }
 
 @mixin typo-h2() {
-  font-family: $font-family-base;
   font-size: 2.25rem; // 36px
   font-weight: 700;
   line-height: 1.44;  
 }
 
 @mixin typo-h3() {
-  font-family: $font-family-base;
   font-size: 1.875rem; // 30px
   font-weight: 700;
   line-height: 1.2;  
 }
 
 @mixin typo-h4() {
-  font-family: $font-family-base;
   font-size: 1.625rem; // 26px
   font-weight: 500;
   line-height: 1.38;
@@ -28,63 +24,54 @@
 }
 
 @mixin typo-h5() {
-  font-family: $font-family-base;
   font-size: 1.4375rem; // 23px
   font-weight: 500;
   line-height: 1.39;  
 }
 
 @mixin typo-h6() {
-  font-family: $font-family-base;
   font-size: 1.25rem; // 20px
   font-weight: 400;
   line-height: 1.2;  
 }
 
 @mixin typo-title() {
-  font-family: $font-family-base;
   font-size: 1.125rem; // 18px
   font-weight: 400;
   line-height: 1.333;  
 }
 
 @mixin typo-title-2() {
-  font-family: $font-family-base;
   font-size: 1rem; // 16px
   font-weight: 700;
   line-height: 1.5;  
 }
 
 @mixin typo-body-lg() {
-  font-family: $font-family-base;
   font-size: 1.125rem; // 18px
   font-weight: 400;
   line-height: 1.333;  
 }
 
 @mixin typo-body() {
-  font-family: $font-family-base;
   font-size: 1rem; // 16px
   font-weight: 400;
   line-height: 1.5;  
 }
 
 @mixin typo-body-sm() {
-  font-family: $font-family-base;
   font-size: .875rem; // 14px
   font-weight: 400;
   line-height: 1.43;  
 }
 
 @mixin typo-caption() {
-  font-family: $font-family-base;
   font-size: .75rem; // 12px
   font-weight: 400;
   line-height: 1.16667;  
 }
 
 @mixin typo-label() {
-  font-family: $font-family-base;
   font-size: .75rem; // 12px
   font-weight: 700;
   line-height: 1.16667;

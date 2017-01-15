@@ -1,0 +1,20 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Chips</div>
+    <br>
+    <div class="typo--h4">Default</div>
+    <br>
+    {% include "items/chips/chip.html" %}
+    <br>
+    <br>
+    <div class="typo--h4">Deletable</div>
+    <br>
+    {% include "items/chips/deletable-chip.html" %}
+</div>
+{% endblock %}

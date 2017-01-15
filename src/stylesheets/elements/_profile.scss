@@ -1,3 +1,403 @@
-@import "profile/profile";
-@import "profile/profile-modal";
-@import "profile/about";
+// head bg
+
+.profile-head-bg {
+    background: $dark;
+    color: $grey;
+}
+
+// head
+
+.profile-head {
+    padding-top: 114px;
+    padding-bottom: 38px;
+
+    @include media-breakpoint-down(sm) {
+    	padding-top: 82px;
+        padding-bottom: 20px;
+    }
+
+    .p-media {
+    	@include media-breakpoint-down(sm) {
+    		flex-direction: column;
+    	}
+
+    	.media-left {
+    		padding-right: 0;
+
+    		@include media-breakpoint-down(md) {
+    			padding-right: 24px;
+    		}
+
+    		@include media-breakpoint-down(sm) {
+    			padding-right: 0;
+    		}
+    	}
+    }
+
+    .p-user-image-wrap {
+        display: inline-block;
+        box-sizing: content-box;
+        overflow: hidden;
+		border: 2px solid $white;
+		border-radius: 100px;
+		position: absolute;
+		right: 100%;
+		top: -10px;
+		margin-right: 32px;
+
+		@include media-breakpoint-down(md) {
+			position: relative;
+			top: auto;
+			right: auto;
+			margin-top: -10px;
+			margin-right: 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 0;
+			margin-bottom: 8px;
+		}
+
+        .avatar {
+			box-sizing: content-box;
+			min-width: $avatar-size-1;
+
+			@include media-breakpoint-down(sm) {
+				min-width: 84px;
+			}
+
+			&,
+			& svg {
+				width: $avatar-size-1;
+				height: $avatar-size-1;
+
+				@include media-breakpoint-down(sm) {
+					width: 84px;
+					height: 84px;
+				}
+			}
+        }
+        
+        .image-change {
+            display: none;
+            position: absolute;
+            height: 30px;
+            padding-top: 4px;
+            background: rgba(37, 37, 37, 0.7);
+            z-index: 1;
+            @include typo-caption;
+            line-height: normal;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            
+            .custom-file-input {
+                display: none;
+            }
+            
+            .change-action {
+                color: $light-grey;
+                display: block;
+                cursor: pointer;
+            }
+        }
+        
+        &:hover {
+            .image-change {
+                display: block;
+            }
+        }
+    }
+    
+    .p-user-name {
+        @include typo-h3;
+        font-weight: 700px;
+        color: $white;
+        margin: 3px 0 0 0;
+
+        @include media-breakpoint-down(sm) {
+        	@include typo-h5;
+        	font-weight: 700px;
+        	margin-top: 0;
+        }
+    }
+
+    .p-user-name-2 {
+    	@include typo-h6;
+    	font-weight: 500;
+    	color: $lighter-grey;
+    	margin-top: 4px;
+    	margin-bottom: 4px;
+
+        @include media-breakpoint-down(sm) {
+        	font-weight: 500;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+    }
+     
+    .p-status {
+        @include typo-body-lg;
+        margin-top: 24px;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-down(sm) {
+        	margin-top: 14px;
+        	margin-bottom: 4px;
+        }
+
+        .icon {
+        	vertical-align: baseline;
+        	margin-right: 10px;
+
+        	&,
+        	& svg {
+	        	width: 20px;
+	        	height: 20px;        		
+        	}
+        }
+    }
+    
+    .p-subscribers-list {
+    	font-size: 0;
+    	margin-bottom: 16px;
+    	margin-left: -7px;
+    	margin-right: -8px;
+    	white-space: nowrap;
+
+        .avatar {
+        	white-space: normal;
+        	font-size: 1rem;
+            margin-left: 7px;
+            margin-right: 8px;
+            border: 1px solid $light-grey;
+            box-sizing: content-box;
+        }
+
+        @include media-breakpoint-down(sm) {
+        	margin-top: 20px;
+        	margin-bottom: 20px;
+        }
+    }
+    
+    .p-subscribers-info {
+        margin-top: 12px;
+        margin-bottom: 12px;
+
+        @include media-breakpoint-down(sm) {
+        	margin-top: 8px;
+        	margin-bottom: 8px;
+        }
+
+        .list-inline-item {
+        	@include typo-caption;
+        }
+    }
+    
+    .p-separator {
+        margin-top: 22px;
+        margin-bottom: 24px;
+        border-top: 1px solid $border-color;
+
+        @include media-breakpoint-down(sm) {
+        	margin-top: 20px;
+        	margin-bottom: 18px;
+        }
+    }
+    
+    .p-actions {
+    	display: inline-flex;
+    	flex-wrap: nowrap;
+    	align-items: center;
+
+    	@include media-breakpoint-down(sm) {
+    		max-width: 288px;
+    	}
+
+    	.btn {
+    		@include text-truncate;
+
+    		@include media-breakpoint-down(sm) {
+	    		padding-left: 16px;
+	    		padding-right: 16px;
+    		}
+    	}
+
+    	.btn + .btn {
+    		margin-left: 6px;
+    	}
+
+    	@include media-breakpoint-down(sm) {
+    		margin-top: 12px;
+    		margin-bottom: 16px;
+    	}
+    }
+
+    .p-col-info-left {
+		@include media-breakpoint-down(sm) {
+    		flex-direction: column;
+		}
+    }
+
+    .p-info-item {
+	    display: flex;
+	    @include typo-body;
+    	margin-top: 2px;
+    	margin-bottom: 2px;
+
+	    @include media-breakpoint-down(sm) {
+	    	flex-direction: column;
+	    	margin-top: 0;
+	    	margin-bottom: 0;
+	    }
+
+	    .title {
+	    	margin-right: 3px;
+
+	    	@include media-breakpoint-down(sm) {
+	    		margin-right: 0;
+	    		margin-top: 2px;
+	    	}
+	    }
+
+	    .count,
+	    .count a {
+	        color: $white;
+	    }
+
+        .count--karma,
+        .count--karma a {
+            color: $green;
+        }
+
+        .count--karma.is-positive,
+        .count--karma.is-positive a {
+        	color: $green;	
+        }
+
+        .count--karma.is-negative,
+        .count--karma.is-negative a {
+        	color: $tomato;	
+        }
+
+        .btns-karma {
+        	margin-left: 15px;
+        	display: inline-block;
+        	vertical-align: middle;
+
+            @include media-breakpoint-down(sm) {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .p-info-item-responsive {
+    	@include media-breakpoint-down(sm) {
+    		@include typo-body-sm;
+    		line-height: 1.07;
+    	}
+
+    	.count {
+			@include media-breakpoint-down(sm) {
+				@include typo-h4;
+				font-weight: 400;
+			}    		
+    	}
+    }
+}
+
+// profile-about
+
+.profile-about {
+    margin-top: 36px;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 30px;
+    }
+
+    .title {
+    	margin-bottom: 10px;
+    }
+    
+    .edit-label,
+    .edit-area {
+        @include typo-h6;
+        font-weight: 400;
+        line-height: 1.4;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        color: $dark-grey;
+        font-style: italic;
+
+        @include media-breakpoint-down(sm) {
+            @include typo-body-lg;
+        }
+    }
+    
+    .edit-label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    .edit-area {
+        background: transparent;
+        border: 0;
+        width: 100%;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    .btn {
+        min-width: 118px;
+    }
+
+    .btn + .btn {
+        margin-left: 3px;
+    }
+    
+    .long-text {
+        display: none;
+    }
+    
+    .more {
+        cursor: pointer;
+        color: $darker-grey;
+    }
+}
+
+// tabs
+
+.profile-tabs {
+    margin-top: 10px;
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 12px;
+    }
+
+    .mdl-tabs__tab-bar {
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+
+    .mdl-tabs__tab {
+        @include media-breakpoint-down(sm) {
+            flex-grow: 1;
+        }
+    }
+
+    .posts-list,
+    .message-wrapper {
+        margin-top: 20px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 14px;
+        }
+    }
+}

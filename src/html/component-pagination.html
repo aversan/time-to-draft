@@ -1,0 +1,16 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Pagination</div>
+    <br>
+	<div class="typo--h4">Default</div>
+	<br>
+    {% include "items/pagination/pagination.html" %}
+</div>
+
+{% endblock %}

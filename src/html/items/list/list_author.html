@@ -1,0 +1,42 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/list/list.html" as list %}
+
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon -primary') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert"></i>
+{% endset %}
+
+{{list.list(
+    items = {
+        item1: {
+            class: 'mdl-list__item--two-line',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            info_user: "Stishenok",
+            info_user_icon: iconExpert,
+            info_sub: '16 Подписчиков'
+        },
+        item2: {
+            class: 'mdl-list__item--two-line',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            info_user: "maybe",
+            info_sub: '19 Подписчиков'
+        },
+        item3: {
+            class: 'mdl-list__item--two-line',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            info_user: "Eugene Leshkovich",
+            info_user_icon: iconExpert,
+            info_sub: '20 Подписчиков'
+        },
+        item4: {
+            class: 'mdl-list__item--two-line',
+            avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            info_user: "alextazy",
+            info_user_icon: iconTeam,
+            info_sub: '56 Подписчиков'
+        }
+    }
+)}}

@@ -1,0 +1,21 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Comment</div>
+    <br>
+    <div class="typo--h4">List</div>
+    <br>
+    {% include "items/comments/comment-list.html" %}
+    <br>
+    <br>
+    <div class="typo--h4">Container</div>
+    <br>
+    {% include "items/comments/comment-container.html" %}
+</div>
+
+{% endblock %}

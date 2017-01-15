@@ -1,0 +1,25 @@
+{% from 'macros/helpers.html' import sprite %}
+
+<div class="modal modal--alt modal--list hide fade" id="modal_list_pg" tabindex="-1" role="dialog" aria-labelledby="modal_list_pg" aria-hidden="true">
+    <div class="modal-body">
+        <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <div class="modal__body-header">
+            <h3 class="typo--h3 modal__title">
+                Площадки
+            </h3>
+        </div>
+        <div class="pre-scrollable modal__scrollable swiper-container js-swiper-container-scrollable">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    {% include 'items/list/list_playground.html' %}
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="modal__info">
+            Данные площадки не вошли в список рекомендованных. Вы можете по-прежнему выбирать любую понравившуюся вам площадку, однако мы не можем гарантировать вам наилучший опыт и сохранность данных.
+        </div>
+    </div>
+</div>

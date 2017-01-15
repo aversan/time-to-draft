@@ -1,9 +1,10 @@
 
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Home_02</title>
+    <title>page title</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- http://realfavicongenerator.net/ is the best! -->
@@ -16,12 +17,14 @@
 <meta name="theme-color" content="#212932">
     
   </head>
-  <body class="page">
+  <body class="page ">
     
+      
 
-<header class="navbar navbar--header navbar-dark is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
+
+<header class="navbar navbar--header navbar-dark js-header is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
     <div class="container">
-        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler js-toggler" type="button">
             
   
   <span class='sprite -hamburger icon'>
@@ -43,8 +46,11 @@
 
             </a>
         </div>
-        <div class="collapse navbar-toggleable-sm float-md-right" id="exCollapsingNavbar2">
-            <div class="nav navbar-nav">
+        <div class="collapse navbar-toggleable-sm float-md-right js-collapse">
+            <button type="button" class="close navbar-close js-close" type="button">
+              <span aria-hidden="true"><i class="icon -close"></i></span>
+            </button>
+            <div class="nav navbar-nav navbar-main-menu">
                 <div class="navbar-nav-divider hidden-md-up"></div>
                 <a class="nav-item nav-link" href="#">
                     Стат-центр
@@ -86,8 +92,8 @@
                     </a>
                 </div>
             </div>
-            <div class="btn-group navbar__btn-group-icon navbar-search">
-                <label class="btn btn--icon navbar__btn-icon" for="site-search">
+            <div class="btn-group navbar__btn-group-icon navbar-search js-search">
+                <label class="btn btn--icon navbar__btn-icon js-search-toggle" for="site-search">
                     
   
   <span class='sprite -search icon'>
@@ -95,9 +101,17 @@
   </span>
 
                 </label>
-                <div class="mdl-textfield mdl-js-textfield navbar-search__textfield">
-                    <input class="mdl-textfield__input" type="text" id="site-search">
-                    <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                <div class="navbar-search__expandable-holder">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--has-icon navbar-search__textfield">
+                        
+  
+  <span class='sprite -search icon mdl-textfield__icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#search' /></use></svg>
+  </span>
+
+                        <input class="mdl-textfield__input" type="text" id="site-search">
+                        <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                    </div>
                 </div>
             </div>
             <div class="btn-group navbar__btn-group-icon hidden-sm-down">
@@ -109,41 +123,46 @@
                         <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification-blank" /></use></svg>
                     </span>
                 </a>
-                <div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+                
+
+<div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="icon -expert"></span>
-                                <span class="person-name">Oleg Smolerov (awd2)</span>
-                                отправил вам личное сообщение
-                            </span>
-                        </span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="person-name">Maybe</span>
-                                прокомментировал ваше сообщение на форуме
-                            </span>
-                        </span>
-                    </a>
-                </div>
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+
             </div>
             <div class="btn-group hidden-sm-down">
                 <div class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -154,25 +173,29 @@
   </span>
 
                 </div>
-                <div class="dropdown-menu dropdown-menu--user-menu dropdown-menu-right">
-                    <a class="dropdown-item dropdown-item--accent" href="">
-                        Написать пост
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Мои блоги
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Личные сообщения
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Профиль
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Выйти
-                    </a>
-                </div>                    
+                
+
+<div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Написать пост
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Мои блоги
+    </a>
+    <a class="dropdown-item" href="">
+        Личные сообщения
+    </a>
+    <a class="dropdown-item" href="">
+        Профиль
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Выйти
+    </a>
+</div>
+
+
             </div>
             <div class="navbar-user-item hidden-md-up">
                 <div class="navbar-user-item__primary">
@@ -186,7 +209,7 @@
                     <div class="navbar-user-item__sub-title">Профиль</div>
                 </div>
                 <div class="navbar-user-item__secondary">
-                    <a href="#" class="btn btn--icon navbar__btn-icon">
+                    <a href="#" class="btn btn--icon navbar__btn-icon js-header-notes-toggler">
                         <span class="sprite -notification icon mdl-badge mdl-badge--overlap" data-badge="3">
                             <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification" /></use></svg>
                         </span>
@@ -202,214 +225,388 @@
         </div>
     </div>
 </header>
-    <div class="page__content">
-      
-    <div class="tournament slider-carousel__wrapper">
-    <h1 class="tournament__header">
-        Горячие турниры <span class="tournament__header-name">Фэнтэзи Спорт</span>
-    </h1>
-    <div class="tabs__control">
-        <span class="tabs__control-item active" data-id="all">Рекомендуемые</span>
-        <span class="tabs__control-item" data-id="free">Бесплатные</span>
-        <span class="tabs__control-item" data-id="paid">На деньги</span>
-    </div>
-
-    <div class="tournament-panel tabs__content active " id="tab-1">
-
-        <div class="js-tournament-slider__arrow__prev slider-carousel__arrow prev__arrow"></div>
-        <div class="js-tournament-slider__arrow__next slider-carousel__arrow next__arrow"></div>
-        <div class="slider-carousel__container">
-            <div class="js-tournament-slider slider-carousel">
-
-                <div class="tournament-item new">
-                    <div class="tournament-item__top">
-                        <div class="tournament-img">
-                            <img src="images/content/bg-1.png" alt="" class="img-2x img-3x tournament-img__item">
-                        </div>
-                        <div class="tournament-head">
-                            <span class="tournament-head__title">Полуфинал КХЛ Днм vs Спрт</span>
-                            <span class="tournament-head__logo tournament__icon tournament__icon__khl"></span>
-                        </div>
-                        <div class="tournament-info">
-                                <span class="tournament-info__price">
-                                    <span class="tournament-info__title">€27.00</span>
-                                    <span class="tournament-info__subtitle">Вход</span>
-                                </span>
-                            <span class="tournament-info__prize">
-                                    <span class="tournament-info__title">€67.00</span>
-                                    <span class="tournament-info__subtitle">Призовой фонд</span>
-                                </span>
-                        </div>
-                    </div>
-                    <div class="tournament-item__bottom">
-                        <div class="tournament__actions">
-                            <div class="tournament__actions-info">
-                                <div class="author">
-                                    <a class="author__ava" href="#">
-                                        <img src="images/users/fanteam.png" class="img-2x img-3x">
-                                    </a>
-                                    <span>
-                                            <a href="#" class="author__name">FanTeam</a>
-                                            <span class="author__time">3 часа назад</span>
-                                        </span>
-                                </div>
-                            </div>
-                            <div class="tournament__actions-act">
-                                <a href="#" class="tournament__btn-act">Играть</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tournament-item free">
-                    <div class="tournament-item__top">
-                        <div class="tournament-img">
-                            <img src="images/content/bg-2.png" alt="" class="img-2x img-3x tournament-img__item">
-                        </div>
-                        <div class="tournament-head">
-                            <span class="tournament-head__title">€500 GPP €10 Euro Full Round POR vs FRA</span>
-                            <span class="tournament-head__logo tournament__icon tournament__icon__pl"></span>
-                        </div>
-                        <div class="tournament-info">
-                                <span class="tournament-info__price">
-                                    <span class="tournament-info__title free">Свободный</span>
-                                    <span class="tournament-info__subtitle">Вход</span>
-                                </span>
-                            <span class="tournament-info__prize">
-                                    <span class="tournament-info__title">€100.00</span>
-                                    <span class="tournament-info__subtitle">Призовой фонд</span>
-                                </span>
-                        </div>
-                    </div>
-                    <div class="tournament-item__bottom">
-                        <div class="tournament__actions">
-                            <div class="tournament__actions-info">
-                                <div class="author">
-                                    <a class="author__ava" href="#">
-                                        <img src="images/users/totaldraft.png" class="img-2x img-3x">
-                                    </a>
-                                    <span>
-                                            <a href="#" class="author__name">Total Draft</a>
-                                            <span class="author__time">1 день назад</span>
-                                        </span>
-                                </div>
-                            </div>
-                            <div class="tournament__actions-act">
-                                <a href="#" class="tournament__btn-act">Играть</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tournament-item free">
-                    <div class="tournament-item__top">
-                        <div class="tournament-img">
-                            <img src="images/content/bg-3.png" alt="" class="img-2x img-3x tournament-img__item">
-                        </div>
-                        <div class="tournament-head">
-                            <span class="tournament-head__title">Чертверть финал АПЛ 2016</span>
-                            <span class="tournament-head__logo tournament__icon tournament__icon__pl"></span>
-                        </div>
-                        <div class="tournament-info">
-                                <span class="tournament-info__price">
-                                    <span class="tournament-info__title free">Свободный</span>
-                                    <span class="tournament-info__subtitle">Вход</span>
-                                </span>
-                            <span class="tournament-info__prize">
-                                    <span class="tournament-info__title">€128.00</span>
-                                    <span class="tournament-info__subtitle">Призовой фонд</span>
-                                </span>
-                        </div>
-                    </div>
-                    <div class="tournament-item__bottom">
-                        <div class="tournament__actions">
-                            <div class="tournament__actions-info">
-                                <div class="author">
-                                    <a class="author__ava" href="#">
-                                        <img src="images/users/fanteam.png" class="img-2x img-3x">
-                                    </a>
-                                    <span>
-                                            <a href="#" class="author__name">FanTeam</a>
-                                            <span class="author__time">3 дня назад</span>
-                                        </span>
-                                </div>
-                            </div>
-                            <div class="tournament__actions-act">
-                                <a href="#" class="tournament__btn-act">Играть</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tournament-item">
-                    <div class="tournament-item__top">
-                        <div class="tournament-img">
-                            <img src="images/content/bg-4.png" alt="" class="img-2x img-3x tournament-img__item">
-                        </div>
-                        <div class="tournament-head">
-                            <span class="tournament-head__title">Первый тур APL 2016</span>
-                            <span class="tournament-head__logo tournament__icon tournament__icon__pl"></span>
-                        </div>
-                        <div class="tournament-info">
-                                <span class="tournament-info__price">
-                                    <span class="tournament-info__title">€20.00</span>
-                                    <span class="tournament-info__subtitle">Вход</span>
-                                </span>
-                            <span class="tournament-info__prize">
-                                    <span class="tournament-info__title">€300.00</span>
-                                    <span class="tournament-info__subtitle">Призовой фонд</span>
-                                </span>
-                        </div>
-                    </div>
-                    <div class="tournament-item__bottom">
-                        <div class="tournament__actions">
-                            <div class="tournament__actions-info">
-                                <div class="author">
-                                    <a class="author__ava" href="#">
-                                        <img src="images/users/fantasybet.png" class="img-2x img-3x">
-                                    </a>
-                                    <span>
-                                            <a href="#" class="author__name">Fantasybet</a>
-                                            <span class="author__time">Неделю назад</span>
-                                        </span>
-                                </div>
-                            </div>
-                            <div class="tournament__actions-act">
-                                <a href="#" class="tournament__btn-act">Играть</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+<div class="navbar navbar--header navbar-dark navbar--header--notes js-header-notes">
+    <div class="collapse navbar-toggleable-sm js-collapse">
+        <div class="nav navbar-nav navbar-main-menu">
+            <a class="nav-item nav-link js-prev" href="#">
+                <i class="icon icon--chevron-left-lg"></i>Назад
+            </a>
         </div>
+        <button type="button" class="close navbar-close js-close" type="button">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        
+
+<div class="dropdown-menu dropdown-menu--note ">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
 
     </div>
 </div>
-    <div class="posts-control">
+    
+    <div class="page__content">
+      
+    
+    
+
+<div class="slider-wide__container slider-wide--silver slider-wide--tournament js-swiper-slider-wide bg-dark">
+    <div class="slider-wide__wrapper">
+        <div class="container">
+            <div class="mdl-tabs mdl-js-tabs">
+                <div class="typo--header typo--header--tabs slider-wide__header">
+                    <h6 class="typo--h6">
+                        Горячие турниры фентези спорта
+                    </h6>
+                    <div class="typo--header-space"></div>
+                    <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container typo--header__tab-bar-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="mdl-tabs__tab-bar mdl-tabs__tab-bar--sm typo--header__tab-bar">
+                                    <a href="#tab-tournament-all" class="mdl-tabs__tab is-active">Рекомендуемые</a>
+                                    <a href="#tab-tournament-free" class="mdl-tabs__tab ">Бесплатные</a>
+                                    <a href="#tab-tournament-paid" class="mdl-tabs__tab ">На деньги</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+                <div class="mdl-tabs__panel is-active" id="tab-tournament-all">
+                    <div class="swiper-container slider-wide__item-container js-swiper-container">
+                        <div class="swiper-wrapper">
+                            
+
+<section class="tournament-item swiper-slide slider-wide__item tournament-item new">
+    <div class="tournament-item__img" style="background-image: url(http://placehold.it/285x128);">
+        <img src="http://placehold.it/285x128" alt="" width="" height="128">
+    </div>
+    <div class="tournament-item__block tournament-item__block--top tournament-item__head">
+        
+            <span class="tournament-item__head-logo tournament-icon tournament-icon--khl"></span>
+        
+        <span class="tournament-item__head-title">
+            3-й тур Серии А
+        </span>
+        <span class="tournament-item__head-sub-title">
+            Начало послезавтра
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__info">
+        <span class="tournament-item__info-price">
+            <span class="title">Свободный</span>
+            <span class="sub-title">вход</span>
+        </span>
+        <span class="tournament-item__info-prize">
+            <span class="title">€78.00</span>
+            <span class="sub-title">призовые</span>
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__block--bottom tournament-item__actions">
+        <div class="tournament-item__actions-info">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar avatar--size-5 author__ava" src="http://placehold.it/36x36" width="" height="36">
+                </a>
+                <span class="author__body">
+                    <span class="author__name">
+                        <a href="">FanTeam</a>
+                    </span>
+                    <span class="author__time">3 часа назад</span>
+                </span>
+            </div>
+        </div>
+        <div class="tournament-item__actions-act">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button>
+        </div>
+    </div>
+    <a class="tournament-item__area-link" href=""></a>
+</section>
+
+
+                            
+
+<section class="tournament-item swiper-slide slider-wide__item tournament-item new">
+    <div class="tournament-item__img" style="background-image: url(http://placehold.it/285x128);">
+        <img src="http://placehold.it/285x128" alt="" width="" height="128">
+    </div>
+    <div class="tournament-item__block tournament-item__block--top tournament-item__head">
+        
+            <span class="tournament-item__head-logo tournament-icon tournament-icon--khl"></span>
+        
+        <span class="tournament-item__head-title">
+            3-й тур Серии А
+        </span>
+        <span class="tournament-item__head-sub-title">
+            Начало послезавтра
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__info">
+        <span class="tournament-item__info-price">
+            <span class="title">Свободный</span>
+            <span class="sub-title">вход</span>
+        </span>
+        <span class="tournament-item__info-prize">
+            <span class="title">€78.00</span>
+            <span class="sub-title">призовые</span>
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__block--bottom tournament-item__actions">
+        <div class="tournament-item__actions-info">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar avatar--size-5 author__ava" src="http://placehold.it/36x36" width="" height="36">
+                </a>
+                <span class="author__body">
+                    <span class="author__name">
+                        <a href="">FanTeam</a>
+                    </span>
+                    <span class="author__time">3 часа назад</span>
+                </span>
+            </div>
+        </div>
+        <div class="tournament-item__actions-act">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button>
+        </div>
+    </div>
+    <a class="tournament-item__area-link" href=""></a>
+</section>
+
+
+                            
+
+<section class="tournament-item swiper-slide slider-wide__item tournament-item new">
+    <div class="tournament-item__img" style="background-image: url(http://placehold.it/285x128);">
+        <img src="http://placehold.it/285x128" alt="" width="" height="128">
+    </div>
+    <div class="tournament-item__block tournament-item__block--top tournament-item__head">
+        
+            <span class="tournament-item__head-logo tournament-icon tournament-icon--khl"></span>
+        
+        <span class="tournament-item__head-title">
+            3-й тур Серии А
+        </span>
+        <span class="tournament-item__head-sub-title">
+            Начало послезавтра
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__info">
+        <span class="tournament-item__info-price">
+            <span class="title">Свободный</span>
+            <span class="sub-title">вход</span>
+        </span>
+        <span class="tournament-item__info-prize">
+            <span class="title">€78.00</span>
+            <span class="sub-title">призовые</span>
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__block--bottom tournament-item__actions">
+        <div class="tournament-item__actions-info">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar avatar--size-5 author__ava" src="http://placehold.it/36x36" width="" height="36">
+                </a>
+                <span class="author__body">
+                    <span class="author__name">
+                        <a href="">FanTeam</a>
+                    </span>
+                    <span class="author__time">3 часа назад</span>
+                </span>
+            </div>
+        </div>
+        <div class="tournament-item__actions-act">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button>
+        </div>
+    </div>
+    <a class="tournament-item__area-link" href=""></a>
+</section>
+
+
+                            
+
+<section class="tournament-item swiper-slide slider-wide__item tournament-item new">
+    <div class="tournament-item__img" style="background-image: url(http://placehold.it/285x128);">
+        <img src="http://placehold.it/285x128" alt="" width="" height="128">
+    </div>
+    <div class="tournament-item__block tournament-item__block--top tournament-item__head">
+        
+            <span class="tournament-item__head-logo tournament-icon tournament-icon--khl"></span>
+        
+        <span class="tournament-item__head-title">
+            3-й тур Серии А
+        </span>
+        <span class="tournament-item__head-sub-title">
+            Начало послезавтра
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__info">
+        <span class="tournament-item__info-price">
+            <span class="title">Свободный</span>
+            <span class="sub-title">вход</span>
+        </span>
+        <span class="tournament-item__info-prize">
+            <span class="title">€78.00</span>
+            <span class="sub-title">призовые</span>
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__block--bottom tournament-item__actions">
+        <div class="tournament-item__actions-info">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar avatar--size-5 author__ava" src="http://placehold.it/36x36" width="" height="36">
+                </a>
+                <span class="author__body">
+                    <span class="author__name">
+                        <a href="">FanTeam</a>
+                    </span>
+                    <span class="author__time">3 часа назад</span>
+                </span>
+            </div>
+        </div>
+        <div class="tournament-item__actions-act">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button>
+        </div>
+    </div>
+    <a class="tournament-item__area-link" href=""></a>
+</section>
+
+
+                            
+
+<section class="tournament-item swiper-slide slider-wide__item tournament-item new">
+    <div class="tournament-item__img" style="background-image: url(http://placehold.it/285x128);">
+        <img src="http://placehold.it/285x128" alt="" width="" height="128">
+    </div>
+    <div class="tournament-item__block tournament-item__block--top tournament-item__head">
+        
+            <span class="tournament-item__head-logo tournament-icon tournament-icon--khl"></span>
+        
+        <span class="tournament-item__head-title">
+            3-й тур Серии А
+        </span>
+        <span class="tournament-item__head-sub-title">
+            Начало послезавтра
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__info">
+        <span class="tournament-item__info-price">
+            <span class="title">Свободный</span>
+            <span class="sub-title">вход</span>
+        </span>
+        <span class="tournament-item__info-prize">
+            <span class="title">€78.00</span>
+            <span class="sub-title">призовые</span>
+        </span>
+    </div>
+    <div class="tournament-item__block tournament-item__block--bottom tournament-item__actions">
+        <div class="tournament-item__actions-info">
+            <div class="author">
+                <a href="#">
+                    <img class="avatar avatar--size-5 author__ava" src="http://placehold.it/36x36" width="" height="36">
+                </a>
+                <span class="author__body">
+                    <span class="author__name">
+                        <a href="">FanTeam</a>
+                    </span>
+                    <span class="author__time">3 часа назад</span>
+                </span>
+            </div>
+        </div>
+        <div class="tournament-item__actions-act">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button>
+        </div>
+    </div>
+    <a class="tournament-item__area-link" href=""></a>
+</section>
+
+
+                        </div>
+                        <div class="slider-wide__pagination js-swiper-pagination"></div>
+                    </div>                    
+                    <div class="slider-wide__prev-wrap">
+                        <div class="slider-wide__prev icon icon--prev-lg js-swiper-prev" title="Предыдущий"></div>
+                    </div>
+                    <div class="slider-wide__next-wrap">
+                        <div class="slider-wide__next icon icon--next-lg js-swiper-next" title="Следующий"></div>
+                    </div>
+                </div>
+                <div class="mdl-tabs__panel" id="tab-tournament-free"></div>
+                <div class="mdl-tabs__panel" id="tab-tournament-paid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="posts-control ">
     <div class="container">
-        <div class="posts-control__title">Выбор редакции</div>
+        <div class="posts-control__title">В центре внимания</div>
+        <div class="posts-control__title">Лента событий</div>
         <div class="posts-control__switcher">
             <span class="posts-control__switcher__label">
                 Все посты
             </span>
             <span class="posts-control__switcher__item">
-                <input type="checkbox" id="posts-switcher" class="switcher"><label for="posts-switcher" class="switcher-label"></label>
+                <input type="checkbox" id="posts-switcher" class="switcher">
+                <span class="js-popover-lenta" data-popover-counter="0">
+                    <label for="posts-switcher" class="switcher-label"></label>
+                </span>
+                <div class="webui-popover-content">
+                    <div class="webui-popover-body">
+                        <p class="typo--body-sm">Это лента Time to draft. Делитесь мыслями и общайтесь с другими пользователями. Лучшие посты попадают на главную.</p>
+                    </div>
+                    <div class="webui-popover-footer">
+                        <button class="webui-popover-button js-popover-lenta-close">Ок, понятно!</button>
+                    </div>
+                </div>
             </span>
         </div>
     </div>
 </div>
-
-    <div class="posts-control__choose">
-        <div class="l-cards container m-b-20">
-            <div class="row">
-                <div class="col-md-8">
-                    
-
-<section class="card double">
+<div class="posts-control__choose">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+    <div class="l-cards container">
+        <div class="row">
+            <div class="col-md-8 flex-xs-first flex-md-unordered">
+                
+
+<section class="card card--overlap-md-up">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label profi">Продвинутым</a>
@@ -417,7 +614,14 @@
     <div class="card__content">
         
         <div class="card__info">
-            <a href="#" class="card__info-user"><span class='sprite -ttd-team icon'><svg viewBox='0 0 1 1'><use xlink:href='images/icons.svg#ttd-team' /></use></svg></span>alextazy</a>
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
             
                 <div class="card__info-time">1 час назад</div>
             
@@ -425,7 +629,7 @@
         
         
             <h2 class="card__title">
-                Полуфиналы Евро-2016: играем строго от обороны
+                <a href="">Над схваткой</a> / <a href="">Полуфиналы Евро-2016: играем строго от обороны</a>
             </h2>
         
         
@@ -469,10 +673,10 @@
     <a class="card__area-link" href=""></a>
 </section>
 
-
-                </div>
-                <div class="col-md-4">
-                    
+                
+            </div>
+            <div class="col-md-4 flex-xs-first flex-md-unordered">
+                
 
 
 <div class="slider-cards__container js-swiper-slider-cards">
@@ -751,18 +955,13 @@
     </div>
 </div>
  -->
-                </div>
             </div>
-        </div>
-
-        <div class="l-cards container m-b-20">
-            <div class="row">
-                <div class="col-md-4">
-                    
+            <div class="col-md-4">
+                
 
 <section class="card ">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label news">Новости</a>
@@ -770,7 +969,14 @@
     <div class="card__content">
         
         <div class="card__info">
-            <a href="#" class="card__info-user"><span class='sprite -ttd-team icon'><svg viewBox='0 0 1 1'><use xlink:href='images/icons.svg#ttd-team' /></use></svg></span>alextazy</a>
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
             
                 <div class="card__info-time">1 час назад</div>
             
@@ -778,7 +984,7 @@
         
         
             <h2 class="card__title">
-                Над схваткой / EURO-2016. Fantasy-превью 1/4 финала: прогнозы, капитаны, джокеры
+                <a href="">Над схваткой</a> / <a href="">EURO-2016. Fantasy-превью 1/4 финала: прогнозы, капитаны, джокеры</a>
             </h2>
         
         
@@ -823,13 +1029,13 @@
 </section>
 
 
-                </div>
-                <div class="col-md-8">
-                    
+            </div>
+            <div class="col-md-8">
+                
 
-<section class="card double">
+<section class="card card--overlap-md-up card--accent">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label action">Акции time to draft</a>
@@ -837,7 +1043,14 @@
     <div class="card__content">
         
         <div class="card__info">
-            <a href="#" class="card__info-user"><span class='sprite -ttd-team icon'><svg viewBox='0 0 1 1'><use xlink:href='images/icons.svg#ttd-team' /></use></svg></span>Time to draft</a>
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+Time to draft</a>
             
                 <div class="card__info-time">2 дня назад</div>
             
@@ -845,7 +1058,7 @@
         
         
             <h2 class="card__title">
-                Получите 50 евро на депозит в четвертьфиналах Евро-2016, играя во фрироллы вместе с нами!
+                <a href="">Получите 50 евро на депозит в четвертьфиналах Евро-2016, играя во фрироллы вместе с нами!</a>
             </h2>
         
         
@@ -890,51 +1103,13 @@
 </section>
 
 
-                </div>
             </div>
-        </div>
-
-        <div class="container m-b-20 hidden-md-up">
-            <div class="wide-slider__wrapper">
-    <div class="wide-slider__title">Где поиграть?</div>
-    <div class="wide-slider ">
-        <div class="wide-slider__item">
-            <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
-            <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
-            <div class="wide-slider__item__control">
-                <span class="team_name">FanTeam</span>
-                <div class="btn btn-sm btn-alt btn-primary-outline">Играть</div>
-            </div>
-        </div>
-        <div class="wide-slider__item">
-            <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
-            <div class="wide-slider__item__title">Фрироллы по Евро-1016 на 250.000 рублей</div>
-            <div class="wide-slider__item__control">
-                <span class="team_name">Total Draft</span>
-                <div class="btn btn-sm btn-alt btn-primary-outline">Играть</div>
-            </div>
-        </div>
-        <div class="wide-slider__item">
-            <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
-            <div class="wide-slider__item__title">Подарочные €5 от TimeToDraft. €5000 Euro 2016</div>
-            <div class="wide-slider__item__control">
-                <span class="team_name">Fantasybet</span>
-                <div class="btn btn-sm btn-alt btn-primary-outline">Играть</div>
-            </div>
-        </div>
-
-    </div>
-</div>
-        </div>
-
-        <div class="l-cards container m-b-20">
-            <div class="row">
-                <div class="col-md-4">
-                    
+            <div class="col-md-4">
+                
 
 <section class="card ">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label news">Новости</a>
@@ -950,7 +1125,7 @@
         
         
             <h2 class="card__title">
-                Mathmen / Обновленная платформа и другие новости FanTeam
+                <a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a>
             </h2>
         
         
@@ -989,19 +1164,21 @@
 
         14
         
+            / <a href="#" class="new">3 новых</a>
+        
     </span>
 </div>
     <a class="card__area-link" href=""></a>
 </section>
 
 
-                </div>
-                <div class="col-md-4">
-                    
+            </div>
+            <div class="col-md-4">
+                
 
 <section class="card ">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label strategy">Стратегии</a>
@@ -1009,7 +1186,14 @@
     <div class="card__content">
         
         <div class="card__info">
-            <a href="#" class="card__info-user">alextazy</a>
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
             
                 <div class="card__info-time">1 час назад</div>
             
@@ -1017,7 +1201,7 @@
         
         
             <h2 class="card__title">
-                Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
             </h2>
         
         
@@ -1062,13 +1246,13 @@
 </section>
 
 
-                </div>
-                <div class="col-md-4">
-                    
+            </div>
+            <div class="col-md-4">
+                
 
 <section class="card ">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label podcast">Подкасты</a>
@@ -1076,15 +1260,17 @@
     <div class="card__content">
         
         <div class="card__info">
-            <a href="#" class="card__info-user"><span class="icon -expert"></span>Eugene Leshkovich</a>
+            <a href="#" class="card__info-user">
+    <i class="icon -expert"></i>
+Eugene Leshkovich</a>
             
-                <div class="card__info-time">Неделю назад назад</div>
+                <div class="card__info-time">неделю назад</div>
             
         </div>
         
         
             <h2 class="card__title">
-                Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
             </h2>
         
         
@@ -1129,18 +1315,264 @@
 </section>
 
 
-                </div>
             </div>
-        </div>
+            <div class="col-md-12 flex-xs-first flex-md-unordered">
+                
 
-        <div class="container m-b-20 hidden-sm-down">
-            <!-- include "items/banners/wide-slider.html" | slider-play -->
+<div class="js-swiper-slider-plays slider-plays__container">
+    <div class="typo--header slider-plays__header">
+        <h6 class="typo--title">
+            <a href="">Где поиграть?</a>
+        </h6>
+        <div class="typo--header-space"></div>
+        <div class="typo--header__actions">
+            <span class="typo--header__actions-title hidden-md-down">
+                <a href="">
+                    Что это такое?
+                </a>
+            </span>
+            <i class="icon icon--prev-sm js-swiper-prev -contrast slider-plays__prev" title="Предыдущий"></i>
+            <i class="icon icon--next-sm js-swiper-next -contrast slider-plays__next" title="Следующий"></i>
         </div>
+    </div>
+    <div class="slider-plays__wrapper">
+        <div class="swiper-container js-swiper-container slider-plays__swiper-container">
+            
 
-        <div class="l-cards container m-b-20">
-            <div class="row">
-                <div class="col-md-4">
-                    <section class="card card--banner card--banner--write">
+<ul class="mdl-list swiper-wrapper slider-plays__swiper-wrapper">
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions mdl-list__item--lg swiper-slide slider-plays__item">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              Фрироллы по €2000 на каждый тур Евро-2016&nbsp;<span class="text-label">New</span>
+            </span>
+          </span>
+        
+
+        
+
+        
+          <span class="mdl-list__item-actions">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">FanTeam</a>
+          </span>
+        
+      </span>
+
+    </span>
+    
+      <a class="mdl-list__item-area-link" href=""></a>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions mdl-list__item--lg swiper-slide slider-plays__item">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              Фрироллы по Евро-2016 на 250.000 рублей
+            </span>
+          </span>
+        
+
+        
+
+        
+          <span class="mdl-list__item-actions">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Total Draft</a>
+          </span>
+        
+      </span>
+
+    </span>
+    
+      <a class="mdl-list__item-area-link" href=""></a>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions mdl-list__item--lg swiper-slide slider-plays__item">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              Подарочные €5 от TimeToDraft.
+            </span>
+          </span>
+        
+
+        
+
+        
+          <span class="mdl-list__item-actions">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>
+          </span>
+        
+      </span>
+
+    </span>
+    
+      <a class="mdl-list__item-area-link" href=""></a>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions mdl-list__item--lg swiper-slide slider-plays__item">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)
+            </span>
+          </span>
+        
+
+        
+
+        
+          <span class="mdl-list__item-actions">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>
+          </span>
+        
+      </span>
+
+    </span>
+    
+      <a class="mdl-list__item-area-link" href=""></a>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions mdl-list__item--lg swiper-slide slider-plays__item">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)
+            </span>
+          </span>
+        
+
+        
+
+        
+          <span class="mdl-list__item-actions">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>
+          </span>
+        
+      </span>
+
+    </span>
+    
+      <a class="mdl-list__item-area-link" href=""></a>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions mdl-list__item--lg swiper-slide slider-plays__item">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              Подарочные €5 от TimeToDraft. €5000 Euro 2016 (Budget)
+            </span>
+          </span>
+        
+
+        
+
+        
+          <span class="mdl-list__item-actions">
+            <button class="btn btn-primary-outline btn-sm btn-alt">Играть</button><a href="" class="mdl-list__item-actions-hint">Fantasybet</a>
+          </span>
+        
+      </span>
+
+    </span>
+    
+      <a class="mdl-list__item-area-link" href=""></a>
+    
+  </li>
+  
+</ul>
+
+
+        </div>
+        <div class="swiper-container-pagination js-swiper-pagination slider-plays__pagination"></div>
+    </div>
+</div>
+            </div>
+            <div class="col-md-4 flex-xs-last flex-md-unordered">
+                <section class="card card--banner card--banner--write">
     <div class="card__content">
         <h2 class="card__title">
             <span>
@@ -1158,13 +1590,13 @@
         </div>
     </div>
 </section>
-                </div>
-                <div class="col-md-4">
-                    
+            </div>
+            <div class="col-md-4">
+                
 
 <section class="card ">
     
-        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg)"></div>
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
     
     
         <a href="#" class="label label--type card__label strategy">Стратегии</a>
@@ -1172,15 +1604,17 @@
     <div class="card__content">
         
         <div class="card__info">
-            <a href="#" class="card__info-user"><span class="icon -expert"></span>Eugene Leshkovich</a>
+            <a href="#" class="card__info-user">
+    <i class="icon -expert"></i>
+Eugene Leshkovich</a>
             
-                <div class="card__info-time">Неделю назад назад</div>
+                <div class="card__info-time">Неделю назад</div>
             
         </div>
         
         
             <h2 class="card__title">
-                Total Draft — играем в Евро-2016 / Играйте в четвертьфиналах Евро-2016
+                <a href="">Полуфиналы Евро-2016: играем строго от обороны
             </h2>
         
         
@@ -1225,9 +1659,1055 @@
 </section>
 
 
-                </div>
-                <div class="col-md-4">
-                    
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label strategy">Стратегии</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
+            
+                <div class="card__info-time">1 час назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-12 flex-xs-last flex-md-unordered">
+                
+
+<div class="panel js-swiper-news">
+    <div class="typo--header">
+        <h6 class="typo--title">
+            Новости из мира фэнтези
+        </h6>
+        <div class="typo--header-space"></div>
+        <div class="typo--header__actions">
+            <i class="icon icon--prev-sm js-swiper-prev" title="Предыдущий"></i>
+            <i class="icon icon--next-sm js-swiper-next" title="Следующий"></i>
+        </div>
+    </div>
+    <div class="swiper-container js-swiper-container">
+        
+
+<ul class="mdl-list column-sm-1-1 column-md-1-3 column-lg-1-3 swiper-wrapper">
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 час назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              2 часа назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Политик: вопрос о положении фэнтези-спорта нельзя решить по щелчку пальцев</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              4 часа назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Лучшие атакующие защитники АПЛ для вашей фэнтези-команды</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 день назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">10 лучших нападающих для фэнтези по АПЛ-2016/17</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 день назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Goal объявил о старте фэнтези-турнира по АПЛ сезона-2016/17</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 день назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Мхитарян занял 3-е место в рейтинге лучших фэнтези-полузащитников АПЛ от Mirror</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 час назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              2 часа назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Политик: вопрос о положении фэнтези-спорта нельзя решить по щелчку пальцев</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              4 часа назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Лучшие атакующие защитники АПЛ для вашей фэнтези-команды</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 день назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">10 лучших нападающих для фэнтези по АПЛ-2016/17</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 день назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Goal объявил о старте фэнтези-турнира по АПЛ сезона-2016/17</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--less-air swiper-slide mt-0">
+    <span class="mdl-list__item-primary-content">
+      
+      
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 день назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Мхитарян занял 3-е место в рейтинге лучших фэнтези-полузащитников АПЛ от Mirror</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+</ul>
+
+
+    </div>
+</div>
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label news">Новости</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">FanTeam</a>
+            
+                <div class="card__info-time">1 час назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+            / <a href="#" class="new">3 новых</a>
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label strategy">Стратегии</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
+            
+                <div class="card__info-time">1 час назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label podcast">Подкасты</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    <i class="icon -expert"></i>
+Eugene Leshkovich</a>
+            
+                <div class="card__info-time">неделю назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-8">
+                
+
+<section class="card card--overlap-md-up">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label profi">Продвинутым</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
+            
+                <div class="card__info-time">1 час назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">9 шагов при подготовке к футбольному турниру в DFS</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Вы наверняка не раз убеждались, что самое сложное в любом деле – это начать. Причины, из-за которых люди откладывают на потом (или навсегда) какие-то занятия могут быть разные.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+                
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label strategy">Стратегии</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+Eugene Leshkovich</a>
+            
+                <div class="card__info-time">неделю назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label news">Новости</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">FanTeam</a>
+            
+                <div class="card__info-time">1 час назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+            / <a href="#" class="new">3 новых</a>
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-4">
+                
+
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label strategy">Стратегии</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+alextazy</a>
+            
+                <div class="card__info-time">1 час назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Total Draft — играем в Евро-2016</a> / <a href="">Играйте в четвертьфиналах Евро-2016</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
+            </div>
+        
+    </div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
+            </div>
+            <div class="col-md-4">
+                
 
 
 
@@ -1282,183 +2762,815 @@
 
 
 
-                </div>
             </div>
-        </div>
+            <div class="col-md-4">             
+                
 
-        <div class="container">
-    <div class="row">
-        <div class="news-from-fantasy-world col-sm-12">
-            <div class="wrapper">
-            <div class="news-header clearfix">
-                <h4 class="title">Новости из мира фэнтези</h4>
-                <div class="arrow-container hidden-xs-up">
-                    <span class="arrow arrow-left"><span class="icon i-dark-arrow-left"></span></span>
-                    <span class="arrow arrow-right"><span class="icon i-dark-arrow-right"></span></span>
-                </div>
+<section class="card ">
+    
+        <div class="card__img" style="background-image: url(images/posts/b-g_3.jpg);"></div>
+    
+    
+        <a href="#" class="label label--type card__label news">Новости</a>
+    
+    <div class="card__content">
+        
+        <div class="card__info">
+            <a href="#" class="card__info-user">
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+Eugene Leshkovich</a>
+            
+                <div class="card__info-time">неделю назад</div>
+            
+        </div>
+        
+        
+            <h2 class="card__title">
+                <a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a>
+            </h2>
+        
+        
+            <div class="card__description">
+                Какие изменения ждут FanTeam в ближайшие несколько недель.
             </div>
-            <ul class="news-list list-unstyled">
-                <li class="new-item">
-                    <span class="time">1 час назад</span>
-                    <div class="title">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                    </div>
-                </li>
-                <li class="new-item">
-                    <span class="time">1 час назад</span>
-                    <div class="title">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                    </div>
-                </li>
-                <li class="new-item">
-                    <span class="time">1 час назад</span>
-                    <div class="title">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                    </div>
-                </li>
-                <li class="new-item hidden-sm-down">
-                    <span class="time">1 час назад</span>
-                    <div class="title">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                    </div>
-                </li>
-                <li class="new-item hidden-sm-down">
-                    <span class="time">1 час назад</span>
-                    <div class="title">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                    </div>
-                </li>
-                <li class="new-item hidden-sm-down">
-                    <span class="time">1 час назад</span>
-                    <div class="title">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                    </div>
-                </li>
-            </ul>
-        </div>
-        </div>
-        <div class="col-sm-12">
-            <a href="#" class="btn more-news-button btn-block">Показать еще...</a>
-        </div>
-
+        
     </div>
-</div>
-        <!-- posts/forum-posts.html -->
+    
 
-        <div class="slider-promo__container js-swiper-slider-promo bg-dark">
-    <div class="slider-promo__wrapper">
-        <div class="container">
-            <h2 class="slider-promo__title">Тонкости и нюансы игры от наших экспертов</h2>
-            <div class="swiper-container js-swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Daily Fantasy: С чего начать?
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Возможен ли хороший результат в Daily Fantasy при слабом знании матчасти?
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-3@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                8 советов для начинающих
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Главные правила игры в Daily Fantasy КХЛ
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Главные правила игры в Daily Fantasy КХЛ
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Daily Fantasy: С чего начать?
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Возможен ли хороший результат в Daily Fantasy при слабом знании матчасти?
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-3@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                8 советов для начинающих
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Главные правила игры в Daily Fantasy КХЛ
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="swiper-slide slider-promo__item">
-                        <a href="#" class="slider-promo__item-img">
-                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
-                        </a>
-                        <h3 class="slider-promo__item-title">
-                            <a href="">
-                                Главные правила игры в Daily Fantasy КХЛ
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="slider-promo__pagination js-swiper-pagination"></div>
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+            / <a href="#" class="new">3 новых</a>
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+
+
             </div>
+            <div class="col-md-8">
+                <section class="card card--banner card--banner--quote">
+    <div class="card__bg-1"></div>
+    <div class="card__bg-2"></div>
+    <div class="card__shadow"></div>
+    <a href="#" class="label label--type card__label playgrnd">Площадки</a>
+    <blockquote class="card__content">
+        <div class="card__title">
+            <a href="#">«Многие менеджеры по праву считают ценообразование главным преимуществом FanTeam, ведь предложенная на этой площадке система открывает огромное пространство для творчества при сборе команды»</a>
         </div>
-        <div class="slider-promo__prev-wrap">
-            <div class="slider-promo__prev icon icon--prev-lg -contrast js-swiper-prev" title="Предыдущий"></div>
-        </div>
-        <div class="slider-promo__next-wrap">
-            <div class="slider-promo__next icon icon--next-lg -contrast js-swiper-next" title="Следующий"></div>
+        <footer class="card__info">
+            <div class="card__info-primary">
+                <a href="">
+                    <img class="avatar avatar--size-3 card__info-avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
+                </a>
+                <div class="card__info-primary-inner">
+                    <a href="#" class="card__info-user">
+                        <i class="icon -expert2"></i>
+                        Oleg Smolerov (awd2)
+                    </a>
+                    <div class="card__info-user-sub-title">
+                        Эксперт, победитель Grand Weekend
+                    </div>
+                </div> 
+            </div>
+        </footer>
+    </blockquote>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    <a class="card__area-link" href=""></a>
+</section>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="btn-more-wrapper container">
+        <button class="btn btn--more btn-block">
+            Показать еще...
+        </button>
+    </div>
+
+    
+
+
+
+
+
+
+<div class="panel-component bg-light">
+    <div class="container">
+        
+
+<div class="mdl-tabs mdl-js-tabs row panel-row">
+    <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container hidden-md-up col-sm-12">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="mdl-tabs__tab-bar hidden-md-up col-sm-12">
+                    
+                        <a href="#tab-other-posts" class="mdl-tabs__tab is-active">Другие посты</a>
+                    
+                        <a href="#tab-forum" class="mdl-tabs__tab ">Новое на форумах</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    
+        <div class="mdl-tabs__panel is-active panel-column col-sm-12 col-md-6" id="tab-other-posts">
+            
+    <section class="panel">
+        <header class="typo--header hidden-sm-down">
+            <h6 class="typo--title">
+                <a href="">Другие посты</a>
+            </h6>
+        </header>
+        <div class="panel-content">
+            
+
+
+
+
+
+
+<ul class="mdl-list ">
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+    
+  
+  <span class='sprite -ttd-team icon -primary'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+
+                alextazy
+              </a>
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 час назад
+            </span>
+            
+            
+          </span>
+        
 
         
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                maybe
+              </a>
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 час назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Политик: вопрос о положении фэнтези-спорта нельзя решить по щелчку пальцев</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          
+  
+  <span class='sprite -person icon mdl-list__item-avatar'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                Daboos
+              </a>
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 час назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Лучшие атакующие защитники АПЛ для вашей фэнтези-команды</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          
+  
+  <span class='sprite -person icon mdl-list__item-avatar'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                Huilo.com
+              </a>
+            
+            
+            <span class="mdl-list__item-info-time">
+              1 час назад
+            </span>
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Goal объявил о старте фэнтези-турнира по АПЛ сезона-2016/17</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+</ul>
+
+
+        </div>
+    </section>
+
+        </div>
+    
+        <div class="mdl-tabs__panel  panel-column col-sm-12 col-md-6" id="tab-forum">
+            
+    <section class="panel">
+        <header class="typo--header hidden-sm-down">
+            <h6 class="typo--title">
+                <a href="">Новое на форумах</a>
+            </h6>
+        </header>
+        <div class="panel-content">
+            
+
+
+
+
+<ul class="mdl-list ">
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+    
+  
+  <span class='sprite -ttd-team icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+
+                alextazy
+              </a>
+            
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Конкурс прогнозов по Евро-2016 на TimeToDraft</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                maybe
+              </a>
+            
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Чем вам нравится фэнтези?</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                Zweeler
+              </a>
+            
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">€5 от TimeToDraft на площадке Zwеeler</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                <i class='icon -expert'></i>
+                Eugene Leshkovich
+              </a>
+            
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Отвечает Eugene Leshkovich</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                maybe
+              </a>
+            
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Чем вам не нравится фэнтези?</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+  <li class="mdl-list__item mdl-list__item--more-line">
+    <span class="mdl-list__item-primary-content">
+      
+      
+        <a href="">
+          <img class="mdl-list__item-avatar" src="http://placehold.it/46x46" alt="" width="46" 
+        height="46">
+        </a>
+      
+      
+      <span class="mdl-list__item-primary-content-inner">
+        
+          <span class="mdl-list__item-info">
+            
+              <a href="" class="mdl-list__item-info-user">
+                
+                alextazy
+              </a>
+            
+            
+            
+          </span>
+        
+
+        
+          <span class="mdl-list__item-title">
+            <span>
+              
+              <a href="">Скоро начало сезона. Готов ли ты?</a>
+            </span>
+          </span>
+        
+
+        
+
+        
+      </span>
+
+    </span>
+    
+  </li>
+  
+</ul>
+
+
+        </div>
+    </section>
+
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+    
+    <div class="slider-wide__container slider-wide--promo slider-wide--dark js-swiper-slider-wide bg-dark">
+    <div class="slider-wide__wrapper">
+        <div class="container">
+            <h2 class="slider-wide__title">Тонкости и нюансы игры от наших экспертов</h2>
+            <div class="swiper-container js-swiper-container slider-wide__item-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Daily Fantasy: С чего начать?
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Возможен ли хороший результат в Daily Fantasy при слабом знании матчасти?
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-3@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                8 советов для начинающих
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Главные правила игры в Daily Fantasy КХЛ
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Главные правила игры в Daily Fantasy КХЛ
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Daily Fantasy: С чего начать?
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-1@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Возможен ли хороший результат в Daily Fantasy при слабом знании матчасти?
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-3@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                8 советов для начинающих
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Главные правила игры в Daily Fantasy КХЛ
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="swiper-slide slider-wide__item">
+                        <a href="#" class="slider-wide__item-img">
+                            <img src="images/slider-promo/img-1-4@2x.jpg" alt="">
+                        </a>
+                        <h3 class="slider-wide__item-title">
+                            <a href="">
+                                Главные правила игры в Daily Fantasy КХЛ
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                <div class="slider-wide__pagination js-swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="slider-wide__prev-wrap">
+            <div class="slider-wide__prev icon icon--prev-lg -contrast js-swiper-prev" title="Предыдущий"></div>
+        </div>
+        <div class="slider-wide__next-wrap">
+            <div class="slider-wide__next icon icon--next-lg -contrast js-swiper-next" title="Следующий"></div>
+        </div>
+    </div>
+</div>
+    
+    
 
 
 
@@ -1496,6 +3608,7 @@
             <h6 class="typo--title">
                 <a href="">Твиттер</a>
             </h6>
+            <div class="typo--header-space"></div>
             <button class="btn btn-twitter btn-xs typo--header__btn">
                 
   
@@ -1505,10 +3618,11 @@
 Читать  @TimeToDraft
             </button>
         </header>
-        <div class="panel-content pre-scrollable swiper-container js-swiper-container-scrollable">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    
+        <div class="panel-content">
+            <div class="pre-scrollable swiper-container js-swiper-container-scrollable panel-scrollable">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        
 
 
 
@@ -1547,6 +3661,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1584,6 +3699,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1629,6 +3745,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1668,14 +3785,16 @@
       </span>
 
     </span>
+    
   </li>
   
 </ul>
 
 
+                    </div>
                 </div>
+                <div class="swiper-scrollbar"></div>
             </div>
-            <div class="swiper-scrollbar"></div>
         </div>
         <footer class="mdl-list-footer hidden-md-up">
             <button class="btn btn-twitter btn-xs">
@@ -1740,6 +3859,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1775,6 +3895,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1810,6 +3931,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1845,6 +3967,7 @@
       </span>
 
     </span>
+    
   </li>
   
 </ul>
@@ -1903,6 +4026,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1938,6 +4062,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -1973,6 +4098,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -2008,6 +4134,7 @@
       </span>
 
     </span>
+    
   </li>
   
 </ul>
@@ -2023,76 +4150,231 @@
 
     </div>
 </div>
-    </div>
 
-    <div class="posts-control__all">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-8">
-                    <div class="post-write">
-    <div class="white-wrapper">
-        <div class="post-write__collapsed">
-            <span href="" class="post-write__user__img">
-                <img src="/images/users/person@3x.png" alt="">
-            </span>
-            <div class="post-write__title">Напишите здесь...</div>
-        </div>
-        <div class="post-write__expanded">
-        <span href="" class="post-write__user__img">
-            <img src="/images/users/person@3x.png" alt="">
-        </span>
-            <div class="post-settings clearfix">
-                <span class="user-name">Андрей Филипович</span>
-                <label class="dropdown-label">Куда:
-                    <div class="btn-group">
-                        <button type="button" class="btn  btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Делимся мыслями
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <span class="dropdown-item selected">Делимся мыслями</span>
-                            <span class="dropdown-item">Марафон на миллион</span>
-                            <div class="dropdown-divider"></div>
-                            <span class="dropdown-item create-new">Создать новый блог</span>
+</div>
+<div class="posts-control__all">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-section">
+                
+
+<div class="post-write">
+    <div class="post-write__collapsed">
+        <div class="editor__container editor__container--post">
+            <div class="editor__wrapper">
+                <div class="editor__header typo--header">
+                    <div class="media media--author">
+                        <span class="media-left">
+                            <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+                        </span>
+                        <div class="media-body media-middle">
+                            <span class="author-name">
+                                <span class="post-write__title">Напишите здесь</span>
+                            </span>
                         </div>
                     </div>
-                </label>
-            </div>
-        </div>
-        <div class="post-controls">
-            <input type="text" class="post-title" placeholder="Заголовок" />
-            <div class="b-medium-editor-wrapper hidden-sm-down">
-                <p id="post-editor" class=""></p>
-            </div>
-            <div class="b-medium-editor-wrapper-mobile hidden-md-up">
-                <p id="mobile-post-editor" class=""></p>
-            </div>
-        </div>
-    </div>
-    <div class="post-buttons">
-        <button class="btn btn-primary-outline">Запостить</button>
-        <button class="btn btn-secondary-outline">Перейти в редактор</button>
-    </div>
-    <div class="pending-post">
-        <div class="pending-post-menu">
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <span class="dropdown-item">Редактировать</span>
-                    <span class="dropdown-item">Удалить</span>
                 </div>
             </div>
         </div>
-        <div class="pending-post-container">
-            <div class="info">
-                <span class="text">
-                    Ваш пост проходит модерацию и появится в ленте совсем скоро!
-                </span>
+    </div>
+    <div class="post-write__expanded">
+        
+
+
+<div class="editor__container editor__container--post">
+    <div class="editor__wrapper">
+        <div class="editor__header typo--header">
+            
+
+<div class="media media--author ">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+    </div>
+</div>
+
+
+            <div class="typo--header-space"></div>
+            <div class="form-group">
+                <span class="editor__header-label">Куда:</span>
+                <div class="btn-group">
+                    <span class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Делимся мыслями
+                    </span>
+                    
+
+<div class="dropdown-menu dropdown-menu-right dropdown-menu--air dropdown-menu--bordered">
+    <a class="dropdown-item selected" href="">
+        Делимся мыслями
+    </a>
+    <a class="dropdown-item" href="">
+        Марафон на миллион
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Создать новый блог
+    </a>
+</div>
+
+
+                </div>
             </div>
+        </div>
+        <textarea class="form-control editor__textfield-title js-autosize" id="desktop-post-editor-title" placeholder="Заголовок" cols="20" rows="1"></textarea>
+        <div class="editor__medium-editor">
+            <div id="desktop-post-editor" data-placeholder="Текст поста"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Запостить</button>
+        <button class="btn btn-sm btn-higher btn-alt btn-secondary-outline btn-responsive">Перейти в редактор</button>
+    </div>
+</div>
+
+<div class="editor__container editor__container--post is-mobile">
+    <div class="editor__wrapper">
+        <div class="editor__header typo--header">
+            
+
+<div class="media media--author ">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+    </div>
+</div>
+
+
+            <div class="typo--header-space"></div>
+            <div class="form-group">
+                <span class="editor__header-label">Куда:</span>
+                <div class="btn-group">
+                    <span class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Делимся мыслями
+                    </span>
+                    
+
+<div class="dropdown-menu dropdown-menu-right dropdown-menu--air dropdown-menu--bordered">
+    <a class="dropdown-item selected" href="">
+        Делимся мыслями
+    </a>
+    <a class="dropdown-item" href="">
+        Марафон на миллион
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Создать новый блог
+    </a>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+        <textarea class="form-control editor__textfield-title js-autosize" id="mobile-post-editor-title" placeholder="Заголовок" cols="20" rows="1"></textarea>
+        <div class="editor__medium-editor is-mobile">
+            <div id="mobile-post-editor-toolbar"></div>
+            <div id="mobile-post-editor" data-placeholder="Текст поста"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Запостить</button>
+        <button class="btn btn-sm btn-higher btn-alt btn-secondary-outline btn-responsive">Перейти в редактор</button>
+    </div>
+</div>
+
+        <div class="posts-list">
+            
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="http://placehold.it/36x36" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(http://placehold.it/752x236);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <div class="post-item__overlay-panel">
+            <div class="post-item__overlay-text">
+                
+                <div class="typo--title typo--medium">Ваш пост проходит модерацию и&nbsp;появится в&nbsp;ленте совсем скоро!</div>
+            </div>
+        </div>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
         </div>
     </div>
 </div>
-                    
+    
+</article>
+
+
+        </div>
+    </div>
+</div>
+                
 
 <div class="posts-list">
     
@@ -2144,7 +4426,10 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
@@ -2196,7 +4481,10 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
@@ -2248,7 +4536,10 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
@@ -2300,7 +4591,10 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
@@ -2352,7 +4646,10 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
@@ -2404,7 +4701,10 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
@@ -2456,12 +4756,17 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
-    <aside class="col-side flex-xs-first flex-md-unordered">
-        
+    
+        <aside class="col-side flex-xs-first flex-md-unordered">
+            
+    
 
 
 
@@ -2787,6 +5092,7 @@
               </a>
             
             
+            
           </span>
         
 
@@ -2805,6 +5111,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -2827,6 +5134,7 @@
               </a>
             
             
+            
           </span>
         
 
@@ -2845,6 +5153,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -2867,6 +5176,7 @@
               </a>
             
             
+            
           </span>
         
 
@@ -2885,6 +5195,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -2909,6 +5220,7 @@
               </a>
             
             
+            
           </span>
         
 
@@ -2927,6 +5239,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line">
@@ -2949,6 +5262,7 @@
               </a>
             
             
+            
           </span>
         
 
@@ -2967,6 +5281,7 @@
       </span>
 
     </span>
+    
   </li>
   
 </ul>
@@ -3024,6 +5339,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions">
@@ -3058,6 +5374,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions">
@@ -3092,6 +5409,7 @@
       </span>
 
     </span>
+    
   </li>
   
   <li class="mdl-list__item mdl-list__item--more-line mdl-list__item--actions">
@@ -3126,6 +5444,7 @@
       </span>
 
     </span>
+    
   </li>
   
 </ul>
@@ -3373,292 +5692,24 @@
 
 
     </div>
+</div>   
+
+        </aside>
+    
 </div>
-    </aside>
-</div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="row">
-                        <div class="main-sidebar col-sm-12 col-md-12">
-    <div class="for-newcomers sm-tab-component hidden-sm-down">
-        <div class="post-links-tabs-wrapper">
-            <ul class="post-tabs-link list-unstyled">
-                <li class="tab-link active" data-tab-id="for-newcomers">
-                    <span class="title">Новичкам</span>
-                </li>
-                <li class="tab-link" data-tab-id="for-advanced-users">
-                    <span class="title">Продвинутым</span>
-                </li>
-            </ul>
-        </div>
-        <div class="post-column tab-item active hidden-lg-down" data-tab-id="for-newcomers">
-            <ul class="post-content">
-                <li class="media">
-                    <span class="media-left">01</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Daily Fantasy Sport: Как начать играть?
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">98</span>
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <span class="media-left">02</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Хороший результат в Daily Fantasy при слабом знании матчасти?
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">31</span>
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <span class="media-left">03</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            8 советов для начинающих: от первых игр до вывода денег
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">198</span>
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <span class="media-left">04</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Главные правила игры в Daily Fantasy КХЛ
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">82</span>
-                        </h4>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="post-column tab-item hidden-lg-down" data-tab-id="for-advanced-users">
-            <ul class="post-content">
-                <li class="media">
-                    <span class="media-left">01</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Главные правила игры в Daily Fantasy КХЛ
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">98</span>
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <span class="media-left">02</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            8 советов для начинающих: от первых игр до вывода денег
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">31</span>
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <span class="media-left">03</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Хороший результат в Daily Fantasy при слабом знании матчасти?
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">198</span>
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <span class="media-left">04</span>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Daily Fantasy Sport: Как начать играть?
-                            <span class='sprite -comment icon'>
-                                <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comment' /></use></svg>
-                            </span>
-                            <span class="comments-count">82</span>
-                        </h4>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="sm-tab-component">
-        <div class="post-links-tabs-wrapper hidden-md-up">
-            <ul class="post-tabs-link list-unstyled">
-                <li class="tab-link active" data-tab-id="where-to-play">
-                    <span class="title">Где поиграть</span>
-                </li>
-                <li class="tab-link" data-tab-id="new-on-forums">
-                    <span class="title">Новое на форумах</span>
-                </li>
-                <li class="tab-link" data-tab-id="experts">
-                    <span class="title">Наши эксперты</span>
-                </li>
-            </ul>
-        </div>
-        <div class="post-column tab-item hidden-sm-down" data-tab-id="new-on-forums">
-            <h6 class="title hidden-sm-down">Новое на форумах</h6>
-            <ul class="post-content">
-                <li class="media">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                    </a>
-                    <div class="media-body">
-                        <div class="author-info">
-                            <span class="icon -expert"></span>
-                            <span class="author-name">alextry</span>
-                        </div>
-                        <h4 class="media-heading">
-                            Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                    </a>
-                    <div class="media-body">
-                        <div class="author-info">
-                            <span class="icon"></span>
-                            <span class="author-name">alextry</span>
-                        </div>
-                        <h4 class="media-heading">
-                            Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                    </a>
-                    <div class="media-body">
-                        <div class="author-info">
-                            <span class="icon"></span>
-                            <span class="author-name">alextry</span>
-                        </div>
-                        <h4 class="media-heading">
-                            Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                        </h4>
-                    </div>
-                </li>
-                <li class="media">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                    </a>
-                    <div class="media-body">
-                        <div class="author-info">
-                            <span class="icon"></span>
-                            <span class="author-name">alextry</span>
-                        </div>
-                        <h4 class="media-heading">
-                            Как будет выглядеть стартовый состав сборной Англии на первый матч Эллардайса
-                        </h4>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="post-column tab-item hidden-sm-down active" data-tab-id="where-to-play">
-            <h6 class="title hidden-sm-down">Где поиграть?</h6>
-            <ul class="post-content">
-                <li class="wide-slider__item">
-                    <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
-                    <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
-                    <div class="wide-slider__item__control">
-                        <span class="team_name">FanTeam</span>
-                        <div class="btn btn-outline-success">Играть</div>
-                    </div>
-                </li>
-                <li class="wide-slider__item">
-                    <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
-                    <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
-                    <div class="wide-slider__item__control">
-                        <span class="team_name">FanTeam</span>
-                        <div class="btn btn-outline-success">Играть</div>
-                    </div>
-                </li>
-                <li class="wide-slider__item">
-                    <a href="#" class="wide-slider__item__image"><img class="media-object" src="images/icons/person.svg" alt=""></a>
-                    <div class="wide-slider__item__title">Фрироллы по €2000 на каждый тур Евро-2016<span class="text-label">New</span></span> </div>
-                    <div class="wide-slider__item__control">
-                        <span class="team_name">FanTeam</span>
-                        <div class="btn btn-outline-success">Играть</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="post-column tab-item col-sm-12 hidden-sm-down hidden-sm-up" data-tab-id="experts">
-            <div class="post-wrapper">
-                <ul class="post-content">
-                    <li class="media">
-                        <a class="media-left" href="#">
-                            <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Time to draft</h4>
-                            <div class="message-text">
-                                Вы же помните, что на Fanteam и TotalDraft крутые фрироллы к 1/2
-                                #Евро2016? #дфс Все тут - https://t.co/OLGHGPFCQq https://t.co/hhCOgjetyp
-                            </div>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <a class="media-left" href="#">
-                            <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Oleg Smolerov (awd2)</h4>
-                            <div class="message-text">
-                                RT @IvKorzh: Сегодня великий день. #TogetherStronger
-                            </div>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <a class="media-left" href="#">
-                            <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Eugene Leshkovich</h4>
-                            <div class="message-text">
-                                Сейчас бы начать атаку... #PORWAL #EURO2016 #Bale #BaleVsCristiano
-                                https://t.co/uVcN0qYLUU
-                            </div>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <a class="media-left" href="#">
-                            <img class="media-object" src="images/icons/person.svg" alt="Author info">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Eugene Leshkovich</h4>
-                            <div class="message-text">
-                                А Уэльс – лучшие на этом Евро. По крайней мере, для меня
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                    </div>
+
+
+                <div class="btn-more-wrapper">
+                    <button class="btn btn--more btn-block">
+                        Показать еще...
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
+
 
 
     </div>
@@ -3770,8 +5821,11 @@
         </div>
     </div>
 </div>
+    <div class="page__bottom-placeholder"></div>
     
-      <script src="javascripts/app.js"></script>
+    
+    
+      <script src="javascripts/app.js" defer></script>
     
   </body>
 </html>

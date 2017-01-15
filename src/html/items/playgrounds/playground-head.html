@@ -1,0 +1,27 @@
+<div class="playground-head" style="background-image: url('images/bg/fanteam-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-5 text-xs-center mx-auto">
+                <img class="playground-head__logo" src="http://placehold.it/80x80" alt="">
+                <h1 class="playground-head__title">FanTeam</h1>
+                <div class="playground-head__rating">
+                    {% for i in [1,2,3,4,5] -%}
+                        {% if loop.index <= 5 %}
+                            <i class="icon i-star"></i>
+                        {% endif %}
+                    {%- endfor %}
+                </div>
+                <div class="playground-head__body">
+                    FanTeam — качественный сайт по Daily Fantasy Sports с большим количеством лиг, доступный игрокам из СНГ. Лицензии получены на Мальте и в Великобритании.
+                </div>
+                <ul class="playground-head__links list-inline">
+                    <li class="list-inline-item">Постов на форуме: <a href="">322</a></li>
+                    <li class="list-inline-item">Комментарии в блоге: <a href="">48</a></li>
+                </ul>
+                <div class="playground-head__footer">
+                    <button class="btn btn-alt btn-primary btn-lg" type="button">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

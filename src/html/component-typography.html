@@ -1,11 +1,12 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Typography</h3>
+    <div class="typo--h3">Typography</div>
     <br>
 	<h1 class="typo--h1">Dispal 1</h1>
 	<h2 class="typo--h2">Display 2</h2>
@@ -27,39 +28,44 @@
 	<div class="typo--caption">
 	    Caption
 	</div>
-
 	<div class="typo--header">
 		<h6 class="typo--title">
 			Наши эксперты
 		</h6>
 	</div>
-
-	<br>
-
 	<div class="typo--header">
 		<h6 class="typo--title">
 			<i class="icon -expert"></i>
 			Наши эксперты
 		</h6>
 	</div>
-
-	<br>
-
 	<div class="typo--header">
 		<h6 class="typo--title">
 			<i class="icon -expert"></i>
 			Наши эксперты
 		</h6>
+		<div class="typo--header-space"></div>
 		<div class="typo--header__actions">
 		    <span class="typo--header__actions-title">Что это такое?</span>
 		    <i class="icon icon--prev-sm"></i>
 		    <i class="icon icon--next-sm"></i>
 		</div>
 	</div>
+	<div class="mdl-tabs mdl-js-tabs">
+		<div class="typo--header">
+			<h6 class="typo--h6">
+				Горячие турниры фентези спорта
+			</h6>
+			<div class="typo--header-space"></div>
+			<div class="mdl-tabs__tab-bar mdl-tabs__tab-bar--sm typo--header__tab-bar">
+				<a href="#tab-1" class="mdl-tabs__tab is-active">Рекомендуемые</a>
+				<a href="#tab-2" class="mdl-tabs__tab ">Бесплатные</a>
+				<a href="#tab-3" class="mdl-tabs__tab ">На деньги</a>
+			</div>
+		</div>
+		<div class="mdl-tabs__panel is-active" id="tab-1"></div>
+		<div class="mdl-tabs__panel" id="tab-2">2</div>
+		<div class="mdl-tabs__panel" id="tab-3">3</div>
+	</div>
 </div>
-
-<br>
-<br>
-<br>
-
 {% endblock %}

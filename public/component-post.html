@@ -1,9 +1,10 @@
 
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>New Project</title>
+    <title>page title</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- http://realfavicongenerator.net/ is the best! -->
@@ -16,12 +17,14 @@
 <meta name="theme-color" content="#212932">
     
   </head>
-  <body class="page">
+  <body class="page ">
     
+      
 
-<header class="navbar navbar--header navbar-dark is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
+
+<header class="navbar navbar--header navbar-dark js-header is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
     <div class="container">
-        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler js-toggler" type="button">
             
   
   <span class='sprite -hamburger icon'>
@@ -43,8 +46,11 @@
 
             </a>
         </div>
-        <div class="collapse navbar-toggleable-sm float-md-right" id="exCollapsingNavbar2">
-            <div class="nav navbar-nav">
+        <div class="collapse navbar-toggleable-sm float-md-right js-collapse">
+            <button type="button" class="close navbar-close js-close" type="button">
+              <span aria-hidden="true"><i class="icon -close"></i></span>
+            </button>
+            <div class="nav navbar-nav navbar-main-menu">
                 <div class="navbar-nav-divider hidden-md-up"></div>
                 <a class="nav-item nav-link" href="#">
                     Стат-центр
@@ -86,8 +92,8 @@
                     </a>
                 </div>
             </div>
-            <div class="btn-group navbar__btn-group-icon navbar-search">
-                <label class="btn btn--icon navbar__btn-icon" for="site-search">
+            <div class="btn-group navbar__btn-group-icon navbar-search js-search">
+                <label class="btn btn--icon navbar__btn-icon js-search-toggle" for="site-search">
                     
   
   <span class='sprite -search icon'>
@@ -95,9 +101,17 @@
   </span>
 
                 </label>
-                <div class="mdl-textfield mdl-js-textfield navbar-search__textfield">
-                    <input class="mdl-textfield__input" type="text" id="site-search">
-                    <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                <div class="navbar-search__expandable-holder">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--has-icon navbar-search__textfield">
+                        
+  
+  <span class='sprite -search icon mdl-textfield__icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#search' /></use></svg>
+  </span>
+
+                        <input class="mdl-textfield__input" type="text" id="site-search">
+                        <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                    </div>
                 </div>
             </div>
             <div class="btn-group navbar__btn-group-icon hidden-sm-down">
@@ -109,41 +123,46 @@
                         <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification-blank" /></use></svg>
                     </span>
                 </a>
-                <div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+                
+
+<div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="icon -expert"></span>
-                                <span class="person-name">Oleg Smolerov (awd2)</span>
-                                отправил вам личное сообщение
-                            </span>
-                        </span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="person-name">Maybe</span>
-                                прокомментировал ваше сообщение на форуме
-                            </span>
-                        </span>
-                    </a>
-                </div>
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+
             </div>
             <div class="btn-group hidden-sm-down">
                 <div class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -154,25 +173,29 @@
   </span>
 
                 </div>
-                <div class="dropdown-menu dropdown-menu--user-menu dropdown-menu-right">
-                    <a class="dropdown-item dropdown-item--accent" href="">
-                        Написать пост
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Мои блоги
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Личные сообщения
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Профиль
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Выйти
-                    </a>
-                </div>                    
+                
+
+<div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Написать пост
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Мои блоги
+    </a>
+    <a class="dropdown-item" href="">
+        Личные сообщения
+    </a>
+    <a class="dropdown-item" href="">
+        Профиль
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Выйти
+    </a>
+</div>
+
+
             </div>
             <div class="navbar-user-item hidden-md-up">
                 <div class="navbar-user-item__primary">
@@ -186,7 +209,7 @@
                     <div class="navbar-user-item__sub-title">Профиль</div>
                 </div>
                 <div class="navbar-user-item__secondary">
-                    <a href="#" class="btn btn--icon navbar__btn-icon">
+                    <a href="#" class="btn btn--icon navbar__btn-icon js-header-notes-toggler">
                         <span class="sprite -notification icon mdl-badge mdl-badge--overlap" data-badge="3">
                             <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification" /></use></svg>
                         </span>
@@ -202,16 +225,70 @@
         </div>
     </div>
 </header>
+<div class="navbar navbar--header navbar-dark navbar--header--notes js-header-notes">
+    <div class="collapse navbar-toggleable-sm js-collapse">
+        <div class="nav navbar-nav navbar-main-menu">
+            <a class="nav-item nav-link js-prev" href="#">
+                <i class="icon icon--chevron-left-lg"></i>Назад
+            </a>
+        </div>
+        <button type="button" class="close navbar-close js-close" type="button">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        
+
+<div class="dropdown-menu dropdown-menu--note ">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+
+    </div>
+</div>
+    
     <div class="page__content">
       
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Post</h3>
+    <div class="typo--h3">Post</div>
     <br>
-</div>
-
+	<div class="typo--h4">Control</div>
+	<br>
+	
 
 <div class="posts-control ">
     <div class="container">
@@ -222,7 +299,18 @@
                 Все посты
             </span>
             <span class="posts-control__switcher__item">
-                <input type="checkbox" id="posts-switcher" class="switcher"><label for="posts-switcher" class="switcher-label"></label>
+                <input type="checkbox" id="posts-switcher" class="switcher">
+                <span class="js-popover-lenta" data-popover-counter="0">
+                    <label for="posts-switcher" class="switcher-label"></label>
+                </span>
+                <div class="webui-popover-content">
+                    <div class="webui-popover-body">
+                        <p class="typo--body-sm">Это лента Time to draft. Делитесь мыслями и общайтесь с другими пользователями. Лучшие посты попадают на главную.</p>
+                    </div>
+                    <div class="webui-popover-footer">
+                        <button class="webui-popover-button js-popover-lenta-close">Ок, понятно!</button>
+                    </div>
+                </div>
             </span>
         </div>
     </div>
@@ -235,72 +323,232 @@
 </div>
 
 
-<div class="container">
-	<div class="post-write">
-    <div class="white-wrapper">
-        <div class="post-write__collapsed">
-            <span href="" class="post-write__user__img">
-                <img src="/images/users/person@3x.png" alt="">
-            </span>
-            <div class="post-write__title">Напишите здесь...</div>
-        </div>
-        <div class="post-write__expanded">
-        <span href="" class="post-write__user__img">
-            <img src="/images/users/person@3x.png" alt="">
-        </span>
-            <div class="post-settings clearfix">
-                <span class="user-name">Андрей Филипович</span>
-                <label class="dropdown-label">Куда:
-                    <div class="btn-group">
-                        <button type="button" class="btn  btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Делимся мыслями
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <span class="dropdown-item selected">Делимся мыслями</span>
-                            <span class="dropdown-item">Марафон на миллион</span>
-                            <div class="dropdown-divider"></div>
-                            <span class="dropdown-item create-new">Создать новый блог</span>
+    <br>
+    <br>
+	<div class="typo--h4">Write</div>
+	<br>
+	
+
+<div class="post-write">
+    <div class="post-write__collapsed">
+        <div class="editor__container editor__container--post">
+            <div class="editor__wrapper">
+                <div class="editor__header typo--header">
+                    <div class="media media--author">
+                        <span class="media-left">
+                            <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+                        </span>
+                        <div class="media-body media-middle">
+                            <span class="author-name">
+                                <span class="post-write__title">Напишите здесь</span>
+                            </span>
                         </div>
                     </div>
-                </label>
-            </div>
-        </div>
-        <div class="post-controls">
-            <input type="text" class="post-title" placeholder="Заголовок" />
-            <div class="b-medium-editor-wrapper hidden-sm-down">
-                <p id="post-editor" class=""></p>
-            </div>
-            <div class="b-medium-editor-wrapper-mobile hidden-md-up">
-                <p id="mobile-post-editor" class=""></p>
-            </div>
-        </div>
-    </div>
-    <div class="post-buttons">
-        <button class="btn btn-primary-outline">Запостить</button>
-        <button class="btn btn-secondary-outline">Перейти в редактор</button>
-    </div>
-    <div class="pending-post">
-        <div class="pending-post-menu">
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <span class="dropdown-item">Редактировать</span>
-                    <span class="dropdown-item">Удалить</span>
                 </div>
             </div>
         </div>
-        <div class="pending-post-container">
-            <div class="info">
-                <span class="text">
-                    Ваш пост проходит модерацию и появится в ленте совсем скоро!
-                </span>
+    </div>
+    <div class="post-write__expanded">
+        
+
+
+<div class="editor__container editor__container--post">
+    <div class="editor__wrapper">
+        <div class="editor__header typo--header">
+            
+
+<div class="media media--author ">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+    </div>
+</div>
+
+
+            <div class="typo--header-space"></div>
+            <div class="form-group">
+                <span class="editor__header-label">Куда:</span>
+                <div class="btn-group">
+                    <span class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Делимся мыслями
+                    </span>
+                    
+
+<div class="dropdown-menu dropdown-menu-right dropdown-menu--air dropdown-menu--bordered">
+    <a class="dropdown-item selected" href="">
+        Делимся мыслями
+    </a>
+    <a class="dropdown-item" href="">
+        Марафон на миллион
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Создать новый блог
+    </a>
+</div>
+
+
+                </div>
             </div>
+        </div>
+        <textarea class="form-control editor__textfield-title js-autosize" id="desktop-post-editor-title" placeholder="Заголовок" cols="20" rows="1"></textarea>
+        <div class="editor__medium-editor">
+            <div id="desktop-post-editor" data-placeholder="Текст поста"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Запостить</button>
+        <button class="btn btn-sm btn-higher btn-alt btn-secondary-outline btn-responsive">Перейти в редактор</button>
+    </div>
+</div>
+
+<div class="editor__container editor__container--post is-mobile">
+    <div class="editor__wrapper">
+        <div class="editor__header typo--header">
+            
+
+<div class="media media--author ">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+    </div>
+</div>
+
+
+            <div class="typo--header-space"></div>
+            <div class="form-group">
+                <span class="editor__header-label">Куда:</span>
+                <div class="btn-group">
+                    <span class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Делимся мыслями
+                    </span>
+                    
+
+<div class="dropdown-menu dropdown-menu-right dropdown-menu--air dropdown-menu--bordered">
+    <a class="dropdown-item selected" href="">
+        Делимся мыслями
+    </a>
+    <a class="dropdown-item" href="">
+        Марафон на миллион
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Создать новый блог
+    </a>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+        <textarea class="form-control editor__textfield-title js-autosize" id="mobile-post-editor-title" placeholder="Заголовок" cols="20" rows="1"></textarea>
+        <div class="editor__medium-editor is-mobile">
+            <div id="mobile-post-editor-toolbar"></div>
+            <div id="mobile-post-editor" data-placeholder="Текст поста"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Запостить</button>
+        <button class="btn btn-sm btn-higher btn-alt btn-secondary-outline btn-responsive">Перейти в редактор</button>
+    </div>
+</div>
+
+        <div class="posts-list">
+            
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="http://placehold.it/36x36" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(http://placehold.it/752x236);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <div class="post-item__overlay-panel">
+            <div class="post-item__overlay-text">
+                
+                <div class="typo--title typo--medium">Ваш пост проходит модерацию и&nbsp;появится в&nbsp;ленте совсем скоро!</div>
+            </div>
+        </div>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
         </div>
     </div>
 </div>
-	<div class="posts-list">
-	    
+    
+</article>
+
+
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+	<div class="typo--h4">Item</div>
+	<br>
+    
 
 <article class="post-item ">
     <div class="post-item__info">
@@ -349,15 +597,878 @@
         
     </span>
 </div>
-    <a class="post-item__area-link" href=""></a>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+    
+    <br>
+    <br>
+	<div class="typo--h4">Items</div>
+	<br>
+    
+
+<div class="posts-list">
+    
+
+<article class="post-item flex-xs-first flex-md-unordered">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+            / <a href="#" class="new">3 новых</a>
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
 </article>
 
 
-	</div>
+
+    
+
+<article class="post-item flex-xs-first flex-md-unordered">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-2@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
 </div>
-<br>
-<br>
-<br>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-3@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-4@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-5@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-3@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-2@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+</article>
+
+
+    
+</div>
+
+
+    <br>
+    <br>
+	<div class="typo--h4">Items actions</div>
+	<br>
+    
+
+<div class="posts-list">
+    
+
+<article class="post-item flex-xs-first flex-md-unordered">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+            / <a href="#" class="new">3 новых</a>
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+
+    
+
+<article class="post-item flex-xs-first flex-md-unordered">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-2@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-3@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-4@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-5@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-3@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+
+    
+
+<article class="post-item ">
+    <div class="post-item__info">
+        <a href="#">
+            <img class="avatar post-item__info-ava" src="/images/users/userpic-8@3x.png" alt="" width="36" height="36">
+        </a>
+        <a href="#" class="post-item__info-name">
+            FanTeam
+        </a>
+        <div class="post-item__info-time">1 час назад</div>
+    </div>
+    <div class="post-item__image" style="background-image: url(/images/content/bitmap-2@3x.jpg);"></div>
+    <h2 class="post-item__title"><a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a></h2>
+    <div class="post-item__description">Какие изменения ждут FanTeam в ближайшие несколько недель.</div>
+    
+
+<div class="card-icons">
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -energy icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#energy' /></use></svg>
+  </span>
+
+        +7
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -view icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#view' /></use></svg>
+  </span>
+
+        79
+    </span>
+    <span class="card-icons__item">
+        
+  
+  <span class='sprite -comments icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#comments' /></use></svg>
+  </span>
+
+        14
+        
+    </span>
+</div>
+    
+        <a class="post-item__area-link" href=""></a>
+    
+    
+        <div class="post-item__actions">
+    <div class="btn-group">
+        <i class="icon -dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu--bordered dropdown-menu--air dropdown-menu-right">
+            <a class="dropdown-item" href="">Редактировать</a>
+            <a class="dropdown-item" href="">Удалить</a>
+        </div>
+    </div>
+</div>
+    
+</article>
+
+
+    
+</div>
+
+
+</div>
 
 
     </div>
@@ -469,8 +1580,11 @@
         </div>
     </div>
 </div>
+    <div class="page__bottom-placeholder"></div>
     
-      <script src="javascripts/app.js"></script>
+    
+    
+      <script src="javascripts/app.js" defer></script>
     
   </body>
 </html>

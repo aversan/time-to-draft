@@ -1,33 +1,79 @@
 {% extends 'layouts/application.html' %}
-{% import "items/global/subheader.html" as header %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/messages/message-button-container.html" as buttonContainer %}
+{% import "items/messages/message-post-items.html" as blogItems %}
+{% import "items/posts/posts-list.html" as postItems %}
 
-{% block title %}Blogs{% endblock %}
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert"></i>
+{% endset %}
+
+{% block pageClass %}{{ 'has-message-button' }}{% endblock %}
 
 {% block content %}
-{ header.subheader(title='Блоги') }}
-<div class="tabs__wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="tabs__container">
-                    <div class="tabs__item active">Все блоги</div>
-                    <div class="tabs__item">Все посты</div>
-                    <div class="tabs__item">Лучшие посты</div>
+    <div class="mdl-tabs mdl-tabs--lg is-upgraded">
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-header__row">
+                            <h1 class="page-header__title">
+                                Блоги
+                            </h1>
+                            <div class="page-header-space"></div>
+                            <div class="page-header__action page-header__action--abs">
+                                <a class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" href="">Создать блог</a>
+                            </div>
+                        </div>
+                        <div class="page-header__row page-header__row--bottom">
+                            <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
+                                            <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Все блоги</span>
+                                            <span class="mdl-tabs__tab" data-uk-switcher-item="1">Все посты</span>
+                                            <span class="mdl-tabs__tab" data-uk-switcher-item="2">Лучшие посты</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-8">
-            {% include "items/blogs/blog-list.html" %}
-            {% include "items/pagination/pagination.html" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-section" id="page_tabs_container">
+                    <div class="mdl-tabs__panel is-active">
+                        <div class="message-wrapper">
+                            {{ blogItems.messagePostItems(hasAction=false) }}
+                        </div>
+                        {% include "items/pagination/pagination.html" %}
+                    </div>
+                    <div class="mdl-tabs__panel">
+                        {{ postItems.postsList( hasAction=false ) }}
+                        {% include "items/pagination/pagination.html" %}
+                    </div>
+                    <div class="mdl-tabs__panel">
+                        {{ postItems.postsList( hasAction=false ) }}
+                        {% include "items/pagination/pagination.html" %}
+                    </div>
+                    <aside class="col-side">
+                        {% include "items/panel/panel-component_beginner-profi-play-forum_side.html" %}
+                    </aside>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-4 hidden-md-up">
-            {% include "items/sidebars/blogs-sidebar.html" %}
-        </div>
+        {{buttonContainer.messageButtonContainer(
+            class='',
+            button_attribute='',
+            button_text='Создать блог'
+        )}}
     </div>
-</div>
 {% endblock %}

@@ -1,0 +1,481 @@
+// backdrop
+
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  background-color: $modal-backdrop-bg;
+  opacity: $modal-backdrop-opacity;
+
+  .modal-open-alt & {
+    background-color: $modal-backdrop-bg-alt;
+  }
+}
+
+// modal
+
+.modal {
+    background-color: $modal-content-bg;
+    border-radius: 6px;
+    border: none;
+    box-shadow: $modal-box-shadow;
+    width: 480px;
+    margin-left: -240px;
+
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+      box-shadow: none;
+      max-width: 100%;
+    }
+
+  &--alt {
+    box-shadow: $modal-box-shadow-alt;
+
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+// large size
+
+.modal-lg {
+  width: $modal-lg;
+  margin-left: -($modal-lg / 2);
+}
+
+.modal.fade.in,
+.modal.container.fade.in,
+.modal.modal-overflow.fade.in {
+  @include media-breakpoint-down(sm) {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+// space
+
+.modal-space {
+  flex-grow: 1;
+}
+
+// pagination
+
+.modal__swiper-pagination {
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 1;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4px;
+    background-color: $light-silver;
+
+    &:hover,
+    &-active,
+    &-active:hover {
+      background-color: $green;
+    }
+
+    &-active {
+      cursor: default;
+    }
+  }
+}
+
+// info
+
+.modal__info {
+    @include typo-caption;
+    color: $grey;
+}
+
+// close
+
+.modal__close {
+    &,
+    &.close {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+    }
+}
+
+// title
+
+.modal__title {
+  font-weight: 700;
+  margin-top: 20px;
+
+  .modal__close + &,
+  .modal__header &,
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// body
+
+.modal-body {
+  padding: 32px 40px 40px 40px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 16px 16px 24px;
+  }
+}
+
+// header
+
+.modal__body-header {
+    margin-bottom: 20px;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+}
+
+// footer
+
+.modal__body-footer {
+  text-align: right;
+  margin-top: 20px;
+
+  .btn + .btn {
+    margin-left: 5px;
+  }
+
+  &--sep {
+    border-top: 1px solid $border-color;
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-bottom: -40px;
+    padding: 20px 40px;
+
+    @include media-breakpoint-down(sm) {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+// modal signin
+
+.modal--sign-in {
+    width: 480px;
+    margin-left: -240px;
+
+    .modal__close {
+      display: none;
+      top: 20px;
+      right: 20px;
+      
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .modal-body {
+      padding: 56px 50px;      
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      min-height: 494px;
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+    }
+
+    .modal__logo {
+        margin-top: 6px;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 34px;
+        }
+
+        img {
+            height: 34px;
+            width: auto;
+
+            @include media-breakpoint-down(sm) {
+              height: 30px;
+            }
+        }
+    }
+
+    .modal__icon {
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+
+    .modal__sub-title {     
+      &.typo--h6 {
+        @include media-breakpoint-down(sm) {
+          @include typo-title;
+          font-weight: 500;
+        }        
+      }
+    }
+
+    .modal__body-header {
+        margin-bottom: 34px;
+
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 24px;
+        }
+
+        & > *:last-child {
+          margin-bottom: 0;
+        }
+    }
+
+    .btn-block,
+    .form-group {
+      margin: 0;
+    }
+    
+    .btn-block + .btn-block,
+    .btn-block + .form-group,
+    .btn-block + .form-control {
+        margin-top: 12px;
+    }
+
+    .modal__info {
+        margin-top: 28px;
+        margin-bottom: 4px;
+    }
+
+    .modal__tabs {
+      margin-top: -18px;
+
+      .mdl-tabs__tab {
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+
+      .mdl-tabs__panel {
+        padding-top: 46px;
+        min-height: 340px;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        &.is-active {
+          display: flex;
+        }
+
+        & > form {
+          display: flex;
+          flex-direction: column;
+          min-height: 302px;
+        }
+      }
+    } 
+
+    .modal__body-footer {
+      margin-top: 34px;
+    }
+}
+
+// modal list
+
+.modal--list {
+    .modal-body {
+      padding-bottom: 26px;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 24px;
+      }
+    }
+
+    .modal__body-header {
+        margin-bottom: 10px;
+
+        & > *:last-child {
+          margin-bottom: 0;
+        }
+    }
+
+    .modal__textfield-container {
+      padding-top: 10px;
+    }
+    
+    .modal__search-container {
+      max-width: 360px;
+    }
+
+    .modal__scrollable {
+      &,
+      &.pre-scrollable {
+        max-height: 410px;
+
+        @include media-breakpoint-down(sm) {
+          max-height: 100%;
+        }
+      }
+    }
+
+    .modal__info {
+        margin-top: 20px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: 0;
+        }
+    }
+}
+
+// modal form
+
+.modal--form {
+  .icon-wrap--medium {
+    padding-left: 48px;
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 40px;
+    }
+
+    .icon-wrap__icon {
+      top: 19px;
+    }
+  }
+}
+
+// modal tutorial
+
+.modal--tutorial {
+    width: 768px;
+    margin-left: -384px;
+
+    .modal__close {
+      display: none;
+      top: 16px;
+      right: 16px;
+      z-index: 2;
+      
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .modal-body {
+      padding: 0;
+      width: 100%;
+      height: 100% !important;
+    }
+
+    .modal__tutorial-img-container {
+      width: 100%;
+      padding-top: 40%;
+      height: 0;
+      position: relative;
+
+      @include media-breakpoint-down(sm) {
+        padding-top: 56%;
+        border-radius: 0;
+      }
+      
+      &--bg-1 {
+        background-color: $twilight;
+      }
+
+      &--bg-2 {
+        background-color: $blue;
+      }
+
+      &--bg-3 {
+        background-color: $orange;
+      }
+    }
+
+    .modal__tutorial-img-overlay {
+      position: absolute;
+      top: 46px;
+      bottom: 0;
+      left: 13%;
+      right: 13%;
+
+      @include media-breakpoint-down(sm) {
+        left: 4%;
+        right: 4%;
+      }
+
+      img {
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .modal__tutorial-block {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      min-height: 255px;
+      padding: 24px 72px 40px;
+      flex-grow: 1;
+
+      @include media-breakpoint-down(sm) {
+        min-height: 0;
+        padding: 16px 16px 24px;
+      }
+    }
+
+    .modal__tutorial-title {
+      @include typo-h3;
+      font-weight: 700;
+      margin-bottom: 8px;
+
+      @include media-breakpoint-down(sm) {
+        @include typo-h4;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+    }
+    
+    .modal__tutorial-body {
+      @include typo-body;
+    }
+
+    .modal__tutorial-footer {
+      margin-top: 50px;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 50px;
+      }
+    }
+    
+    .modal__tutorial-btn {
+      min-width: 222px;
+
+      @include media-breakpoint-down(sm) {
+        min-width: 160px;
+      }
+    }
+
+    .modal__swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal__swiper-slide {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal__swiper-pagination {
+      bottom: 100px;
+
+      @include media-breakpoint-down(sm) {
+        bottom: 74px;
+      }
+    }
+}

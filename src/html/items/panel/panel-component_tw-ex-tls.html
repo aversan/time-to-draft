@@ -7,17 +7,20 @@
             <h6 class="typo--title">
                 <a href="">Твиттер</a>
             </h6>
+            <div class="typo--header-space"></div>
             <button class="btn btn-twitter btn-xs typo--header__btn">
                 {{ sprite('twitter', '0 0 1 1', 'icon -white') }}Читать  @TimeToDraft
             </button>
         </header>
-        <div class="panel-content pre-scrollable swiper-container js-swiper-container-scrollable">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    {% include "items/list/list_twitter.html" %}
+        <div class="panel-content">
+            <div class="pre-scrollable swiper-container js-swiper-container-scrollable panel-scrollable">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {% include "items/list/list_twitter.html" %}
+                    </div>
                 </div>
+                <div class="swiper-scrollbar"></div>
             </div>
-            <div class="swiper-scrollbar"></div>
         </div>
         <footer class="mdl-list-footer hidden-md-up">
             <button class="btn btn-twitter btn-xs">

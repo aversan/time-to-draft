@@ -1,11 +1,3 @@
-.btn,
-button.btn {
-  &:active,
-  &:focus {
-    outline: none;
-  }
-}
-
 .btn .icon {
   margin-top: -3px;
 }
@@ -89,6 +81,17 @@ button.btn {
 
   &.btn-lg {
     padding: 0.625rem 1.250rem;
+
+    &.btn-higher {
+      padding: 1rem 2rem;
+    }
+
+    &.btn-responsive {
+      @include media-breakpoint-down(sm) {
+        padding: .407rem 1.625rem;
+        line-height: 1.5;
+      }
+    }
   }
 
   &.btn-sm {
@@ -97,6 +100,13 @@ button.btn {
 
     &.btn-higher {
       padding: 0.657rem 1.314rem;
+    }
+
+    &.btn-responsive {
+      @include media-breakpoint-down(sm) {
+        padding: .407rem 1.625rem;
+        line-height: 1.5;
+      }        
     }
   }
 }
@@ -115,12 +125,33 @@ button.btn {
   }
 }
 
+.btn-fb .icon,
+.btn-vk .icon,
+.btn-twitter .icon {
+  margin: -4px 12px -4px 0;
+  position: relative;
+  top: -2px;
+
+  &,
+  & svg {
+    width: 26px;
+    height: auto;
+  }
+}
+
 .btn-fb {
   background-color: $facebook-color;
-  color: $white;
+
+  &,
+  &:hover,
+  &:focus {
+    color: $white;
+  }
 
   .icon,
-  .icon svg {
+  .icon svg,
+  .icon.-facebook,
+  .icon.-facebook svg {
     color: $white;
   }
 }
@@ -129,8 +160,16 @@ button.btn {
   background-color: $vkontakte-color;
   color: $white;
 
+  &,
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
   .icon,
-  .icon svg {
+  .icon svg,
+  .icon.-vkontakte,
+  .icon.-vkontakte svg {
     color: $white;
   }
 }
@@ -139,8 +178,16 @@ button.btn {
   background-color: #1b95e0;
   color: $white;
 
+  &,
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
   .icon,
-  .icon svg {
+  .icon svg,
+  .icon.-twitter,
+  .icon.-twitter svg {
     color: $white;
   }
 }
@@ -161,7 +208,8 @@ button.btn {
 
     &,
     & svg {
-      height: 1rem;
+      width: auto;
+      height: 18px;
     }
   }
 }
@@ -226,4 +274,50 @@ button.btn {
       border-radius: 0;
     }
   }
+}
+
+.btn-more-wrapper-alt {
+  padding: 16px;
+  background-color: $light-grey;
+  text-align: center;
+  
+  .btn {
+    min-width: 300px;
+
+    @include media-breakpoint-down(sm) {
+      min-width: 100%;
+    }
+  }
+}
+
+.btn-lg {
+  &.btn-responsive {
+    @include media-breakpoint-down(sm) {
+      font-size: $font-size-sm;
+      font-size: $line-height-sm;
+    }    
+  }
+}
+
+.btns-karma {
+    .btn {
+        background: $dark-grey;
+        border: none;
+        width: 26px;
+        height: 26px;
+        color: $dark;
+        font-size: 24px;
+        padding: 1px;
+        line-height: 18px;
+        
+        &:hover,
+        &:focus {
+            background-color: $green;
+            color: $dark;
+        }
+    }
+}
+
+.btn {
+  outline: none !important;
 }

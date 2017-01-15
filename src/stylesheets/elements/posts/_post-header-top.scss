@@ -1,0 +1,136 @@
+// post-header-top
+
+.post-header-top {
+  padding-top: 28px;
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid $border-color;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 32px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+
+  &.row {
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 21px;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 17px;
+    }
+
+    &:after {
+      content: '';
+      border-bottom: 1px solid $border-color;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 0;
+
+      @include media-breakpoint-down(sm) {
+        left: 8px;
+        right: 8px;
+      }
+    }
+  }
+
+  .media--author {
+    display: inline-flex;
+
+    .author-name {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      @include media-breakpoint-down(sm) {
+        max-width: 140px;
+      }
+    }
+  }
+
+  .media--author + .media--author,
+  .media--author + .media-badge {
+    margin-left: 46px;
+
+    @include media-breakpoint-down(md) {
+      margin-left: 36px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-left: 20px;
+    }
+  }
+}
+
+// header rating
+
+.post-header-top__rating {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 0;
+  
+  @include media-breakpoint-down(md) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 20px;
+  }
+}
+
+
+// header actions
+
+.post-header-top__action {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 4px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+  
+  &.list-inline {
+    margin-right: -14px;
+    display: block;
+  }
+  
+  .list-inline-item {
+    @include typo-body-sm;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    & {
+      margin-right: 14px;
+    }
+  }
+
+  a:not(.btn) {
+    color: $orange;
+  }
+
+  .btn + .btn {
+    margin-left: 8px;
+  }
+}

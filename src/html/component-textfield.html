@@ -1,58 +1,64 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Text field</h3>
+    <div class="typo--h3">Text field</div>
+    <br>
+    <div class="typo--h4">Default</div>
     <br>
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 	    <input class="mdl-textfield__input" type="text" id="sample1">
 	    <label class="mdl-textfield__label" for="sample1">Имя и фамилия</label>
 	</div>
-
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--lg">
 	    <input class="mdl-textfield__input" type="text" id="sample1-1">
 	    <label class="mdl-textfield__label" for="sample1-1">Имя и фамилия</label>
 	</div>
-
 	<br>
-
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 	    <input class="mdl-textfield__input" type="text" id="sample2" value="Олег Смалеров">
 	    <label class="mdl-textfield__label" for="sample2">Имя и фамилия</label>
 	</div>
-
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--lg">
 	    <input class="mdl-textfield__input" type="text" id="sample2-1" value="Олег Смалеров">
 	    <label class="mdl-textfield__label" for="sample2-1">Имя и фамилия</label>
 	</div>
-
 	<br>
-
 	<div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label is-invalid">
 	    <input class="mdl-textfield__input" type="text" id="sample3" value="Vasil">
 	    <label class="mdl-textfield__label" for="sample3">Электронная почта</label>
 	    <span class="mdl-textfield__error">Неверный формат</span>
 	</div>
-
 	<div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label is-invalid  mdl-textfield--lg">
 	    <input class="mdl-textfield__input" type="text" id="sample3-1" value="Vasil">
 	    <label class="mdl-textfield__label" for="sample3-1">Электронная почта</label>
 	    <span class="mdl-textfield__error">Неверный формат</span>
 	</div>
-
 	<br>
-
+    <br>
+    <div class="typo--h4">Has icon</div>
+    <br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--has-icon">
+		{{ sprite('search', '0 0 1 1', 'icon -darker-grey mdl-textfield__icon') }}
+	    <input class="mdl-textfield__input" type="text" id="page_search" value="Фэнтези">
+	    <label class="mdl-textfield__label" for="page_search">Поиск</label>
+	</div>
+	<div class="mdl-textfield mdl-textfield--lg mdl-js-textfield mdl-textfield--has-icon">
+		{{ sprite('search', '0 0 1 1', 'icon -darker-grey mdl-textfield__icon') }}
+	    <input class="mdl-textfield__input" type="text" id="page_search" value="Фэнтези">
+	    <label class="mdl-textfield__label" for="page_search">Поиск</label>
+	</div>
+	<br>
+    <br>
+    <div class="typo--h4">Full width</div>
+    <br>
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
 	    <input class="mdl-textfield__input" type="text" id="sample0">
 	    <label class="mdl-textfield__label" for="sample0">Имя и фамилия</label>
 	</div>
 </div>
-
-<br>
-<br>
-<br>
-
 {% endblock %}

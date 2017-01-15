@@ -1,0 +1,38 @@
+{% import "items/media/media.html" as media %}
+
+<div class="editor__container editor__container--message">
+    <div class="editor__wrapper">
+        <div class="editor__header">
+            {{media.mediaAuthor(
+                class='',
+                avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+                author_name='<a href="">Oleg Smolerov (awd2)</a>'
+            )}}
+        </div>
+        <div class="editor__medium-editor">
+            <div id="desktop-message-editor" data-placeholder="Текст комментария"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Оставить комментарий</button>
+    </div>
+</div>
+
+<div class="editor__container editor__container--message is-mobile">
+    <div class="editor__wrapper">
+        <div class="editor__header">
+            {{media.mediaAuthor(
+                class='',
+                avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+                author_name='<a href="">Oleg Smolerov (awd2)</a>'
+            )}}
+        </div>
+        <div class="editor__medium-editor is-mobile">
+            <div id="mobile-message-editor-toolbar"></div>
+            <div id="mobile-message-editor" data-placeholder="Текст комментария"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Оставить комментарий</button>
+    </div>
+</div>

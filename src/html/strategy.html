@@ -1,17 +1,77 @@
 {% extends 'layouts/application.html' %}
-{% import "items/cards/card.html" as cards %}
-{% block title %}{{ home_02.title }}{% endblock %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/posts/posts-list.html" as postsList %}
 
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert"></i>
+{% endset %}
+
+{% set colSideContent %}
+    {% include "items/panel/panel-component_play-forum-expert_side.html" %}
+{% endset %}
 
 {% block content %}
-{% include "items/subheader.html" %}
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-8">
-            {% include "items/posts/posts-list.html" %}
+    <div class="mdl-tabs mdl-tabs--lg is-upgraded">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">
+                    Стратегии
+                </h1>
+                <div class="page-header__row page-header__row--bottom">
+                    <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
+                                    <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Новичкам</span>
+                                    <span class="mdl-tabs__tab" data-uk-switcher-item="1">Продвинутым</span>
+                                    <span class="mdl-tabs__tab" data-uk-switcher-item="2">Инструменты</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% include "items/sidebars/strategy-sidebar.html" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8" id="page_tabs_container">
+                    <div class="mdl-tabs__panel is-active">
+                        {{ postsList.postsList(
+                            colSideContent = colSideContent
+                        ) }}
+                        <div class="btn-more-wrapper">
+                            <button class="btn btn--more btn-block">
+                                Показать еще...
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mdl-tabs__panel">
+                        {{ postsList.postsList(
+                            colSideContent = colSideContent
+                        ) }}
+                        <div class="btn-more-wrapper">
+                            <button class="btn btn--more btn-block">
+                                Показать еще...
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mdl-tabs__panel">
+                        {{ postsList.postsList(
+                            colSideContent = colSideContent
+                        ) }}
+                        <div class="btn-more-wrapper">
+                            <button class="btn btn--more btn-block">
+                                Показать еще...
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 {% endblock %}

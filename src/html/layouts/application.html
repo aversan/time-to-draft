@@ -1,4 +1,5 @@
 {% from 'macros/helpers.html' import sprite %}
+{% set pageClass = "" %}
 <!doctype html>
 <html>
   <head>
@@ -9,14 +10,19 @@
     {% include "shared/app-icons.html" %}
     {% block head %}{% endblock %}
   </head>
-  <body class="page">
-    {% block header %}{% include "items/navbar/navbar_header_is-logged.html" %}{% endblock %}
+  <body class="page {% block pageClass %}{% endblock %}">
+    {% block header %}
+      {% include "items/navbar/navbar_header_is-logged.html" %}
+    {% endblock %}
     <div class="page__content">
       {% block content %}{% endblock %}
     </div>
     {% block footer %}{% include "items/footer/footer.html" %}{% endblock %}
+    <div class="page__bottom-placeholder"></div>
+    {% block modal %}
+    {% endblock %}
     {% block javascript %}
-      <script src="javascripts/app.js"></script>
+      <script src="javascripts/app.js" defer></script>
     {% endblock %}
   </body>
 </html>

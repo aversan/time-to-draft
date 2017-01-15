@@ -37,6 +37,14 @@ module.exports = function(env) {
     module: {
       loaders: [
         {
+          test: require.resolve("blueimp-file-upload"),
+          loader: "imports?define=>false"
+        },
+        {
+          test: require.resolve("medium-editor-insert-plugin"),
+          loader: "imports?define=>false"
+        },
+        {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/,

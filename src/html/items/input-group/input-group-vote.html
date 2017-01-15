@@ -1,0 +1,11 @@
+{% macro vote(
+    class='',
+    controlClass='',
+    controlValue=''
+) %}
+
+<div class="input-group input-group--vote {{ class }}">
+    <input class="form-control {{ controlClass }}" type="text" value="{{ controlValue }}">
+</div>
+
+{% endmacro %}

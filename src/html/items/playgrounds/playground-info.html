@@ -1,0 +1,59 @@
+{% from 'macros/helpers.html' import sprite %}
+
+<div class="playground-info">
+    <div class="container">
+        <div class="text-xs-center playground-info__values row">
+            <div class="playground-info__value col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                <div class="progress-radial progress-radial--lg progress-90 progress-radial--responsive">
+                    <div class="overlay">
+                        9
+                    </div>
+                </div>
+                <div class="progress-radial-caption">Надежность</div>
+            </div>
+            <div class="playground-info__value col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                <div class="progress-radial progress-radial--lg progress-80 progress-radial--responsive">
+                    <div class="overlay">
+                        8
+                    </div>
+                </div>
+                <div class="progress-radial-caption">Служба поддержки</div>
+            </div>
+            <div class="playground-info__value col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                <div class="progress-radial progress-radial--lg progress-radial--transparent progress-radial--responsive">
+                    <div class="overlay">
+                        6.4k
+                    </div> 
+                </div>
+                <div class="progress-radial-caption">Кол-во игроков</div>
+            </div>
+            <div class="playground-info__value col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                <div class="progress-radial progress-radial--lg progress-radial--icon progress-radial--responsive">
+                    <div class="overlay">
+                        {{ sprite('football', '0 0 1 1', 'icon') }}
+                        {{ sprite('check', '0 0 1 1', 'icon') }}
+                    </div>
+                </div>
+                <div class="progress-radial-caption">Футбол: есть</div>
+            </div>
+            <div class="playground-info__value col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                <div class="progress-radial progress-radial--lg progress-radial--icon progress-radial--responsive">
+                    <div class="overlay">
+                        {{ sprite('hockey', '0 0 1 1', 'icon') }}
+                        {{ sprite('check', '0 0 1 1', 'icon') }}
+                    </div>
+                </div>
+                <div class="progress-radial-caption">Хоккей: есть</div>
+            </div>
+            <div class="playground-info__value col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                <div class="progress-radial progress-radial--lg progress-radial--icon progress-radial--responsive not-available">
+                    <div class="overlay">
+                        {{ sprite('basketball', '0 0 1 1', 'icon') }}
+                        {{ sprite('check', '0 0 1 1', 'icon') }}
+                    </div>
+                </div>
+                <div class="progress-radial-caption">Баскетбол: нету</div>
+            </div>
+        </div>
+    </div>      
+</div>

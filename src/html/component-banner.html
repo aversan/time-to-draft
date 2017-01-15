@@ -1,16 +1,16 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Banner</h3>
+    <div class="typo--h3">Banner</div>
+    <br>
+    <div class="typo--h4">Quick banner</div>
     <br>
 </div>
 {% include 'items/banners/quick-banner.html' %}
-<br>
-<br>
-<br>
 
 {% endblock %}

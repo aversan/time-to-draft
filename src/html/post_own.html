@@ -1,0 +1,23 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+
+{% block content %}
+
+{% include "items/posts/post_own.html" %}
+{% include "items/sliders/slider-plays_wide.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <div class="mb-20">
+                {% include "items/sliders/recommended-to-read.html" %}
+            </div>
+            <div class="mb-20">
+                {% include "items/subscribe/subscribe.html" %}
+            </div>
+            {% include "items/comments/comment-container.html" %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

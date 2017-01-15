@@ -1,0 +1,37 @@
+{% from 'macros/helpers.html' import sprite %}
+
+{% macro profileAbout(
+register=true,
+text="В футбол влюбился с детства, окончательно и бесповоротно.
+Прогнозированием и аналитикой занимаюсь почти 10 лет,
+а с активным развитием fantasy-футбола убежден, что буду заниматься и дальше.
+Люблю всевозможные марафоны и новые возможности и много много длинного текста."
+) %}
+<div class="container profile-about">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 mx-auto">
+            <h6 class="typo--h6 typo--medium title">О себе</h6>
+            {% if register %}
+                <span class="edit-label" id="edit-label">
+                    {{ sprite('plus-small', '0 0 1 1', 'icon') }}
+                    <span class="typo--italic">Опишите себя</span>
+                </span>
+                <textarea class="edit-area" id="edit-area"></textarea>
+                <button type="button" id="back-edit" class="btn btn-alt btn-sm btn-higher btn-secondary-outline btn-responsive">Отменить</button>
+                <button type="button" id="save-edit" class="btn btn-alt btn-sm btn-higher btn-primary btn-responsive">Сохранить</button>
+            {% else %}
+                <div class="edit-area short-text">
+                    {{ text | truncate(237, true, "...") }}
+                    {% if text.length > 237 %}
+                        <span class="more" id="read-more">Читать полностью</span>
+                    {% endif %}
+                </div>
+                <div class="edit-area long-text">
+                    {{ text }}
+                    <span class="more" id="read-less">Свернуть</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endmacro %}

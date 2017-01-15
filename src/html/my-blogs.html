@@ -1,0 +1,64 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/messages/message-button-container.html" as buttonContainer %}
+{% import "items/messages/message-post-items.html" as blogItems %}
+{% import "items/posts/posts-list.html" as postItems %}
+
+{% block pageClass %}{{ 'has-message-button' }}{% endblock %}
+
+{% block content %}
+
+<div class="mdl-tabs mdl-tabs--lg is-upgraded">
+    <div class="page-header">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+    		        <div class="page-header__row">
+    			        <h1 class="page-header__title">
+    			            Мои блоги
+    			        </h1>
+    			        <div class="page-header-space"></div>
+                        <div class="page-header__action page-header__action--abs">
+                            <a class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" href="">Создать блог</a>
+                        </div>
+    		        </div>    			
+                    <div class="page-header__row page-header__row--bottom">
+                        <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
+                                        <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Все блоги</span>
+                                        <span class="mdl-tabs__tab" data-uk-switcher-item="1">Все посты</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+        		</div>
+        	</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" id="page_tabs_container">
+                <div class="mdl-tabs__panel is-active">
+                    <div class="message-wrapper">
+                        {{ blogItems.messagePostItems( hasAction=true ) }}
+                    </div>
+                    {% include "items/pagination/pagination.html" %}
+                </div>
+                <div class="mdl-tabs__panel">
+                    {{ postItems.postsList( hasAction=true ) }}
+                    {% include "items/pagination/pagination.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{buttonContainer.messageButtonContainer(
+        class='',
+        button_attribute='',
+        button_text='Создать блог'
+    )}}
+</div>
+{% endblock %}

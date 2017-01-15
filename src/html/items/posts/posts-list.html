@@ -1,5 +1,10 @@
 {% import "items/posts/post-item.html" as item %}
 
+{% macro postsList(
+    colSideContent='',
+    hasAction=false
+) %}
+
 <div class="posts-list">
     {{item.post(
         class='flex-xs-first flex-md-unordered',
@@ -9,7 +14,8 @@
         info_user='FanTeam',
         info_time='1 час назад',
         image='/images/content/bitmap@3x.jpg',
-        hasNewComment=true
+        hasNewComment=true,
+        hasAction=hasAction
     )}}
 
     {{item.post(
@@ -19,7 +25,8 @@
         user_ava='/images/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap-2@3x.jpg'
+        image='/images/content/bitmap-2@3x.jpg',
+        hasAction=hasAction
     )}}
 
     {{item.post(
@@ -28,7 +35,8 @@
         user_ava='/images/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap-3@3x.jpg'
+        image='/images/content/bitmap-3@3x.jpg',
+        hasAction=hasAction
     )}}
 
     {{item.post(
@@ -37,7 +45,8 @@
         user_ava='/images/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap-4@3x.jpg'
+        image='/images/content/bitmap-4@3x.jpg',
+        hasAction=hasAction
     )}}
 
     {{item.post(
@@ -46,7 +55,8 @@
         user_ava='/images/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap-5@3x.jpg'
+        image='/images/content/bitmap-5@3x.jpg',
+        hasAction=hasAction
     )}}
 
     {{item.post(
@@ -55,7 +65,8 @@
         user_ava='/images/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap-3@3x.jpg'
+        image='/images/content/bitmap-3@3x.jpg',
+        hasAction=hasAction
     )}}
 
     {{item.post(
@@ -64,9 +75,14 @@
         user_ava='/images/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap-2@3x.jpg'
+        image='/images/content/bitmap-2@3x.jpg',
+        hasAction=hasAction
     )}}
-    <aside class="col-side flex-xs-first flex-md-unordered">
-        {% include "items/panel/panel-component_beginner-profi-play-forum_side.html" %}
-    </aside>
+    {% if colSideContent | length %}
+        <aside class="col-side flex-xs-first flex-md-unordered">
+            {{ colSideContent | safe }}
+        </aside>
+    {% endif %}
 </div>
+
+{% endmacro %}

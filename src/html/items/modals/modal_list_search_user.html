@@ -1,0 +1,97 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/list/list.html" as list %}
+
+{% set iconTeam %}
+    {{ sprite('ttd-team', '0 0 1 1', 'icon -primary') }}
+{% endset %}
+
+{% set iconExpert %}
+    <i class="icon -expert"></i>
+{% endset %}
+
+<div class="modal modal--alt modal--list hide fade" id="modal_list_serch_user" tabindex="-1" role="dialog" aria-labelledby="modal_list_serch_user" aria-hidden="true">
+    <div class="modal-body">
+        <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <div class="modal__body-header">
+            <h3 class="typo--h3 modal__title">
+                Кому пишем?
+            </h3>
+        </div>
+        <div class="modal__search-container">
+            <div class="modal__textfield-container mdl-textfield-my-0">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--has-icon">
+                    {{ sprite('search', '0 0 1 1', 'icon -grey mdl-textfield__icon') }}
+                    <input class="mdl-textfield__input" type="text" id="modal_search_user" value="">
+                    <label class="mdl-textfield__label" for="modal_search_user">Поиск людей</label>
+                </div>
+            </div>
+            <div class="pre-scrollable modal__scrollable swiper-container js-swiper-container-scrollable">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{list.list(
+                            items = {
+                                item1: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "Stishenok",
+                                    info_user_icon: iconExpert,
+                                    info_sub: '16 Подписчиков'
+                                },
+                                item2: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "maybe",
+                                    info_sub: '19 Подписчиков'
+                                },
+                                item3: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "Eugene Leshkovich",
+                                    info_user_icon: iconExpert,
+                                    info_sub: '20 Подписчиков'
+                                },
+                                item4: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "alextazy",
+                                    info_user_icon: iconTeam,
+                                    info_sub: '56 Подписчиков'
+                                },
+                                item5: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "Stishenok",
+                                    info_user_icon: iconExpert,
+                                    info_sub: '16 Подписчиков'
+                                },
+                                item6: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "maybe",
+                                    info_sub: '19 Подписчиков'
+                                },
+                                item7: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "Eugene Leshkovich",
+                                    info_user_icon: iconExpert,
+                                    info_sub: '20 Подписчиков'
+                                },
+                                item8: {
+                                    class: 'mdl-list__item--two-line',
+                                    avatar: { src: 'http://placehold.it/46x46', width: '46', height: '46' },
+                                    info_user: "alextazy",
+                                    info_user_icon: iconTeam,
+                                    info_sub: '56 Подписчиков'
+                                }
+                            }
+                        )}}
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</div>

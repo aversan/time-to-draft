@@ -1,0 +1,45 @@
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/media/media.html" as media %}
+{% set iconExpert %}
+    <i class="icon -expert -small"></i>
+{% endset %}
+
+<div class="modal modal--alt modal--form modal-lg hide fade" id="modal_form_new_message" tabindex="-1" role="dialog" aria-labelledby="modal_form_new_message" aria-hidden="true">
+    <div class="modal-body">
+        <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        <div class="modal__body-header">
+            <h3 class="typo--h3 modal__title">
+                Новое сообщение
+            </h3>
+        </div>
+        <form action="">
+            <div class="form-group">
+                <div class="mdl-textfield-label">Кому</div>
+                {{media.mediaAuthor(
+                    avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36' },
+                    author_name='<a href="">Oleg Smolerov (awd2)</a>',
+                    author_icon=iconExpert
+                )}}
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                <input class="mdl-textfield__input" type="text" id="modal_message_theme" value="">
+                <label class="mdl-textfield__label" for="modal_message_theme">Тема</label>
+                <span class="mdl-textfield__error"></span>
+            </div>
+            {% include "items/editors/editor-modal-message.html" %}
+            {#
+            <div class="mdl-textfield-my-0">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--transparent">
+                    <textarea class="mdl-textfield__input" type="text" rows= "5" id="modal_message_text"></textarea>
+                    <label class="mdl-textfield__label" for="modal_message_text">Текст сообщения</label>
+                </div>
+            </div>
+            #}
+            <div class="modal__body-footer modal__body-footer--sep">
+                <button class="btn btn-alt btn-primary btn-sm btn-higher" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/profile/profile-head.html" as head %}
+{% import "items/profile/profile-about.html" as about %}
+{% import "items/profile/profile-tabs.html" as tabs %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Profile</div>
+    <br>
+    <div class="typo--h4">Head</div>
+    <br>
+</div>
+<div class="row profile-head-bg">
+    <div class="col-sm-12 col-lg-12 col-md-12">
+        {{ head.profileHead(register=false) }}
+        {{ head.profileHead(register=true) }}
+    </div>
+</div>
+<div class="container">    
+    <br>
+    <br>
+    <div class="typo--h4">About</div>
+    <br>
+    {{ about.profileAbout(register=false) }}
+    {{ about.profileAbout(register=true, text="В футбол влюбился с детства, окончательно и бесповоротно.
+        Прогнозированием и аналитикой занимаюсь почти 10 лет,
+        а с активным развитием fantasy-футбола убежден, что буду заниматься и дальше.
+        Люблю всевозможные марафоны и новые возможности")}}
+    <br>
+    <br>
+    <div class="typo--h4">Tabs</div>
+    <br>
+    {{ tabs.profileTabs(register=false) }}
+    {{ tabs.profileTabs(register=true) }}
+</div>
+{% endblock %}

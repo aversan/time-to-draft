@@ -1,11 +1,12 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Label</h3>
+    <div class="typo--h3">Label</div>
     <br>
 	<a class="label label--type news" href="">news</a>
 	<a class="label label--type profi" href="">profi</a>
@@ -15,9 +16,5 @@
 	<a class="label label--type outline" href="">outline</a>
 	<a class="label label--type newbie" href="">newbie</a>
 </div>
-
-<br>
-<br>
-<br>
 
 {% endblock %}

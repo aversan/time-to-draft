@@ -1,0 +1,18 @@
+// breadcrumb
+
+.breadcrumb {
+	border-radius: 0;
+	margin-bottom: 20px;
+	@include typo-body;
+}
+
+.breadcrumb-divider:before {
+	display: inline-block;
+	color: $breadcrumb-divider-color;
+	content: "#{$breadcrumb-divider}";
+}
+
+.breadcrumb--lg {
+	@include typo-h6;
+	font-weight: 400;
+}

@@ -1,9 +1,10 @@
 
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>page title</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- http://realfavicongenerator.net/ is the best! -->
@@ -16,12 +17,14 @@
 <meta name="theme-color" content="#212932">
     
   </head>
-  <body class="page">
+  <body class="page ">
     
+      
 
-<header class="navbar navbar--header navbar-dark is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
+
+<header class="navbar navbar--header navbar-dark js-header is-logged" data-uk-sticky="{ showup: true, animation: 'uk-animation-slide-top' }">
     <div class="container">
-        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler float-xs-right hidden-md-up navbar-toggler js-toggler" type="button">
             
   
   <span class='sprite -hamburger icon'>
@@ -43,8 +46,11 @@
 
             </a>
         </div>
-        <div class="collapse navbar-toggleable-sm float-md-right" id="exCollapsingNavbar2">
-            <div class="nav navbar-nav">
+        <div class="collapse navbar-toggleable-sm float-md-right js-collapse">
+            <button type="button" class="close navbar-close js-close" type="button">
+              <span aria-hidden="true"><i class="icon -close"></i></span>
+            </button>
+            <div class="nav navbar-nav navbar-main-menu">
                 <div class="navbar-nav-divider hidden-md-up"></div>
                 <a class="nav-item nav-link" href="#">
                     Стат-центр
@@ -86,8 +92,8 @@
                     </a>
                 </div>
             </div>
-            <div class="btn-group navbar__btn-group-icon navbar-search">
-                <label class="btn btn--icon navbar__btn-icon" for="site-search">
+            <div class="btn-group navbar__btn-group-icon navbar-search js-search">
+                <label class="btn btn--icon navbar__btn-icon js-search-toggle" for="site-search">
                     
   
   <span class='sprite -search icon'>
@@ -95,9 +101,17 @@
   </span>
 
                 </label>
-                <div class="mdl-textfield mdl-js-textfield navbar-search__textfield">
-                    <input class="mdl-textfield__input" type="text" id="site-search">
-                    <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                <div class="navbar-search__expandable-holder">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--has-icon navbar-search__textfield">
+                        
+  
+  <span class='sprite -search icon mdl-textfield__icon'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#search' /></use></svg>
+  </span>
+
+                        <input class="mdl-textfield__input" type="text" id="site-search">
+                        <label class="mdl-textfield__label" for="site-search">Поиск по сайту</label>
+                    </div>
                 </div>
             </div>
             <div class="btn-group navbar__btn-group-icon hidden-sm-down">
@@ -109,41 +123,46 @@
                         <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification-blank" /></use></svg>
                     </span>
                 </a>
-                <div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+                
+
+<div class="dropdown-menu dropdown-menu--note dropdown-menu-right">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="icon -expert"></span>
-                                <span class="person-name">Oleg Smolerov (awd2)</span>
-                                отправил вам личное сообщение
-                            </span>
-                        </span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <span class="media media-middle">
-                            <span class="media-left">
-                                
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
   
   <span class='sprite -person icon avatar avatar--size-4 media-object'>
     <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
   </span>
 
-                            </span>
-                            <span class="media-body">
-                                <span class="person-name">Maybe</span>
-                                прокомментировал ваше сообщение на форуме
-                            </span>
-                        </span>
-                    </a>
-                </div>
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
+</div>
+
+
+
             </div>
             <div class="btn-group hidden-sm-down">
                 <div class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -154,25 +173,29 @@
   </span>
 
                 </div>
-                <div class="dropdown-menu dropdown-menu--user-menu dropdown-menu-right">
-                    <a class="dropdown-item dropdown-item--accent" href="">
-                        Написать пост
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Мои блоги
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Личные сообщения
-                    </a>
-                    <a class="dropdown-item" href="">
-                        Профиль
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">
-                        Выйти
-                    </a>
-                </div>                    
+                
+
+<div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item dropdown-item--accent" href="">
+        Написать пост
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Мои блоги
+    </a>
+    <a class="dropdown-item" href="">
+        Личные сообщения
+    </a>
+    <a class="dropdown-item" href="">
+        Профиль
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="">
+        Выйти
+    </a>
+</div>
+
+
             </div>
             <div class="navbar-user-item hidden-md-up">
                 <div class="navbar-user-item__primary">
@@ -186,7 +209,7 @@
                     <div class="navbar-user-item__sub-title">Профиль</div>
                 </div>
                 <div class="navbar-user-item__secondary">
-                    <a href="#" class="btn btn--icon navbar__btn-icon">
+                    <a href="#" class="btn btn--icon navbar__btn-icon js-header-notes-toggler">
                         <span class="sprite -notification icon mdl-badge mdl-badge--overlap" data-badge="3">
                             <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#notification" /></use></svg>
                         </span>
@@ -202,92 +225,244 @@
         </div>
     </div>
 </header>
-    <div class="page__content">
-      
+<div class="navbar navbar--header navbar-dark navbar--header--notes js-header-notes">
+    <div class="collapse navbar-toggleable-sm js-collapse">
+        <div class="nav navbar-nav navbar-main-menu">
+            <a class="nav-item nav-link js-prev" href="#">
+                <i class="icon icon--chevron-left-lg"></i>Назад
+            </a>
+        </div>
+        <button type="button" class="close navbar-close js-close" type="button">
+          <span aria-hidden="true"><i class="icon -close"></i></span>
+        </button>
+        
 
-<div class="subheader__wrapper message-subheader">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h1 class="subheader__title">ЛИЧНЫЕ СООБЩЕНИЯ</h1>
-      </div>
-    </div>
-  </div>
+<div class="dropdown-menu dropdown-menu--note ">
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="icon -expert"></span>
+                <span class="person-name">Oleg Smolerov (awd2)</span>
+                отправил вам личное сообщение
+            </span>
+        </span>
+    </a>
+    <a class="dropdown-item" href="#">
+        <span class="media media-middle">
+            <span class="media-left">
+                
+  
+  <span class='sprite -person icon avatar avatar--size-4 media-object'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#person' /></use></svg>
+  </span>
+
+            </span>
+            <span class="media-body">
+                <span class="person-name">Maybe</span>
+                прокомментировал ваше сообщение на форуме
+            </span>
+        </span>
+    </a>
 </div>
 
+
+
+    </div>
+</div>
+    
+    <div class="page__content">
+      
+<div class="page-header">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+		        <div class="page-header__row">
+			        <h1 class="page-header__title">
+			            Сообщения
+			        </h1>
+		        </div>    			
+    		</div>
+    	</div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <div class="messages-wrapper new-message">
-    <div class="message-hostory">
-        <h4 class="message-theme">
-            Привет, брат. Есть че поиграть?
-        </h4>
-        <ul class="messages-content list-unstyled">
-            <li class="message-item">
-                <div class="media">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="images/users/userpic-2@3x.png" alt="Author info">
-                    </a>
-                    <div class="media-body">
-                        <div class="author-info">
-                            <span class="icon -expert"></span>
-                            <span class="author-name">Oleg Smolerov (awd2)</span>
-                        </div>
-                        <span class="time">1 час назад</span>
-                    </div>
-                </div>
-                <div class="message-text">
-                    Айчына! Скажы, у трывожны час, у цяжкiя гады. Цi адчуваеш ты патрэбу ў кожным з нас? I мой ўласны лёс цi злучаны з табой, Адзiнаю маёй?
-                </div>
-                <div class="answer-container">
-                    <span class="answer-button">Ответить</span>
-                    <span class="answer-button">Цитировать</span>
-                </div>
-            </li>
-            <li class="message-item your-message">
-                <div class="media">
-                    <a class="media-left online" href="#">
-                        <img class="media-object" src="images/users/userpic-1@3x.png" alt="Author info">
-                    </a>
-                    <div class="media-body">
-                        <div class="author-info">
-                            <span class="icon"></span>
-                            <span class="author-name">Phill Ivey</span>
-                        </div>
-                        <span class="time">1 час назад</span>
-                    </div>
-                </div>
-                <div class="message-text">
-                    Айчына! Скажы, у трывожны час, у цяжкiя гады. Цi адчуваеш ты патрэбу ў кожным з нас? I мой ўласны лёс цi злучаны з табой, Адзiнаю маёй?
-                </div>
-                <div class="answer-container">
-                    <span class="answer-button">Ответить</span>
-                    <span class="answer-button">Цитировать</span>
-                </div>
-            </li>
-        </ul>
+        	<div class="message-wrapper">
+            	<a class="message-btn-prev" href="" data-role="button">
+            		<i class="icon icon--chevron-left-lg"></i>Привет, брат. Есть че поиграть?
+            	</a>
+            	
+
+<div class="message-item is-new">
+    <div class="typo--header message-item__header">
+        
+
+<div class="media media--author is-online message-item__media">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+    <i class="icon -expert -small"></i>
+
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+            <span class="time">1 час назад</span>
+        
     </div>
-    <div class="new-message-container">
-        <div class="wrapper">
-            <div class="container-heder">
-                <img class="user-image" src="images/users/userpic-2@3x.png" alt="Author info">
-                <span class="user-name">Phil Ivey</span>
-            </div>
-            <div class="b-medium-editor-wrapper-mobile hidden-md-up">
-                <div id="mobile-message-editor-control">
+</div>
 
-                </div>
-            </div>
-            <div class="b-medium-editor-wrapper hidden-sm-down">
-                <div id="message-editor-control">
 
-                </div>
-            </div>
+        <div class="typo--header-space"></div>
+        
+        <div class="message-item__actions hidden-sm-down">
+            <a class="message-item__actions-link" href="">Ответить</a>
+            <a class="message-item__actions-link" href="">Цитировать</a>
         </div>
+        
+    </div>
+    <div class="message-item__text">
+        Тексты, посвященные Евро-2016
+    </div>
+    
+    <div class="message-item__actions hidden-md-up">
+        <a class="message-item__actions-link" href="">Ответить</a>
+        <a class="message-item__actions-link" href="">Цитировать</a>
+    </div>
+    
+</div>
+<div class="message-item">
+    <div class="typo--header message-item__header">
+        
+
+<div class="media media--author is-offline message-item__media">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+    
+  
+  <span class='sprite -ttd-team icon -small'>
+    <svg viewBox="0 0 1 1"><use xlink:href='images/icons.svg#ttd-team' /></use></svg>
+  </span>
+
+
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+            <span class="time">1 час назад</span>
+        
+    </div>
+</div>
+
+
+        <div class="typo--header-space"></div>
+        
+        <div class="message-item__actions hidden-sm-down">
+            <a class="message-item__actions-link" href="">Цитировать</a>
+        </div>
+        
+    </div>
+    <div class="message-item__text">
+        <blockquote class="message-item__text-blockquote">
+            Айчына! Скажы, у трывожны час, у цяжкiя гады. Цi адчуваеш ты патрэбу ў кожным з нас? I мой ўласны лёс цi злучаны з табой, Адзiнаю маёй?
+        </blockquote>
+    </div>
+    
+    <div class="message-item__actions hidden-md-up">
+        <a class="message-item__actions-link" href="">Цитировать</a>
+    </div>
+    
+</div>
+
+
+            </div>
+            
+
+<div class="editor__container editor__container--message">
+    <div class="editor__wrapper">
+        <div class="editor__header">
+            
+
+<div class="media media--author ">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+    </div>
+</div>
+
+
+        </div>
+        <div class="editor__medium-editor">
+            <div id="desktop-message-editor" data-placeholder="Текст сообщения"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
         <button class="btn btn-sm btn-higher btn-alt btn-primary-outline">Отправить</button>
     </div>
 </div>
+
+<div class="editor__container editor__container--message is-mobile">
+    <div class="editor__wrapper">
+        <div class="editor__header">
+            
+
+<div class="media media--author ">
+    <a class="media-left " href="#" >
+        <img class="media-object avatar" src="http://placehold.it/36x36" alt="" width="36" height="36">
+    </a>
+    <div class="media-body media-middle">
+        
+            <span class="author-name">
+                
+                <a href="">Oleg Smolerov (awd2)</a>
+            </span>
+        
+        
+        
+    </div>
+</div>
+
+
+        </div>
+        <div class="editor__medium-editor is-mobile">
+            <div id="mobile-message-editor-toolbar"></div>
+            <div id="mobile-message-editor" data-placeholder="Текст сообщения"></div>
+        </div>
+    </div>
+    <div class="editor__footer">
+        <button class="btn btn-sm btn-higher btn-alt btn-primary-outline btn-responsive">Отправить</button>
+    </div>
+</div>
+
         </div>
     </div>
 </div>
@@ -401,8 +576,11 @@
         </div>
     </div>
 </div>
+    <div class="page__bottom-placeholder"></div>
     
-      <script src="javascripts/app.js"></script>
+    
+    
+      <script src="javascripts/app.js" defer></script>
     
   </body>
 </html>
