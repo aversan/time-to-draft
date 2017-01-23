@@ -1,5 +1,6 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
+{% import "items/navbar/navbar-header.html" as navbar %}
 
 {% block content %}
 
@@ -11,13 +12,19 @@
     <div class="typo--h4">Header</div>
     <br>
 </div>
-{% include "items/navbar/navbar_header.html" %}
+{{navbar.header(
+  class='',
+  loggedIn=false
+)}}
 <div class="container">
     <br>
     <br>
     <div class="typo--h4">Header logged</div>
     <br>
 </div>
-{% include "items/navbar/navbar_header_is-logged.html" %}
+{{navbar.header(
+  class='',
+  loggedIn=true
+)}}
 
 {% endblock %}

@@ -1,14 +1,31 @@
 {% extends 'layouts/application.html' %}
-{% import "items/tournament/tournament-item.html" as tournamentItem %}
 {% from 'macros/helpers.html' import sprite %}
+{% import "items/tournament/tournament-item.html" as tournamentItem %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Tournament</h3>
+    <div class="typo--h3">Tournament</div>
     <br>
+    <div class="typo--h4">Item</div>
+    <br>
+    {{tournamentItem.tournamentItem(
+        class='swiper-slide slider-wide__item tournament-item free',
+        image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+        head_logo_name='khl',
+        head_title='3-й тур Серии А',
+        head_sub_title='Начало послезавтра',
+        info_price_title='Свободный',
+        info_price_sub_title='вход',
+        info_prize_title='€78.00',
+        info_prize_sub_title='призовые',
+        actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+        actions_info_author_name='FanTeam',
+        actions_info_author_time='3 часа назад',
+        label='Free'
+    )}}    
     {{tournamentItem.tournamentItem(
         class='swiper-slide slider-wide__item tournament-item new',
         image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
@@ -21,11 +38,24 @@
         info_prize_sub_title='призовые',
         actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
         actions_info_author_name='FanTeam',
-        actions_info_author_time='3 часа назад'
+        actions_info_author_time='3 часа назад',
+        label='New'
+    )}}    
+    {{tournamentItem.tournamentItem(
+        class='swiper-slide slider-wide__item tournament-item',
+        image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+        head_logo_name='khl',
+        head_title='3-й тур Серии А',
+        head_sub_title='Начало послезавтра',
+        info_price_title='Свободный',
+        info_price_sub_title='вход',
+        info_prize_title='€78.00',
+        info_prize_sub_title='призовые',
+        actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+        actions_info_author_name='FanTeam',
+        actions_info_author_time='3 часа назад',
+        label=''
     )}}    
 </div>
-<br>
-<br>
-<br>
 
 {% endblock %}

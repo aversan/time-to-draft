@@ -1,21 +1,18 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
 {% import "items/posts/posts-list.html" as postsList %}
+{% import "items/posts/post-header-top.html" as postHeaderTop %}
 
 {% set colSideContent %}
     {% include "items/panel/panel-component_beginner-profi-play-forum_side.html" %}
-{% endset %}
-
-{% set iconExpert %}
-    <i class="icon -expert -small"></i>
 {% endset %}
 
 {% block content %}
 
     <div class="page-header">
         <div class="container">
-            {% include "items/posts/post-header-top_personal-blog.html" %}
-            <!-- {% include "items/posts/post-header-top_personal-blog-2.html" %} -->
+            {{ postHeaderTop.blogHeaderTop1(register=false) }}
+            <!-- {{ postHeaderTop.blogHeaderTop2(register=false) }} -->
             <div class="row">
                 <div class="col-sm-12 col-md-8 col-lg-8">
                     <h1 class="page-header__title page-header__title--no-transform">
@@ -48,4 +45,8 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block modal %}
+    {% include "items/modals/modal_list_coauthor.html" %}
 {% endblock %}

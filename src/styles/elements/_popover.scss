@@ -1,0 +1,77 @@
+.webui-popover {
+    z-index: 978;
+}
+
+.webui-popover-info {
+    border: solid 1px rgba(37, 37, 37, 0.13);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.13), 0 4px 9px 0 rgba(0, 0, 0, 0.08);
+    background-color: $blue;
+    color: #fff;
+    border-radius: 2px;
+
+    &.webui-popover.bottom > .webui-arrow:after,
+    &.webui-popover.bottom-right > .webui-arrow:after,
+    &.webui-popover.bottom-left > .webui-arrow:after {
+        border-bottom-color: $blue;
+    }
+}
+
+.webui-popover .webui-popover-content > div:first-child {
+    width: 100%;
+}
+
+.webui-popover-header,
+.webui-popover-body,
+.webui-popover-footer {
+    padding-left: 16px;
+    padding-right: 20px;
+
+    @include media-breakpoint-down(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+.webui-popover-body {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    p {
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.webui-popover-header,
+.webui-popover-footer {
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+        min-height: 32px;
+    }
+}
+
+.webui-popover-header {
+    border-bottom: 1px solid $border-color;
+}
+
+.webui-popover-footer {
+    border-top: 1px solid $border-color;
+    justify-content: flex-end;
+}
+
+.webui-popover-button {
+    @include typo-body;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+}

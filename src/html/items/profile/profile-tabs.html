@@ -1,53 +1,58 @@
 {% import "items/posts/posts-list.html" as postsList %}
-{% import "items/messages/message-post-items.html" as messagePostItems %}
+{% import "items/messages/message-items.html" as messageItems %}
 
 {% macro profileTabs(
 register=true
 ) %}
-<div class="mdl-tabs mdl-js-tabs profile-tabs">
+<div class="mdl-tabs profile-tabs is-upgraded">
     <div class="typo--header">
-        <div class="swiper-container js-swiper-container-tabs mdl-tabs__tab-bar typo--header__tab-bar">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="mdl-tabs__tab-bar">
-                        <a href="#posts" class="mdl-tabs__tab is-active">Посты</a>
-                        <a href="#blogs" class="mdl-tabs__tab">Блоги</a>
-                    </div>
-                </div>
+        <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container typo--header__tab-bar-container">
+            <div class="swiper-wrapper mdl-tabs__tab-bar typo--header__tab-bar" data-uk-switcher="{ connect: '.js-profile-tabs-container' }" data-connect=".js-profile-tabs-container">
+                <span class="swiper-slide mdl-tabs__tab is-active" data-uk-switcher-item="0">Посты</span>
+                <span class=" swiper-slide mdl-tabs__tab" data-uk-switcher-item="1">Блоги</span>
             </div>
             <div class="swiper-scrollbar"></div>
         </div>
-        <div class="typo--header-space hidden-sm-down"></div>   
+        <div class="typo--header-space"></div>
         {% if register %}
-            <button type="button" class="btn btn-sm btn-higher btn-primary btn-alt" data-toggle="modal" data-target="#modal_form_new_blog">Написать пост</button>
+            <div class="switcher js-profile-tabs-container">
+                <div class="is-active">
+                    <a role="button" class="btn btn-sm btn-higher btn-primary btn-alt hidden-sm-down" href="new-post.html">Написать пост</a>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-sm btn-higher btn-primary btn-alt hidden-sm-down" data-toggle="modal" data-target="#modal_form_new_blog">Создать блог</button>
+                </div>
+            </div>
         {% endif %}
     </div>
-    <div class="mdl-tabs__panel is-active" id="posts">
-        {% if register %}
-            {{ postsList.postsList(hasAction=true) }}
-        {% else %}
-            {{ postsList.postsList(hasAction=false) }}
-        {% endif %}
-        <div class="btn-more-wrapper">
-            <button class="btn btn--more btn-block">
-                Показать еще...
-            </button>
+    <div class="js-profile-tabs-container">
+        <div class="mdl-tabs__panel is-active">
+            {% if register %}
+                {{ postsList.postsList(hasAction=true) }}
+            {% else %}
+                {{ postsList.postsList(hasAction=false) }}
+            {% endif %}
+            <div class="btn-more-wrapper">
+                <button class="btn btn--more btn-block">
+                    Показать еще...
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="mdl-tabs__panel" id="blogs">
-        {% if register %}
-            <div class="message-wrapper">
-                {{ messagePostItems.messagePostItems(hasAction=true) }}
+        <div class="mdl-tabs__panel">
+            {% if register %}
+                <div class="message-wrapper">
+                    {{ messageItems.blogMessageItems(hasAction=true) }}
+                </div>
+            {% else %}
+                <div class="message-wrapper">
+                    {{ messageItems.blogMessageItems(hasAction=false) }}
+                </div>
+            {% endif %}
+            <div class="btn-more-wrapper">
+                <button class="btn btn--more btn-block">
+                    Показать еще...
+                </button>
             </div>
-        {% else %}
-            <div class="message-wrapper">
-                {{ messagePostItems.messagePostItems(hasAction=false) }}
-            </div>
-        {% endif %}
-        <div class="btn-more-wrapper">
-            <button class="btn btn--more btn-block">
-                Показать еще...
-            </button>
         </div>
     </div>
 </div>

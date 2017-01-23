@@ -1,4 +1,5 @@
 {% import "items/media/media.html" as media %}
+{% from 'macros/helpers.html' import sprite %}
 {% import "items/dropdown/dropdown.html" as dropdown %}
 
 <div class="editor__container editor__container--post editor__container--post--full">
@@ -20,7 +21,7 @@
                                 Делимся мыслями
                             </span>
                             {{ dropdown.dropdownMenuNewPost(
-                                class='dropdown-menu-right dropdown-menu--air dropdown-menu--bordered'
+                                class='dropdown-menu-right dropdown-menu--air'
                             )}}
                         </div>
                     </div>                
@@ -43,7 +44,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-xs-left">
                             <div class="hidden-sm-down">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="desktop-full-post-editor-chips" value="">
+                                    <textarea class="mdl-textfield__input js-autosize" id="desktop-full-post-editor-chips" cols="20" rows="1"></textarea>
                                     <label class="mdl-textfield__label" for="desktop-full-post-editor-chips">Добавьте тэги</label>
                                 </div>
                             </div>
@@ -52,7 +53,9 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-xs-right">
-                            <i class="icon -medium -question"></i>
+                            <a class="icon-link hidden-sm-down" data-toggle="modal" href="#modal_post_help">
+                                {{ sprite('question', '0 0 1 1', 'icon -grey -hoverable') }}
+                            </a>
                             <button class="btn btn-sm btn-higher btn-alt btn-primary btn-responsive">Опубликовать</button>
                         </div>
                     </div>
@@ -82,7 +85,7 @@
                                     Делимся мыслями
                                 </span>
                                 {{ dropdown.dropdownMenuNewPost(
-                                    class='dropdown-menu-right dropdown-menu--air dropdown-menu--bordered'
+                                    class='dropdown-menu-right dropdown-menu--air'
                                 )}}
                             </div>
                         </div>
@@ -107,7 +110,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-xs-left">
                             <div class="hidden-sm-down">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="mobile-full-post-editor-chips" value="">
+                                    <textarea class="mdl-textfield__input js-autosize" id="mobile-full-post-editor-chips" cols="20" rows="1"></textarea>
                                     <label class="mdl-textfield__label" for="mobile-full-post-editor-chips">Добавьте тэги</label>
                                 </div>
                             </div>
@@ -116,7 +119,6 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-xs-right">
-                            <i class="icon -medium -question"></i>
                             <button class="btn btn-sm btn-higher btn-alt btn-primary btn-responsive">Опубликовать</button>
                         </div>
                     </div>

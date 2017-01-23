@@ -1,24 +1,10 @@
-<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-        <circle id="path-1" cx="18" cy="18" r="18"></circle>
-    </defs>
-    <g id="Design-v.2.1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home-360-Menu" transform="translate(-16.000000, -88.000000)">
-            <g id="Group-29">
-                <g id="Group-28" transform="translate(16.000000, 88.000000)">
-                    <g id="Person">
-                        <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                        </mask>
-                        <use id="Mask" fill="#444444" xlink:href="#path-1"></use>
-                        <g id="Group-25" mask="url(#mask-2)">
-                            <g transform="translate(3.772725, 8.000000)" id="Group-45">
-                                <g>
-                                    <path d="M14.2272754,14 C18.0932686,14 21.2272754,10.8659932 21.2272754,7 C21.2272754,3.13400675 18.0932686,-3.55271368e-14 14.2272754,-3.55271368e-14 C10.3612821,-3.55271368e-14 7.22727539,3.13400675 7.22727539,7 C7.22727539,10.8659932 10.3612821,14 14.2272754,14 Z M14.3050781,31.9090909 C8.93671875,31.9090909 0.514285714,26.9090909 0.514285714,26.9090909 C0.514285714,20.3547078 6.68571429,15.1112013 14.4,15.1112013 C22.1142857,15.1112013 28.2857143,20.3547078 28.2857143,26.9090909 C28.2857143,26.9090909 18.1938616,31.9090909 14.3050781,31.9090909 Z" id="Combined-Shape" fill="#9E9E9E"></path>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24">
+    <g id="Design-Final" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Profile-Edit" transform="translate(-517.000000, -320.000000)">
+            <g id="Group-27" transform="translate(478.000000, 214.000000)">
+                <g id="User" transform="translate(39.000000, 106.000000)">
+                    <path d="M15.621,17 C14.243,17.738 12.669,18.16 10.998,18.16 C9.328,18.16 7.755,17.74 6.377,17 C3.401,17.782 1.069,19.635 0,23.62 L22,23.62 C20.931,19.634 18.599,17.781 15.621,17 L15.621,17 Z" id="Shape"></path>
+                    <path d="M11,16 C15.418,16 19,12.418 19,8 C19,3.582 15.418,0 11,0 C6.582,0 3,3.582 3,8 C3,12.418 6.582,16 11,16 L11,16 Z" id="Shape"></path>
                 </g>
             </g>
         </g>

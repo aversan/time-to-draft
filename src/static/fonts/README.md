@@ -10,4 +10,4 @@ gulpfile.js/tasks/fonts
 ```
 All this task does is copy fonts from `./src/fonts` to `./public/fonts`. 
 
-A sass `+font-face` mixin is included in `./src/stylesheets/base/mixins`.
+A sass `+font-face` mixin is included in `./src/styles/base/mixins`.

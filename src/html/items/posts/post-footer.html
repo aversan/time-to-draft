@@ -4,18 +4,18 @@
     <div class="mdl-chip-container post__chip-container">
         <span class="mdl-chip-label">Тэги:</span>
         <div class="mdl-chip-list">
-            <span class="mdl-chip">
+            <a href="" class="mdl-chip">
                 <span class="mdl-chip__text">dailyfantasy</span>
-            </span>
-            <span class="mdl-chip">
+            </a>
+            <a href="" class="mdl-chip">
                 <span class="mdl-chip__text">captain</span>
-            </span>
-            <span class="mdl-chip">
+            </a>
+            <a href="" class="mdl-chip">
                 <span class="mdl-chip__text">fantasyfootball</span>
-            </span>
-            <span class="mdl-chip">
+            </a>
+            <a href="" class="mdl-chip">
                 <span class="mdl-chip__text">euro2016</span>
-            </span>
+            </a>
         </div>
     </div>
     <div class="rating-container">
@@ -24,10 +24,10 @@
                 {{ sprite('energy', '0 0 1 1', 'icon -primary') }}
                 <span class="text">Рейтинг:</span>
                 <span class="value value--rating">+6</span>
-            </li>
-            <li class="list-inline-item rating-item">
-                {{ sprite('up', '0 0 1 1', 'icon -hoverable -dark-grey') }}
-                {{ sprite('down', '0 0 1 1', 'icon -hoverable  -dark-grey') }}
+                <span class="btn-group">
+                    {{ sprite('up', '0 0 1 1', 'icon -hoverable -dark-grey') }}
+                    {{ sprite('down', '0 0 1 1', 'icon -hoverable  -dark-grey') }}
+                </span>
             </li>
             <li class="list-inline-item rating-item">
                 {{ sprite('view', '0 0 1 1', 'icon -primary') }}

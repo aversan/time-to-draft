@@ -10,10 +10,14 @@
     info_prize_sub_title='info_prize_sub_title',
     actions_info_author_avatar={ src: 'http://placehold.it/36x36', width: '36', height: '36'},
     actions_info_author_name='actions_info_author_name',
-    actions_info_author_time='actions_info_author_time'
+    actions_info_author_time='actions_info_author_time',
+    label=''
 ) %}
 
 <section class="tournament-item {{ class }}">
+    {% if label | length %}
+        <div class="tournament-item__label">{{ label | safe }}</div>
+    {% endif %}
     <div class="tournament-item__img" style="background-image: url({{ image.src | safe }});">
         <img src="{{ image.src | safe }}" alt="" width="{{ image.width | safe }}" height="{{ image.height }}">
     </div>

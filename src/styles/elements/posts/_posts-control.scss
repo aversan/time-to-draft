@@ -1,0 +1,162 @@
+// posts-control
+
+.posts-control {
+  &,
+  & > .container {
+    height: 72px;
+
+    @include media-breakpoint-down(sm) {
+      height: 56px;
+    }
+  }
+
+  .container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+// title
+
+.posts-control__title {
+  @include typo-h6;
+  font-weight: 700;
+  color: $darker-grey;
+
+  @include media-breakpoint-down(sm) {
+    @include typo-body-lg;
+    font-weight: 700;
+  }
+
+  .posts-control & {
+    display: block;
+  }
+
+  .posts-control & + & {
+    display: none;
+  }
+
+  .posts-control.active & {
+    display: none;
+  }
+  
+  .posts-control.active & + & {
+    display: block;
+  }
+}
+
+// switcher
+
+.posts-control__switcher {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__label {
+    @include typo-body;
+    margin-right: .75rem;
+    color: $grey;
+    text-align: right;
+
+    @include media-breakpoint-down(sm) {
+      margin-right: 0.625rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+  
+    .switcher {
+      position: absolute;
+      visibility: hidden;
+      z-index: -10;
+    }
+    
+    .switcher-label {
+      display: inline-block;
+      margin: 0;
+      position: relative;
+      cursor: pointer;
+      width: 32px;
+      height: 11px;
+      border-radius: 100px;
+      background-color: rgba($dark-grey, 0.5);
+
+      .posts-control.active & {
+        background-color: $green;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        margin-top: -9px;
+        left: 0;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.27);
+        background-color: $white;
+
+        .posts-control.active & {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+
+    .webui-popover.bottom-right {
+      left: auto !important;
+      right: 0;
+
+      @include media-breakpoint-down(sm) {
+        right: -16px;
+      }
+
+      .webui-arrow {
+        left: auto !important;
+        right: 20px;
+
+        @include media-breakpoint-down(sm) {
+          right: 16px;
+        }
+      }
+    }
+
+    .webui-popover.bottom,
+    .webui-popover.bottom-left,
+    .webui-popover.bottom-right {
+      margin-top: 16px;
+    }
+  }
+
+  &__label {
+    color: $grey;
+  }
+}
+
+// choose
+
+.posts-control__choose {
+  display: block;
+
+  .posts-control.active ~ & {
+    display: none;
+  }
+}
+
+// all
+
+.posts-control__all {
+  display: none;
+
+  .posts-control.active ~ & {
+    display: block;
+  }
+}

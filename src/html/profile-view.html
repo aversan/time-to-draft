@@ -3,7 +3,6 @@
 {% import "items/profile/profile-head.html" as head %}
 {% import "items/profile/profile-about.html" as about %}
 {% import "items/profile/profile-tabs.html" as tabs %}
-{% import "items/messages/message-post-items.html" as postItems %}
 {% block pageClass %}{{ 'page--navbar-overlap' }}{% endblock %}
 
 {% block content %}
@@ -21,16 +20,6 @@
         <div class="row">
             <div class="col-lg-8 col-md-12 col-sm-12 mx-auto">
                 {{ tabs.profileTabs(register=false) }}
-                <div class="tab-content">
-                    <div class="tab-pane active" id="posts" role="tabpanel">
-                        {% include "items/posts/posts-list.html" %}
-                    </div>
-                    <div class="tab-pane" id="blogs" role="tabpanel">
-                        <div class="message-wrapper">
-                            {{ postItems.messagePostItems(hasAction=false) }}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

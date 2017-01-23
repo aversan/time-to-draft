@@ -6,6 +6,10 @@ var pathToUrl       = require('./pathToUrl')
 var webpack         = require('webpack')
 var webpackManifest = require('./webpackManifest')
 
+// var MediumEditor = require('medium-editor');
+// var $ = require('jquery');
+// require('medium-editor-insert-plugin')($);
+
 module.exports = function(env) {
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
   var jsDest = path.resolve(config.root.dest, config.tasks.js.dest)
@@ -26,7 +30,8 @@ module.exports = function(env) {
         $: 'jquery',
         jquery: 'jquery',
         "window.jQuery": "jquery",
-        "window.Tether": 'tether'
+        "window.Tether": "tether",
+        "window.sortable": "sortable"
       })
     ],
     resolve: {

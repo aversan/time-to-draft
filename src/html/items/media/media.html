@@ -9,7 +9,11 @@
 ) %}
 
 <div class="media media--author {{ class }}">
-    <a class="media-left {{ "media-left--badge" if hasBadge }}" href="#" {{ "data-badge=+1" if hasBadge }}>
+    {% if hasBadge %}
+    <a class="media-left media-left--badge" href="#modal_list_coauthor" data-badge="+1" data-toggle="modal" }}>
+    {% else %}
+    <a class="media-left" href="#">
+    {% endif %}
         <img class="media-object avatar" src="{{ avatar.src | safe }}" alt="" width="{{ avatar.width | safe }}" height="{{ avatar.height | safe }}">
     </a>
     <div class="media-body media-middle">

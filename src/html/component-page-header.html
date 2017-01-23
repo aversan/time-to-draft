@@ -1,5 +1,6 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
+{% import "items/tabs/tabs.html" as tabs %}
 
 {% block content %}
 
@@ -19,18 +20,25 @@
     	<div class="container">
     	    <h1 class="page-header__title">Стратегии</h1>
             <div class="page-header__row page-header__row--bottom">
-                <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
-                                <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Все блоги</span>
-                                <span class="mdl-tabs__tab" data-uk-switcher-item="1">Все посты</span>
-                                <span class="mdl-tabs__tab" data-uk-switcher-item="2">Лучшие посты</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-scrollbar"></div>
-                </div>
+                {{tabs.pageTabs(
+                    items = {
+                        item0: {
+                            id: 0,
+                            class: 'is-active',
+                            title: 'Все блоги'
+                        },
+                        item1: {
+                            id: 1,
+                            class: '',
+                            title: 'Все посты'
+                        },
+                        item2: {
+                            id: 2,
+                            class: '',
+                            title: 'Лучшие посты'
+                        }
+                    }
+                )}}
             </div>
         </div>
     </div>
@@ -46,22 +54,29 @@
                         </h1>
                         <div class="page-header-space"></div>   
                         <div class="page-header__action page-header__action--abs">
-                            <a class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down  btn-responsive" href="">Создать блог</a>
+                            <a class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" href="">Создать блог</a>
                         </div>
                     </div>
                     <div class="page-header__row page-header__row--bottom">
-                        <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
-                                        <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Все блоги</span>
-                                        <span class="mdl-tabs__tab" data-uk-switcher-item="1">Все посты</span>
-                                        <span class="mdl-tabs__tab" data-uk-switcher-item="2">Лучшие посты</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-scrollbar"></div>
-                        </div>
+                        {{tabs.pageTabs(
+                            items = {
+                                item0: {
+                                    id: 0,
+                                    class: 'is-active',
+                                    title: 'Все блоги'
+                                },
+                                item1: {
+                                    id: 1,
+                                    class: '',
+                                    title: 'Все посты'
+                                },
+                                item2: {
+                                    id: 2,
+                                    class: '',
+                                    title: 'Лучшие посты'
+                                }
+                            }
+                        )}}
                     </div>
                 </div>
             </div>

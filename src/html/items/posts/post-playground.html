@@ -1,0 +1,24 @@
+{% from 'macros/helpers.html' import sprite %}
+
+<article class="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
+                <header class="post__header">
+                    <h1 class="post__title">Обзор площадки</h1>
+                </header>
+                <div class="post__text">
+                    <h2>Виды fantasy</h2>
+                    <p>
+                        FanTeam выделяется широким охватом футбольных лиг, включая экзотические для Daily Fantasy турецкий и финский чемпионаты и даже шведский и норвежский первые дивизионы. Искушенных игроков привлечет наличие на fantasy-платформе ряда нестандартных турнирных опций.
+                    </p>
+                    <figure class="post__img">
+                        <img class="img-fluid" src="img/content/review.jpg" alt="">
+                    </figure>
+                </div>
+                {# include "items/posts/post-more.html" #}
+                {% include "items/posts/post-footer.html" %}
+            </div>
+        </div>
+    </div>
+</article>

@@ -3,6 +3,7 @@
 {% import "items/posts/post-item.html" as item %}
 {% import "items/posts/posts-control.html" as postscontrol %}
 {% import "items/posts/posts-list.html" as postsList %}
+{% import "items/posts/post-header-top.html" as postHeaderTop %}
 
 {% block content %}
 
@@ -33,10 +34,10 @@
     {{item.post(
         title='<a href="">Mathmen</a> / <a href="">Обновленная платформа и другие новости FanTeam</a>',
         description='Какие изменения ждут FanTeam в ближайшие несколько недель.',
-        user_ava='/images/users/userpic-8@3x.png',
+        user_ava='/img/users/userpic-8@3x.png',
         info_user='FanTeam',
         info_time='1 час назад',
-        image='/images/content/bitmap@3x.jpg',
+        image='/img/content/bitmap@3x.jpg',
         hasNewComment=true
     )}}    
     <br>
@@ -53,6 +54,20 @@
     {{ postsList.postsList(
         hasAction = true
     ) }}
+    <br>
+    <br>
+    <div class="typo--h4">Post header top</div>
+    <br>
+    {{ postHeaderTop.postHeaderTop(register=false) }}
+    <br>
+    <br>
+    <div class="typo--h4">Post header top actions</div>
+    <br>
+    {{ postHeaderTop.postHeaderTop(register=true) }}
+    <br>
+    <br>
+    <div class="typo--h4">Post preloder</div>
+    <div class="post-preloader"></div>
 </div>
 
 {% endblock %}

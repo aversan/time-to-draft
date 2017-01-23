@@ -1,4 +1,5 @@
 {% from 'macros/helpers.html' import sprite %}
+{% import "items/dropdown/dropdown.html" as dropdown %}
 
 <div class="footer">
     <div class="container footer__container">
@@ -63,13 +64,18 @@
             </div>
             <div class="col-md-4 col-lg-3 footer__col-right">
                 <div class="footer__lang">
-                    <a href="">
-                        <span class="icon -russian"></span>
-                        <span href="#" class="lang-name">Русский</span>
-                    </a>
+                    <div class="btn-group dropup">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="icon -russian"></span>
+                            <span href="#" class="lang-name">Русский</span>
+                        </a>
+                        {{ dropdown.dropdownMenuLanguage(
+                            class="dropdown-menu-left"
+                        ) }}
+                    </div>
                 </div>
                 <a class="footer__brand" href="#">
-                    <img class="logo" src="images/logos/logo.svg" alt="Time to Draft" width="87" height="29">
+                    <img class="logo" src="img/logos/logo.svg" alt="Time to Draft" width="87" height="28">
                 </a>
                 <div class="footer__copyright">
                     ©&nbsp;TimeToDraft.com 2015-2016

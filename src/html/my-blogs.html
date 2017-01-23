@@ -1,8 +1,9 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
 {% import "items/messages/message-button-container.html" as buttonContainer %}
-{% import "items/messages/message-post-items.html" as blogItems %}
+{% import "items/messages/message-items.html" as messageItems %}
 {% import "items/posts/posts-list.html" as postItems %}
+{% import "items/tabs/tabs.html" as tabs %}
 
 {% block pageClass %}{{ 'has-message-button' }}{% endblock %}
 
@@ -19,18 +20,21 @@
     			        </h1>
     			        <div class="page-header-space"></div>
                         <div class="page-header__action page-header__action--abs">
-                            <a class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" href="">Создать блог</a>
+                            <div class="switcher js-blogs-tabs-container">
+                                <div class="is-active">
+                                    <button class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" data-toggle="modal" data-target="#modal_form_new_blog">Создать блог</button>
+                                </div>
+                                <div>
+                                    <a role="button" class="btn btn-primary btn-alt btn-sm btn-higher hidden-sm-down btn-responsive" href="new-post.html">Написать пост</a>
+                                </div>
+                            </div>
                         </div>
     		        </div>    			
                     <div class="page-header__row page-header__row--bottom">
                         <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
-                                        <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Все блоги</span>
-                                        <span class="mdl-tabs__tab" data-uk-switcher-item="1">Все посты</span>
-                                    </div>
-                                </div>
+                            <div class="swiper-wrapper mdl-tabs__tab-bar" data-uk-switcher="{ connect: '.js-blogs-tabs-container' }" data-connect=".js-blogs-tabs-container">
+                                <span class="mdl-tabs__tab swiper-slide is-active" data-uk-switcher-item="0">Все блоги</span>
+                                <span class="mdl-tabs__tab swiper-slide" data-uk-switcher-item="1">Все посты</span>
                             </div>
                             <div class="swiper-scrollbar"></div>
                         </div>
@@ -41,10 +45,10 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" id="page_tabs_container">
+            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 js-blogs-tabs-container">
                 <div class="mdl-tabs__panel is-active">
                     <div class="message-wrapper">
-                        {{ blogItems.messagePostItems( hasAction=true ) }}
+                        {{ messageItems.blogMessageItems( hasAction=true ) }}
                     </div>
                     {% include "items/pagination/pagination.html" %}
                 </div>
@@ -55,10 +59,27 @@
             </div>
         </div>
     </div>
-    {{buttonContainer.messageButtonContainer(
-        class='',
-        button_attribute='',
-        button_text='Создать блог'
-    )}}
 </div>
+
+<div class="switcher js-blogs-tabs-container">
+    <div class="is-active">
+        <div class="message-button-container hidden-md-up text-xs-center">
+            <div class="container">
+                <button class="btn btn-sm btn-higher btn-responsive btn-alt btn-primary" data-toggle="modal" data-target="#modal_form_new_blog">Создать блог</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="message-button-container hidden-md-up text-xs-center">
+            <div class="container">
+                <a role="button" class="btn btn-sm btn-higher btn-responsive btn-alt btn-primary" href="new-post.html">Написать пост</a>                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block modal %}
+    {% include "items/modals/modal_form_new_blog.html" %}
 {% endblock %}

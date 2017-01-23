@@ -17,6 +17,16 @@
 <div class="row profile-head-bg">
     <div class="col-sm-12 col-lg-12 col-md-12">
         {{ head.profileHead(register=false) }}
+    </div>
+</div>
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h4">Head registered</div>
+    <br>
+</div>
+<div class="row profile-head-bg">
+    <div class="col-sm-12 col-lg-12 col-md-12">
         {{ head.profileHead(register=true) }}
     </div>
 </div>
@@ -26,6 +36,10 @@
     <div class="typo--h4">About</div>
     <br>
     {{ about.profileAbout(register=false) }}
+    <br>
+    <br>
+    <div class="typo--h4">About registered</div>
+    <br>
     {{ about.profileAbout(register=true, text="В футбол влюбился с детства, окончательно и бесповоротно.
         Прогнозированием и аналитикой занимаюсь почти 10 лет,
         а с активным развитием fantasy-футбола убежден, что буду заниматься и дальше.
@@ -35,6 +49,10 @@
     <div class="typo--h4">Tabs</div>
     <br>
     {{ tabs.profileTabs(register=false) }}
+    <br>
+    <br>
+    <div class="typo--h4">Tabs registered</div>
+    <br>
     {{ tabs.profileTabs(register=true) }}
 </div>
 {% endblock %}

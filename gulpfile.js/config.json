@@ -17,21 +17,23 @@
     },
 
     "js": {
-      "src": "javascripts",
-      "dest": "javascripts",
+      "src": "scripts",
+      "dest": "scripts",
       "entries": {
         "app": ["./app.js"]
       },
       "extensions": ["js", "json"],
       "babel": {
         "presets": ["es2015", "stage-1"],
-        "plugins": []
+        "plugins": [
+          "add-module-exports"
+        ]
       },
       "extractSharedJs": false
     },
     "css": {
-      "src": "stylesheets",
-      "dest": "stylesheets",
+      "src": "styles",
+      "dest": "styles",
       "autoprefixer": {
         "browsers": ["last 3 versions"]
       },
@@ -56,8 +58,8 @@
     },
 
     "images": {
-      "src": "images",
-      "dest": "images",
+      "src": "img",
+      "dest": "img",
       "extensions": ["jpg", "png", "svg", "gif"]
     },
 
@@ -76,7 +78,7 @@
 
     "svgSprite": {
       "src": "icons",
-      "dest": "images",
+      "dest": "img",
       "extensions": ["svg"]
     },
 

@@ -1,0 +1,357 @@
+$card-l-min-width: 285px;
+$card-l-width: #{$card-l-min-width / $font-size-root}rem;
+$card-m-min-width: 272px;
+$card-m-width: #{$card-m-min-width / $font-size-root}rem;
+$card-s-min-width: 246px;
+$card-s-width: #{$card-s-min-width / $font-size-root}rem;
+
+// item
+
+.tournament-item {
+  position: relative;
+  display: inline-block;
+  min-width: $card-l-min-width;
+  width: $card-l-width;
+  border-radius: 2px;
+  margin: 0 20px 20px 0;
+  box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 0.07);
+  background-color: $white;
+
+  @include media-breakpoint-down(md) {
+    min-width: $card-m-min-width;
+    width: $card-m-width;
+  }
+
+  @include media-breakpoint-down(sm) {
+    min-width: $card-s-min-width;
+    width: $card-s-width;
+  }
+}
+
+.tournament-item__label {
+  box-sizing: content-box;
+  width: 44px;
+  height: 0px;
+  text-overflow: clip;
+  outline: none;
+  border-width: 0px 20px 20px;
+  border-style: solid;
+  border-color: transparent transparent $green;
+  position: absolute;
+  top: 13px;
+  left: -19px;
+  transform: rotate(-45deg);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+
+  .tournament-item.free & {
+    border-color: transparent transparent $green;
+  }
+
+  .tournament-item.new & {
+    border-color: transparent transparent $salmon;
+  }
+}
+
+// img
+
+.tournament-item__img {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  // box-shadow: inset 0 0 0 1px rgba($grey, .3);
+  min-height: 60px;
+  max-height: 128px;
+
+  @include media-breakpoint-down(md) {
+    max-height: 118px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    max-height: 106px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    // background-color: rgba(26,29,32, .07);
+
+
+    .tournament-item:hover & {
+      // background-color: rgba(227, 227, 227, 0.1);
+    }
+  }
+
+  img {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    visibility: hidden;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+// block
+
+.tournament-item__block {
+  padding: 16px 20px;
+  box-sizing: border-box;
+
+  @include media-breakpoint-down(md) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  & + & {
+    border-top: 1px solid $border-color-light;
+  }
+}
+
+// head
+
+.tournament-item__head {
+  height: 88px;
+
+  @include media-breakpoint-down(md) {
+    height: 90px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 84px;
+  }
+
+  &-title {
+    display: block;
+    @include typo-h6;
+    font-weight: 700;
+
+    @include media-breakpoint-down(md) {
+      @include typo-title;
+      font-weight: 700;
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include typo-title-2;
+      font-weight: 700;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &-sub-title {
+    display: block;
+    @include typo-caption;
+    color: $grey;
+    margin-top: 4px;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 2px;
+    }
+  }
+
+  &-logo {
+    float: right;
+    margin-left: 10px;
+    margin-top: -41px;
+    margin-right: -4px;
+    position: relative;
+  }
+}
+
+// info
+
+.tournament-item__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+
+  &-price,
+  &-prize {
+    display: flex;
+    flex: 0 0 50%;
+    max-width: 50%;
+    flex-direction: column;
+    height: 34px;
+    text-align: center;
+    white-space: nowrap;
+
+    @include media-breakpoint-down(md) {
+      height: 24px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: 28px;
+    }
+
+    .title,
+    .sub-title {
+      position: relative;
+      top: -3px;
+
+      @include media-breakpoint-down(md) {
+        top: -8px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        top: -6px;
+      }
+    }
+
+    .sub-title {
+      top: -2px;
+
+      @include media-breakpoint-down(md) {
+        top: -7px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        top: -5px;
+      }
+    }
+
+    .title {
+      @include typo-body;
+    }
+
+    .sub-title {
+      @include typo-caption;
+      color: $grey;
+      text-transform: uppercase;
+    }
+  }
+  
+  &-price {
+    padding-right: 10px;
+  }
+
+  &-prize {
+    padding-left: 10px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 32px;
+      border-left: 1px solid $border-color-light;
+      left: 0;
+      top: 50%;
+      margin-top: -16px;      
+    }
+  }
+}
+
+// actions
+
+.tournament-item__actions {
+  display: flex;
+  align-items: center;
+
+  &-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+    
+    .author {
+      display: block;
+      @include clearfix;
+
+      &__ava {
+        display: block;
+        margin-right: 12px;
+        position: relative;
+        float: left;
+
+        @include media-breakpoint-down(md) {
+          margin-left: 4px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      
+      &__body {
+        display: block;
+        overflow: hidden;
+      }
+
+      &__name {
+        @include typo-body;
+        margin-top: -3px;
+        display: block;
+        position: relative;
+        z-index: 1;
+        @include text-truncate;
+
+        a {
+          color: inherit;
+        }
+      }
+      
+      &__time {
+        display: block;
+        @include typo-caption;
+        color: $grey;
+        @include text-truncate;
+      }
+    }
+  }
+
+  &-act {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: right;
+
+    .btn {
+      position: relative;
+      z-index: 1;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+      max-width: 96px;
+
+      @include media-breakpoint-down(md) {
+        max-width: 86px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        max-width: 96px;
+      }
+    }
+  }
+}
+
+// area link
+
+.tournament-item__area-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}

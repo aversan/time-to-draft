@@ -1,0 +1,40 @@
+// collapsed
+
+.editor-write__collapsed {
+  display: flex;
+  align-items: center;
+
+  .editor-write.is-expanded & {
+    display: none;
+  }
+}
+
+// expanded
+
+.editor-write__expanded {
+  display: none;
+
+  .editor-write.is-expanded & {
+    display: block;
+  }
+}
+
+// header
+
+.editor-write__header {
+  &.typo--header {
+    border-bottom: none;
+    height: 60px;
+
+    @include media-breakpoint-down(sm) {
+      height: 56px;
+    }
+  }
+}
+
+// title
+
+.editor-write__title {
+  cursor: pointer;
+  color: $lighter-grey;
+}

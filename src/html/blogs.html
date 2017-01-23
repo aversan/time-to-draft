@@ -1,16 +1,9 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
 {% import "items/messages/message-button-container.html" as buttonContainer %}
-{% import "items/messages/message-post-items.html" as blogItems %}
+{% import "items/messages/message-items.html" as messageItems %}
 {% import "items/posts/posts-list.html" as postItems %}
-
-{% set iconTeam %}
-    {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
-{% endset %}
-
-{% set iconExpert %}
-    <i class="icon -expert"></i>
-{% endset %}
+{% import "items/tabs/tabs.html" as tabs %}
 
 {% block pageClass %}{{ 'has-message-button' }}{% endblock %}
 
@@ -30,18 +23,25 @@
                             </div>
                         </div>
                         <div class="page-header__row page-header__row--bottom">
-                            <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
-                                            <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Все блоги</span>
-                                            <span class="mdl-tabs__tab" data-uk-switcher-item="1">Все посты</span>
-                                            <span class="mdl-tabs__tab" data-uk-switcher-item="2">Лучшие посты</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                            </div>
+                            {{tabs.pageTabs(
+                                items = {
+                                    item0: {
+                                        id: 0,
+                                        class: 'is-active',
+                                        title: 'Все блоги'
+                                    },
+                                    item1: {
+                                        id: 1,
+                                        class: '',
+                                        title: 'Все посты'
+                                    },
+                                    item2: {
+                                        id: 2,
+                                        class: '',
+                                        title: 'Лучшие посты'
+                                    }
+                                }
+                            )}}
                         </div>
                     </div>
                 </div>
@@ -52,16 +52,16 @@
                 <div class="col-sm-12 col-md-8 col-section" id="page_tabs_container">
                     <div class="mdl-tabs__panel is-active">
                         <div class="message-wrapper">
-                            {{ blogItems.messagePostItems(hasAction=false) }}
+                            {{ messageItems.blogMessageItems(hasAction=false) }}
                         </div>
                         {% include "items/pagination/pagination.html" %}
                     </div>
                     <div class="mdl-tabs__panel">
-                        {{ postItems.postsList( hasAction=false ) }}
+                        {{ postItems.postsList(hasAction=false) }}
                         {% include "items/pagination/pagination.html" %}
                     </div>
                     <div class="mdl-tabs__panel">
-                        {{ postItems.postsList( hasAction=false ) }}
+                        {{ postItems.postsList(hasAction=false) }}
                         {% include "items/pagination/pagination.html" %}
                     </div>
                     <aside class="col-side">
@@ -76,4 +76,8 @@
             button_text='Создать блог'
         )}}
     </div>
+{% endblock %}
+
+{% block modal %}
+    {% include "items/modals/modal_list_coauthor.html" %}
 {% endblock %}

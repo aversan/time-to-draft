@@ -1,26 +1,7 @@
 <div class="playground-review__container">
     <div class="collapse playground-review__collapse" id="playground-review-collapse">
         <div class="playground-review__body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
-                        <div class="post">
-                            <div class="post__header">
-                                <h1 class="post__title">Обзор площадки</h1>
-                            </div>
-                            <div class="post__text">
-                                <h2>Виды fantasy</h2>
-                                <p>
-                                    FanTeam выделяется широким охватом футбольных лиг, включая экзотические для Daily Fantasy турецкий и финский чемпионаты и даже шведский и норвежский первые дивизионы. Искушенных игроков привлечет наличие на fantasy-платформе ряда нестандартных турнирных опций.
-                                </p>
-                                <figure class="post__img">
-                                    <img class="img-fluid" src="images/content/review.jpg" alt="">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include "items/posts/post-playground.html" %}
         </div>
     </div>
     <div class="playground-review__footer text-xs-center">
@@ -33,7 +14,7 @@
                             data-target="#playground-review-collapse"
                             aria-expanded="false"
                             aria-controls="playground-review-collapse"
-                            class="btn btn-sm btn-higher btn-alt btn-secondary-outline">Обзор площадки
+                            class="btn btn-sm btn-higher btn-alt btn-secondary-outline js-playgroud-review-toggle">Обзор площадки
                     </button>
                 </div>
             </div>

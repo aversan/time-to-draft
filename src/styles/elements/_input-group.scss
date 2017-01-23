@@ -1,0 +1,83 @@
+// subscribe
+
+.input-group--subscribe {
+  border: 1px solid $input-border-color;
+  border-radius: $border-radius;
+  background-color: $white;
+  width: 100%;
+
+  .form-control {
+    border-color: transparent;
+    padding: .69rem .75rem;
+  }
+
+  .btn {
+    position: relative;
+    outline: none;
+    padding: .69rem 1rem;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      height: 30px;
+      top: 50%;
+      margin-top: -15px;
+      left: -1px;
+      border-left: 1px solid $input-border-color;
+    }    
+  }
+}
+
+// vote
+
+.input-group--vote {
+  height: 18px;
+  width: auto;
+
+  .form-control {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    font-size: 14px;
+    width: 18px;
+
+    &.is-positive {
+      color: $green;
+    }
+
+    &.is-negative {
+      color: $tomato;
+    }
+  }
+
+  .btn {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    padding: 0;
+    border: none;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid $border-color;
+    color: $dark-grey;
+
+    &:hover {
+      color: $darker-grey;
+      background-color: #f5f5f5;
+    }
+
+    &:focus {
+      color: $dark-grey;
+    }
+  }
+
+  .btn + .btn {
+    margin-left: 8px;
+  }
+}

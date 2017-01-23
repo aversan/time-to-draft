@@ -1,0 +1,47 @@
+{% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
+{% import "items/messages/message-items.html" as messageItems %}
+{% import "items/posts/post-header-top.html" as postHeaderTop %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <div class="typo--h3">Blog</div>
+    <br>
+    <div class="typo--h4">Items</div>
+    <br>
+    <div class="message-wrapper">
+		{{ messageItems.blogMessageItems(hasAction=false) }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Items actions</div>
+    <br>
+    <div class="message-wrapper">
+    	{{ messageItems.blogMessageItems(hasAction=true) }}
+    </div>
+    <br>
+    <br>
+    <div class="typo--h4">Blog header top (one co-author)</div>
+    <br>
+    {{ postHeaderTop.blogHeaderTop1(register=false) }}
+    <br>
+    <br>
+    <div class="typo--h4">Blog header top actions (one co-author)</div>
+    <br>
+    {{ postHeaderTop.blogHeaderTop1(register=true) }}
+    <br>
+    <br>
+    <div class="typo--h4">Blog header top (more co-author)</div>
+    <br>
+    {{ postHeaderTop.blogHeaderTop2(register=false) }}
+    <br>
+    <br>
+    <div class="typo--h4">Blog header top actions (more co-author)</div>
+    <br>
+    {{ postHeaderTop.blogHeaderTop2(register=true) }}
+</div>
+
+{% endblock %}

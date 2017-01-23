@@ -32,23 +32,23 @@
 
 <div class="dropdown-menu dropdown-menu--note {{ class }}">
     <a class="dropdown-item" href="#">
-        <span class="media media-middle">
+        <span class="media">
             <span class="media-left">
-                {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+                {{ sprite('person-circle', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
             </span>
-            <span class="media-body">
-                <span class="icon -expert"></span>
+            <span class="media-body media-middle">
+                <span class="icon -expert-outline"></span>
                 <span class="person-name">Oleg Smolerov (awd2)</span>
                 отправил вам личное сообщение
             </span>
         </span>
     </a>
     <a class="dropdown-item" href="#">
-        <span class="media media-middle">
+        <span class="media">
             <span class="media-left">
-                {{ sprite('person', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
+                {{ sprite('person-circle', '0 0 1 1', 'icon avatar avatar--size-4 media-object') }}
             </span>
-            <span class="media-body">
+            <span class="media-body media-middle">
                 <span class="person-name">Maybe</span>
                 прокомментировал ваше сообщение на форуме
             </span>
@@ -106,6 +106,21 @@
     </a>
     <a class="dropdown-item" href="">
         Бундеслига
+    </a>
+</div>
+
+{% endmacro %}
+
+{% macro dropdownMenuLanguage(
+    class=''
+) %}
+
+<div class="dropdown-menu {{ class }}">
+    <a class="dropdown-item selected" href="">
+        Русский
+    </a>
+    <a class="dropdown-item" href="">
+        Английский
     </a>
 </div>
 

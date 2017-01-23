@@ -1,7 +1,7 @@
 {% import "items/posts/post-item.html" as item %}
 
-<div class="post-write">
-    <div class="post-write__collapsed">
+<div class="editor-write">
+    <div class="editor-write__collapsed">
         <div class="editor__container editor__container--post">
             <div class="editor__wrapper">
                 <div class="editor__header typo--header">
@@ -11,7 +11,7 @@
                         </span>
                         <div class="media-body media-middle">
                             <span class="author-name">
-                                <span class="post-write__title">Напишите здесь</span>
+                                <span class="editor-write__title">Напишите здесь</span>
                             </span>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="post-write__expanded">
+    <div class="editor-write__expanded">
         {% include "items/editors/editor-post.html" %}
         <div class="posts-list">
             {{item.post(

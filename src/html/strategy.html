@@ -1,14 +1,7 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
 {% import "items/posts/posts-list.html" as postsList %}
-
-{% set iconTeam %}
-    {{ sprite('ttd-team', '0 0 1 1', 'icon') }}
-{% endset %}
-
-{% set iconExpert %}
-    <i class="icon -expert"></i>
-{% endset %}
+{% import "items/tabs/tabs.html" as tabs %}
 
 {% set colSideContent %}
     {% include "items/panel/panel-component_play-forum-expert_side.html" %}
@@ -22,18 +15,25 @@
                     Стратегии
                 </h1>
                 <div class="page-header__row page-header__row--bottom">
-                    <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="mdl-tabs__tab-bar" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
-                                    <span class="mdl-tabs__tab is-active" data-uk-switcher-item="0">Новичкам</span>
-                                    <span class="mdl-tabs__tab" data-uk-switcher-item="1">Продвинутым</span>
-                                    <span class="mdl-tabs__tab" data-uk-switcher-item="2">Инструменты</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-scrollbar"></div>
-                    </div>
+                    {{tabs.pageTabs(
+                        items = {
+                            item0: {
+                                id: 0,
+                                class: 'is-active',
+                                title: 'Новичкам'
+                            },
+                            item1: {
+                                id: 1,
+                                class: '',
+                                title: 'Продвинутым'
+                            },
+                            item2: {
+                                id: 2,
+                                class: '',
+                                title: 'Инструменты'
+                            }
+                        }
+                    )}}
                 </div>
             </div>
         </div>

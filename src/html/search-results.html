@@ -1,6 +1,6 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
-{% import "items/messages/message-post-items.html" as postItems %}
+{% import "items/messages/message-items.html" as messageItems %}
 
 {% block content %}
     <div class="mdl-tabs mdl-tabs--lg is-upgraded">
@@ -9,7 +9,9 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-8">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--has-icon page-header__textfield mdl-textfield--full-width">
-							{{ sprite('search', '0 0 1 1', 'icon -darker-grey mdl-textfield__icon') }}
+                            <label for="page_search">
+                                 {{ sprite('search', '0 0 1 1', 'icon -darker-grey mdl-textfield__icon') }}
+                            </label>
 						    <input class="mdl-textfield__input" type="text" id="page_search" value="Фэнтези">
 						    <label class="mdl-textfield__label" for="page_search">Поиск</label>
 						</div>
@@ -21,7 +23,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-8 col-section">
                     <div class="message-wrapper">
-                        {{ postItems.messagePostItems(hasAction=false) }}
+                        {{ messageItems.blogMessageItems(hasAction=false) }}
                     </div>
                     {% include "items/pagination/pagination.html" %}
                     <aside class="col-side">

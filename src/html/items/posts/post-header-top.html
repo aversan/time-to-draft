@@ -2,7 +2,7 @@
 {% import "items/media/media.html" as media %}
 
 {% set iconExpert %}
-    <i class="icon -expert -small"></i>
+    <i class="icon -expert-outline"></i>
 {% endset %}
 
 {% macro postHeaderTop(
@@ -10,7 +10,7 @@
 ) %}
 
 <div class="row post-header-top">
-    <div class="col-xs-12 col-md-8 text-xs-left">
+    <div class="col-xs-12 col-md-8 text-xs-left col-left">
         {{media.mediaAuthor(
             class='media--author-lg media--responsive',
             avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
@@ -31,16 +31,86 @@
             <div class="col-xs-7 col-md-12 text-xs-right text-md-right">
                 {% if register %}
                     <ul class="list-inline post-header-top__action text-xs-right text-md-right">
-                        <li class="list-inline-item">
-                            <a href="">Редактировать</a>
+                        <li class="list-inline-item ">
+                            <a class="edit-link" href="">Редактировать</a>
                         </li>
-                        <li class="list-inline-item">
-                            <a href="">Удалить</a>
+                        <li class="list-inline-item del">
+                            <a class="del-link" href="">Удалить</a>
                         </li>
                     </ul>                    
                 {% endif %}
             </div>
         </div>
+    </div>
+</div>
+
+{% endmacro %}
+
+{% macro blogHeaderTop1(
+    register=true
+) %}
+
+<div class="row post-header-top">
+    <div class="col-sm-12 col-md-8 col-lg-8 text-xs-left col-left">
+        {{media.mediaAuthor(
+            class='media--author-lg media--responsive',
+            avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconExpert,
+            sub_title='Автор'
+        )}}
+        {{media.mediaAuthor(
+            class='media--author-lg media--responsive hidden-sm-down',
+            avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            author_name='<a href="">alextasy</a>',
+            author_icon=iconExpert,
+            sub_title='Соавтор'
+        )}}
+        <a class="media-badge hidden-md-up" data-badge="+1" href="#modal_list_coauthor" data-toggle="modal"></a>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 text-xs-left text-md-right hidden-sm-down">
+        {% if register %}
+        <div class="post-header-top__action">
+            <a href="new.post.html" class="btn btn-secondary-outline btn-alt btn-sm btn-higher btn-responsive">Редактировать</a>
+            <a href="new.post.html" class="btn btn-primary btn-alt btn-sm btn-higher btn-responsive">Написать пост</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endmacro %}
+
+{% macro blogHeaderTop2(
+    register=true
+) %}
+
+<div class="row post-header-top">
+    <div class="col-sm-12 col-md-8 col-lg-8 text-xs-left col-left">
+        {{media.mediaAuthor(
+            class='media--author-lg media--responsive',
+            avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            author_name='<a href="">Oleg Smolerov (awd2)</a>',
+            author_icon=iconExpert,
+            sub_title='Автор'
+        )}}
+        <div class="media media--author media--author-lg media--responsive hidden-sm-down">
+            <a class="media-left media-left--badge" data-badge="+2" href="#modal_list_coauthor" data-toggle="modal">
+                <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
+                <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
+            </a>
+            <div class="media-body media-middle">
+                <a class="sub-title" href="#modal_list_coauthor" data-toggle="modal">Показать<br>соавторов</a>
+            </div>
+        </div>
+        <a class="media-badge hidden-md-up" data-badge="+4" href="#modal_list_coauthor" data-toggle="modal"></a>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 text-xs-left text-md-right hidden-sm-down">
+        {% if register %}
+        <div class="post-header-top__action">
+            <a href="new-post.html" class="btn btn-secondary-outline btn-alt btn-sm btn-higher btn-responsive">Редактировать</a>
+            <a href="new-post.html" class="btn btn-primary btn-alt btn-sm btn-higher btn-responsive" role="button">Написать пост</a>
+        </div>
+        {% endif %}
     </div>
 </div>
 

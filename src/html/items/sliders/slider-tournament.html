@@ -1,6 +1,93 @@
 {% import "items/tournament/tournament-item.html" as tournamentItem %}
 
-<div class="slider-wide__container slider-wide--silver slider-wide--tournament js-swiper-slider-wide bg-dark">
+{% set itemsContainer %}
+    <div class="swiper-container slider-wide__item-container js-swiper-container">
+        <div class="swiper-wrapper">
+            {{tournamentItem.tournamentItem(
+                class='swiper-slide slider-wide__item tournament-item new',
+                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+                head_logo_name='khl',
+                head_title='3-й тур Серии А',
+                head_sub_title='Начало послезавтра',
+                info_price_title='Свободный',
+                info_price_sub_title='вход',
+                info_prize_title='€78.00',
+                info_prize_sub_title='призовые',
+                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+                actions_info_author_name='FanTeam',
+                actions_info_author_time='3 часа назад',
+                label='New'
+            )}}
+            {{tournamentItem.tournamentItem(
+                class='swiper-slide slider-wide__item tournament-item free',
+                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+                head_logo_name='khl',
+                head_title='3-й тур Серии А',
+                head_sub_title='Начало послезавтра',
+                info_price_title='Свободный',
+                info_price_sub_title='вход',
+                info_prize_title='€78.00',
+                info_prize_sub_title='призовые',
+                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+                actions_info_author_name='FanTeam',
+                actions_info_author_time='3 часа назад',
+                label='Free'
+            )}}
+            {{tournamentItem.tournamentItem(
+                class='swiper-slide slider-wide__item tournament-item',
+                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+                head_logo_name='khl',
+                head_title='3-й тур Серии А',
+                head_sub_title='Начало послезавтра',
+                info_price_title='Свободный',
+                info_price_sub_title='вход',
+                info_prize_title='€78.00',
+                info_prize_sub_title='призовые',
+                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+                actions_info_author_name='FanTeam',
+                actions_info_author_time='3 часа назад'
+            )}}
+            {{tournamentItem.tournamentItem(
+                class='swiper-slide slider-wide__item tournament-item',
+                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+                head_logo_name='khl',
+                head_title='3-й тур Серии А',
+                head_sub_title='Начало послезавтра',
+                info_price_title='Свободный',
+                info_price_sub_title='вход',
+                info_prize_title='€78.00',
+                info_prize_sub_title='призовые',
+                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+                actions_info_author_name='FanTeam',
+                actions_info_author_time='3 часа назад'
+            )}}
+            {{tournamentItem.tournamentItem(
+                class='swiper-slide slider-wide__item tournament-item',
+                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
+                head_logo_name='khl',
+                head_title='3-й тур Серии А',
+                head_sub_title='Начало послезавтра',
+                info_price_title='Свободный',
+                info_price_sub_title='вход',
+                info_prize_title='€78.00',
+                info_prize_sub_title='призовые',
+                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
+                actions_info_author_name='FanTeam',
+                actions_info_author_time='3 часа назад'
+            )}}
+        </div>
+        <div class="slider-wide__pagination js-swiper-pagination"></div>
+    </div>                    
+    <div class="slider-wide__prev-wrap">
+        <div class="slider-wide__prev icon icon--prev-lg js-swiper-prev" title="Предыдущий"></div>
+    </div>
+    <div class="slider-wide__next-wrap">
+        <div class="slider-wide__next icon icon--next-lg js-swiper-next" title="Следующий"></div>
+    </div>
+{% endset %}
+
+
+<div class="slider-wide__container slider-wide--silver slider-wide--tournament bg-dark">
     <div class="slider-wide__wrapper">
         <div class="container">
             <div class="mdl-tabs mdl-js-tabs">
@@ -10,103 +97,23 @@
                     </h6>
                     <div class="typo--header-space"></div>
                     <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container typo--header__tab-bar-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="mdl-tabs__tab-bar mdl-tabs__tab-bar--sm typo--header__tab-bar">
-                                    <a href="#tab-tournament-all" class="mdl-tabs__tab is-active">Рекомендуемые</a>
-                                    <a href="#tab-tournament-free" class="mdl-tabs__tab ">Бесплатные</a>
-                                    <a href="#tab-tournament-paid" class="mdl-tabs__tab ">На деньги</a>
-                                </div>
-                            </div>
+                        <div class="swiper-wrapper mdl-tabs__tab-bar mdl-tabs__tab-bar--sm typo--header__tab-bar">
+                            <a href="#tab-tournament-all" class="swiper-slide mdl-tabs__tab is-active">Рекомендуемые</a>
+                            <a href="#tab-tournament-free" class="swiper-slide mdl-tabs__tab ">Бесплатные</a>
+                            <a href="#tab-tournament-paid" class="swiper-slide mdl-tabs__tab ">На деньги</a>
                         </div>
                         <div class="swiper-scrollbar"></div>
                     </div>
                 </div>
-                <div class="mdl-tabs__panel is-active" id="tab-tournament-all">
-                    <div class="swiper-container slider-wide__item-container js-swiper-container">
-                        <div class="swiper-wrapper">
-                            {{tournamentItem.tournamentItem(
-                                class='swiper-slide slider-wide__item tournament-item new',
-                                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
-                                head_logo_name='khl',
-                                head_title='3-й тур Серии А',
-                                head_sub_title='Начало послезавтра',
-                                info_price_title='Свободный',
-                                info_price_sub_title='вход',
-                                info_prize_title='€78.00',
-                                info_prize_sub_title='призовые',
-                                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
-                                actions_info_author_name='FanTeam',
-                                actions_info_author_time='3 часа назад'
-                            )}}
-                            {{tournamentItem.tournamentItem(
-                                class='swiper-slide slider-wide__item tournament-item new',
-                                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
-                                head_logo_name='khl',
-                                head_title='3-й тур Серии А',
-                                head_sub_title='Начало послезавтра',
-                                info_price_title='Свободный',
-                                info_price_sub_title='вход',
-                                info_prize_title='€78.00',
-                                info_prize_sub_title='призовые',
-                                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
-                                actions_info_author_name='FanTeam',
-                                actions_info_author_time='3 часа назад'
-                            )}}
-                            {{tournamentItem.tournamentItem(
-                                class='swiper-slide slider-wide__item tournament-item new',
-                                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
-                                head_logo_name='khl',
-                                head_title='3-й тур Серии А',
-                                head_sub_title='Начало послезавтра',
-                                info_price_title='Свободный',
-                                info_price_sub_title='вход',
-                                info_prize_title='€78.00',
-                                info_prize_sub_title='призовые',
-                                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
-                                actions_info_author_name='FanTeam',
-                                actions_info_author_time='3 часа назад'
-                            )}}
-                            {{tournamentItem.tournamentItem(
-                                class='swiper-slide slider-wide__item tournament-item new',
-                                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
-                                head_logo_name='khl',
-                                head_title='3-й тур Серии А',
-                                head_sub_title='Начало послезавтра',
-                                info_price_title='Свободный',
-                                info_price_sub_title='вход',
-                                info_prize_title='€78.00',
-                                info_prize_sub_title='призовые',
-                                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
-                                actions_info_author_name='FanTeam',
-                                actions_info_author_time='3 часа назад'
-                            )}}
-                            {{tournamentItem.tournamentItem(
-                                class='swiper-slide slider-wide__item tournament-item new',
-                                image={ src: 'http://placehold.it/285x128', widht: '285', height: '128'},
-                                head_logo_name='khl',
-                                head_title='3-й тур Серии А',
-                                head_sub_title='Начало послезавтра',
-                                info_price_title='Свободный',
-                                info_price_sub_title='вход',
-                                info_prize_title='€78.00',
-                                info_prize_sub_title='призовые',
-                                actions_info_author_avatar={ src: 'http://placehold.it/36x36', widht: '36', height: '36'},
-                                actions_info_author_name='FanTeam',
-                                actions_info_author_time='3 часа назад'
-                            )}}
-                        </div>
-                        <div class="slider-wide__pagination js-swiper-pagination"></div>
-                    </div>                    
-                    <div class="slider-wide__prev-wrap">
-                        <div class="slider-wide__prev icon icon--prev-lg js-swiper-prev" title="Предыдущий"></div>
-                    </div>
-                    <div class="slider-wide__next-wrap">
-                        <div class="slider-wide__next icon icon--next-lg js-swiper-next" title="Следующий"></div>
-                    </div>
+                <div class="mdl-tabs__panel is-active js-swiper-slider-wide" id="tab-tournament-all">
+                    {{ itemsContainer | safe }}
                 </div>
-                <div class="mdl-tabs__panel" id="tab-tournament-free"></div>
-                <div class="mdl-tabs__panel" id="tab-tournament-paid"></div>
+                <div class="mdl-tabs__panel js-swiper-slider-wide" id="tab-tournament-free">
+                    {{ itemsContainer | safe }}
+                </div>
+                <div class="mdl-tabs__panel js-swiper-slider-wide" id="tab-tournament-paid">
+                    {{ itemsContainer | safe }}
+                </div>
             </div>
         </div>
     </div>

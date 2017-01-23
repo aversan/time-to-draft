@@ -3,7 +3,6 @@
 {% import "items/profile/profile-head.html" as head %}
 {% import "items/profile/profile-about.html" as about %}
 {% import "items/profile/profile-tabs.html" as tabs %}
-{% import "items/profile/profile-tabs.html" as tabs %}
 {% import "items/messages/message-button-container.html" as buttonContainer %}
 
 {% block pageClass %}{{ 'page--navbar-overlap has-message-button' }}{% endblock %}
@@ -29,11 +28,22 @@
         </div>
     </div>
 </div>
-{{buttonContainer.messageButtonContainer(
-    class='',
-    button_attribute='data-toggle="modal" data-target="#modal_form_new_blog"',
-    button_text='Написать пост'
-)}}
+<div class="switcher js-profile-tabs-container">
+    <div class="is-active">
+        <div class="message-button-container hidden-md-up text-xs-center">
+            <div class="container">
+                <a role="button" class="btn btn-sm btn-higher btn-responsive btn-alt btn-primary" href="new-post.html">Написать пост</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="message-button-container hidden-md-up text-xs-center">
+            <div class="container">
+                <button class="btn btn-sm btn-higher btn-responsive btn-alt btn-primary" data-toggle="modal" data-target="#modal_form_new_blog">Создать блог</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block modal %}

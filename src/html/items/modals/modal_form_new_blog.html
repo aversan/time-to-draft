@@ -1,9 +1,8 @@
 {% from 'macros/helpers.html' import sprite %}
-{% from 'macros/helpers.html' import sprite %}
 {% import "items/media/media.html" as media %}
 
 {% set iconExpert %}
-    <i class="icon -expert -small"></i>
+    <i class="icon -expert-outline"></i>
 {% endset %}
 
 <div class="modal modal--alt modal--form hide fade" id="modal_form_new_blog" tabindex="-1" role="dialog" aria-labelledby="modal_form_new_blog" aria-hidden="true">
@@ -18,7 +17,7 @@
         </div>
         <form action="">
             <div class="icon-wrap icon-wrap--medium">
-                <!-- {{ sprite('', '0 0 1 1', 'icon -grey icon-wrap__icon') }} -->
+                {{ sprite('text', '0 0 1 1', 'icon -grey icon-wrap__icon') }}
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                     <input class="mdl-textfield__input" type="text" id="modal_blog_name" value="Марафон на миллион">
                     <label class="mdl-textfield__label" for="modal_blog_name">Название блога</label>
@@ -26,7 +25,7 @@
                 </div>
             </div>
             <div class="icon-wrap icon-wrap--medium">
-                <!-- {{ sprite('', '0 0 1 1', 'icon -grey icon-wrap__icon') }} -->
+                {{ sprite('info', '0 0 1 1', 'icon -grey icon-wrap__icon') }}
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                     <input class="mdl-textfield__input" type="text" id="modal_blog_desc" value="Блог о всем на свете и не только">
                     <label class="mdl-textfield__label" for="modal_blog_desc">Описание блога</label>

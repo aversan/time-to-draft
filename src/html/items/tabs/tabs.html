@@ -13,14 +13,10 @@
 
 <div class="mdl-tabs mdl-js-tabs {{ class }}">
     <div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container {{ classBar }}">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="mdl-tabs__tab-bar {{ classBar }}">
-                    {% for id, item in items %}
-                        <a href="#{{ item.id }}" class="mdl-tabs__tab {{ item.class }}">{{ item.title | safe }}</a>
-                    {% endfor %}
-                </div>
-            </div>
+        <div class="swiper-wrapper mdl-tabs__tab-bar {{ classBar }}">
+            {% for id, item in items %}
+                <a href="#{{ item.id }}" class="mdl-tabs__tab swiper-slide {{ item.class }}">{{ item.title | safe }}</a>
+            {% endfor %}
         </div>
         <div class="swiper-scrollbar"></div>
     </div>
@@ -29,6 +25,29 @@
             {{ item.content | safe }}
         </div>
     {% endfor %}
+</div>
+
+{% endmacro %}
+
+{% macro pageTabs(
+    class='',
+    classBar='',
+    items = {
+        item1: {
+            id: '0',
+            class: '',
+            title: 'title'
+        }
+    }
+) %}
+
+<div class="swiper-container js-swiper-container-tabs mdl-tabs__bar-container {{ classBar }}">
+    <div class="swiper-wrapper mdl-tabs__tab-bar {{ classBar }}" data-uk-switcher="{ connect: '#page_tabs_container' }" data-connect="#page_tabs_container">
+        {% for id, item in items %}
+            <span class="mdl-tabs__tab swiper-slide {{ item.class }}"  data-uk-switcher-item="{{ item.id | int }}">{{ item.title | safe }}</span>
+        {% endfor %}
+    </div>
+    <div class="swiper-scrollbar"></div>
 </div>
 
 {% endmacro %}

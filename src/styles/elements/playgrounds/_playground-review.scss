@@ -1,0 +1,39 @@
+// playground-review
+
+.playground-review__container {
+	margin-top: 68px;
+
+	@include media-breakpoint-down(sm) {
+		margin-top: 32px;
+	}
+}
+
+.playground-review__body {
+	margin-bottom: -1px;
+	position: relative;
+	z-index: 1;
+
+	.post {
+		padding-top: 38px;
+	}
+}
+
+.playground-review__footer {
+	@include media-breakpoint-down(md) {
+		padding-bottom: 20px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 12px;
+	}
+
+	.playground-hr {
+		margin-top: 0;
+		margin-bottom: 40px;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 0;
+			margin-bottom: 32px;
+		}
+	}
+}

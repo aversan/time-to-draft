@@ -19,7 +19,7 @@ Generates an SVG Sprite! You can either include the created SVG directly on the 
 or reference the image remotely.
 
 ```html
-<svg viewBox="0 0 1 1"><use xlink:href='images/spritesheets/sprites.svg#my-icon' /></use></svg>
+<svg viewBox="0 0 1 1"><use xlink:href='img/spritesheets/sprites.svg#my-icon' /></use></svg>
 ```
 If you refernce the sprite remotely, be sure to include https://github.com/jonathantneal/svg4everybody to ensure external loading works on Internet Explorer.
 
@@ -31,7 +31,7 @@ Which spits out:
 
 ```html
   <span class='sprite -my-icon'>
-    <svg viewBox="0 0 1 1"><use xlink:href='images/spritesheets/sprites.svg#my-icon' /></use></svg>
+    <svg viewBox="0 0 1 1"><use xlink:href='img/spritesheets/sprites.svg#my-icon' /></use></svg>
   </span>
 ```
 
@@ -59,7 +59,7 @@ I recommend setting up your SVGs on a 500 x 500 canvas, centering your artwork, 
 ```
 gulpfile.js/tasks/iconFont
 ```
-SVGs added to `src/icons` will be automatically compiled into an iconFont, and output to `./public/fonts`. At the same time, a `.sass` file will be output to `src/stylesheets/generated/_icons.sass`. This file contains mixins and classes based on the svg filename. If you want to edit the template that generates this file, it's at `gulpfile.js/tasks/iconFont/template.sass`. If you have the option, I'd recommend using SVG sprites (see below) over this method for icons.
+SVGs added to `src/icons` will be automatically compiled into an iconFont, and output to `./public/fonts`. At the same time, a `.sass` file will be output to `src/styles/generated/_icons.sass`. This file contains mixins and classes based on the svg filename. If you want to edit the template that generates this file, it's at `gulpfile.js/tasks/iconFont/template.sass`. If you have the option, I'd recommend using SVG sprites (see below) over this method for icons.
 
 ##### Usage:
 With generated classes:

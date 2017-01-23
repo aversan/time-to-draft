@@ -1,28 +1,52 @@
 {% extends 'layouts/application.html' %}
+{% from 'macros/helpers.html' import sprite %}
 
 {% block content %}
 
 <div class="container">
     <br>
     <br>
-    <h3 class="h3">Slider</h3>
+    <div class="typo--h3">Slider</div>
+    <br>
+    <div class="typo--h4">Tournament</div>
     <br>
 </div>
 {% include 'items/sliders/slider-tournament.html' %}
-{% include "items/sliders/slider-wide_promo.html" %}
-<br>
 <div class="container">
-	{% include 'items/sliders/slider-cards.html' %}
+	<br>
+	<br>
+	<div class="typo--h4">Promo wide</div>
+	<br>
+</div>
+{% include "items/sliders/slider-wide_promo.html" %}
+<div class="container">
+	<br>
+	<br>
+	<div class="typo--h4">Plays</div>
 	<br>
 	{% include 'items/sliders/slider-plays.html' %}
 	<br>
+	<br>
+	<div class="typo--h4">Plays wide</div>
+	<br>
+</div>
+{% include 'items/sliders/slider-plays_wide.html' %}
+<div class="container">
+	<br>
+	<br>
+	<div class="typo--h4">Cards</div>
+	<br>
+	{% include 'items/sliders/slider-cards.html' %}
+	<br>
+	<br>
+	<div class="typo--h4">News</div>
+	<br>
 	{% include 'items/sliders/news-from-fantasy-world.html' %}
+	<br>
+	<br>
+	<div class="typo--h4">Recommended to read</div>
 	<br>
 	{% include 'items/sliders/recommended-to-read.html' %}
 </div>
-<br>
-{% include 'items/sliders/slider-plays_wide.html' %}
-<br>
-<br>
 
 {% endblock %}

@@ -1,0 +1,572 @@
+// list
+
+.mdl-list {
+	@include media-breakpoint-down(md) {
+		padding-top: $list-border-md;
+		padding-bottom: $list-border-md;
+	}
+
+	margin-bottom: 0;
+}
+
+// item
+
+.mdl-list__item {
+	@include typo-body;
+	font-weight: 500;
+	letter-spacing: normal;
+
+	&--less-air {
+		line-height: 20px;
+	}
+
+	&--two-line {
+		@include media-breakpoint-down(md) {
+			height: $list-two-line-height-md;
+		}
+	}
+
+	&--three-line {
+		@include media-breakpoint-down(md) {
+			height: $list-three-line-height-md;
+		}
+	}
+
+	&--three-line.mdl-list__item--actions {
+		position: relative;
+		height: $list-actions-three-line-height;
+
+		@include media-breakpoint-down(md) {
+			height: $list-actions-three-line-height-md;
+		}
+	}
+
+	&--lg {
+		@include typo-h6;
+		line-height: 28px;
+		font-weight: 700;		
+
+		@include media-breakpoint-down(md) {
+			@include typo-title;
+			line-height: 24px;
+			font-weight: 700;
+		}
+
+		@include media-breakpoint-down(sm) {
+			@include typo-h6;
+			line-height: 28px;
+			font-weight: 700;
+		}
+	}
+
+	&--xl {
+		@include typo-h5;
+		line-height: 32px;
+		font-weight: 700;
+
+		@include media-breakpoint-down(lg) {
+			@include typo-h6;
+			line-height: 24px;
+			font-weight: 700;
+		}
+
+		@include media-breakpoint-down(md) {
+			@include typo-title;
+			line-height: 24px;
+			font-weight: 700;
+		}
+
+		@include media-breakpoint-down(sm) {
+			@include typo-title-2;
+			line-height: 24px;
+			font-weight: 700;
+		}
+	}
+}
+
+// title
+
+.mdl-list__item-title {
+	display: block;
+
+	& {
+		color: $list-main-text-text-color;
+	}
+
+	& a {
+		color: inherit;
+	}
+
+	.mdl-list__item-header & {
+		display: inline;
+	}
+
+	.mdl-list__item--two-line &,
+	.mdl-list__item--three-line &,
+	.mdl-list__item--more-line & {
+		overflow: hidden;
+	}
+
+	.mdl-list__item--three-line & {
+		height: 48px;
+		overflow: hidden;
+	}
+
+	.mdl-list__item--lg.mdl-list__item--three-line & {
+		height: 56px;
+
+		@include media-breakpoint-down(md) {
+			height: 48px;
+		}
+	}
+
+	.mdl-list__item--xl.mdl-list__item--three-line & {
+		height: 64px;
+
+		@include media-breakpoint-down(lg) {
+			height: 48px;
+		}
+
+		@include media-breakpoint-down(md) {
+			height: 48px;
+		}
+	}
+
+	.text-label {
+		@include typo-body-sm;
+		position: relative;
+		top: -.4em;
+		color: $tomato;
+	}
+
+	.icon {
+		margin-top: -3px;
+	}
+
+	.icon.-ttd-team,
+	.icon.-ttd-team svg {
+		height: auto;
+		width: 16px;
+		margin-right: 0px;
+	}
+
+	.icon.-expert,
+	.icon.-expert svg {
+		width: 17px;
+		height: 15px;
+		margin-right: 5px;
+	}
+}
+
+// text body
+
+.mdl-list__item-text-body {
+	overflow: hidden;
+
+	.mdl-list__item-title + & {
+		margin-top: 4px;
+	}
+
+	.mdl-list__item--more-line & {
+		display: block;
+		height: auto;
+		padding: 0;
+	}
+
+	.mdl-list__item--two-line &,
+	.mdl-list__item--three-line &,
+	.mdl-list__item--more-line & {
+		@include typo-body-sm;
+		color: $list-main-text-text-color;
+
+		.link,
+		.link:hover,
+		.link:focus {
+			color: $list-supporting-text-text-color;
+		}
+	}
+
+	a {
+		color: inherit;
+	}
+}
+
+// avatar
+
+.mdl-list__item-avatar {
+	.mdl-list__item .mdl-list__item-primary-content & {
+		@include media-breakpoint-down(md) {
+			margin-right: ($list-avatar-text-left-distance-md - $list-avatar-size-md);
+		}		
+	}
+
+	.mdl-list__item--more-line .mdl-list__item-primary-content & {
+		float: left;
+	}
+
+	&,
+	&.icon,
+	&.icon svg {
+		width: $list-avatar-size;
+		height: $list-avatar-size;
+		background-color: transparent;
+
+		@include media-breakpoint-down(md) {
+			width: $list-avatar-size-md;
+			height: $list-avatar-size-md;
+		}
+	}
+
+	&,
+	&.material-icons,
+	&.icon {
+		background-color: transparent;
+	}
+}
+
+// num
+
+.mdl-list__item-num {
+	font-family: Arial, sans-serif;
+	
+	// .fonts-loaded & {
+		font-family: $font-family-alt;
+	// }
+
+	font-weight: 400;
+	font-size: 40px;
+	color: $green;
+	width: $list-num-size;
+	height: $list-num-size;
+	text-align: right;
+	padding-top: .1em;
+
+	@include media-breakpoint-down(md) {
+		font-size: 36px;
+		width: $list-num-size-md;
+		height: $list-num-size-md;
+	}
+
+	.mdl-list__item .mdl-list__item-primary-content & {
+		margin-right: ($list-num-text-left-distance - $list-num-size);
+		
+		@include media-breakpoint-down(md) {
+			margin-right: ($list-num-text-left-distance-md - $list-num-size-md);
+		}		
+	}
+
+	.mdl-list__item--more-line .mdl-list__item-primary-content & {
+		float: left;
+	}
+}
+
+// icon
+
+.mdl-list__item-icon {
+	.mdl-list__item--more-line .mdl-list__item-primary-content & {
+		float: left;
+	}
+}
+
+// header
+
+.mdl-list__item-header {
+	display: block;
+	overflow: hidden;
+
+	&-icon {
+		@include typo-body-sm;
+		line-height: normal;
+		margin-left: 12px;
+		white-space: nowrap;
+		color: $grey;
+
+		.icon {
+			margin-right: 4px;
+			vertical-align: middle;
+		}
+
+		.accent {
+			font-weight: 500;
+			color: $darker-grey;
+		}
+	}
+}
+
+// primary content
+
+.mdl-list__item-primary-content {
+	.mdl-list__item--two-line &,
+	.mdl-list__item--three-line & {
+		line-height: 24px;
+	}
+
+	.mdl-list__item--less-air.mdl-list__item--two-line &,
+	.mdl-list__item--less-air.mdl-list__item--three-line & {
+		line-height: 20px;
+	}
+
+	.mdl-list__item--lg.mdl-list__item--two-line &,
+	.mdl-list__item--lg.mdl-list__item--three-line & {
+		line-height: 28px;
+
+		@include media-breakpoint-down(md) {
+			line-height: 24px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			line-height: 28px;
+		}
+	}
+
+	.mdl-list__item--xl.mdl-list__item--two-line &,
+	.mdl-list__item--xl.mdl-list__item--three-line & {
+		line-height: 32px;
+
+		@include media-breakpoint-down(lg) {
+			line-height: 24px;
+		}
+
+		@include media-breakpoint-down(md) {
+			line-height: 24px;
+		}
+	}
+
+	.mdl-list__item--two-line & {
+		@include media-breakpoint-down(md) {
+			height: $list-two-line-height-md - $list-min-padding - $list-bottom-padding-md;
+		}
+	}
+
+	.mdl-list__item--three-line & {	
+		@include media-breakpoint-down(md) {
+			height: $list-three-line-height-md - $list-min-padding - $list-bottom-padding-md;
+		}
+	}
+
+	.mdl-list__item--three-line.mdl-list__item--actions & {
+		height: $list-actions-three-line-height - $list-min-padding - $list-bottom-padding;
+
+		@include media-breakpoint-down(md) {
+			height: $list-actions-three-line-height-md - $list-min-padding - $list-bottom-padding-md;
+		}
+	}
+
+	.mdl-list__item--lg.mdl-list__item--three-line.mdl-list__item--actions & {
+		height: $list-actions-three-line-height - $list-min-padding - $list-bottom-padding + 12px;
+
+		@include media-breakpoint-down(md) {
+			height: $list-actions-three-line-height-md - $list-min-padding - $list-bottom-padding-md + 8px;
+		}
+	}
+
+	.mdl-list__item--xl.mdl-list__item--three-line.mdl-list__item--actions & {
+		height: $list-actions-three-line-height - $list-min-padding - $list-bottom-padding + 12px;
+
+		@include media-breakpoint-down(lg) {
+			height: $list-actions-three-line-height - $list-min-padding - $list-bottom-padding + 12px;
+		}
+
+		@include media-breakpoint-down(md) {
+			height: $list-actions-three-line-height-md - $list-min-padding - $list-bottom-padding-md + 8px;
+		}
+	}
+
+	.mdl-list__item--more-line & {
+		height: auto;
+		display: block;
+		line-height: 24px;
+		padding-bottom: $list-bottom-padding;
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: $list-bottom-padding-md;
+		}
+	}
+
+	.mdl-list__item--less-air.mdl-list__item--more-line & {
+		line-height: 20px;
+	}
+
+	.mdl-list__item--lg.mdl-list__item--more-line & {
+		line-height: 28px;
+
+		@include media-breakpoint-down(md) {
+			line-height: 24px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			line-height: 28px;
+		}
+	}
+
+	.mdl-list__item--xl.mdl-list__item--more-line & {
+		line-height: 32px;
+
+		@include media-breakpoint-down(lg) {
+			line-height: 24px;
+		}
+
+		@include media-breakpoint-down(md) {
+			line-height: 24px;
+		}
+	}
+}
+
+// actions
+
+.mdl-list__item-actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	margin-top: 16px;
+	margin-left: $list-num-text-left-distance;
+
+	@include media-breakpoint-down(md) {
+		margin-top: 8px;
+		margin-left: $list-num-text-left-distance-md;
+	}
+
+	.mdl-list__item-primary-content-inner & {
+		margin-left: 0;
+	}
+
+	.mdl-list__item--lg & {
+		margin-top: 20px;
+
+		@include media-breakpoint-down(md) {
+			margin-top: 16px;
+		}
+
+		@include media-breakpoint-down(sm)  {
+			margin-top: 20px;
+		}
+	}
+
+	.mdl-list__item--xl & {
+		margin-top: 34px;
+
+		@include media-breakpoint-down(md) {
+			margin-top: 16px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 12px;
+		}
+	}
+}
+
+// hint
+
+.mdl-list__item-actions-hint,
+a.mdl-list__item-actions-hint {
+	@include typo-body;
+	margin-left: 16px;
+	color: $list-supporting-text-text-color;
+}
+
+
+// info
+
+.mdl-list__item-info {
+	&-user {
+		@include typo-body;
+		display: inline-block;
+		padding: 0;
+		margin-bottom: 0;
+		
+		&,
+		&:hover,
+		&:focus {
+			color: $list-main-text-text-color;
+		}
+
+		.icon {
+			margin-top: -3px;
+		}
+
+		.icon.-ttd-team,
+		.icon.-ttd-team svg {
+			height: auto;
+			width: 16px;
+			margin-right: 0px;
+		}
+
+		.icon.-expert,
+		.icon.-expert svg {
+			width: 14px;
+			height: 14px;
+			margin-right: 5px;
+		}
+	}
+
+	&-time {
+		@include typo-caption;
+		display: block;
+		padding: 0;
+		margin-bottom: 4px;
+
+		&,
+		&:hover,
+		&:focus {
+			color: $list-supporting-text-text-color;
+		}
+	}
+
+	&-sub {
+		@include typo-body-sm;
+		display: block;
+		padding: 0;
+		margin: 0;
+		color: $list-supporting-text-text-color;		
+	}
+}
+
+// area link
+
+.mdl-list__item-area-link {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+// footer
+
+.mdl-list-footer {
+	margin-top: 16px;
+
+	margin-left: $list-num-text-left-distance;
+
+	@include media-breakpoint-down(md) {
+		margin-left: $list-num-text-left-distance-md;
+	}
+}
+
+.mdl-list__item-primary-content-inner {
+	display: block;
+	overflow: hidden;
+}
+
+// sep
+
+.mdl-list--sep {
+	.mdl-list__item-primary-content-inner {
+		border-bottom: 1px solid $border-color-light;
+		padding-bottom: $list-bottom-padding;
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: $list-bottom-padding-md;
+		}
+	}
+
+	.mdl-list__item:last-child .mdl-list__item-primary-content-inner {
+		border-bottom: none;
+		padding-bottom: 0;
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: 0;
+		}
+	}
+}

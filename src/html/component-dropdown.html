@@ -51,27 +51,6 @@
 	</div>
     <br>
     <br>
-    <div class="typo--h4">Menu bordered</div>
-    <br>
-	<div class="dropdown">
-	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	        Menu bordered
-	    </a>
-	    <div class="dropdown-menu dropdown-menu--bordered">
-	        <a class="dropdown-item" href="">
-	            Эксперты
-	        </a>
-	        <a class="dropdown-item" href="">
-	            Блоги
-	        </a>
-	        <div class="dropdown-divider"></div>
-	        <a class="dropdown-item" href="">
-	            Форум
-	        </a>
-	    </div>
-	</div>
-    <br>
-    <br>
     <div class="typo--h4">Menu note</div>
     <br>
 	<div class="dropdown">
@@ -106,9 +85,19 @@
     <br>
 	<div class="dropdown">
 	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	        Best matches
+	        Menu best matches
 	    </a>
 		{{ dropdown.dropdownMenuBestMatches() }}
+	</div>
+    <br>
+    <br>
+    <div class="typo--h4">Language</div>
+    <br>
+	<div class="dropdown">
+	    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Menu language
+	    </a>
+		{{ dropdown.dropdownMenuLanguage() }}
 	</div>
 </div>
 {% endblock %}

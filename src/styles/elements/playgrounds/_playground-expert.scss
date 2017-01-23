@@ -1,0 +1,38 @@
+// playground-expert
+
+.playground-expert__body {
+    @include typo-h6;
+    line-height: 1.4;
+    font-style: italic;
+
+    @include media-breakpoint-down(sm) {
+        @include typo-body-lg;
+    }
+    
+    i {
+        display: inline-block;
+        font-size: 30px;
+        line-height: 20px;
+        height: 20px;
+        font-style: normal;
+        color: $grey;
+        margin: 0 7px;
+
+        @include media-breakpoint-down(sm) {
+        	display: none;
+        }
+    }
+}
+
+.playground-expert__footer {
+	margin-top: 28px;
+
+	@include media-breakpoint-down(sm) {
+		margin-top: 24px;
+	}
+
+	.media {
+		display: inline-flex;
+		max-width: 100%;
+	}
+}
