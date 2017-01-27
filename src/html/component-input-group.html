@@ -1,6 +1,6 @@
 {% extends 'layouts/application.html' %}
 {% from 'macros/helpers.html' import sprite %}
-{% import "items/input-group/input-group-vote.html" as vote %}
+{% import "items/input-group/input-group.html" as inputGroup %}
 
 {% block content %}
 
@@ -16,10 +16,7 @@
     <br>
     <div class="typo--h4">Vote</div>
     <br>
-    {{ vote.vote(
-        class='',
-        controlClass='js-comment-vote',
-        controlValue='6'
-    ) }}
+    {{ inputGroup.vote() }}
 </div>
+
 {% endblock %}

@@ -85,6 +85,12 @@
   }
 }
 
+.modal__hr {
+  border-top: 1px solid $border-color;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 // info
 
 .modal__info {
@@ -402,6 +408,9 @@
       height: 0;
       position: relative;
       overflow: hidden;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: none;
 
       @include media-breakpoint-down(sm) {
         padding-top: 56%;
@@ -481,6 +490,18 @@
         bottom: 74px;
       }
     }
+
+    .modal__tutorial-image-1 {
+      @include img-retina($tutorial-image-01, $tutorial-image-01-x2, 100%, 100%);
+    }
+
+    .modal__tutorial-image-2 {
+      @include img-retina($tutorial-image-02, $tutorial-image-02-x2, 100%, 100%);
+    }
+
+    .modal__tutorial-image-3 {
+      @include img-retina($tutorial-image-03, $tutorial-image-03-x2, 100%, 100%);
+    }
 }
 
 // modal info
@@ -535,5 +556,77 @@
         padding: 0 .2rem;
       }
     }
+  }
+}
+
+.modal--post-cover {
+  width: 768px;
+  margin-left: -384px;
+
+  .modal__hr,
+  .modal__thumbs,
+  .modal__slideer {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .modal__slideer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .icon:first-child {
+      &,
+      & svg {
+        width: auto;
+        height: 15px;
+      }
+    }
+
+    .icon:last-child {
+      &,
+      & svg {
+        width: auto;
+        height: 22px;
+      }
+    }
+
+    .mdl-slider__container {
+      width: calc(100% + 24px);
+      flex-basis: calc(100% + 24px);
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+
+  .modal__thumbs {
+    font-size: 0;
+    
+    img {
+      font-size: 1rem;
+      display: inline-block;
+      vertical-align: top;
+      width: 52px;
+      height: 52px;
+      margin: 0 8px 8px 0;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  }
+
+  .modal__cover .cropper-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal__body-footer {
+    margin-top: 16px;
+  }
+
+  .modal__body-footer .btn {
+    min-width: 222px;
   }
 }

@@ -50,16 +50,16 @@
     transform: translate(-50%, 0);
     margin-left: 226px;
     width: 1027px;
-    height: 560px;
+    height: 530px;
     display: block;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    @include img-retina($banner-quick-players, $banner-quick-players-x2, 1027px, 560px);
-    background-size: 1027px, 560px;
+    @include img-retina($banner-quick-players, $banner-quick-players-x2, 1027px, 530px);
+    background-size: 1027px, 530px;
 
     @include media-breakpoint-down(md) {
-      background-size: 94.5%, 94.5%;
-      margin-left: 334px;
+      background-size: 92.5%, 92.5%;
+      margin-left: 316px;
     }
 
     @include media-breakpoint-down(sm) {

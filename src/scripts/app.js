@@ -41,6 +41,92 @@ $(() => {
 
     viewport.use('Custom', visibilityDivs);
 
+    // cropper
+
+    $(function () {
+        var $container = $('.js-post-cover');
+        var $crop_image =  $container.find('.js-crop > img');
+        var $range =  $container.find('.js-range-input');
+        var $thumbs =  $container.find('.js-thumbs > img');
+        var allow_width = 720;
+        var allow_height = 365;
+
+        $crop_image.cropper({
+            aspectRatio: allow_width / allow_height,
+            viewMode: 1,
+            dragMode: 'move',
+            autoCropArea: 0,
+            restore: false,
+            guides: false,
+            highlight: false,
+            cropBoxMovable: false,
+            cropBoxResizable: false,
+            zoomOnTouch: false,
+            zoomOnWheel: false,
+            built: function () {
+                $(this).cropper('zoomTo', 0);
+                var current_image = $(this).cropper('getImageData');
+                var zoom_level = current_image.width / current_image.naturalWidth;
+                console.log(current_image);
+                $range.prop({'min': zoom_level, 'max': zoom_level + 1});
+            },
+            crop: function(e) {
+                // Output the result data for cropping image.
+                console.log('-----------------Crop Data-----------------');
+                console.log('X => ', e.x);
+                console.log('Y => ', e.y);
+                console.log('WIDTH => ', e.width);
+                console.log('HEIGHT => ', e.height);
+                console.log('-----------------/Crop Data-----------------');
+            }
+        });
+
+        // Change image from list
+        $(document).delegate('.js-post-cover .js-thumbs > img', "click", function() {
+            $crop_image.cropper('replace', $(this).attr('src'));
+            var current_image = $crop_image.cropper('getImageData');
+            var zoom_level = current_image.width / current_image.naturalWidth;
+            $range.prop({'min': zoom_level, 'max': zoom_level + 1}).val(0);
+        });
+
+        // Zoom range
+        $(document).delegate('.js-post-cover .js-range-input', 'input change', function() {
+            var range_val = +$(this).val();
+            console.log('ZOOM', range_val);
+            $crop_image.cropper('zoomTo', range_val);
+        });
+
+        // Show modal window and reinit the cropper
+        // $('#modal').on('shown.bs.modal', function () {
+        //     $crop_image.cropper('replace', content_crop_images[0].src);
+        //     var current_image = $crop_image.cropper('getImageData');
+        //     var zoom_level = current_image.width / current_image.naturalWidth;
+        //     $range.prop({'min': zoom_level, 'max': zoom_level + 1}).val(0);
+        // });
+
+        // Change image
+        // $('.js-crop-replace').on('click', function () {
+        //     $crop_image.cropper('replace', 'images/big.jpg');
+        //     var current_image = $crop_image.cropper('getImageData');
+        //     var zoom_level = current_image.width / current_image.naturalWidth;
+        //     $(".js-range-input").attr({'min': zoom_level, 'max': zoom_level + 1}).val(0);
+        // });
+
+        // Crop an image
+        $(".js-crop-button").on("click", function () {
+            var cropped_canvas = $crop_image.cropper('getCroppedCanvas');
+            // $(".js-crop-result").html(cropped_canvas);
+            console.log(cropped_canvas);
+            //console.log(cropped_canvas.toDataURL());
+        });
+
+        $crop_image.on('zoom.cropper', function (e) {
+            console.log('Ratio =>', e.ratio);
+            console.log('Old ratio => ', e.oldRatio);
+        });
+
+    });
+
     // set col section height
 
     var $colSection = $('.col-section');
@@ -460,16 +546,16 @@ $(() => {
         // modal message editor
 
         $(function () {
-            var desktopMessageEditor = new MediumEditor("#desktop-modal-message-editor", {
+            var desktopMessageEditor = new MediumEditor("#desktop-message-editor", {
                 "toolbar":{
                     "buttons": ['bold', 'italic', 'underline', 'anchor']
                 }
             });
 
-            var mobileMessageEditor = new MediumEditor("#mobile-modal-message-editor", {
+            var mobileMessageEditor = new MediumEditor("#mobile-message-editor", {
                 "toolbar":{
                     "buttons": ['bold', 'italic', 'underline', 'anchor'],
-                    relativeContainer: document.getElementById('mobile-modal-message-editor-toolbar')
+                    relativeContainer: document.getElementById('mobile-message-editor-toolbar')
                 }
             });
         });
@@ -686,7 +772,7 @@ $(() => {
         if (text !== '') {
             editLabel.html(text + '<i class="icon -pencil"><i>');
         } else {
-            editLabel.html('<span class="sprite -plus-small icon"><svg viewBox="0 0 1 1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#plus-small"></use></svg></span>'+
+            editLabel.html('<span class="sprite -plus-circle icon"><svg viewBox="0 0 1 1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#plus-circle"></use></svg></span>'+
                 '<em class="typo--h6 typo--italic">Опишите себя</em>');
         }
         textArea.hide();

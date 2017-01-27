@@ -4,6 +4,10 @@
 	padding-left: 12px;
 	padding-right: 12px;
 	color: $darker-grey;
+
+	&:focus {
+		box-shadow: none;
+	} 
 }
 
 a.mdl-chip {

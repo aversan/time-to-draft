@@ -123,3 +123,7 @@ option[data-hidden="true"] {
 .switcher > *:not(.is-active) {
   display: none;
 }
+
+[data-toggle*=modal]:focus {
+  outline: none;
+}

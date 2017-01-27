@@ -63,6 +63,12 @@
         max-height: 100%;
       }
     }
+
+    .mdl-list {
+      @include media-breakpoint-down(md) {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
@@ -178,10 +184,6 @@
 
     @include media-breakpoint-down(md) {
       padding-bottom: 12px;
-    }
-
-    @include media-breakpoint-down(sm) {
-      padding-bottom: 26px;
     }
   }
 

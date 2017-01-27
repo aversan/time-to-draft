@@ -152,6 +152,9 @@
 	  display: block;
     @include typo-body;
     color: $darker-grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
 	  a {
 	    color: inherit;

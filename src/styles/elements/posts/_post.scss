@@ -76,7 +76,8 @@
 
 // text
 
-.post__text {
+.post__text,
+.post-text {
   @include typo-body-lg;
   line-height: 1.56;
 
@@ -84,7 +85,7 @@
     @include typo-body;
   }
 
-  h2 {
+  h1 {
     @include typo-h4;
     font-weight: 700;
     margin-top: 28px;
@@ -97,7 +98,7 @@
     }
   }
 
-  h3 {
+  h2 {
     @include typo-h5;
     font-weight: 700;
     margin-top: 28px;
@@ -120,9 +121,11 @@
   }
 }
 
-// lead
+// blockquote
 
-.post__lead {
+.post__text blockquote,
+.post-text blockquote,
+.post-blockquote {
   @include typo-h5;
   font-weight: 400;
   color: $grey;
@@ -139,6 +142,11 @@
     font-weight: 400;
     padding: 20px 14px 12px;
     margin: 32px 0;
+  }
+
+  .container .editor__wrapper & {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

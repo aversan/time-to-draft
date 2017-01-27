@@ -272,17 +272,17 @@
 
     opacity: 1;
 
-    @media (min-width: 768px) {
+    @include media-breakpoint-up(sm) {
       width: 15px;
       height: 15px;
     }
 
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(md) {
       width: 10px;
       height: 10px;
     }
 
-    @media (min-width: 1200px) {
+    @include media-breakpoint-up(lg) {
       width: 5px;
       height: 5px;
 
@@ -312,7 +312,7 @@
 }
 
 .cropper-bg {
-  background-image: inline('../images/bg.png');
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEXMzMz////TjRV2AAAAFUlEQVQY02NghAIGGBgggQG2HiYAAEUQAIEnpAxuAAAAAElFTkSuQmCC);
 }
 
 .cropper-hide {

@@ -14,6 +14,7 @@
       height: 22px;
       background: $white;
       border: 1px solid #ddd;
+      box-shadow: 0 1px 3px 0 $range-faded-color;
     }
 
     &::-moz-range-thumb {
@@ -21,6 +22,7 @@
       height: 22px;
       background: $white;
 	  	border: 1px solid #ddd;
+      box-shadow: 0 1px 3px 0 $range-faded-color;
     }
 
     &:focus:not(:active)::-webkit-slider-thumb {

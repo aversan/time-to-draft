@@ -91,7 +91,7 @@
 
   .icon.-dropdown {
     vertical-align: top;
-    top: .3rem;
+    top: 3px;
   }
 
   .dropdown-menu {
@@ -314,9 +314,13 @@ a.message-btn-prev {
 // blog
 
 .message-item--blog {
-  max-width: calc(100% - 100px);
+  position: relative;
 
-  .media-body {
+  .message-item__media {
+    max-width: calc(100% - 100px);
+  }
+
+  .message-item__media .media-body {
     max-width: calc(100% - 48px);
     @include text-truncate;
 
@@ -344,7 +348,11 @@ a.message-btn-prev {
 .message-item--message {
   .message-item__media {
     width: 100%;
-    max-width: 100%;
+    max-width: calc(100% - 200px);
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+    }
   }
 
   &.is-new .message-item__title {

@@ -1,0 +1,14 @@
+{% from 'macros/helpers.html' import sprite %}
+
+{% macro vote(
+    class='',
+    value=1
+) %}
+
+<div class="input-group input-group--vote {{ class }}">
+    <input class="form-control {{ "is-positive" if value >=0 else "is-negative" }}" type="text" value="{{ value | int }}" readonly>
+    <button class="btn btn-link">{{ sprite('plus', '0 0 1 1', 'icon') }}</button>
+    <button class="btn btn-link">{{ sprite('minus', '0 0 1 1', 'icon') }}</button>
+</div>
+
+{% endmacro %}

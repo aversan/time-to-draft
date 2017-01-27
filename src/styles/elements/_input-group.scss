@@ -32,7 +32,7 @@
 
 .input-group--vote {
   height: 18px;
-  width: auto;
+  width: 62px;
 
   .form-control {
     padding: 0;
@@ -74,6 +74,28 @@
 
     &:focus {
       color: $dark-grey;
+    }
+
+    .icon {
+      &,
+      & svg {
+        width: 8px;
+        height: auto;        
+      }
+    }
+
+    & .icon {
+      &,
+      & svg {
+        color: $dark-grey;
+      }
+    }
+
+    &:hover .icon {
+      &,
+      & svg {
+        color: $darker-grey;
+      }
     }
   }
 

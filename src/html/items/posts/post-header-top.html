@@ -64,7 +64,8 @@
             avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
             author_name='<a href="">alextasy</a>',
             author_icon=iconExpert,
-            sub_title='Соавтор'
+            sub_title='Соавтор',
+            coauthor_num=1
         )}}
         <a class="media-badge hidden-md-up" data-badge="+1" href="#modal_list_coauthor" data-toggle="modal"></a>
     </div>
@@ -93,15 +94,12 @@
             author_icon=iconExpert,
             sub_title='Автор'
         )}}
-        <div class="media media--author media--author-lg media--responsive hidden-sm-down">
-            <a class="media-left media-left--badge" data-badge="+2" href="#modal_list_coauthor" data-toggle="modal">
-                <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
-                <img class="media-object avatar" src="http://placehold.it/46x46" alt="" width="46" height="46">
-            </a>
-            <div class="media-body media-middle">
-                <a class="sub-title" href="#modal_list_coauthor" data-toggle="modal">Показать<br>соавторов</a>
-            </div>
-        </div>
+        {{media.mediaAuthor(
+            class='media--author-lg media--responsive hidden-sm-down',
+            avatar={ src: 'http://placehold.it/46x46', width: '46', height: '46' },
+            sub_title='Показать<br>соавторов',
+            coauthor_num=4
+        )}}
         <a class="media-badge hidden-md-up" data-badge="+4" href="#modal_list_coauthor" data-toggle="modal"></a>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4 text-xs-left text-md-right hidden-sm-down">
